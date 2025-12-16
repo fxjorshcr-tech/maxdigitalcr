@@ -230,16 +230,22 @@ export default function Home() {
             <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">El mundo cambió</p>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight mb-8">
-              El 80% de las decisiones de compra
+              Tus clientes ya no solo buscan en Google.
               <br />
-              <span className="text-neutral-400">empiezan en Google.</span>
+              <span className="text-neutral-400">Ahora preguntan a la IA.</span>
             </h2>
 
-            <p className="text-xl text-neutral-500 mb-12">
-              Si no estás ahí, no existís para tus clientes.
+            <p className="text-xl text-neutral-500 mb-12 max-w-2xl mx-auto">
+              ChatGPT, Claude, Gemini. Las búsquedas conversacionales son el presente.
+              <br />
+              Tu sitio debe estar optimizado para que las IA te recomienden.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
+              <div className="text-center">
+                <div className="text-4xl font-bold text-neutral-900 mb-2">AI-Ready</div>
+                <p className="text-sm text-neutral-500">Optimizado para búsqueda conversacional</p>
+              </div>
               <div className="text-center">
                 <div className="text-4xl font-bold text-neutral-900 mb-2">24/7</div>
                 <p className="text-sm text-neutral-500">Tu negocio disponible siempre</p>
@@ -247,10 +253,6 @@ export default function Home() {
               <div className="text-center">
                 <div className="text-4xl font-bold text-neutral-900 mb-2">∞</div>
                 <p className="text-sm text-neutral-500">Alcance sin límites geográficos</p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-neutral-900 mb-2">1°</div>
-                <p className="text-sm text-neutral-500">Primera impresión profesional</p>
               </div>
             </div>
           </div>
@@ -298,10 +300,12 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight mb-6">
               Mientras lo pensás,
               <br />
-              <span className="text-neutral-400">tu competencia ya está vendiendo.</span>
+              <span className="text-neutral-400">la IA ya recomendó a otro.</span>
             </h2>
             <p className="text-lg text-neutral-500 mb-10 max-w-2xl mx-auto">
-              Cada día sin presencia digital es un día que tus clientes encuentran a otros.
+              Cuando alguien le pregunta a la IA por servicios como los tuyos, ¿aparecés vos?
+              <br />
+              Nosotros nos aseguramos de que sí.
             </p>
             <Link
               href="#contacto"
