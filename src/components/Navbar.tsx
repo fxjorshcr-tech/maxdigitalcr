@@ -14,11 +14,11 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/Gemini_Generated_Image_edeejoedeejoedee.png"
+              src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/Gemini_Generated_Image_sxj9f2sxj9f2sxj9.png"
               alt="MaxDigitalCR"
-              width={140}
-              height={40}
-              className="h-10 w-auto"
+              width={180}
+              height={56}
+              className="h-14 w-auto"
               priority
             />
           </Link>
