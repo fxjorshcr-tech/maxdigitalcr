@@ -125,26 +125,101 @@ export default function Home() {
         </section>
 
         {/* Client Logos */}
-        <section className="py-12 px-6 border-y border-neutral-100">
+        <section className="py-16 px-6 border-y border-neutral-100">
           <div className="max-w-6xl mx-auto">
-            <p className="text-center text-xs text-neutral-400 uppercase tracking-widest mb-8">
+            <p className="text-center text-xs text-neutral-400 uppercase tracking-widest mb-10">
               Confían en nosotros
             </p>
-            <div className="flex items-center justify-center gap-12 md:gap-20">
+            <div className="flex items-center justify-center gap-16 md:gap-24">
               <Image
                 src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/Logo%20CWT%20Costa%20Rica-FINAL-01.png"
                 alt="Can't Wait Travel"
-                width={180}
-                height={60}
-                className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity"
+                width={280}
+                height={100}
+                className="h-20 md:h-24 w-auto"
               />
               <Image
                 src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/WhatsApp%20Image%202025-12-15%20at%2010.26.40%20PM.jpeg"
                 alt="Go Adventures"
-                width={180}
-                height={60}
-                className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity"
+                width={280}
+                height={100}
+                className="h-20 md:h-24 w-auto"
               />
+            </div>
+          </div>
+        </section>
+
+        {/* Performance Social Proof */}
+        <section className="py-24 sm:py-32 px-6 bg-neutral-900 text-white overflow-hidden">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-sm text-neutral-500 uppercase tracking-widest mb-6">Rendimiento garantizado</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
+                  Páginas que cargan
+                  <br />
+                  <span className="text-neutral-500">en menos de 1 segundo.</span>
+                </h2>
+                <p className="text-lg text-neutral-400 mb-8">
+                  Cada sitio que entregamos está optimizado al máximo nivel.
+                  Rendimiento perfecto en Google PageSpeed.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <div className="flex items-center gap-2 text-sm text-neutral-400">
+                    <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    SEO optimizado
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-neutral-400">
+                    <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    100% accesible
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-neutral-400">
+                    <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Best practices
+                  </div>
+                </div>
+              </div>
+
+              {/* Performance Metrics Display */}
+              <div className="bg-neutral-800 rounded-2xl p-8 border border-neutral-700">
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-3 h-3 rounded-full bg-red-500" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                  <div className="w-3 h-3 rounded-full bg-green-500" />
+                  <span className="ml-4 text-sm text-neutral-500 font-mono">PageSpeed Insights</span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-6">
+                  {[
+                    { score: 100, label: "Performance", color: "text-green-500" },
+                    { score: 100, label: "Accessibility", color: "text-green-500" },
+                    { score: 100, label: "Best Practices", color: "text-green-500" },
+                    { score: 100, label: "SEO", color: "text-green-500" },
+                  ].map((metric) => (
+                    <div key={metric.label} className="text-center">
+                      <div className={`text-4xl font-bold ${metric.color} mb-1`}>
+                        {metric.score}
+                      </div>
+                      <div className="text-xs text-neutral-500 uppercase tracking-wider">
+                        {metric.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 pt-6 border-t border-neutral-700">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-neutral-500">Tiempo de carga</span>
+                    <span className="text-green-500 font-mono font-bold">0.8s</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
