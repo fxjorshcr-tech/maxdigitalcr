@@ -29,77 +29,47 @@ html {
   color: #ffffff;
 }
 
-/* Stars animation */
-@keyframes twinkle {
+/* Grid pattern - technical */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-grid-dark {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Dot pattern */
+.bg-dots {
+  background-image: radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-dots-dark {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Subtle animations */
+@keyframes pulse-slow {
   0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
+  50% { opacity: 0.6; }
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes pulse-slow {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
-}
-
-@keyframes code-scroll {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
-}
-
-.animate-twinkle {
-  animation: twinkle 3s ease-in-out infinite;
-}
-
-.animate-twinkle-delay-1 {
-  animation: twinkle 3s ease-in-out 0.5s infinite;
-}
-
-.animate-twinkle-delay-2 {
-  animation: twinkle 3s ease-in-out 1s infinite;
-}
-
-.animate-twinkle-delay-3 {
-  animation: twinkle 3s ease-in-out 1.5s infinite;
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-delay {
-  animation: float 6s ease-in-out 2s infinite;
+  50% { transform: translateY(-10px); }
 }
 
 .animate-pulse-slow {
   animation: pulse-slow 4s ease-in-out infinite;
 }
 
-.animate-code-scroll {
-  animation: code-scroll 20s linear infinite;
-}
-
-/* Gradient text */
-.text-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Grid pattern */
-.bg-grid {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-}
-
-/* Dot pattern */
-.bg-dots {
-  background-image: radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px);
-  background-size: 24px 24px;
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
