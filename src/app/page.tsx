@@ -1,39 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-// Technical grid with circuit-like lines
-function TechGrid() {
-  return (
-    <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.04)" strokeWidth="1"/>
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#grid)" />
-
-      {/* Circuit lines */}
-      <g stroke="rgba(0,0,0,0.08)" strokeWidth="1" fill="none">
-        <path d="M 0 200 L 120 200 L 120 280 L 200 280" />
-        <path d="M 100% 300 L calc(100% - 150px) 300 L calc(100% - 150px) 400" />
-        <circle cx="120" cy="200" r="3" fill="rgba(0,0,0,0.1)" />
-        <circle cx="120" cy="280" r="3" fill="rgba(0,0,0,0.1)" />
-        <circle cx="200" cy="280" r="3" fill="rgba(0,0,0,0.1)" />
-      </g>
-    </svg>
-  );
-}
 
 // Wireframe cube
 function WireframeCube({ className = "" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.5">
-      {/* Back face */}
       <path d="M 25 25 L 75 25 L 75 75 L 25 75 Z" opacity="0.3" />
-      {/* Front face */}
       <path d="M 15 35 L 65 35 L 65 85 L 15 85 Z" opacity="0.6" />
-      {/* Connecting lines */}
       <line x1="15" y1="35" x2="25" y2="25" opacity="0.4" />
       <line x1="65" y1="35" x2="75" y2="25" opacity="0.4" />
       <line x1="65" y1="85" x2="75" y2="75" opacity="0.4" />
@@ -50,7 +25,6 @@ function OrbitalRings({ className = "" }: { className?: string }) {
       <circle cx="100" cy="100" r="60" stroke="currentColor" strokeWidth="0.5" opacity="0.3" />
       <circle cx="100" cy="100" r="40" stroke="currentColor" strokeWidth="0.5" opacity="0.4" />
       <circle cx="100" cy="100" r="4" fill="currentColor" opacity="0.5" />
-      {/* Orbital dots */}
       <circle cx="100" cy="20" r="3" fill="currentColor" opacity="0.4" />
       <circle cx="160" cy="100" r="2" fill="currentColor" opacity="0.3" />
       <circle cx="60" cy="140" r="2.5" fill="currentColor" opacity="0.35" />
@@ -58,7 +32,7 @@ function OrbitalRings({ className = "" }: { className?: string }) {
   );
 }
 
-// Connection nodes
+// Connection nodes for dark sections
 function ConnectionNodes() {
   return (
     <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="xMidYMid slice">
@@ -68,24 +42,17 @@ function ConnectionNodes() {
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill="url(#dots)" />
-
-      {/* Connection lines */}
       <g stroke="rgba(255,255,255,0.1)" strokeWidth="1">
         <line x1="10%" y1="20%" x2="30%" y2="40%" />
         <line x1="30%" y1="40%" x2="50%" y2="30%" />
         <line x1="70%" y1="60%" x2="90%" y2="50%" />
-        <line x1="60%" y1="80%" x2="80%" y2="70%" />
       </g>
-
-      {/* Nodes */}
       <g fill="rgba(255,255,255,0.2)">
         <circle cx="10%" cy="20%" r="4" />
         <circle cx="30%" cy="40%" r="3" />
         <circle cx="50%" cy="30%" r="4" />
         <circle cx="70%" cy="60%" r="3" />
         <circle cx="90%" cy="50%" r="4" />
-        <circle cx="60%" cy="80%" r="3" />
-        <circle cx="80%" cy="70%" r="4" />
       </g>
     </svg>
   );
@@ -95,13 +62,9 @@ function ConnectionNodes() {
 function BlueprintCorners({ className = "" }: { className?: string }) {
   return (
     <div className={`absolute inset-4 pointer-events-none ${className}`}>
-      {/* Top left */}
       <div className="absolute top-0 left-0 w-8 h-8 border-l border-t border-neutral-200" />
-      {/* Top right */}
       <div className="absolute top-0 right-0 w-8 h-8 border-r border-t border-neutral-200" />
-      {/* Bottom left */}
       <div className="absolute bottom-0 left-0 w-8 h-8 border-l border-b border-neutral-200" />
-      {/* Bottom right */}
       <div className="absolute bottom-0 right-0 w-8 h-8 border-r border-b border-neutral-200" />
     </div>
   );
@@ -115,16 +78,13 @@ export default function Home() {
       <main className="bg-white">
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden bg-grid">
-          {/* Decorative elements */}
           <WireframeCube className="absolute top-32 left-[10%] w-24 h-24 text-neutral-300 animate-float opacity-50" />
           <OrbitalRings className="absolute bottom-32 right-[8%] w-40 h-40 text-neutral-300 opacity-40" />
 
-          {/* Circuit lines */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
             <line x1="0" y1="30%" x2="15%" y2="30%" stroke="rgba(0,0,0,0.06)" strokeWidth="1" />
             <line x1="15%" y1="30%" x2="15%" y2="50%" stroke="rgba(0,0,0,0.06)" strokeWidth="1" />
             <circle cx="15%" cy="30%" r="3" fill="rgba(0,0,0,0.08)" />
-
             <line x1="100%" y1="60%" x2="85%" y2="60%" stroke="rgba(0,0,0,0.06)" strokeWidth="1" />
             <line x1="85%" y1="60%" x2="85%" y2="75%" stroke="rgba(0,0,0,0.06)" strokeWidth="1" />
             <circle cx="85%" cy="60%" r="3" fill="rgba(0,0,0,0.08)" />
@@ -165,56 +125,118 @@ export default function Home() {
         </section>
 
         {/* Client Logos */}
-        <section className="py-16 px-6 border-y border-neutral-100">
+        <section className="py-12 px-6 border-y border-neutral-100">
           <div className="max-w-6xl mx-auto">
             <p className="text-center text-xs text-neutral-400 uppercase tracking-widest mb-8">
               Confían en nosotros
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-              {["Can't Wait Travel", "Go Adventures", "Grupo Oroz", "OroStudios"].map((client) => (
-                <span key={client} className="text-sm font-medium text-neutral-300 hover:text-neutral-500 transition-colors">
-                  {client}
-                </span>
+            <div className="flex items-center justify-center gap-12 md:gap-20">
+              <Image
+                src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/Logo%20CWT%20Costa%20Rica-FINAL-01.png"
+                alt="Can't Wait Travel"
+                width={180}
+                height={60}
+                className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity"
+              />
+              <Image
+                src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/WhatsApp%20Image%202025-12-15%20at%2010.26.40%20PM.jpeg"
+                alt="Go Adventures"
+                width={180}
+                height={60}
+                className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Why Digital Section - NEW */}
+        <section className="py-24 sm:py-32 px-6 bg-neutral-50 bg-grid">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">El mundo cambió</p>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight mb-8">
+              El 80% de las decisiones de compra
+              <br />
+              <span className="text-neutral-400">empiezan en Google.</span>
+            </h2>
+
+            <p className="text-xl text-neutral-500 mb-12">
+              Si no estás ahí, no existís para tus clientes.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
+              <div className="text-center">
+                <div className="text-4xl font-bold text-neutral-900 mb-2">24/7</div>
+                <p className="text-sm text-neutral-500">Tu negocio disponible siempre</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-neutral-900 mb-2">∞</div>
+                <p className="text-sm text-neutral-500">Alcance sin límites geográficos</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-neutral-900 mb-2">1°</div>
+                <p className="text-sm text-neutral-500">Primera impresión profesional</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Myths Section - NEW (Dark) */}
+        <section className="relative py-24 sm:py-32 px-6 bg-neutral-900 text-white overflow-hidden">
+          <ConnectionNodes />
+          <div className="absolute inset-0 bg-grid-dark" />
+
+          <div className="relative z-10 max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-sm text-neutral-500 uppercase tracking-widest mb-6">Olvidate de los mitos</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+                Lo que te dijeron
+                <br />
+                <span className="text-neutral-500">ya no es cierto.</span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {[
+                { myth: '"Es muy caro"', truth: "Desde ₡100,000" },
+                { myth: '"Toma mucho tiempo"', truth: "Días, no meses" },
+                { myth: '"Es muy complicado"', truth: "Nosotros nos encargamos" },
+                { myth: '"No lo necesito"', truth: "Tu competencia ya lo tiene" },
+              ].map((item) => (
+                <div key={item.myth} className="p-6 border border-neutral-700 rounded-xl bg-neutral-800/50">
+                  <div className="flex items-start gap-4">
+                    <span className="text-neutral-500 text-xl">✗</span>
+                    <div>
+                      <p className="text-neutral-500 line-through mb-1">{item.myth}</p>
+                      <p className="text-white font-semibold">{item.truth}</p>
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Revolution Section - Dark */}
-        <section className="relative py-24 sm:py-32 px-6 bg-neutral-900 text-white overflow-hidden">
-          <ConnectionNodes />
-          <div className="absolute inset-0 bg-grid-dark" />
-
-          <div className="relative z-10 max-w-4xl mx-auto text-center">
-            <p className="text-sm text-neutral-500 uppercase tracking-widest mb-6">El futuro llegó</p>
-
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Pagar miles de dólares
+        {/* Competition Section - NEW */}
+        <section className="py-24 sm:py-32 px-6 border-b border-neutral-100">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight mb-6">
+              Mientras lo pensás,
               <br />
-              <span className="text-neutral-600 line-through">por una página web</span>
-              <br />
-              es cosa del pasado.
+              <span className="text-neutral-400">tu competencia ya está vendiendo.</span>
             </h2>
-
-            <p className="text-lg text-neutral-400 max-w-2xl mx-auto mb-10">
-              La nueva tecnología llegó a Costa Rica.
-              Lo que antes costaba millones, ahora es accesible.
+            <p className="text-lg text-neutral-500 mb-10 max-w-2xl mx-auto">
+              Cada día sin presencia digital es un día que tus clientes encuentran a otros.
             </p>
-
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-500">
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-white rounded-full" />
-                Sin código obsoleto
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-white rounded-full" />
-                Sin intermediarios
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-white rounded-full" />
-                Sin sorpresas
-              </span>
-            </div>
+            <Link
+              href="#contacto"
+              className="inline-flex items-center gap-2 bg-neutral-900 text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-neutral-800 transition-all"
+            >
+              No esperar más
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </section>
 
@@ -342,8 +364,6 @@ export default function Home() {
         {/* Stack Section */}
         <section className="relative py-24 sm:py-32 px-6 bg-neutral-50 overflow-hidden">
           <div className="absolute inset-0 bg-grid opacity-50" />
-
-          {/* Decorative wireframe */}
           <WireframeCube className="absolute top-20 right-[5%] w-32 h-32 text-neutral-300 opacity-30" />
 
           <div className="relative z-10 max-w-6xl mx-auto text-center">
@@ -427,49 +447,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects Section */}
-        <section id="proyectos" className="relative py-24 sm:py-32 px-6 bg-neutral-900 text-white overflow-hidden">
-          <div className="absolute inset-0 bg-grid-dark" />
-
-          <div className="relative z-10 max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold">
-                Nuestro trabajo.
-              </h2>
-              <p className="mt-4 text-neutral-500">Proyectos que hablan por sí solos</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                { name: "Can't Wait Travel", category: "Turismo" },
-                { name: "Go Adventures", category: "Tours" },
-                { name: "Grupo Oroz", category: "Corporativo" },
-                { name: "OroStudios", category: "Creativo" },
-              ].map((project) => (
-                <div
-                  key={project.name}
-                  className="group relative aspect-[4/3] bg-neutral-800 rounded-xl border border-neutral-700 overflow-hidden hover:border-neutral-500 transition-all cursor-pointer"
-                >
-                  <div className="absolute inset-0 bg-grid-dark opacity-50" />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                    <span className="text-xs text-neutral-500 uppercase tracking-widest mb-2">
-                      {project.category}
-                    </span>
-                    <h3 className="text-xl font-semibold text-white">
-                      {project.name}
-                    </h3>
-                    <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <span className="text-sm text-neutral-400">Ver proyecto →</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Process Section */}
-        <section className="py-24 sm:py-32 px-6 bg-dots">
+        <section className="py-24 sm:py-32 px-6 bg-neutral-50 bg-dots">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900">
@@ -484,7 +463,7 @@ export default function Home() {
                 { step: "02", title: "Proponemos", description: "Sin sorpresas" },
                 { step: "03", title: "Construimos", description: "Rápido y bien" },
                 { step: "04", title: "Lanzamos", description: "Tu sitio en vivo" },
-              ].map((item, index) => (
+              ].map((item) => (
                 <div key={item.step} className="text-center">
                   <div className="w-16 h-16 mx-auto mb-4 border border-neutral-200 rounded-xl flex items-center justify-center bg-white">
                     <span className="text-xl font-mono font-bold text-neutral-900">{item.step}</span>
