@@ -75,50 +75,23 @@ function BlueprintCorners({ className = "" }: { className?: string }) {
 
 // Matrix rain component
 function MatrixRain() {
-  const [columns, setColumns] = useState<Array<{ id: number; left: number; duration: number; delay: number; chars: string[] }>>([]);
+  const [chars, setChars] = useState<string[]>([]);
 
   useEffect(() => {
-    const codeSnippets = [
-      ['const', 'let', 'var', 'if', 'for', 'while', 'return', 'async', 'await', 'import', 'export', 'function'],
-      ['<div>', '</>', '{}', '[]', '=>', '===', '!==', '&&', '||', '...', '??'],
-      ['npm', 'git', 'push', 'pull', 'commit', 'build', 'deploy', 'test'],
-      ['React', 'Next', 'Node', 'API', 'REST', 'JSON', 'HTTP', 'GET', 'POST'],
-      ['0', '1', '{', '}', '(', ')', ';', ':', '<', '>', '/'],
-    ];
-
-    const newColumns = Array.from({ length: 12 }, (_, i) => {
-      const snippetGroup = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
-      const chars = Array.from({ length: 15 }, () =>
-        snippetGroup[Math.floor(Math.random() * snippetGroup.length)]
-      );
-      return {
-        id: i,
-        left: (i * 8.5) + Math.random() * 3,
-        duration: 12 + Math.random() * 8,
-        delay: Math.random() * -20,
-        chars,
-      };
-    });
-    setColumns(newColumns);
+    const characters = ['0', '1', '{', '}', '<', '>', '/', ';', ':', '=', '+', '-', '*', '&', '%', '#', '@'];
+    const newChars = Array.from({ length: 30 }, () =>
+      characters[Math.floor(Math.random() * characters.length)]
+    );
+    setChars(newChars);
   }, []);
 
   return (
     <div className="matrix-rain">
-      {columns.map((col) => (
-        <div
-          key={col.id}
-          className="matrix-column"
-          style={{
-            left: `${col.left}%`,
-            animationDuration: `${col.duration}s`,
-            animationDelay: `${col.delay}s`,
-          }}
-        >
-          {col.chars.map((char, i) => (
-            <span key={i}>{char}</span>
-          ))}
-        </div>
-      ))}
+      <div className="matrix-column" style={{ left: '50%', transform: 'translateX(-50%)' }}>
+        {chars.map((char, i) => (
+          <span key={i}>{char}</span>
+        ))}
+      </div>
     </div>
   );
 }
