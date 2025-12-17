@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useEffect, useState } from "react";
 
 // Wireframe cube
 function WireframeCube({ className = "" }: { className?: string }) {
@@ -70,6 +73,56 @@ function BlueprintCorners({ className = "" }: { className?: string }) {
   );
 }
 
+// Matrix rain component
+function MatrixRain() {
+  const [columns, setColumns] = useState<Array<{ id: number; left: number; duration: number; delay: number; chars: string[] }>>([]);
+
+  useEffect(() => {
+    const codeSnippets = [
+      ['const', 'let', 'var', 'if', 'for', 'while', 'return', 'async', 'await', 'import', 'export', 'function'],
+      ['<div>', '</>', '{}', '[]', '=>', '===', '!==', '&&', '||', '...', '??'],
+      ['npm', 'git', 'push', 'pull', 'commit', 'build', 'deploy', 'test'],
+      ['React', 'Next', 'Node', 'API', 'REST', 'JSON', 'HTTP', 'GET', 'POST'],
+      ['0', '1', '{', '}', '(', ')', ';', ':', '<', '>', '/'],
+    ];
+
+    const newColumns = Array.from({ length: 12 }, (_, i) => {
+      const snippetGroup = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+      const chars = Array.from({ length: 15 }, () =>
+        snippetGroup[Math.floor(Math.random() * snippetGroup.length)]
+      );
+      return {
+        id: i,
+        left: (i * 8.5) + Math.random() * 3,
+        duration: 12 + Math.random() * 8,
+        delay: Math.random() * -20,
+        chars,
+      };
+    });
+    setColumns(newColumns);
+  }, []);
+
+  return (
+    <div className="matrix-rain">
+      {columns.map((col) => (
+        <div
+          key={col.id}
+          className="matrix-column"
+          style={{
+            left: `${col.left}%`,
+            animationDuration: `${col.duration}s`,
+            animationDelay: `${col.delay}s`,
+          }}
+        >
+          {col.chars.map((char, i) => (
+            <span key={i} style={{ opacity: 0.4 + (i * 0.04) }}>{char}</span>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -78,6 +131,7 @@ export default function Home() {
       <main className="bg-white">
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden bg-grid">
+          <MatrixRain />
           <WireframeCube className="absolute top-32 left-[10%] w-24 h-24 text-neutral-300 animate-float opacity-50" />
           <OrbitalRings className="absolute bottom-32 right-[8%] w-40 h-40 text-neutral-300 opacity-40" />
 
@@ -175,13 +229,13 @@ export default function Home() {
                     <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    100% accesible
+                    Totalmente accesible
                   </div>
                   <div className="flex items-center gap-2 text-sm text-neutral-400">
                     <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Best practices
+                    Mejores prácticas
                   </div>
                 </div>
               </div>
@@ -197,10 +251,10 @@ export default function Home() {
 
                 <div className="grid grid-cols-2 gap-6">
                   {[
-                    { score: 100, label: "Performance", color: "text-green-500" },
-                    { score: 100, label: "Accessibility", color: "text-green-500" },
-                    { score: 100, label: "Best Practices", color: "text-green-500" },
-                    { score: 100, label: "SEO", color: "text-green-500" },
+                    { score: "A+", label: "Performance", color: "text-green-500" },
+                    { score: "✓", label: "Accessibility", color: "text-green-500" },
+                    { score: "A+", label: "Best Practices", color: "text-green-500" },
+                    { score: "✓", label: "SEO", color: "text-green-500" },
                   ].map((metric) => (
                     <div key={metric.label} className="text-center">
                       <div className={`text-4xl font-bold ${metric.color} mb-1`}>
