@@ -551,99 +551,136 @@ export default function Home() {
           </div>
         </section>
 
-        {/* AI Search Section */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-50 bg-grid">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">El futuro ya llegó</p>
-
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight mb-8">
-              Tus clientes ya no solo buscan en Google.
-              <br />
-              <span className="text-neutral-400">Ahora preguntan a la IA.</span>
-            </h2>
-
-            <p className="text-xl text-neutral-500 mb-12 max-w-2xl mx-auto">
-              ChatGPT, Claude, Gemini. Las búsquedas conversacionales son el presente.
-              Cuando alguien pregunta &ldquo;¿cuál es el mejor taller en San José?&rdquo;, ¿tu negocio aparece?
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
-              <div className="text-center p-6 bg-white rounded-xl border border-neutral-200">
-                <div className="text-3xl font-bold text-neutral-900 mb-2">AI-Ready</div>
-                <p className="text-sm text-neutral-500">Sitios optimizados para que las IA te recomienden</p>
-              </div>
-              <div className="text-center p-6 bg-white rounded-xl border border-neutral-200">
-                <div className="text-3xl font-bold text-neutral-900 mb-2">SEO</div>
-                <p className="text-sm text-neutral-500">Aparecer primero en Google y otros buscadores</p>
-              </div>
-              <div className="text-center p-6 bg-white rounded-xl border border-neutral-200">
-                <div className="text-3xl font-bold text-neutral-900 mb-2">Local</div>
-                <p className="text-sm text-neutral-500">Clientes cerca de vos te encuentran fácil</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Myths Section (Dark) */}
-        <section className="relative py-24 sm:py-32 px-6 bg-neutral-900 text-white overflow-hidden">
-          <ConnectionNodes />
-          <div className="absolute inset-0 bg-grid-dark" />
-
-          <div className="relative z-10 max-w-4xl mx-auto">
+        {/* Why Us Section */}
+        <section className="py-24 sm:py-32 px-6 bg-neutral-900 text-white">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-sm text-neutral-500 uppercase tracking-widest mb-6">Derribando barreras</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-                Las excusas que te frenan
+              <p className="text-sm text-neutral-500 uppercase tracking-widest mb-6">¿Por qué nosotros?</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
+                No somos una agencia más.
                 <br />
-                <span className="text-neutral-500">ya no tienen sentido.</span>
+                <span className="text-neutral-500">Somos tu socio digital.</span>
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {[
-                { myth: '"Es muy caro"', truth: "Desde ₡100,000 — menos que un anuncio en radio" },
-                { myth: '"Toma mucho tiempo"', truth: "Tu sitio listo en días, no en meses" },
-                { myth: '"Es muy complicado"', truth: "Vos solo decidís, nosotros ejecutamos" },
-                { myth: '"Ya tengo redes sociales"', truth: "Las redes alquilan, tu web es tuya para siempre" },
-                { myth: '"Mi negocio es pequeño"', truth: "Los pequeños son los que más crecen con presencia web" },
-                { myth: '"No sé de tecnología"', truth: "No necesitás saber, para eso estamos nosotros" },
-              ].map((item) => (
-                <div key={item.myth} className="p-6 border border-neutral-700 rounded-xl bg-neutral-800/50">
-                  <div className="flex items-start gap-4">
-                    <span className="text-red-500 text-xl">✗</span>
-                    <div>
-                      <p className="text-neutral-500 line-through mb-2">{item.myth}</p>
-                      <p className="text-white font-medium">{item.truth}</p>
-                    </div>
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center p-6">
+                <div className="w-16 h-16 mx-auto mb-6 bg-neutral-800 rounded-2xl flex items-center justify-center border border-neutral-700">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
                 </div>
-              ))}
+                <h3 className="text-xl font-semibold mb-3">Tecnología de punta</h3>
+                <p className="text-neutral-400">
+                  Usamos las mismas herramientas que Netflix, Airbnb y TikTok. Next.js, React, Vercel. Lo mejor del mercado.
+                </p>
+              </div>
+              <div className="text-center p-6">
+                <div className="w-16 h-16 mx-auto mb-6 bg-neutral-800 rounded-2xl flex items-center justify-center border border-neutral-700">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Entrega rápida</h3>
+                <p className="text-neutral-400">
+                  Tu sitio listo en días, no en meses. Procesos optimizados para que empieces a vender lo antes posible.
+                </p>
+              </div>
+              <div className="text-center p-6">
+                <div className="w-16 h-16 mx-auto mb-6 bg-neutral-800 rounded-2xl flex items-center justify-center border border-neutral-700">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Trato directo</h3>
+                <p className="text-neutral-400">
+                  Sin intermediarios. Hablás directamente con quien construye tu sitio. Comunicación clara y sin vueltas.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Urgency Section */}
-        <section className="py-24 sm:py-32 px-6 border-b border-neutral-100">
+        {/* Myths + CTA Section */}
+        <section className="py-24 sm:py-32 px-6 bg-neutral-50">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
+                Dejá de poner excusas.
+              </h2>
+              <p className="text-lg text-neutral-500">
+                Cada día que pasa sin página web, es un cliente que se va con tu competencia.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+              {[
+                { myth: '"Es muy caro"', truth: "Desde ₡100,000" },
+                { myth: '"Toma mucho tiempo"', truth: "Listo en días" },
+                { myth: '"Ya tengo redes"', truth: "Las redes no son tuyas" },
+                { myth: '"No sé de tecnología"', truth: "Nosotros nos encargamos" },
+              ].map((item) => (
+                <div key={item.myth} className="flex items-center gap-4 p-4 bg-white rounded-xl border border-neutral-200">
+                  <span className="text-red-500 text-lg">✗</span>
+                  <span className="text-neutral-400 line-through text-sm">{item.myth}</span>
+                  <span className="text-neutral-900 font-medium text-sm ml-auto">{item.truth}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Link
+                href="#contacto"
+                className="inline-flex items-center gap-2 bg-neutral-900 text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-neutral-800 transition-all"
+              >
+                Quiero mi página web
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Price Section */}
+        <section id="precio" className="py-24 sm:py-32 px-6 bg-white">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">No es si, es cuándo</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight mb-6">
-              Cada día sin página web
-              <br />
-              <span className="text-neutral-400">es un cliente que perdiste.</span>
+            <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">Inversión</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-2">
+              Tu página web profesional
             </h2>
-            <p className="text-lg text-neutral-500 mb-6 max-w-2xl mx-auto">
-              Mientras leés esto, alguien está buscando exactamente lo que ofrecés.
-              Si no te encuentra a vos, encuentra a tu competencia.
+            <p className="text-xl text-neutral-400 mb-8">desde</p>
+
+            <span className="text-6xl sm:text-7xl md:text-8xl font-bold text-neutral-900">
+              ₡100,000
+            </span>
+            <p className="text-lg text-neutral-500 mt-4 mb-12">
+              Pago único · Sin mensualidades ocultas · Tuya para siempre
             </p>
-            <p className="text-lg text-neutral-700 font-medium mb-10 max-w-2xl mx-auto">
-              La pregunta no es si necesitás una página web.
-              Es cuánto más vas a esperar para tenerla.
-            </p>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-2xl mx-auto mb-12">
+              {[
+                "Dominio incluido",
+                "Diseño responsive",
+                "SSL (https)",
+                "SEO básico",
+                "Velocidad óptima",
+                "30 días soporte",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-2 text-sm text-neutral-600">
+                  <svg className="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  {item}
+                </div>
+              ))}
+            </div>
+
             <Link
               href="#contacto"
               className="inline-flex items-center gap-2 bg-neutral-900 text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-neutral-800 transition-all"
             >
-              Empezar hoy
+              Empezar ahora
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -651,270 +688,59 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Price Section */}
-        <section id="precio" className="relative py-24 sm:py-32 px-6 overflow-hidden bg-dots">
-          <BlueprintCorners />
-
-          <div className="relative z-10 max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight mb-4">
-              Tu página web profesional
-            </h2>
-            <p className="text-xl text-neutral-400 mb-2">desde</p>
-
-            <div className="my-8">
-              <span className="text-6xl sm:text-7xl md:text-8xl font-bold text-neutral-900">
-                ₡100,000
-              </span>
-              <p className="text-lg text-neutral-500 mt-4">
-                Pago único · Sin mensualidades ocultas
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto mt-12">
-              <div className="p-6 bg-white border border-neutral-200 rounded-xl">
-                <div className="w-12 h-12 mx-auto mb-4 border border-neutral-200 rounded-lg flex items-center justify-center">
-                  <svg className="w-6 h-6 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-neutral-900 mb-1">Tecnología</h3>
-                <p className="text-sm text-neutral-500">La misma que usa Netflix</p>
-              </div>
-              <div className="p-6 bg-white border border-neutral-200 rounded-xl">
-                <div className="w-12 h-12 mx-auto mb-4 border border-neutral-200 rounded-lg flex items-center justify-center">
-                  <svg className="w-6 h-6 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-neutral-900 mb-1">Velocidad</h3>
-                <p className="text-sm text-neutral-500">Entregado en días</p>
-              </div>
-              <div className="p-6 bg-white border border-neutral-200 rounded-xl">
-                <div className="w-12 h-12 mx-auto mb-4 border border-neutral-200 rounded-lg flex items-center justify-center">
-                  <svg className="w-6 h-6 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-neutral-900 mb-1">Calidad</h3>
-                <p className="text-sm text-neutral-500">Diseño profesional</p>
-              </div>
-            </div>
-
-            <div className="mt-12">
-              <Link
-                href="#contacto"
-                className="inline-flex items-center gap-2 bg-neutral-900 text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-neutral-800 transition-all"
-              >
-                Empezar ahora
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* What You Get Section */}
-        <section className="py-24 sm:py-32 px-6 border-y border-neutral-100">
+        {/* Services + Process Combined */}
+        <section className="py-24 sm:py-32 px-6 bg-neutral-50">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">Todo incluido</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight">
-                No solo una página web.
-                <br />
-                <span className="text-neutral-400">Una solución completa.</span>
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: (
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                    </svg>
-                  ),
-                  title: "Dominio personalizado",
-                  description: "tunegocio.com — profesional y fácil de recordar para tus clientes",
-                },
-                {
-                  icon: (
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                    </svg>
-                  ),
-                  title: "Diseño responsive",
-                  description: "Se ve perfecto en celular, tablet y computadora",
-                },
-                {
-                  icon: (
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                  ),
-                  title: "SSL incluido",
-                  description: "Conexión segura (https) que genera confianza y mejora SEO",
-                },
-                {
-                  icon: (
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  ),
-                  title: "Velocidad extrema",
-                  description: "Carga en menos de 1 segundo para no perder visitantes",
-                },
-                {
-                  icon: (
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                  ),
-                  title: "SEO básico",
-                  description: "Optimizado para aparecer en Google desde el día uno",
-                },
-                {
-                  icon: (
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                  ),
-                  title: "Soporte incluido",
-                  description: "30 días de soporte post-lanzamiento sin costo adicional",
-                },
-              ].map((feature) => (
-                <div key={feature.title} className="relative p-8 border border-neutral-200 rounded-xl hover:border-neutral-400 transition-colors group">
-                  <BlueprintCorners className="opacity-0 group-hover:opacity-100 transition-opacity !inset-2" />
-                  <div className="text-neutral-400 mb-6 group-hover:text-neutral-900 transition-colors">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-neutral-500 text-sm">
-                    {feature.description}
-                  </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+              {/* Services */}
+              <div>
+                <p className="text-sm text-neutral-400 uppercase tracking-widest mb-4">Servicios</p>
+                <h2 className="text-3xl font-bold text-neutral-900 mb-8">
+                  ¿Qué construimos?
+                </h2>
+                <div className="space-y-4">
+                  {[
+                    { title: "Landing Pages", description: "Una página. Máximo impacto. Perfecta para campañas.", icon: "📄" },
+                    { title: "Sitios Web", description: "Tu negocio completo en línea. Profesional y moderno.", icon: "🌐" },
+                    { title: "Sistemas de Reservas", description: "Automatizá citas y reservaciones. Ahorrá tiempo.", icon: "📅" },
+                    { title: "E-Commerce", description: "Vendé tus productos 24/7. Carrito y pagos incluidos.", icon: "🛒" },
+                  ].map((service) => (
+                    <div key={service.title} className="flex items-start gap-4 p-4 bg-white rounded-xl border border-neutral-200">
+                      <span className="text-2xl">{service.icon}</span>
+                      <div>
+                        <h3 className="font-semibold text-neutral-900">{service.title}</h3>
+                        <p className="text-sm text-neutral-500">{service.description}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
+              </div>
 
-        {/* Stack Section */}
-        <section className="relative py-24 sm:py-32 px-6 bg-neutral-50 overflow-hidden">
-          <div className="absolute inset-0 bg-grid opacity-50" />
-          <WireframeCube className="absolute top-20 right-[5%] w-32 h-32 text-neutral-300 opacity-30" />
-
-          <div className="relative z-10 max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
-              Construido con lo mejor.
-            </h2>
-            <p className="text-neutral-500 mb-4">
-              Lo mismo que usa Netflix. Airbnb. TikTok.
-            </p>
-            <p className="text-lg text-neutral-900 font-semibold mb-12">
-              Ahora para tu negocio.
-            </p>
-
-            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-              {[
-                { name: "Next.js", icon: "▲", color: "bg-black text-white" },
-                { name: "React", icon: "⚛️", color: "bg-[#61DAFB] text-black" },
-                { name: "TypeScript", icon: "TS", color: "bg-[#3178C6] text-white" },
-                { name: "Vercel", icon: "▲", color: "bg-black text-white" },
-                { name: "Supabase", icon: "⚡", color: "bg-[#3ECF8E] text-white" },
-                { name: "Tailwind", icon: "🎨", color: "bg-[#06B6D4] text-white" },
-              ].map((tech) => (
-                <div
-                  key={tech.name}
-                  className="group flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-neutral-200 hover:border-neutral-400 hover:shadow-sm transition-all"
-                >
-                  <span className={`w-8 h-8 rounded-lg ${tech.color} flex items-center justify-center text-xs font-bold`}>
-                    {tech.icon}
-                  </span>
-                  <span className="text-sm font-medium text-neutral-700">
-                    {tech.name}
-                  </span>
+              {/* Process */}
+              <div>
+                <p className="text-sm text-neutral-400 uppercase tracking-widest mb-4">Proceso</p>
+                <h2 className="text-3xl font-bold text-neutral-900 mb-8">
+                  Así trabajamos
+                </h2>
+                <div className="space-y-6">
+                  {[
+                    { step: "1", title: "Hablamos", description: "Nos contás tu idea. Entendemos tu negocio y objetivos." },
+                    { step: "2", title: "Proponemos", description: "Te presentamos opciones claras. Sin sorpresas ni letra pequeña." },
+                    { step: "3", title: "Construimos", description: "Desarrollamos tu sitio. Te mantenemos informado en cada paso." },
+                    { step: "4", title: "Lanzamos", description: "Tu página en vivo. Te enseñamos a usarla. Soporte incluido." },
+                  ].map((item) => (
+                    <div key={item.step} className="flex items-start gap-4">
+                      <span className="w-8 h-8 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0">
+                        {item.step}
+                      </span>
+                      <div>
+                        <h3 className="font-semibold text-neutral-900">{item.title}</h3>
+                        <p className="text-sm text-neutral-500">{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Services Section */}
-        <section className="py-24 sm:py-32 px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900">
-                ¿Qué construimos?
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { title: "Landing Pages", description: "Una página. Máximo impacto.", icon: "📄" },
-                { title: "Sitios Web", description: "Tu negocio en línea. Profesional.", icon: "🌐" },
-                { title: "Reservas", description: "Automatizá tu operación.", icon: "📅" },
-                { title: "E-Commerce", description: "Vendé 24/7.", icon: "🛒" },
-              ].map((service) => (
-                <div
-                  key={service.title}
-                  className="group p-8 bg-white border border-neutral-200 rounded-xl hover:border-neutral-900 transition-all"
-                >
-                  <div className="text-4xl mb-4">{service.icon}</div>
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-neutral-500">
-                    {service.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center mt-12">
-              <Link
-                href="/servicios"
-                className="inline-flex items-center gap-2 text-neutral-900 font-medium hover:gap-3 transition-all"
-              >
-                Explorar servicios
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Process Section */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-50 bg-dots">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900">
-                Así trabajamos.
-              </h2>
-              <p className="mt-4 text-neutral-500">Simple. Transparente. Efectivo.</p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { step: "01", title: "Hablamos", description: "Entendemos tu proyecto" },
-                { step: "02", title: "Proponemos", description: "Sin sorpresas" },
-                { step: "03", title: "Construimos", description: "Rápido y bien" },
-                { step: "04", title: "Lanzamos", description: "Tu sitio en vivo" },
-              ].map((item) => (
-                <div key={item.step} className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 border border-neutral-200 rounded-xl flex items-center justify-center bg-white">
-                    <span className="text-xl font-mono font-bold text-neutral-900">{item.step}</span>
-                  </div>
-                  <span className="text-sm font-semibold text-neutral-900 block">
-                    {item.title}
-                  </span>
-                  <span className="text-xs text-neutral-500 block mt-1">
-                    {item.description}
-                  </span>
-                </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
