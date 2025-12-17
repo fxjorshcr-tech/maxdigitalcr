@@ -115,7 +115,7 @@ function MatrixRain() {
           }}
         >
           {col.chars.map((char, i) => (
-            <span key={i} style={{ opacity: 0.4 + (i * 0.04) }}>{char}</span>
+            <span key={i}>{char}</span>
           ))}
         </div>
       ))}
