@@ -300,73 +300,103 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Google My Business Section */}
+        {/* Google My Business + Web Synergy Section */}
         <section className="py-24 sm:py-32 px-6 bg-neutral-50 bg-grid">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">El poder de Google</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight mb-6">
-                  Google My Business
-                  <br />
-                  <span className="text-neutral-400">tu vitrina digital gratuita.</span>
-                </h2>
-                <p className="text-lg text-neutral-500 mb-6">
-                  Cuando alguien busca &ldquo;restaurantes cerca de mí&rdquo; o &ldquo;talleres en San José&rdquo;,
-                  Google muestra los negocios con perfil verificado primero.
-                </p>
-                <p className="text-lg text-neutral-500 mb-8">
-                  <strong className="text-neutral-900">Sin Google My Business, sos invisible.</strong> Con él,
-                  aparecés en Maps, en búsquedas locales, y tus clientes te encuentran con un clic.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-white border border-neutral-200 rounded-full text-sm text-neutral-600">Aparecer en Maps</span>
-                  <span className="px-4 py-2 bg-white border border-neutral-200 rounded-full text-sm text-neutral-600">Reseñas de clientes</span>
-                  <span className="px-4 py-2 bg-white border border-neutral-200 rounded-full text-sm text-neutral-600">Horarios y contacto</span>
-                  <span className="px-4 py-2 bg-white border border-neutral-200 rounded-full text-sm text-neutral-600">Fotos del negocio</span>
-                </div>
-              </div>
+            <div className="text-center mb-16">
+              <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">La fórmula del crecimiento</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight mb-6">
+                Google My Business + Página Web
+                <br />
+                <span className="text-neutral-400">= Crecimiento exponencial.</span>
+              </h2>
+              <p className="text-xl text-neutral-500 max-w-3xl mx-auto">
+                Las reseñas y estrellas en Google generan confianza. Tu página web convierte esa confianza en clientes.
+                Juntos, escalan tu negocio más rápido.
+              </p>
+            </div>
 
-              <div className="bg-white rounded-2xl p-8 border border-neutral-200 shadow-sm">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
-                    <span className="text-white text-xl font-bold">G</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-neutral-900">Tu Negocio</p>
-                    <p className="text-sm text-green-600">Verificado</p>
-                  </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Step 1: GMB */}
+              <div className="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="w-8 h-8 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
+                  <span className="font-semibold text-neutral-900">Te encuentran en Google</span>
                 </div>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3 text-sm">
+                <div className="bg-neutral-50 rounded-xl p-4 mb-4">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                      <span className="text-white font-bold">G</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900 text-sm">Tu Negocio</p>
+                      <p className="text-xs text-green-600">Verificado</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
                     <span className="text-yellow-500">★★★★★</span>
                     <span className="text-neutral-500">4.9 (127 reseñas)</span>
                   </div>
-                  <div className="flex items-center gap-3 text-sm text-neutral-600">
-                    <svg className="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    San José, Costa Rica
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-neutral-600">
-                    <svg className="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="text-green-600 font-medium">Abierto ahora</span> · Cierra a las 6PM
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-neutral-600">
-                    <svg className="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    +506 8888-8888
-                  </div>
                 </div>
-                <div className="mt-6 pt-6 border-t border-neutral-100 flex gap-3">
-                  <button className="flex-1 bg-blue-500 text-white py-2 rounded-lg text-sm font-medium">Llamar</button>
-                  <button className="flex-1 border border-neutral-200 py-2 rounded-lg text-sm font-medium">Direcciones</button>
-                </div>
+                <p className="text-sm text-neutral-500">
+                  Alguien busca tu servicio. Ve tus 5 estrellas y buenas reseñas. Quiere saber más...
+                </p>
               </div>
+
+              {/* Step 2: Click to Web */}
+              <div className="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="w-8 h-8 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
+                  <span className="font-semibold text-neutral-900">Visitan tu página web</span>
+                </div>
+                <div className="bg-neutral-50 rounded-xl p-4 mb-4 text-center">
+                  <div className="w-full h-20 bg-neutral-200 rounded-lg flex items-center justify-center mb-2">
+                    <span className="text-neutral-400 text-xs">tunegocio.com</span>
+                  </div>
+                  <div className="flex justify-center gap-1">
+                    <div className="w-8 h-1 bg-neutral-300 rounded" />
+                    <div className="w-8 h-1 bg-neutral-300 rounded" />
+                    <div className="w-8 h-1 bg-neutral-300 rounded" />
+                  </div>
+                </div>
+                <p className="text-sm text-neutral-500">
+                  Hacen clic en tu sitio web. Ven tus servicios, precios, fotos. Les gusta lo que ven...
+                </p>
+              </div>
+
+              {/* Step 3: Contact */}
+              <div className="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
+                  <span className="font-semibold text-neutral-900">Te contactan</span>
+                </div>
+                <div className="bg-green-50 rounded-xl p-4 mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
+                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900 text-sm">Nuevo mensaje</p>
+                      <p className="text-xs text-neutral-500">&ldquo;Hola, quiero cotizar...&rdquo;</p>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-sm text-neutral-500">
+                  Ya confían en vos. Te escriben listos para comprar. <strong className="text-neutral-900">Nuevo cliente.</strong>
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 bg-neutral-900 rounded-2xl p-8 text-center">
+              <p className="text-neutral-400 mb-2">El resultado</p>
+              <p className="text-2xl md:text-3xl font-bold text-white mb-4">
+                Más visibilidad → Más confianza → Más clientes
+              </p>
+              <p className="text-neutral-400 max-w-2xl mx-auto">
+                Sin página web, perdés todos esos clics. Con ella, cada reseña se convierte en una oportunidad de venta.
+              </p>
             </div>
           </div>
         </section>
