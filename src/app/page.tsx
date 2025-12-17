@@ -158,20 +158,34 @@ export default function Home() {
             <p className="text-center text-xs text-neutral-400 uppercase tracking-widest mb-10">
               Confían en nosotros
             </p>
-            <div className="flex items-center justify-center gap-16 md:gap-24">
+            <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
               <Image
                 src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/Logo%20CWT%20Costa%20Rica-FINAL-01.png"
                 alt="Can't Wait Travel"
-                width={280}
-                height={100}
-                className="h-20 md:h-24 w-auto"
+                width={200}
+                height={80}
+                className="h-16 md:h-20 w-auto"
               />
               <Image
                 src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/WhatsApp%20Image%202025-12-15%20at%2010.26.40%20PM.jpeg"
                 alt="Go Adventures"
-                width={280}
-                height={100}
-                className="h-20 md:h-24 w-auto"
+                width={200}
+                height={80}
+                className="h-16 md:h-20 w-auto"
+              />
+              <Image
+                src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/Orostudios%20CR%20Logo.png"
+                alt="Orostudios CR"
+                width={200}
+                height={80}
+                className="h-16 md:h-20 w-auto"
+              />
+              <Image
+                src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-grupo-oroz.png"
+                alt="Grupo Oroz"
+                width={200}
+                height={80}
+                className="h-16 md:h-20 w-auto"
               />
             </div>
           </div>
