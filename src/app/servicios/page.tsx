@@ -193,12 +193,15 @@ export default function ServiciosPage() {
                 </div>
 
                 <div className="flex items-center justify-between pt-6 border-t border-neutral-200">
-                  <span className="text-sm text-neutral-500 font-mono">Entrega: 5-7 días</span>
+                  <div>
+                    <span className="text-sm text-neutral-500 font-mono">Entrega: 5-7 días</span>
+                    <p className="text-xl font-bold text-neutral-900 mt-1">Desde ₡100,000</p>
+                  </div>
                   <Link
-                    href="/#contacto"
-                    className="inline-flex items-center gap-2 text-neutral-900 font-medium hover:gap-3 transition-all text-sm"
+                    href="/contacto"
+                    className="inline-flex items-center gap-2 bg-neutral-900 text-white px-5 py-2.5 rounded-full font-medium hover:bg-neutral-800 transition-all text-sm"
                   >
-                    Solicitar cotización
+                    Cotizar
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -265,12 +268,15 @@ export default function ServiciosPage() {
                 </div>
 
                 <div className="flex items-center justify-between pt-6 border-t border-neutral-700">
-                  <span className="text-sm text-neutral-500 font-mono">Entrega: 7-10 días</span>
+                  <div>
+                    <span className="text-sm text-neutral-500 font-mono">Entrega: 7-10 días</span>
+                    <p className="text-xl font-bold text-white mt-1">Desde ₡175,000</p>
+                  </div>
                   <Link
-                    href="/#contacto"
-                    className="inline-flex items-center gap-2 text-white font-medium hover:gap-3 transition-all text-sm"
+                    href="/contacto"
+                    className="inline-flex items-center gap-2 bg-white text-neutral-900 px-5 py-2.5 rounded-full font-medium hover:bg-neutral-100 transition-all text-sm"
                   >
-                    Solicitar cotización
+                    Cotizar
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -336,12 +342,15 @@ export default function ServiciosPage() {
                 </div>
 
                 <div className="flex items-center justify-between pt-6 border-t border-neutral-200">
-                  <span className="text-sm text-neutral-500 font-mono">Entrega: 10-14 días</span>
+                  <div>
+                    <span className="text-sm text-neutral-500 font-mono">Entrega: 10-14 días</span>
+                    <p className="text-xl font-bold text-neutral-900 mt-1">Desde ₡275,000</p>
+                  </div>
                   <Link
-                    href="/#contacto"
-                    className="inline-flex items-center gap-2 text-neutral-900 font-medium hover:gap-3 transition-all text-sm"
+                    href="/contacto"
+                    className="inline-flex items-center gap-2 bg-neutral-900 text-white px-5 py-2.5 rounded-full font-medium hover:bg-neutral-800 transition-all text-sm"
                   >
-                    Solicitar cotización
+                    Cotizar
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -408,12 +417,15 @@ export default function ServiciosPage() {
                 </div>
 
                 <div className="flex items-center justify-between pt-6 border-t border-neutral-700">
-                  <span className="text-sm text-neutral-500 font-mono">Entrega: 14-21 días</span>
+                  <div>
+                    <span className="text-sm text-neutral-500 font-mono">Entrega: 14-21 días</span>
+                    <p className="text-xl font-bold text-white mt-1">Desde ₡450,000</p>
+                  </div>
                   <Link
-                    href="/#contacto"
-                    className="inline-flex items-center gap-2 text-white font-medium hover:gap-3 transition-all text-sm"
+                    href="/contacto"
+                    className="inline-flex items-center gap-2 bg-white text-neutral-900 px-5 py-2.5 rounded-full font-medium hover:bg-neutral-100 transition-all text-sm"
                   >
-                    Solicitar cotización
+                    Cotizar
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -588,11 +600,11 @@ export default function ServiciosPage() {
               ¿Listo para empezar?
             </h2>
             <p className="text-neutral-400 mb-8">
-              Contanos sobre tu proyecto. Sin compromiso.
+              Contanos sobre tu proyecto. Sin compromiso. Te respondemos en menos de 24 horas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/#contacto"
+                href="/contacto"
                 className="inline-flex items-center justify-center gap-2 bg-white text-neutral-900 px-8 py-4 rounded-full text-sm font-medium hover:bg-neutral-100 transition-colors"
               >
                 Contactar
@@ -604,8 +616,11 @@ export default function ServiciosPage() {
                 href="https://wa.me/50688888888"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 border border-neutral-700 px-8 py-4 rounded-full text-sm font-medium hover:border-neutral-500 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-[#25D366] px-8 py-4 rounded-full text-sm font-medium hover:bg-[#128C7E] transition-colors"
               >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                </svg>
                 WhatsApp
               </a>
             </div>

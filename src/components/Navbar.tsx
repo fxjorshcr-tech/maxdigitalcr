@@ -26,20 +26,20 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <Link
-              href="#proyectos"
-              className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
+              href="/nosotros"
+              className="text-sm font-semibold text-neutral-600 hover:text-neutral-900 transition-colors"
             >
-              Proyectos
+              Nosotros
             </Link>
             <Link
               href="/servicios"
-              className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
+              className="text-sm font-semibold text-neutral-600 hover:text-neutral-900 transition-colors"
             >
               Servicios
             </Link>
             <Link
-              href="#contacto"
-              className="text-sm bg-neutral-900 text-white px-5 py-2.5 rounded-full hover:bg-neutral-800 transition-colors"
+              href="/contacto"
+              className="text-sm font-semibold bg-neutral-900 text-white px-5 py-2.5 rounded-full hover:bg-neutral-800 transition-colors"
             >
               Contacto
             </Link>
@@ -81,22 +81,22 @@ export default function Navbar() {
           <div className="md:hidden pt-4 pb-2 border-t border-neutral-100 mt-4">
             <div className="flex flex-col gap-4">
               <Link
-                href="#proyectos"
-                className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
+                href="/nosotros"
+                className="text-sm font-semibold text-neutral-600 hover:text-neutral-900 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Proyectos
+                Nosotros
               </Link>
               <Link
                 href="/servicios"
-                className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
+                className="text-sm font-semibold text-neutral-600 hover:text-neutral-900 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Servicios
               </Link>
               <Link
-                href="#contacto"
-                className="text-sm bg-neutral-900 text-white px-5 py-2.5 rounded-full hover:bg-neutral-800 transition-colors text-center"
+                href="/contacto"
+                className="text-sm font-semibold bg-neutral-900 text-white px-5 py-2.5 rounded-full hover:bg-neutral-800 transition-colors text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contacto
