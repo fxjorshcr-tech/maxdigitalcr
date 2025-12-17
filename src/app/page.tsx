@@ -119,17 +119,18 @@ export default function Home() {
 
           <div className="relative z-10 max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-neutral-100 border border-neutral-200 rounded-full px-4 py-2 mb-8">
-              <span className="w-2 h-2 bg-neutral-900 rounded-full" />
-              <span className="text-sm text-neutral-600 font-medium">Tecnología de nueva generación</span>
+              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+              <span className="text-sm text-neutral-600 font-medium">Tu competencia ya está en línea</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-900 leading-tight tracking-tight">
-              Creá en días.
+              Si no estás en Google,
               <br />
-              <span className="text-neutral-400">Escalá sin límites.</span>
+              <span className="text-neutral-400">no existís.</span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-neutral-500 max-w-xl mx-auto">
-              Desarrollo web de nueva generación para negocios que quieren crecer.
+              El 97% de los consumidores buscan negocios locales en internet antes de comprar.
+              Sin presencia digital, perdés clientes todos los días.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -176,20 +177,91 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Google My Business Section */}
+        <section className="py-24 sm:py-32 px-6 bg-neutral-50 bg-grid">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">El poder de Google</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight mb-6">
+                  Google My Business
+                  <br />
+                  <span className="text-neutral-400">tu vitrina digital gratuita.</span>
+                </h2>
+                <p className="text-lg text-neutral-500 mb-6">
+                  Cuando alguien busca &ldquo;restaurantes cerca de mí&rdquo; o &ldquo;talleres en San José&rdquo;,
+                  Google muestra los negocios con perfil verificado primero.
+                </p>
+                <p className="text-lg text-neutral-500 mb-8">
+                  <strong className="text-neutral-900">Sin Google My Business, sos invisible.</strong> Con él,
+                  aparecés en Maps, en búsquedas locales, y tus clientes te encuentran con un clic.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <span className="px-4 py-2 bg-white border border-neutral-200 rounded-full text-sm text-neutral-600">Aparecer en Maps</span>
+                  <span className="px-4 py-2 bg-white border border-neutral-200 rounded-full text-sm text-neutral-600">Reseñas de clientes</span>
+                  <span className="px-4 py-2 bg-white border border-neutral-200 rounded-full text-sm text-neutral-600">Horarios y contacto</span>
+                  <span className="px-4 py-2 bg-white border border-neutral-200 rounded-full text-sm text-neutral-600">Fotos del negocio</span>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 border border-neutral-200 shadow-sm">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl font-bold">G</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-neutral-900">Tu Negocio</p>
+                    <p className="text-sm text-green-600">Verificado</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-sm">
+                    <span className="text-yellow-500">★★★★★</span>
+                    <span className="text-neutral-500">4.9 (127 reseñas)</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-neutral-600">
+                    <svg className="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    San José, Costa Rica
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-neutral-600">
+                    <svg className="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="text-green-600 font-medium">Abierto ahora</span> · Cierra a las 6PM
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-neutral-600">
+                    <svg className="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    +506 8888-8888
+                  </div>
+                </div>
+                <div className="mt-6 pt-6 border-t border-neutral-100 flex gap-3">
+                  <button className="flex-1 bg-blue-500 text-white py-2 rounded-lg text-sm font-medium">Llamar</button>
+                  <button className="flex-1 border border-neutral-200 py-2 rounded-lg text-sm font-medium">Direcciones</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Performance Social Proof */}
         <section className="py-24 sm:py-32 px-6 bg-neutral-900 text-white overflow-hidden">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="text-sm text-neutral-500 uppercase tracking-widest mb-6">Rendimiento garantizado</p>
+                <p className="text-sm text-neutral-500 uppercase tracking-widest mb-6">Velocidad que convierte</p>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
-                  Páginas que cargan
+                  3 segundos.
                   <br />
-                  <span className="text-neutral-500">en menos de 1 segundo.</span>
+                  <span className="text-neutral-500">Es todo lo que tenés.</span>
                 </h2>
                 <p className="text-lg text-neutral-400 mb-8">
-                  Cada sitio que entregamos está optimizado al máximo nivel.
-                  Rendimiento perfecto en Google PageSpeed.
+                  Si tu página tarda más de 3 segundos en cargar, el 53% de los visitantes la abandona.
+                  Nuestros sitios cargan en menos de 1 segundo.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <div className="flex items-center gap-2 text-sm text-neutral-400">
@@ -251,10 +323,85 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Why Digital Section - NEW */}
+        {/* Why You Need a Website Section */}
+        <section className="py-24 sm:py-32 px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">La realidad del mercado</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight mb-6">
+                ¿Por qué necesitás una página web?
+              </h2>
+              <p className="text-xl text-neutral-500 max-w-2xl mx-auto">
+                Los números no mienten. Sin presencia digital, tu negocio pierde oportunidades cada día.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="p-6 bg-neutral-50 rounded-xl border border-neutral-100">
+                <div className="text-4xl font-bold text-neutral-900 mb-2">97%</div>
+                <p className="text-sm text-neutral-600">de los consumidores buscan negocios locales en internet</p>
+              </div>
+              <div className="p-6 bg-neutral-50 rounded-xl border border-neutral-100">
+                <div className="text-4xl font-bold text-neutral-900 mb-2">75%</div>
+                <p className="text-sm text-neutral-600">juzgan la credibilidad por el diseño del sitio web</p>
+              </div>
+              <div className="p-6 bg-neutral-50 rounded-xl border border-neutral-100">
+                <div className="text-4xl font-bold text-neutral-900 mb-2">88%</div>
+                <p className="text-sm text-neutral-600">no vuelven después de una mala experiencia web</p>
+              </div>
+              <div className="p-6 bg-neutral-50 rounded-xl border border-neutral-100">
+                <div className="text-4xl font-bold text-neutral-900 mb-2">24/7</div>
+                <p className="text-sm text-neutral-600">tu negocio disponible mientras dormís</p>
+              </div>
+            </div>
+
+            <div className="mt-16 bg-neutral-900 rounded-2xl p-8 md:p-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                    Tu página web es tu mejor vendedor
+                  </h3>
+                  <p className="text-neutral-400 mb-6">
+                    Trabaja las 24 horas, los 7 días de la semana. No pide vacaciones, no se enferma,
+                    y puede atender a miles de clientes al mismo tiempo. Una inversión que se paga sola.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3 text-neutral-300">
+                      <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      Genera confianza y credibilidad
+                    </li>
+                    <li className="flex items-center gap-3 text-neutral-300">
+                      <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      Atrae clientes mientras dormís
+                    </li>
+                    <li className="flex items-center gap-3 text-neutral-300">
+                      <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      Te diferencia de la competencia
+                    </li>
+                  </ul>
+                </div>
+                <div className="text-center">
+                  <div className="inline-block bg-neutral-800 rounded-xl p-6 border border-neutral-700">
+                    <p className="text-sm text-neutral-500 mb-2">Retorno de inversión promedio</p>
+                    <p className="text-5xl font-bold text-green-500">5-10x</p>
+                    <p className="text-sm text-neutral-400 mt-2">en el primer año</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* AI Search Section */}
         <section className="py-24 sm:py-32 px-6 bg-neutral-50 bg-grid">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">El mundo cambió</p>
+            <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">El futuro ya llegó</p>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight mb-8">
               Tus clientes ya no solo buscan en Google.
@@ -264,55 +411,56 @@ export default function Home() {
 
             <p className="text-xl text-neutral-500 mb-12 max-w-2xl mx-auto">
               ChatGPT, Claude, Gemini. Las búsquedas conversacionales son el presente.
-              <br />
-              Tu sitio debe estar optimizado para que las IA te recomienden.
+              Cuando alguien pregunta &ldquo;¿cuál es el mejor taller en San José?&rdquo;, ¿tu negocio aparece?
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-neutral-900 mb-2">AI-Ready</div>
-                <p className="text-sm text-neutral-500">Optimizado para búsqueda conversacional</p>
+              <div className="text-center p-6 bg-white rounded-xl border border-neutral-200">
+                <div className="text-3xl font-bold text-neutral-900 mb-2">AI-Ready</div>
+                <p className="text-sm text-neutral-500">Sitios optimizados para que las IA te recomienden</p>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-neutral-900 mb-2">24/7</div>
-                <p className="text-sm text-neutral-500">Tu negocio disponible siempre</p>
+              <div className="text-center p-6 bg-white rounded-xl border border-neutral-200">
+                <div className="text-3xl font-bold text-neutral-900 mb-2">SEO</div>
+                <p className="text-sm text-neutral-500">Aparecer primero en Google y otros buscadores</p>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-neutral-900 mb-2">∞</div>
-                <p className="text-sm text-neutral-500">Alcance sin límites geográficos</p>
+              <div className="text-center p-6 bg-white rounded-xl border border-neutral-200">
+                <div className="text-3xl font-bold text-neutral-900 mb-2">Local</div>
+                <p className="text-sm text-neutral-500">Clientes cerca de vos te encuentran fácil</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Myths Section - NEW (Dark) */}
+        {/* Myths Section (Dark) */}
         <section className="relative py-24 sm:py-32 px-6 bg-neutral-900 text-white overflow-hidden">
           <ConnectionNodes />
           <div className="absolute inset-0 bg-grid-dark" />
 
           <div className="relative z-10 max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-sm text-neutral-500 uppercase tracking-widest mb-6">Olvidate de los mitos</p>
+              <p className="text-sm text-neutral-500 uppercase tracking-widest mb-6">Derribando barreras</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-                Lo que te dijeron
+                Las excusas que te frenan
                 <br />
-                <span className="text-neutral-500">ya no es cierto.</span>
+                <span className="text-neutral-500">ya no tienen sentido.</span>
               </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
-                { myth: '"Es muy caro"', truth: "Desde ₡100,000" },
-                { myth: '"Toma mucho tiempo"', truth: "Días, no meses" },
-                { myth: '"Es muy complicado"', truth: "Nosotros nos encargamos" },
-                { myth: '"No lo necesito"', truth: "Tu competencia ya lo tiene" },
+                { myth: '"Es muy caro"', truth: "Desde ₡100,000 — menos que un anuncio en radio" },
+                { myth: '"Toma mucho tiempo"', truth: "Tu sitio listo en días, no en meses" },
+                { myth: '"Es muy complicado"', truth: "Vos solo decidís, nosotros ejecutamos" },
+                { myth: '"Ya tengo redes sociales"', truth: "Las redes alquilan, tu web es tuya para siempre" },
+                { myth: '"Mi negocio es pequeño"', truth: "Los pequeños son los que más crecen con presencia web" },
+                { myth: '"No sé de tecnología"', truth: "No necesitás saber, para eso estamos nosotros" },
               ].map((item) => (
                 <div key={item.myth} className="p-6 border border-neutral-700 rounded-xl bg-neutral-800/50">
                   <div className="flex items-start gap-4">
-                    <span className="text-neutral-500 text-xl">✗</span>
+                    <span className="text-red-500 text-xl">✗</span>
                     <div>
-                      <p className="text-neutral-500 line-through mb-1">{item.myth}</p>
-                      <p className="text-white font-semibold">{item.truth}</p>
+                      <p className="text-neutral-500 line-through mb-2">{item.myth}</p>
+                      <p className="text-white font-medium">{item.truth}</p>
                     </div>
                   </div>
                 </div>
@@ -321,24 +469,28 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Competition Section - NEW */}
+        {/* Urgency Section */}
         <section className="py-24 sm:py-32 px-6 border-b border-neutral-100">
           <div className="max-w-4xl mx-auto text-center">
+            <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">No es si, es cuándo</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight mb-6">
-              Mientras lo pensás,
+              Cada día sin página web
               <br />
-              <span className="text-neutral-400">la IA ya recomendó a otro.</span>
+              <span className="text-neutral-400">es un cliente que perdiste.</span>
             </h2>
-            <p className="text-lg text-neutral-500 mb-10 max-w-2xl mx-auto">
-              Cuando alguien le pregunta a la IA por servicios como los tuyos, ¿aparecés vos?
-              <br />
-              Nosotros nos aseguramos de que sí.
+            <p className="text-lg text-neutral-500 mb-6 max-w-2xl mx-auto">
+              Mientras leés esto, alguien está buscando exactamente lo que ofrecés.
+              Si no te encuentra a vos, encuentra a tu competencia.
+            </p>
+            <p className="text-lg text-neutral-700 font-medium mb-10 max-w-2xl mx-auto">
+              La pregunta no es si necesitás una página web.
+              Es cuánto más vas a esperar para tenerla.
             </p>
             <Link
               href="#contacto"
               className="inline-flex items-center gap-2 bg-neutral-900 text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-neutral-800 transition-all"
             >
-              No esperar más
+              Empezar hoy
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -409,14 +561,15 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Features Section */}
+        {/* What You Get Section */}
         <section className="py-24 sm:py-32 px-6 border-y border-neutral-100">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
+              <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">Todo incluido</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight">
-                La mejor tecnología del mundo.
+                No solo una página web.
                 <br />
-                <span className="text-neutral-400">Ahora accesible.</span>
+                <span className="text-neutral-400">Una solución completa.</span>
               </h2>
             </div>
 
@@ -425,29 +578,56 @@ export default function Home() {
                 {
                   icon: (
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg>
+                  ),
+                  title: "Dominio personalizado",
+                  description: "tunegocio.com — profesional y fácil de recordar para tus clientes",
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                  ),
+                  title: "Diseño responsive",
+                  description: "Se ve perfecto en celular, tablet y computadora",
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  ),
+                  title: "SSL incluido",
+                  description: "Conexión segura (https) que genera confianza y mejora SEO",
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   ),
-                  title: "Tecnología de clase mundial",
-                  description: "Frameworks modernos que garantizan velocidad y seguridad",
+                  title: "Velocidad extrema",
+                  description: "Carga en menos de 1 segundo para no perder visitantes",
                 },
                 {
                   icon: (
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                   ),
-                  title: "Días, no meses",
-                  description: "Procesos optimizados para entregar resultados rápido",
+                  title: "SEO básico",
+                  description: "Optimizado para aparecer en Google desde el día uno",
                 },
                 {
                   icon: (
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
                   ),
-                  title: "Sin pagar de más",
-                  description: "Precios justos sin costos ocultos ni sorpresas",
+                  title: "Soporte incluido",
+                  description: "30 días de soporte post-lanzamiento sin costo adicional",
                 },
               ].map((feature) => (
                 <div key={feature.title} className="relative p-8 border border-neutral-200 rounded-xl hover:border-neutral-400 transition-colors group">
