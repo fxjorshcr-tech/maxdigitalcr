@@ -120,17 +120,17 @@ export default function Home() {
           <div className="relative z-10 max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-neutral-100 border border-neutral-200 rounded-full px-4 py-2 mb-8">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-sm text-neutral-600 font-medium">Tu competencia ya está en línea</span>
+              <span className="text-sm text-neutral-600 font-medium">Desarrollo web en Costa Rica</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-900 leading-tight tracking-tight">
-              Si no estás en Google,
+              Rápido. Profesional.
               <br />
-              <span className="text-neutral-400">no existís.</span>
+              <span className="text-neutral-400">Accesible.</span>
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-neutral-500 max-w-xl mx-auto">
-              El 97% de los consumidores buscan negocios locales en internet antes de comprar.
-              Sin presencia digital, perdés clientes todos los días.
+            <p className="mt-6 text-lg sm:text-xl text-neutral-500 max-w-2xl mx-auto">
+              Páginas web profesionales a una fracción del costo tradicional.
+              La misma tecnología que usan las grandes empresas, ahora para tu negocio en Costa Rica.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -187,6 +187,115 @@ export default function Home() {
                 height={80}
                 className="h-16 md:h-20 w-auto"
               />
+            </div>
+          </div>
+        </section>
+
+        {/* Who Is This For Section */}
+        <section className="py-24 sm:py-32 px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-sm text-neutral-400 uppercase tracking-widest mb-6">Soluciones para todos</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight mb-6">
+                ¿Para quién es esto?
+              </h2>
+              <p className="text-xl text-neutral-500 max-w-2xl mx-auto">
+                Si tenés un negocio y querés crecer, necesitás presencia digital.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+              {[
+                { icon: "🏨", name: "Hoteles" },
+                { icon: "🍽️", name: "Restaurantes" },
+                { icon: "✂️", name: "Barberías" },
+                { icon: "🏠", name: "Bienes Raíces" },
+                { icon: "🚗", name: "Talleres" },
+                { icon: "🌴", name: "Tours" },
+                { icon: "💪", name: "Gimnasios" },
+                { icon: "🏥", name: "Clínicas" },
+                { icon: "📸", name: "Fotógrafos" },
+                { icon: "⚖️", name: "Abogados" },
+                { icon: "🎨", name: "Diseñadores" },
+                { icon: "🛒", name: "Tiendas" },
+              ].map((item) => (
+                <div key={item.name} className="p-4 bg-neutral-50 rounded-xl border border-neutral-100 text-center hover:border-neutral-300 transition-colors">
+                  <span className="text-3xl mb-2 block">{item.icon}</span>
+                  <span className="text-sm font-medium text-neutral-700">{item.name}</span>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-center text-neutral-500 mt-8">
+              Y cualquier negocio que quiera crecer en el mundo digital.
+            </p>
+          </div>
+        </section>
+
+        {/* Professionalism Section */}
+        <section className="py-24 sm:py-32 px-6 bg-neutral-900 text-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-sm text-neutral-500 uppercase tracking-widest mb-6">Primera impresión</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
+                  Dale profesionalismo
+                  <br />
+                  <span className="text-neutral-500">a tu negocio.</span>
+                </h2>
+                <p className="text-lg text-neutral-400 mb-6">
+                  Un cliente que busca tus servicios te juzga en segundos.
+                  Sin página web, parecés improvisado. Con ella, parecés establecido.
+                </p>
+                <p className="text-lg text-neutral-400 mb-8">
+                  <strong className="text-white">Tu página web es tu carta de presentación.</strong> Es lo primero
+                  que ven tus clientes, y define si confían en vos o buscan a otro.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3 text-neutral-300">
+                    <svg className="w-5 h-5 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Generá confianza desde el primer contacto
+                  </li>
+                  <li className="flex items-center gap-3 text-neutral-300">
+                    <svg className="w-5 h-5 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Mostrá tus servicios de forma clara y atractiva
+                  </li>
+                  <li className="flex items-center gap-3 text-neutral-300">
+                    <svg className="w-5 h-5 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Competí de igual a igual con empresas más grandes
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-neutral-800 rounded-2xl p-8 border border-neutral-700">
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center shrink-0">
+                      <span className="text-red-500">✗</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-white mb-1">Sin página web</p>
+                      <p className="text-sm text-neutral-400">&ldquo;¿Este negocio es serio? No tienen ni página...&rdquo;</p>
+                    </div>
+                  </div>
+                  <div className="border-t border-neutral-700" />
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center shrink-0">
+                      <span className="text-green-500">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-white mb-1">Con página web profesional</p>
+                      <p className="text-sm text-neutral-400">&ldquo;Se ven muy profesionales, voy a contactarlos.&rdquo;</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
