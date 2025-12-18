@@ -218,7 +218,7 @@ export default function Nosotros() {
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { number: "1-10", label: "Días de entrega" },
+                { number: "SSL", label: "Seguridad incluida" },
                 { number: "100%", label: "Clientes satisfechos" },
                 { number: "24h", label: "Tiempo de respuesta" },
                 { number: "🇨🇷", label: "100% Ticos" },

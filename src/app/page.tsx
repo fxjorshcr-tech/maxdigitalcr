@@ -174,7 +174,7 @@ export default function Home() {
 
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { number: "1-10", label: "Días de entrega" },
+                  { number: "SSL", label: "Seguridad incluida" },
                   { number: "100%", label: "Clientes satisfechos" },
                   { number: "24h", label: "Tiempo de respuesta" },
                   { number: "🇨🇷", label: "100% Ticos" },
