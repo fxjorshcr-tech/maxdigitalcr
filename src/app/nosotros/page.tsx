@@ -109,7 +109,7 @@ export default function Nosotros() {
                 {
                   icon: "🎯",
                   title: "Resultados sobre todo",
-                  desc: "No hacemos páginas bonitas que no sirven. Hacemos páginas que generan clientes y ventas para tu negocio."
+                  desc: "Hacemos páginas que generan clientes y ventas para tu negocio. Diseño con propósito."
                 },
                 {
                   icon: "💬",
@@ -156,7 +156,7 @@ export default function Nosotros() {
                 Resolvemos problemas reales.
               </h2>
               <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
-                No solo hacemos páginas web. Ayudamos a negocios a crecer en el mundo digital.
+                Ayudamos a negocios a crecer en el mundo digital con páginas web profesionales.
               </p>
             </div>
 
