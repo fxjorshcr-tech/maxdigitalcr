@@ -12,18 +12,6 @@
   --accent: #3ECF8E;
 }
 
-.dark {
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --primary: #fafafa;
-  --primary-foreground: #0a0a0a;
-  --secondary: #171717;
-  --secondary-foreground: #fafafa;
-  --muted: #a3a3a3;
-  --border: #262626;
-  --accent: #3ECF8E;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -42,7 +30,6 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Smooth scrolling */
@@ -56,18 +43,11 @@ html {
   color: #0a0a0a;
 }
 
-/* Grid pattern - light mode */
+/* Grid pattern */
 .bg-grid {
   background-image:
     linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-.dark .bg-grid {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
@@ -81,11 +61,6 @@ html {
 /* Dot pattern */
 .bg-dots {
   background-image: radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-.dark .bg-dots {
-  background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
@@ -126,52 +101,9 @@ html {
   animation: glow 3s ease-in-out infinite;
 }
 
-/* Theme toggle button styles */
-.theme-toggle {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 9999px;
-  background: var(--secondary);
-  border: 1px solid var(--border);
-  transition: all 0.3s ease;
-}
-
-.theme-toggle-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 9999px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.theme-toggle-btn.active {
-  background: var(--accent);
-  color: #0a0a0a;
-}
-
-.theme-toggle-btn:not(.active) {
-  color: var(--muted);
-}
-
-.theme-toggle-btn:hover:not(.active) {
-  color: var(--foreground);
-}
-
 /* Glassmorphism effect */
 .glass {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.dark .glass {
-  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -192,8 +124,4 @@ html {
 .card-hover:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.dark .card-hover:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
