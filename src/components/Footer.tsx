@@ -100,7 +100,7 @@ export default function Footer() {
               © {new Date().getFullYear()} MaxDigitalCR. Todos los derechos reservados.
             </p>
             <p className="text-sm text-neutral-600">
-              Hecho con ❤️ en Costa Rica
+              Powered by MaxDigitalCR
             </p>
           </div>
         </div>
