@@ -126,35 +126,73 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <svg
-              className={`w-6 h-6 ${scrolled || !isDarkHero ? "text-neutral-900" : "text-white"}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          {/* Mobile: Language Flags + Menu Button */}
+          <div className="md:hidden flex items-center gap-3">
+            {/* Language Switcher Mobile - Always visible */}
+            <div className="flex items-center gap-1">
+              <Link
+                href={basePath || '/'}
+                className={`w-6 h-6 rounded-full overflow-hidden border-2 transition-all ${
+                  !isEnglish ? 'border-[#3ECF8E]' : 'border-transparent opacity-70'
+                }`}
+                title="Español"
+              >
+                <svg viewBox="0 0 512 512" className="w-full h-full">
+                  <rect fill="#002b7f" width="512" height="512"/>
+                  <rect fill="#fff" y="102.4" width="512" height="307.2"/>
+                  <rect fill="#ce1126" y="170.7" width="512" height="170.7"/>
+                </svg>
+              </Link>
+              <Link
+                href={`/en${basePath}`}
+                className={`w-6 h-6 rounded-full overflow-hidden border-2 transition-all ${
+                  isEnglish ? 'border-[#3ECF8E]' : 'border-transparent opacity-70'
+                }`}
+                title="English"
+              >
+                <svg viewBox="0 0 512 512" className="w-full h-full">
+                  <rect fill="#bd3d44" width="512" height="512"/>
+                  <rect fill="#fff" y="39.4" width="512" height="39.4"/>
+                  <rect fill="#fff" y="118.2" width="512" height="39.4"/>
+                  <rect fill="#fff" y="197" width="512" height="39.4"/>
+                  <rect fill="#fff" y="275.8" width="512" height="39.4"/>
+                  <rect fill="#fff" y="354.6" width="512" height="39.4"/>
+                  <rect fill="#fff" y="433.4" width="512" height="39.4"/>
+                  <rect fill="#192f5d" width="204.8" height="275.8"/>
+                </svg>
+              </Link>
+            </div>
+
+            {/* Menu Button */}
+            <button
+              className="p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
             >
-              {isMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
+              <svg
+                className={`w-6 h-6 ${scrolled || !isDarkHero ? "text-neutral-900" : "text-white"}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                {isMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
