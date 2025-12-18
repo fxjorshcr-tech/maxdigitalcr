@@ -158,8 +158,8 @@ export default function Home() {
                   un profundo entendimiento del mercado local.
                 </p>
                 <p className="text-lg mb-8 text-neutral-600">
-                  <strong className="text-neutral-900">No somos una agencia gigante con procesos eternos.</strong> Somos
-                  ágiles, directos y enfocados en resultados. Tu página lista en días, no en meses.
+                  <strong className="text-neutral-900">Somos ágiles, directos y enfocados en resultados.</strong> Comunicación
+                  clara, procesos eficientes y tu página lista en días, no en meses.
                 </p>
                 <Link
                   href="/nosotros"
@@ -174,7 +174,7 @@ export default function Home() {
 
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { number: "50+", label: "Proyectos entregados" },
+                  { number: "⚡", label: "Entrega express" },
                   { number: "10", label: "Días máximo de entrega" },
                   { number: "100%", label: "Clientes satisfechos" },
                   { number: "24h", label: "Tiempo de respuesta" },

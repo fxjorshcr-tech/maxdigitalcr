@@ -60,22 +60,32 @@ export default function Nosotros() {
               <div className="bg-neutral-900 rounded-2xl p-8">
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center shrink-0">
-                      <span className="text-red-500 text-xl">✗</span>
+                    <div className="w-12 h-12 bg-[#3ECF8E]/20 rounded-xl flex items-center justify-center shrink-0">
+                      <span className="text-[#3ECF8E] text-xl">⚡</span>
                     </div>
                     <div>
-                      <p className="font-semibold text-white mb-1">El problema</p>
-                      <p className="text-sm text-neutral-400">Agencias caras, lentas y con resultados mediocres</p>
+                      <p className="font-semibold text-white mb-1">Velocidad</p>
+                      <p className="text-sm text-neutral-400">Entregamos en días, no en meses</p>
                     </div>
                   </div>
                   <div className="border-t border-neutral-700" />
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-[#3ECF8E]/20 rounded-xl flex items-center justify-center shrink-0">
-                      <span className="text-[#3ECF8E] text-xl">✓</span>
+                      <span className="text-[#3ECF8E] text-xl">💰</span>
                     </div>
                     <div>
-                      <p className="font-semibold text-white mb-1">Nuestra solución</p>
-                      <p className="text-sm text-neutral-400">Tecnología de punta, precios justos, entrega rápida</p>
+                      <p className="font-semibold text-white mb-1">Precios justos</p>
+                      <p className="text-sm text-neutral-400">Tecnología de punta accesible para todos</p>
+                    </div>
+                  </div>
+                  <div className="border-t border-neutral-700" />
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-[#3ECF8E]/20 rounded-xl flex items-center justify-center shrink-0">
+                      <span className="text-[#3ECF8E] text-xl">🎯</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-white mb-1">Resultados reales</p>
+                      <p className="text-sm text-neutral-400">Páginas que generan clientes para tu negocio</p>
                     </div>
                   </div>
                 </div>
@@ -172,20 +182,20 @@ export default function Nosotros() {
               </div>
 
               <div className="p-8 rounded-2xl bg-neutral-900 border border-neutral-700">
-                <h3 className="text-xl font-bold text-white mb-6">Lo que NO hacemos</h3>
+                <h3 className="text-xl font-bold text-white mb-6">Nuestro compromiso</h3>
                 <ul className="space-y-4">
                   {[
-                    "Cobrar de más por trabajo simple",
-                    "Tardar meses en entregar",
-                    "Usar plantillas genéricas sin personalización",
-                    "Desaparecer después de entregar",
-                    "Prometer cosas que no podemos cumplir",
-                    "Complicar lo que puede ser simple",
-                    "Venderte cosas que no necesitás"
+                    "Precios justos y transparentes desde el inicio",
+                    "Entregas rápidas en 1-10 días hábiles",
+                    "Diseños personalizados para tu negocio",
+                    "Soporte continuo después de la entrega",
+                    "Comunicación clara y directa",
+                    "Soluciones simples y efectivas",
+                    "Solo te ofrecemos lo que realmente necesitás"
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-neutral-300">
-                      <svg className="w-5 h-5 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      <svg className="w-5 h-5 text-[#3ECF8E] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       {item}
                     </li>
@@ -208,7 +218,7 @@ export default function Nosotros() {
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { number: "50+", label: "Proyectos entregados" },
+                { number: "⚡", label: "Entrega express" },
                 { number: "100%", label: "Clientes satisfechos" },
                 { number: "10", label: "Días máximo de entrega" },
                 { number: "24h", label: "Tiempo de respuesta" },
