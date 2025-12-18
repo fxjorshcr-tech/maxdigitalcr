@@ -10,8 +10,15 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
-  // Determine if we're on a page with a dark hero
-  const isDarkHero = pathname === "/" || pathname === "/servicios" || pathname === "/nosotros" || pathname === "/contacto";
+  // Check if we're on English version
+  const isEnglish = pathname.startsWith('/en');
+
+  // Get the base path without /en prefix
+  const basePath = isEnglish ? pathname.replace('/en', '') || '/' : pathname;
+
+  // Determine if we're on a page with a dark hero (both Spanish and English versions)
+  const darkHeroPages = ['/', '/servicios', '/nosotros', '/contacto'];
+  const isDarkHero = darkHeroPages.includes(basePath);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,11 +34,19 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
-  const navLinks = [
+  // Navigation links with translations
+  const navLinks = isEnglish ? [
+    { href: "/en/servicios", label: "Services" },
+    { href: "/en/nosotros", label: "About" },
+    { href: "/en/contacto", label: "Contact", isCTA: true },
+  ] : [
     { href: "/servicios", label: "Servicios" },
     { href: "/nosotros", label: "Nosotros" },
     { href: "/contacto", label: "Contacto", isCTA: true },
   ];
+
+  // Home link based on language
+  const homeLink = isEnglish ? "/en" : "/";
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b transition-all duration-300 ${
@@ -42,7 +57,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center" onClick={handleLinkClick}>
+          <Link href={homeLink} className="flex items-center" onClick={handleLinkClick}>
             <Image
               src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png"
               alt="MaxDigitalCR"
@@ -74,6 +89,41 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Language Switcher */}
+            <div className={`flex items-center gap-2 ml-2 border-l pl-4 ${scrolled || !isDarkHero ? 'border-neutral-300' : 'border-neutral-600'}`}>
+              <Link
+                href={basePath || '/'}
+                className={`w-7 h-7 rounded-full overflow-hidden border-2 transition-all hover:scale-110 ${
+                  !isEnglish ? 'border-[#3ECF8E]' : 'border-transparent opacity-60 hover:opacity-100'
+                }`}
+                title="Español"
+              >
+                <svg viewBox="0 0 512 512" className="w-full h-full">
+                  <rect fill="#002b7f" width="512" height="512"/>
+                  <rect fill="#fff" y="102.4" width="512" height="307.2"/>
+                  <rect fill="#ce1126" y="170.7" width="512" height="170.7"/>
+                </svg>
+              </Link>
+              <Link
+                href={`/en${basePath}`}
+                className={`w-7 h-7 rounded-full overflow-hidden border-2 transition-all hover:scale-110 ${
+                  isEnglish ? 'border-[#3ECF8E]' : 'border-transparent opacity-60 hover:opacity-100'
+                }`}
+                title="English"
+              >
+                <svg viewBox="0 0 512 512" className="w-full h-full">
+                  <rect fill="#bd3d44" width="512" height="512"/>
+                  <rect fill="#fff" y="39.4" width="512" height="39.4"/>
+                  <rect fill="#fff" y="118.2" width="512" height="39.4"/>
+                  <rect fill="#fff" y="197" width="512" height="39.4"/>
+                  <rect fill="#fff" y="275.8" width="512" height="39.4"/>
+                  <rect fill="#fff" y="354.6" width="512" height="39.4"/>
+                  <rect fill="#fff" y="433.4" width="512" height="39.4"/>
+                  <rect fill="#192f5d" width="204.8" height="275.8"/>
+                </svg>
+              </Link>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -131,6 +181,46 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+
+              {/* Language Switcher Mobile */}
+              <div className={`flex items-center gap-4 pt-4 mt-2 border-t ${scrolled || !isDarkHero ? 'border-neutral-200' : 'border-neutral-700'}`}>
+                <span className={`text-sm ${scrolled || !isDarkHero ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                  {isEnglish ? 'Language:' : 'Idioma:'}
+                </span>
+                <Link
+                  href={basePath || '/'}
+                  onClick={handleLinkClick}
+                  className={`w-8 h-8 rounded-full overflow-hidden border-2 transition-all ${
+                    !isEnglish ? 'border-[#3ECF8E]' : 'border-transparent opacity-60'
+                  }`}
+                  title="Español"
+                >
+                  <svg viewBox="0 0 512 512" className="w-full h-full">
+                    <rect fill="#002b7f" width="512" height="512"/>
+                    <rect fill="#fff" y="102.4" width="512" height="307.2"/>
+                    <rect fill="#ce1126" y="170.7" width="512" height="170.7"/>
+                  </svg>
+                </Link>
+                <Link
+                  href={`/en${basePath}`}
+                  onClick={handleLinkClick}
+                  className={`w-8 h-8 rounded-full overflow-hidden border-2 transition-all ${
+                    isEnglish ? 'border-[#3ECF8E]' : 'border-transparent opacity-60'
+                  }`}
+                  title="English"
+                >
+                  <svg viewBox="0 0 512 512" className="w-full h-full">
+                    <rect fill="#bd3d44" width="512" height="512"/>
+                    <rect fill="#fff" y="39.4" width="512" height="39.4"/>
+                    <rect fill="#fff" y="118.2" width="512" height="39.4"/>
+                    <rect fill="#fff" y="197" width="512" height="39.4"/>
+                    <rect fill="#fff" y="275.8" width="512" height="39.4"/>
+                    <rect fill="#fff" y="354.6" width="512" height="39.4"/>
+                    <rect fill="#fff" y="433.4" width="512" height="39.4"/>
+                    <rect fill="#192f5d" width="204.8" height="275.8"/>
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
         )}

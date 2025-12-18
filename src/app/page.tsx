@@ -34,7 +34,7 @@ export default function Home() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-white">
-              <span className="whitespace-nowrap">Rápido. Profesional. Accesible.</span>
+              <span className="whitespace-nowrap">Rápido. <span className="text-[#3ECF8E]">Profesional.</span> Accesible.</span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl max-w-2xl mx-auto text-neutral-400">
               Páginas web profesionales a una fracción del costo tradicional.
@@ -60,7 +60,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Client Logos - WHITE BACKGROUND, FULL COLOR */}
+        {/* Client Logos */}
         <section className="py-16 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <p className="text-center text-sm uppercase tracking-widest mb-10 text-neutral-900 font-bold">
@@ -99,272 +99,124 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Digital Growth Statistics Section */}
+        {/* Nuestra Propuesta - NEW SECTION */}
         <section className="py-24 sm:py-32 px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">El mundo es digital</p>
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Páginas Web Profesionales</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                Tus clientes te buscan en Google.
+                Creamos tu página web.
                 <br />
-                <span className="text-neutral-500">¿Te van a encontrar?</span>
+                <span className="text-neutral-500">Rápido, accesible y con la mejor tecnología.</span>
               </h2>
               <p className="text-xl max-w-3xl mx-auto text-neutral-400">
-                En 2025, el 97% de los consumidores buscan negocios locales en Google antes de tomar una decisión de compra.
-                Si no te encuentran, simplemente no existís para ellos.
+                Diseñamos y desarrollamos páginas web profesionales usando las mismas herramientas que Netflix y Airbnb — pero a precios accesibles para negocios locales.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {[
-                { stat: "5.4B", desc: "personas usan internet en el mundo", icon: "🌍" },
-                { stat: "97%", desc: "buscan negocios en Google antes de comprar", icon: "🔍" },
-                { stat: "75%", desc: "juzgan credibilidad por el diseño web", icon: "💎" },
-                { stat: "53%", desc: "abandonan si tarda más de 3 segundos", icon: "⚡" },
+                { icon: "⚡", title: "1-10 días", desc: "Tu página lista en tiempo récord. No meses de espera." },
+                { icon: "💰", title: "Desde ₡100k", desc: "Fracción del costo de agencias tradicionales." },
+                { icon: "🔧", title: "Soporte incluido", desc: "30 días de soporte post-lanzamiento gratis." },
               ].map((item) => (
-                <div key={item.stat} className="p-6 rounded-xl border bg-neutral-800 border-neutral-700 text-center transition-all hover:border-[#3ECF8E] hover:scale-105">
-                  <div className="text-3xl mb-3">{item.icon}</div>
-                  <div className="text-3xl md:text-4xl font-bold text-[#3ECF8E] mb-2">{item.stat}</div>
-                  <p className="text-sm text-neutral-400">{item.desc}</p>
+                <div key={item.title} className="p-8 rounded-2xl bg-neutral-800 border border-neutral-700 text-center hover:border-[#3ECF8E] transition-all">
+                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <h3 className="text-2xl font-bold text-[#3ECF8E] mb-2">{item.title}</h3>
+                  <p className="text-neutral-400">{item.desc}</p>
                 </div>
               ))}
             </div>
 
-            <div className="rounded-2xl p-8 bg-gradient-to-r from-[#3ECF8E]/10 to-transparent border border-[#3ECF8E]/30 text-center">
-              <p className="text-xl md:text-2xl font-semibold text-white mb-2">
-                No tener página web en 2025 es como no tener teléfono en los 90s.
-              </p>
-              <p className="text-neutral-400">
-                Tus competidores ya están online. La pregunta es: ¿vos cuándo?
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* AI Section */}
-        <section className="py-24 sm:py-32 px-6 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">La nueva satisfacción de necesidades</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
-                  La IA cambió las reglas.
-                  <br />
-                  <span className="text-neutral-400">¿Tu sitio está listo?</span>
-                </h2>
-                <p className="text-lg mb-6 text-neutral-600">
-                  Las búsquedas ya no son solo en Google. ChatGPT, Perplexity, Claude y otros asistentes de IA
-                  responden millones de consultas diarias. Si tu sitio web no está optimizado, la IA simplemente
-                  no te menciona.
-                </p>
-                <p className="text-lg mb-8 text-neutral-600">
-                  <strong className="text-neutral-900">Google penaliza sitios lentos y mal construidos.</strong> Los
-                  empuja al fondo de los resultados. Nosotros construimos sitios con rendimiento perfecto:
-                  carga instantánea, código limpio y estructura que la IA entiende.
-                </p>
-              </div>
-
-              <div className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { stat: "40%", desc: "de búsquedas serán conversacionales en 2025" },
-                    { stat: "1B+", desc: "usuarios activos de ChatGPT" },
-                    { stat: "53%", desc: "de tráfico perdido por sitios lentos" },
-                    { stat: "100", desc: "puntos en PageSpeed o Google te ignora" },
-                  ].map((item) => (
-                    <div key={item.desc} className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-center">
-                      <div className="text-2xl font-bold text-[#3ECF8E] mb-1">{item.stat}</div>
-                      <p className="text-xs text-neutral-500">{item.desc}</p>
-                    </div>
-                  ))}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { icon: "🔍", title: "SEO técnico", desc: "Primeros en Google" },
+                { icon: "🤖", title: "Optimizado para IA", desc: "ChatGPT te recomienda" },
+                { icon: "📱", title: "100% responsive", desc: "Perfecto en cualquier dispositivo" },
+                { icon: "🔒", title: "SSL incluido", desc: "Seguro desde el día 1" },
+              ].map((item) => (
+                <div key={item.title} className="p-4 rounded-xl bg-neutral-800/50 border border-neutral-700/50 text-center">
+                  <div className="text-2xl mb-2">{item.icon}</div>
+                  <p className="font-medium text-white text-sm">{item.title}</p>
+                  <p className="text-xs text-neutral-500">{item.desc}</p>
                 </div>
-
-                <div className="p-6 rounded-xl bg-neutral-900 border border-neutral-700">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#3ECF8E]/20 rounded-xl flex items-center justify-center shrink-0">
-                      <span className="text-[#3ECF8E] text-xl">🤖</span>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-white mb-1">Optimizados para IA</p>
-                      <p className="text-sm text-neutral-400">
-                        Nuestros sitios usan datos estructurados, semántica correcta y contenido
-                        que los asistentes de IA pueden leer y recomendar.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Who We Are Section */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Quiénes somos</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                  Somos MaxDigitalCR.
-                  <br />
-                  <span className="text-neutral-500">Tu equipo de desarrollo web.</span>
-                </h2>
-                <p className="text-lg mb-6 text-neutral-400">
-                  Somos un equipo de desarrolladores en Costa Rica especializados en crear páginas web
-                  profesionales para PyMEs y emprendedores. Combinamos tecnología de clase mundial con
-                  un profundo entendimiento del mercado local.
-                </p>
-                <p className="text-lg mb-8 text-neutral-400">
-                  <strong className="text-white">Somos ágiles, directos y enfocados en resultados.</strong> Comunicación
-                  clara, procesos eficientes y tu página lista en días, no en meses.
-                </p>
-                <Link
-                  href="/nosotros"
-                  className="inline-flex items-center gap-2 text-[#3ECF8E] font-medium hover:underline"
-                >
-                  Conocé más sobre nosotros
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
-
-              <div className="space-y-4">
-                {[
-                  { icon: "⚡", title: "Entrega rápida", desc: "Tu página lista en 1-10 días hábiles" },
-                  { icon: "💬", title: "Comunicación directa", desc: "Hablás con quien hace tu página" },
-                  { icon: "🔧", title: "Soporte continuo", desc: "Siempre hay alguien para ayudarte" },
-                  { icon: "🇨🇷", title: "100% Ticos", desc: "Entendemos el mercado local" },
-                ].map((item) => (
-                  <div key={item.title} className="flex items-center gap-4 p-4 rounded-xl bg-neutral-800 border border-neutral-700">
-                    <div className="text-2xl">{item.icon}</div>
-                    <div>
-                      <p className="font-semibold text-white">{item.title}</p>
-                      <p className="text-sm text-neutral-400">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Pain Points Section */}
+        {/* Stats with Real Sources */}
         <section className="py-24 sm:py-32 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Sin complicaciones</p>
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">La Realidad</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
-                Quitamos tus preocupaciones
+                La presencia digital
                 <br />
-                <span className="text-neutral-400">de la mesa.</span>
+                <span className="text-neutral-400">ya no es opcional.</span>
               </h2>
-              <p className="text-xl max-w-3xl mx-auto text-neutral-600">
-                Sabemos que crear una página web puede parecer complicado. Por eso nos encargamos de todo.
-              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
-                  worry: "\"No sé nada de tecnología\"",
-                  solution: "Nosotros nos encargamos de todo. Vos solo nos decís qué querés y nosotros lo hacemos realidad.",
-                  icon: "🤔"
+                  stat: "97%",
+                  desc: "de consumidores buscan negocios online antes de comprar",
+                  source: "BrightLocal Consumer Review Survey 2024",
+                  icon: "🔍"
                 },
                 {
-                  worry: "\"Es muy caro\"",
-                  solution: "Precios desde ₡100,000. Una fracción de lo que cobran las agencias tradicionales.",
-                  icon: "💰"
+                  stat: "75%",
+                  desc: "juzgan la credibilidad de un negocio por su diseño web",
+                  source: "Stanford Web Credibility Research",
+                  icon: "💎"
                 },
                 {
-                  worry: "\"Tarda mucho tiempo\"",
-                  solution: "Entregamos en 1-10 días hábiles dependiendo del proyecto. No meses.",
-                  icon: "⏰"
+                  stat: "88%",
+                  desc: "confían en reseñas online tanto como recomendaciones personales",
+                  source: "BrightLocal Local Consumer Review Survey",
+                  icon: "⭐"
                 },
                 {
-                  worry: "\"¿Y después quién me ayuda?\"",
-                  solution: "Soporte post-lanzamiento incluido. Siempre vas a tener a alguien que te responda.",
-                  icon: "🤝"
-                },
-                {
-                  worry: "\"No sé qué diseño necesito\"",
-                  solution: "Te guiamos y proponemos opciones basadas en tu industria y objetivos.",
-                  icon: "🎨"
-                },
-                {
-                  worry: "\"Me da miedo que no funcione\"",
-                  solution: "Sitios probados, rápidos y optimizados. Funcionan perfecto desde el día 1.",
-                  icon: "✅"
+                  stat: "53%",
+                  desc: "abandonan si la página tarda más de 3 segundos",
+                  source: "Google/SOASTA Research",
+                  icon: "⚡"
                 },
               ].map((item) => (
-                <div key={item.worry} className="p-6 rounded-xl bg-neutral-50 border border-neutral-200 transition-all hover:border-[#3ECF8E] hover:shadow-lg">
-                  <div className="text-3xl mb-4">{item.icon}</div>
-                  <p className="text-neutral-900 font-semibold mb-3">{item.worry}</p>
-                  <p className="text-neutral-600 text-sm">{item.solution}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Who Is This For Section */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Soluciones para todos</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                ¿Para quién es esto?
-              </h2>
-              <p className="text-xl max-w-2xl mx-auto text-neutral-400">
-                Si tenés un negocio y querés crecer, necesitás presencia digital.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-              {[
-                { icon: "🏨", name: "Hoteles" },
-                { icon: "🍽️", name: "Restaurantes" },
-                { icon: "✂️", name: "Barberías" },
-                { icon: "🏠", name: "Bienes Raíces" },
-                { icon: "🚗", name: "Talleres" },
-                { icon: "🌴", name: "Tours" },
-                { icon: "💪", name: "Gimnasios" },
-                { icon: "🏥", name: "Clínicas" },
-                { icon: "📸", name: "Fotógrafos" },
-                { icon: "⚖️", name: "Abogados" },
-                { icon: "🎨", name: "Diseñadores" },
-                { icon: "🛒", name: "Tiendas" },
-              ].map((item) => (
-                <div key={item.name} className="p-4 rounded-xl border text-center transition-all hover:scale-105 bg-neutral-800 border-neutral-700 hover:border-[#3ECF8E]">
-                  <span className="text-3xl mb-2 block">{item.icon}</span>
-                  <span className="text-sm font-medium text-white">{item.name}</span>
+                <div key={item.stat} className="p-8 rounded-2xl bg-neutral-50 border border-neutral-200 hover:border-[#3ECF8E] transition-all">
+                  <div className="flex items-start gap-4">
+                    <div className="text-4xl">{item.icon}</div>
+                    <div>
+                      <div className="text-4xl md:text-5xl font-bold text-[#3ECF8E] mb-2">{item.stat}</div>
+                      <p className="text-lg text-neutral-700 mb-3">{item.desc}</p>
+                      <p className="text-sm text-neutral-400 italic">— {item.source}</p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
 
             <div className="mt-12 text-center">
-              <p className="text-lg text-neutral-400 mb-4">
-                <strong className="text-white">¿No ves tu industria?</strong> No importa.
-              </p>
-              <p className="text-xl font-semibold text-white">
-                Si tenés clientes, necesitás una página web. <span className="text-[#3ECF8E]">Punto.</span>
+              <p className="text-xl text-neutral-600">
+                Si no estás online, <strong className="text-neutral-900">simplemente no existís</strong> para tus clientes potenciales.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Services Preview */}
-        <section className="py-24 sm:py-32 px-6 bg-white">
+        {/* Services Preview - LA SOLUCIÓN */}
+        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Nuestros servicios</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Nuestros Servicios</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
                 La página perfecta
                 <br />
-                <span className="text-neutral-400">para tu negocio.</span>
+                <span className="text-neutral-500">para tu negocio.</span>
               </h2>
-              <p className="text-xl max-w-2xl mx-auto text-neutral-600">
-                Desde landing pages hasta tiendas online completas. Entregadas en tiempo récord.
+              <p className="text-xl max-w-2xl mx-auto text-neutral-400">
+                Desde landing pages hasta tiendas online completas. Todas optimizadas para Google e IA.
               </p>
             </div>
 
@@ -375,14 +227,14 @@ export default function Home() {
                   price: "₡100,000",
                   time: "1-3 días",
                   desc: "Página de alto impacto para captar clientes.",
-                  features: ["Diseño responsive", "Formulario de contacto", "SEO optimizado"]
+                  features: ["Diseño responsive", "SEO + IA optimizado", "Formulario de contacto"]
                 },
                 {
                   title: "Sitio Catálogo",
                   price: "₡200,000",
                   time: "3-7 días",
                   desc: "Mostrá todos tus productos o servicios.",
-                  features: ["Múltiples páginas", "Galería de productos", "Panel admin"],
+                  features: ["Múltiples páginas", "Google My Business", "Panel admin"],
                   popular: true
                 },
                 {
@@ -437,34 +289,89 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Technology Section */}
+        {/* Pain Points Section */}
         <section className="py-24 sm:py-32 px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Sin Complicaciones</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
+                Quitamos tus preocupaciones
+                <br />
+                <span className="text-neutral-400">de la mesa.</span>
+              </h2>
+              <p className="text-xl max-w-3xl mx-auto text-neutral-600">
+                Sabemos que crear una página web puede parecer complicado. Por eso nos encargamos de todo.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  worry: "\"No sé nada de tecnología\"",
+                  solution: "Nosotros nos encargamos de todo. Vos solo nos decís qué querés y nosotros lo hacemos realidad.",
+                  icon: "🤔"
+                },
+                {
+                  worry: "\"Es muy caro\"",
+                  solution: "Precios desde ₡100,000. Una fracción de lo que cobran las agencias tradicionales.",
+                  icon: "💰"
+                },
+                {
+                  worry: "\"Tarda mucho tiempo\"",
+                  solution: "Entregamos en 1-10 días hábiles dependiendo del proyecto. No meses.",
+                  icon: "⏰"
+                },
+                {
+                  worry: "\"¿Y después quién me ayuda?\"",
+                  solution: "Soporte post-lanzamiento incluido. Siempre vas a tener a alguien que te responda.",
+                  icon: "🤝"
+                },
+                {
+                  worry: "\"No sé qué diseño necesito\"",
+                  solution: "Te guiamos y proponemos opciones basadas en tu industria y objetivos.",
+                  icon: "🎨"
+                },
+                {
+                  worry: "\"Me da miedo que no funcione\"",
+                  solution: "Sitios probados, rápidos y optimizados. Funcionan perfecto desde el día 1.",
+                  icon: "✅"
+                },
+              ].map((item) => (
+                <div key={item.worry} className="p-6 rounded-xl bg-neutral-50 border border-neutral-200 transition-all hover:border-[#3ECF8E]">
+                  <div className="text-3xl mb-4">{item.icon}</div>
+                  <p className="text-neutral-900 font-semibold mb-3">{item.worry}</p>
+                  <p className="text-neutral-600 text-sm">{item.solution}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Google My Business Section - PRUEBA SOCIAL */}
+        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Tecnología de punta</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
-                  La misma tecnología
+                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Reputación Online</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+                  Las estrellas de Google
                   <br />
-                  <span className="text-neutral-400">que usan los gigantes.</span>
+                  <span className="text-neutral-500">venden por vos.</span>
                 </h2>
-                <p className="text-lg mb-6 text-neutral-600">
-                  Netflix, Airbnb, TikTok, Uber — todas construyen sus aplicaciones con las mismas
-                  herramientas que usamos nosotros.
+                <p className="text-lg mb-6 text-neutral-400">
+                  Un negocio con 4.5+ estrellas genera <strong className="text-white">270% más clics</strong> que uno sin reseñas. Tu página web y tu perfil de Google My Business trabajan juntos.
                 </p>
-                <p className="text-lg mb-8 text-neutral-600">
-                  <strong className="text-neutral-900">Antes, esto costaba millones.</strong> Hoy, gracias a
-                  herramientas open-source y la nube, podemos darte la misma calidad a una fracción
-                  del costo y en tiempo récord.
+                <p className="text-lg mb-8 text-neutral-400">
+                  <strong className="text-white">Nosotros te ayudamos a configurar ambos</strong> para que tu negocio se vea profesional y confiable desde el primer momento.
                 </p>
                 <ul className="space-y-3">
                   {[
-                    "Sitios que cargan en menos de 1 segundo",
-                    "Escalables para miles de visitantes",
-                    "Seguros con certificado SSL incluido",
-                    "Optimizados para Google desde el día 1"
+                    "Configuración de Google My Business",
+                    "Integración con tu página web",
+                    "Estrategia para obtener más reseñas",
+                    "Widget de reseñas en tu sitio"
                   ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-neutral-700">
+                    <li key={item} className="flex items-center gap-3 text-neutral-300">
                       <CheckIcon />
                       {item}
                     </li>
@@ -472,82 +379,207 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { name: "Next.js", desc: "Framework de React", icon: "▲", color: "bg-black" },
-                  { name: "React", desc: "Interfaz de usuario", icon: "⚛️", color: "bg-[#61DAFB]" },
-                  { name: "TypeScript", desc: "Código robusto", icon: "TS", color: "bg-[#3178C6]" },
-                  { name: "Vercel", desc: "Deploy global", icon: "▲", color: "bg-black" },
-                  { name: "Supabase", desc: "Base de datos", icon: "⚡", color: "bg-[#3ECF8E]" },
-                  { name: "Tailwind", desc: "Diseño moderno", icon: "🎨", color: "bg-[#06B6D4]" },
-                ].map((tech) => (
-                  <div
-                    key={tech.name}
-                    className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 hover:border-[#3ECF8E] transition-all"
-                  >
-                    <div className={`w-10 h-10 rounded-lg ${tech.color} flex items-center justify-center text-white text-sm font-bold mb-3`}>
-                      {tech.icon}
+              <div className="space-y-6">
+                {/* Google Review Card Mock */}
+                <div className="bg-white rounded-2xl shadow-xl p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">G</div>
+                    <div>
+                      <p className="font-semibold text-neutral-900">Tu Negocio</p>
+                      <div className="flex items-center gap-1">
+                        {[1,2,3,4,5].map((star) => (
+                          <svg key={star} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                        <span className="text-sm text-neutral-500 ml-2">4.9 (127 reseñas)</span>
+                      </div>
                     </div>
-                    <h3 className="text-neutral-900 font-semibold">{tech.name}</h3>
-                    <p className="text-sm text-neutral-500">{tech.desc}</p>
                   </div>
-                ))}
+                  <div className="border-t border-neutral-100 pt-4">
+                    <p className="text-sm text-neutral-600 italic">&quot;Excelente servicio, muy profesionales. Mi página quedó increíble y la entregaron super rápido. 100% recomendados.&quot;</p>
+                    <p className="text-xs text-neutral-400 mt-2">— Cliente satisfecho</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  {[
+                    { number: "4.9", label: "Calificación" },
+                    { number: "270%", label: "Más clics" },
+                    { number: "88%", label: "Confían en reseñas" },
+                  ].map((item) => (
+                    <div key={item.label} className="p-4 rounded-xl bg-neutral-800 border border-neutral-700">
+                      <div className="text-2xl font-bold text-[#3ECF8E]">{item.number}</div>
+                      <p className="text-xs text-neutral-400">{item.label}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Process Section */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
+        {/* Who Is This For Section */}
+        <section className="py-24 sm:py-32 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Proceso simple</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white">
-                Así trabajamos.
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Para Todos</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
+                ¿Para quién es esto?
               </h2>
-              <p className="mt-4 text-neutral-400">
-                Simple. Transparente. Efectivo.
+              <p className="text-xl max-w-2xl mx-auto text-neutral-600">
+                Si tenés un negocio y querés crecer, necesitás presencia digital.
               </p>
             </div>
 
-            <div className="relative">
-              {/* Connection Line */}
-              <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#3ECF8E]/30 to-transparent -translate-y-1/2" />
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+              {[
+                { icon: "🏨", name: "Hoteles" },
+                { icon: "🍽️", name: "Restaurantes" },
+                { icon: "✂️", name: "Barberías" },
+                { icon: "🏠", name: "Bienes Raíces" },
+                { icon: "🚗", name: "Talleres" },
+                { icon: "🌴", name: "Tours" },
+                { icon: "💪", name: "Gimnasios" },
+                { icon: "🏥", name: "Clínicas" },
+                { icon: "📸", name: "Fotógrafos" },
+                { icon: "⚖️", name: "Abogados" },
+                { icon: "🎨", name: "Diseñadores" },
+                { icon: "🛒", name: "Tiendas" },
+              ].map((item) => (
+                <div key={item.name} className="p-4 rounded-xl border text-center transition-all hover:scale-105 bg-neutral-50 border-neutral-200 hover:border-[#3ECF8E]">
+                  <span className="text-3xl mb-2 block">{item.icon}</span>
+                  <span className="text-sm font-medium text-neutral-900">{item.name}</span>
+                </div>
+              ))}
+            </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="mt-12 text-center">
+              <p className="text-lg text-neutral-600 mb-4">
+                <strong className="text-neutral-900">¿No ves tu industria?</strong> No importa.
+              </p>
+              <p className="text-xl font-semibold text-neutral-900">
+                Si tenés clientes, necesitás una página web. <span className="text-[#3ECF8E]">Punto.</span>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Who We Are + Technology + Process */}
+        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
+          <div className="max-w-6xl mx-auto">
+            {/* Who We Are */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+              <div>
+                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Quiénes Somos</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+                  Somos MaxDigitalCR.
+                  <br />
+                  <span className="text-neutral-500">Tu equipo de desarrollo web.</span>
+                </h2>
+                <p className="text-lg mb-6 text-neutral-400">
+                  Un equipo de desarrolladores en Costa Rica especializados en crear páginas web
+                  profesionales para PyMEs y emprendedores.
+                </p>
+                <p className="text-lg mb-8 text-neutral-400">
+                  <strong className="text-white">Comunicación directa, procesos eficientes</strong> y tu página lista en días, no en meses.
+                </p>
+                <Link
+                  href="/nosotros"
+                  className="inline-flex items-center gap-2 text-[#3ECF8E] font-medium hover:underline"
+                >
+                  Conocé más sobre nosotros
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
                 {[
-                  { step: "01", title: "Hablamos", desc: "Nos contás tu idea y entendemos exactamente qué necesitás.", icon: "💬" },
-                  { step: "02", title: "Proponemos", desc: "Te presentamos un plan claro con precio fijo. Sin sorpresas.", icon: "📋" },
-                  { step: "03", title: "Construimos", desc: "Desarrollamos mientras ves el progreso en tiempo real.", icon: "🔨" },
-                  { step: "04", title: "Lanzamos", desc: "Tu página en vivo. Te enseñamos a usarla y damos soporte.", icon: "🚀" },
+                  { icon: "⚡", title: "Entrega rápida", desc: "1-10 días hábiles" },
+                  { icon: "💬", title: "Comunicación directa", desc: "Hablás con quien hace tu página" },
+                  { icon: "🔧", title: "Soporte continuo", desc: "Siempre hay alguien para ayudarte" },
+                  { icon: "🇨🇷", title: "100% Ticos", desc: "Entendemos el mercado local" },
                 ].map((item) => (
-                  <div key={item.step} className="relative text-center">
-                    <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-neutral-800 border border-neutral-700 flex flex-col items-center justify-center relative z-10 transition-all hover:border-[#3ECF8E] hover:scale-110">
-                      <span className="text-2xl">{item.icon}</span>
-                    </div>
-                    <span className="text-xs font-mono text-[#3ECF8E] block mb-2">{item.step}</span>
-                    <span className="text-lg font-semibold block text-white">
-                      {item.title}
-                    </span>
-                    <p className="text-sm mt-2 text-neutral-400 max-w-[200px] mx-auto">
-                      {item.desc}
-                    </p>
+                  <div key={item.title} className="p-4 rounded-xl bg-neutral-800 border border-neutral-700 hover:border-[#3ECF8E] transition-all">
+                    <div className="text-2xl mb-2">{item.icon}</div>
+                    <p className="font-semibold text-white">{item.title}</p>
+                    <p className="text-sm text-neutral-400">{item.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="mt-16 text-center">
-              <p className="text-neutral-400 mb-6">¿El resultado?</p>
-              <p className="text-2xl font-bold text-white">
-                Tu página lista en <span className="text-[#3ECF8E]">1-10 días hábiles</span>
-              </p>
+            {/* Technology */}
+            <div className="mb-24">
+              <div className="text-center mb-12">
+                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Tecnología</p>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Las mismas herramientas que usan los gigantes.
+                </h3>
+                <p className="text-neutral-400 max-w-2xl mx-auto">
+                  Netflix, Airbnb, TikTok — todas construyen con las mismas herramientas que usamos nosotros.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+                {[
+                  { name: "Next.js", icon: "▲", color: "bg-white text-black" },
+                  { name: "React", icon: "⚛️", color: "bg-[#61DAFB]" },
+                  { name: "TypeScript", icon: "TS", color: "bg-[#3178C6]" },
+                  { name: "Vercel", icon: "▲", color: "bg-white text-black" },
+                  { name: "Supabase", icon: "⚡", color: "bg-[#3ECF8E]" },
+                  { name: "Tailwind", icon: "🎨", color: "bg-[#06B6D4]" },
+                ].map((tech) => (
+                  <div key={tech.name} className="p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-center hover:border-[#3ECF8E] transition-all">
+                    <div className={`w-10 h-10 mx-auto rounded-lg ${tech.color} flex items-center justify-center text-sm font-bold mb-2`}>
+                      {tech.icon}
+                    </div>
+                    <p className="text-sm font-medium text-white">{tech.name}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Process */}
+            <div className="rounded-3xl p-8 md:p-12 bg-neutral-800 border border-neutral-700">
+              <div className="text-center mb-12">
+                <p className="text-sm uppercase tracking-widest mb-4 text-[#3ECF8E] font-bold">Proceso Simple</p>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                  Así trabajamos.
+                </h3>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                {[
+                  { step: "01", title: "Hablamos", desc: "Nos contás tu idea y entendemos qué necesitás.", icon: "💬" },
+                  { step: "02", title: "Proponemos", desc: "Plan claro con precio fijo. Sin sorpresas.", icon: "📋" },
+                  { step: "03", title: "Construimos", desc: "Desarrollamos mientras ves el progreso.", icon: "🔨" },
+                  { step: "04", title: "Lanzamos", desc: "Tu página en vivo con soporte incluido.", icon: "🚀" },
+                ].map((item) => (
+                  <div key={item.step} className="text-center">
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-neutral-700 border border-neutral-600 flex items-center justify-center text-2xl">
+                      {item.icon}
+                    </div>
+                    <span className="text-xs font-mono text-[#3ECF8E] block mb-2">{item.step}</span>
+                    <span className="text-lg font-semibold block text-white">{item.title}</span>
+                    <p className="text-sm mt-2 text-neutral-400">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-12 text-center">
+                <p className="text-2xl font-bold text-white">
+                  Tu página lista en <span className="text-[#3ECF8E]">1-10 días hábiles</span>
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-800">
+        <section className="py-24 sm:py-32 px-6 bg-gradient-to-b from-neutral-900 to-neutral-800">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
               Cada día sin página web
