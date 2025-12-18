@@ -105,9 +105,9 @@ export default function Home() {
             <div className="text-center mb-16">
               <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">El mundo es digital</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                El mundo satisface sus necesidades en línea.
+                Tus clientes te buscan en Google.
                 <br />
-                <span className="text-neutral-500">¿Ya estás en línea?</span>
+                <span className="text-neutral-500">¿Te van a encontrar?</span>
               </h2>
               <p className="text-xl max-w-3xl mx-auto text-neutral-400">
                 En 2025, el 97% de los consumidores buscan negocios locales en Google antes de tomar una decisión de compra.
@@ -158,8 +158,8 @@ export default function Home() {
                   un profundo entendimiento del mercado local.
                 </p>
                 <p className="text-lg mb-8 text-neutral-600">
-                  <strong className="text-neutral-900">No somos una agencia gigante con procesos eternos.</strong> Somos
-                  ágiles, directos y enfocados en resultados. Tu página lista en días, no en meses.
+                  <strong className="text-neutral-900">Somos ágiles, directos y enfocados en resultados.</strong> Comunicación
+                  clara, procesos eficientes y tu página lista en días, no en meses.
                 </p>
                 <Link
                   href="/nosotros"
@@ -174,10 +174,10 @@ export default function Home() {
 
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { number: "50+", label: "Proyectos entregados" },
-                  { number: "10", label: "Días máximo de entrega" },
+                  { number: "SSL", label: "Seguridad incluida" },
                   { number: "100%", label: "Clientes satisfechos" },
                   { number: "24h", label: "Tiempo de respuesta" },
+                  { number: "🇨🇷", label: "100% Ticos" },
                 ].map((item) => (
                   <div key={item.label} className="p-6 rounded-xl bg-neutral-50 border border-neutral-200 text-center">
                     <div className="text-3xl font-bold text-[#3ECF8E] mb-2">{item.number}</div>
