@@ -4,24 +4,57 @@ export default function Footer() {
   return (
     <footer className="bg-neutral-900 border-t border-neutral-800">
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* About Us */}
-          <div className="md:col-span-1">
-            <h3 className="text-lg font-semibold mb-4 text-white">
+          <div className="md:col-span-2">
+            <h3 className="text-lg font-bold mb-4 text-white">
               MaxDigitalCR
             </h3>
             <p className="text-sm mb-4 text-neutral-400">
               Somos un equipo de desarrolladores apasionados por crear páginas web profesionales
-              y accesibles para negocios en Costa Rica.
+              y accesibles para negocios en Costa Rica. Tecnología de clase mundial a precios justos.
             </p>
             <p className="text-sm text-neutral-500">
-              La Fortuna, Costa Rica
+              📍 La Fortuna, Costa Rica
             </p>
+          </div>
+
+          {/* Links */}
+          <div>
+            <h4 className="text-sm font-bold mb-4 text-white">
+              Navegación
+            </h4>
+            <div className="space-y-2">
+              <Link
+                href="/"
+                className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
+              >
+                Inicio
+              </Link>
+              <Link
+                href="/servicios"
+                className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
+              >
+                Servicios
+              </Link>
+              <Link
+                href="/nosotros"
+                className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
+              >
+                Nosotros
+              </Link>
+              <Link
+                href="/contacto"
+                className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
+              >
+                Contacto
+              </Link>
+            </div>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-medium mb-4 text-white">
+            <h4 className="text-sm font-bold mb-4 text-white">
               Contacto
             </h4>
             <div className="space-y-3">
@@ -58,34 +91,18 @@ export default function Footer() {
               </a>
             </div>
           </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-sm font-medium mb-4 text-white">
-              Enlaces
-            </h4>
-            <div className="space-y-2">
-              <Link
-                href="#precios"
-                className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
-              >
-                Precios
-              </Link>
-              <Link
-                href="#contacto"
-                className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
-              >
-                Contacto
-              </Link>
-            </div>
-          </div>
         </div>
 
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-neutral-800">
-          <p className="text-sm text-center text-neutral-600">
-            © {new Date().getFullYear()} MaxDigitalCR. Todos los derechos reservados.
-          </p>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-neutral-600">
+              © {new Date().getFullYear()} MaxDigitalCR. Todos los derechos reservados.
+            </p>
+            <p className="text-sm text-neutral-600">
+              Hecho con ❤️ en Costa Rica
+            </p>
+          </div>
         </div>
       </div>
     </footer>

@@ -3,14 +3,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  // Determine if we're on a page with a dark hero
+  const isDarkHero = pathname === "/" || pathname === "/servicios" || pathname === "/nosotros" || pathname === "/contacto";
 
   useEffect(() => {
     const handleScroll = () => {
-      // Change navbar style after scrolling past the hero section
       setScrolled(window.scrollY > 100);
     };
 
@@ -18,46 +22,58 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu when clicking a link
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
+  const navLinks = [
+    { href: "/servicios", label: "Servicios" },
+    { href: "/nosotros", label: "Nosotros" },
+    { href: "/contacto", label: "Contacto", isCTA: true },
+  ];
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b transition-all duration-300 ${
-      scrolled
+      scrolled || !isDarkHero
         ? "bg-white/90 border-neutral-200"
         : "bg-neutral-900/80 border-neutral-800"
     }`}>
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo - Made bigger */}
-          <Link href="/" className="flex items-center">
+          {/* Logo */}
+          <Link href="/" className="flex items-center" onClick={handleLinkClick}>
             <Image
               src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png"
               alt="MaxDigitalCR"
               width={220}
               height={68}
-              className={`h-16 md:h-20 w-auto transition-all ${
-                scrolled ? "" : "brightness-0 invert"
+              className={`h-14 md:h-16 w-auto transition-all ${
+                scrolled || !isDarkHero ? "" : "brightness-0 invert"
               }`}
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link
-              href="#precios"
-              className={`text-sm transition-colors ${
-                scrolled
-                  ? "text-neutral-600 hover:text-neutral-900"
-                  : "text-neutral-400 hover:text-white"
-              }`}
-            >
-              Precios
-            </Link>
-            <Link
-              href="#contacto"
-              className="text-sm px-5 py-2.5 rounded-full transition-colors bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
-            >
-              Contacto
-            </Link>
+          <div className="hidden md:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={
+                  link.isCTA
+                    ? "text-sm px-5 py-2.5 rounded-full transition-colors bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
+                    : `text-sm transition-colors ${
+                        scrolled || !isDarkHero
+                          ? "text-neutral-600 hover:text-neutral-900"
+                          : "text-neutral-400 hover:text-white"
+                      } ${pathname === link.href ? "font-semibold" : ""}`
+                }
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
 
           {/* Mobile Menu Button */}
@@ -67,7 +83,7 @@ export default function Navbar() {
             aria-label="Toggle menu"
           >
             <svg
-              className={`w-6 h-6 ${scrolled ? "text-neutral-900" : "text-white"}`}
+              className={`w-6 h-6 ${scrolled || !isDarkHero ? "text-neutral-900" : "text-white"}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -94,27 +110,27 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className={`md:hidden pt-4 pb-2 border-t mt-4 ${
-            scrolled ? "border-neutral-200" : "border-neutral-800"
+            scrolled || !isDarkHero ? "border-neutral-200" : "border-neutral-800"
           }`}>
-            <div className="flex flex-col gap-4">
-              <Link
-                href="#precios"
-                className={`text-sm transition-colors ${
-                  scrolled
-                    ? "text-neutral-600 hover:text-neutral-900"
-                    : "text-neutral-400 hover:text-white"
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Precios
-              </Link>
-              <Link
-                href="#contacto"
-                className="text-sm px-5 py-2.5 rounded-full text-center transition-colors bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contacto
-              </Link>
+            <div className="flex flex-col gap-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={handleLinkClick}
+                  className={
+                    link.isCTA
+                      ? "text-sm px-5 py-3 rounded-full text-center transition-colors bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
+                      : `text-sm py-2 transition-colors ${
+                          scrolled || !isDarkHero
+                            ? "text-neutral-600 hover:text-neutral-900"
+                            : "text-neutral-400 hover:text-white"
+                        } ${pathname === link.href ? "font-semibold" : ""}`
+                  }
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
         )}
