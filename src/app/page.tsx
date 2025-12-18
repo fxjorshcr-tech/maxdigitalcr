@@ -99,84 +99,128 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Digital Presence Section - Problem + Solution Connected */}
+        {/* Nuestra Propuesta - NEW SECTION */}
         <section className="py-24 sm:py-32 px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">El Problema</p>
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Nuestra Propuesta</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                Tus clientes te buscan
+                Tecnología de clase mundial.
                 <br />
-                <span className="text-neutral-500">en todos lados.</span>
+                <span className="text-neutral-500">Precio accesible. Tiempo récord.</span>
               </h2>
               <p className="text-xl max-w-3xl mx-auto text-neutral-400">
-                El 97% buscan en Google antes de comprar. Ahora también preguntan a ChatGPT y otros asistentes de IA. Si no aparecés, simplemente no existís.
+                Usamos las mismas herramientas que Netflix y Airbnb, pero las hacemos accesibles para negocios locales. Páginas optimizadas para Google e IA desde el día 1.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {[
-                { stat: "97%", desc: "buscan en Google antes de comprar", icon: "🔍" },
-                { stat: "1B+", desc: "usuarios preguntan a ChatGPT", icon: "🤖" },
-                { stat: "75%", desc: "juzgan credibilidad por el diseño", icon: "💎" },
-                { stat: "53%", desc: "abandonan si tarda +3 segundos", icon: "⚡" },
+                { icon: "⚡", title: "1-10 días", desc: "Tu página lista en tiempo récord. No meses de espera." },
+                { icon: "💰", title: "Desde ₡100k", desc: "Fracción del costo de agencias tradicionales." },
+                { icon: "🔧", title: "Soporte incluido", desc: "30 días de soporte post-lanzamiento gratis." },
               ].map((item) => (
-                <div key={item.stat} className="p-6 rounded-xl border bg-neutral-800 border-neutral-700 text-center transition-all hover:border-[#3ECF8E] hover:scale-105">
-                  <div className="text-3xl mb-3">{item.icon}</div>
-                  <div className="text-3xl md:text-4xl font-bold text-[#3ECF8E] mb-2">{item.stat}</div>
-                  <p className="text-sm text-neutral-400">{item.desc}</p>
+                <div key={item.title} className="p-8 rounded-2xl bg-neutral-800 border border-neutral-700 text-center hover:border-[#3ECF8E] transition-all">
+                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <h3 className="text-2xl font-bold text-[#3ECF8E] mb-2">{item.title}</h3>
+                  <p className="text-neutral-400">{item.desc}</p>
                 </div>
               ))}
             </div>
 
-            {/* The Solution - Connected */}
-            <div className="rounded-3xl p-8 md:p-12 bg-gradient-to-br from-[#3ECF8E]/10 to-neutral-800 border border-[#3ECF8E]/30">
-              <div className="text-center mb-10">
-                <p className="text-sm uppercase tracking-widest mb-4 text-[#3ECF8E] font-bold">Nuestra Solución</p>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-                  Creamos páginas optimizadas para todo esto.
-                </h3>
-                <p className="text-neutral-400 max-w-2xl mx-auto">
-                  Cada página que hacemos está diseñada para que te encuentren en Google, en IA, y para que conviertan visitantes en clientes.
-                </p>
-              </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { icon: "🔍", title: "SEO técnico", desc: "Primeros en Google" },
+                { icon: "🤖", title: "Optimizado para IA", desc: "ChatGPT te recomienda" },
+                { icon: "📱", title: "100% responsive", desc: "Perfecto en cualquier dispositivo" },
+                { icon: "🔒", title: "SSL incluido", desc: "Seguro desde el día 1" },
+              ].map((item) => (
+                <div key={item.title} className="p-4 rounded-xl bg-neutral-800/50 border border-neutral-700/50 text-center">
+                  <div className="text-2xl mb-2">{item.icon}</div>
+                  <p className="font-medium text-white text-sm">{item.title}</p>
+                  <p className="text-xs text-neutral-500">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {[
-                  { icon: "🔍", title: "SEO técnico", desc: "Primeros en Google" },
-                  { icon: "🤖", title: "Optimizado para IA", desc: "ChatGPT te recomienda" },
-                  { icon: "⚡", title: "Velocidad < 1 seg", desc: "Nadie abandona tu sitio" },
-                  { icon: "💎", title: "Diseño profesional", desc: "Credibilidad instantánea" },
-                ].map((item) => (
-                  <div key={item.title} className="text-center p-4">
-                    <div className="w-14 h-14 mx-auto mb-4 bg-[#3ECF8E]/20 rounded-xl flex items-center justify-center">
-                      <span className="text-2xl">{item.icon}</span>
+        {/* Stats with Real Sources - NEW SECTION */}
+        <section className="py-24 sm:py-32 px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">La Realidad</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
+                La presencia digital
+                <br />
+                <span className="text-neutral-400">ya no es opcional.</span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                {
+                  stat: "97%",
+                  desc: "de consumidores buscan negocios online antes de comprar",
+                  source: "BrightLocal Consumer Review Survey 2024",
+                  icon: "🔍"
+                },
+                {
+                  stat: "75%",
+                  desc: "juzgan la credibilidad de un negocio por su diseño web",
+                  source: "Stanford Web Credibility Research",
+                  icon: "💎"
+                },
+                {
+                  stat: "88%",
+                  desc: "confían en reseñas online tanto como recomendaciones personales",
+                  source: "BrightLocal Local Consumer Review Survey",
+                  icon: "⭐"
+                },
+                {
+                  stat: "53%",
+                  desc: "abandonan si la página tarda más de 3 segundos",
+                  source: "Google/SOASTA Research",
+                  icon: "⚡"
+                },
+              ].map((item) => (
+                <div key={item.stat} className="p-8 rounded-2xl bg-neutral-50 border border-neutral-200 hover:border-[#3ECF8E] transition-all">
+                  <div className="flex items-start gap-4">
+                    <div className="text-4xl">{item.icon}</div>
+                    <div>
+                      <div className="text-4xl md:text-5xl font-bold text-[#3ECF8E] mb-2">{item.stat}</div>
+                      <p className="text-lg text-neutral-700 mb-3">{item.desc}</p>
+                      <p className="text-sm text-neutral-400 italic">— {item.source}</p>
                     </div>
-                    <p className="font-semibold text-white mb-1">{item.title}</p>
-                    <p className="text-sm text-neutral-400">{item.desc}</p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <p className="text-xl text-neutral-600">
+                Si no estás online, <strong className="text-neutral-900">simplemente no existís</strong> para tus clientes potenciales.
+              </p>
             </div>
           </div>
         </section>
 
         {/* Google My Business Section */}
-        <section className="py-24 sm:py-32 px-6 bg-white">
+        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Reputación Online</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
                   Las estrellas de Google
                   <br />
-                  <span className="text-neutral-400">venden por vos.</span>
+                  <span className="text-neutral-500">venden por vos.</span>
                 </h2>
-                <p className="text-lg mb-6 text-neutral-600">
-                  Un negocio con 4.5+ estrellas genera <strong className="text-neutral-900">270% más clics</strong> que uno sin reseñas. Tu página web y tu perfil de Google My Business trabajan juntos.
+                <p className="text-lg mb-6 text-neutral-400">
+                  Un negocio con 4.5+ estrellas genera <strong className="text-white">270% más clics</strong> que uno sin reseñas. Tu página web y tu perfil de Google My Business trabajan juntos.
                 </p>
-                <p className="text-lg mb-8 text-neutral-600">
-                  <strong className="text-neutral-900">Nosotros te ayudamos a configurar ambos</strong> para que tu negocio se vea profesional y confiable desde el primer momento.
+                <p className="text-lg mb-8 text-neutral-400">
+                  <strong className="text-white">Nosotros te ayudamos a configurar ambos</strong> para que tu negocio se vea profesional y confiable desde el primer momento.
                 </p>
                 <ul className="space-y-3">
                   {[
@@ -185,7 +229,7 @@ export default function Home() {
                     "Estrategia para obtener más reseñas",
                     "Widget de reseñas en tu sitio"
                   ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-neutral-700">
+                    <li key={item} className="flex items-center gap-3 text-neutral-300">
                       <CheckIcon />
                       {item}
                     </li>
@@ -195,7 +239,7 @@ export default function Home() {
 
               <div className="space-y-6">
                 {/* Google Review Card Mock */}
-                <div className="bg-white rounded-2xl shadow-xl border border-neutral-200 p-6">
+                <div className="bg-white rounded-2xl shadow-xl p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">G</div>
                     <div>
@@ -222,9 +266,9 @@ export default function Home() {
                     { number: "270%", label: "Más clics" },
                     { number: "88%", label: "Confían en reseñas" },
                   ].map((item) => (
-                    <div key={item.label} className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+                    <div key={item.label} className="p-4 rounded-xl bg-neutral-800 border border-neutral-700">
                       <div className="text-2xl font-bold text-[#3ECF8E]">{item.number}</div>
-                      <p className="text-xs text-neutral-500">{item.label}</p>
+                      <p className="text-xs text-neutral-400">{item.label}</p>
                     </div>
                   ))}
                 </div>
@@ -233,17 +277,17 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services Preview - Moved up for coherence */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
+        {/* Services Preview */}
+        <section className="py-24 sm:py-32 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Nuestros Servicios</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
                 La página perfecta
                 <br />
-                <span className="text-neutral-500">para tu negocio.</span>
+                <span className="text-neutral-400">para tu negocio.</span>
               </h2>
-              <p className="text-xl max-w-2xl mx-auto text-neutral-400">
+              <p className="text-xl max-w-2xl mx-auto text-neutral-600">
                 Desde landing pages hasta tiendas online completas. Todas optimizadas para Google e IA.
               </p>
             </div>
@@ -275,8 +319,8 @@ export default function Home() {
               ].map((service) => (
                 <div key={service.title} className={`rounded-2xl p-6 border transition-all hover:scale-105 ${
                   service.popular
-                    ? "bg-neutral-800 border-[#3ECF8E] border-2 relative"
-                    : "bg-neutral-800 border-neutral-700"
+                    ? "bg-neutral-900 border-[#3ECF8E] border-2 relative"
+                    : "bg-neutral-900 border-neutral-700"
                 }`}>
                   {service.popular && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -318,16 +362,16 @@ export default function Home() {
         </section>
 
         {/* Pain Points Section */}
-        <section className="py-24 sm:py-32 px-6 bg-white">
+        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Sin Complicaciones</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
                 Quitamos tus preocupaciones
                 <br />
-                <span className="text-neutral-400">de la mesa.</span>
+                <span className="text-neutral-500">de la mesa.</span>
               </h2>
-              <p className="text-xl max-w-3xl mx-auto text-neutral-600">
+              <p className="text-xl max-w-3xl mx-auto text-neutral-400">
                 Sabemos que crear una página web puede parecer complicado. Por eso nos encargamos de todo.
               </p>
             </div>
@@ -365,10 +409,10 @@ export default function Home() {
                   icon: "✅"
                 },
               ].map((item) => (
-                <div key={item.worry} className="p-6 rounded-xl bg-neutral-50 border border-neutral-200 transition-all hover:border-[#3ECF8E] hover:shadow-lg">
+                <div key={item.worry} className="p-6 rounded-xl bg-neutral-800 border border-neutral-700 transition-all hover:border-[#3ECF8E]">
                   <div className="text-3xl mb-4">{item.icon}</div>
-                  <p className="text-neutral-900 font-semibold mb-3">{item.worry}</p>
-                  <p className="text-neutral-600 text-sm">{item.solution}</p>
+                  <p className="text-white font-semibold mb-3">{item.worry}</p>
+                  <p className="text-neutral-400 text-sm">{item.solution}</p>
                 </div>
               ))}
             </div>
@@ -376,14 +420,14 @@ export default function Home() {
         </section>
 
         {/* Who Is This For Section */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
+        <section className="py-24 sm:py-32 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Para Todos</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
                 ¿Para quién es esto?
               </h2>
-              <p className="text-xl max-w-2xl mx-auto text-neutral-400">
+              <p className="text-xl max-w-2xl mx-auto text-neutral-600">
                 Si tenés un negocio y querés crecer, necesitás presencia digital.
               </p>
             </div>
@@ -403,43 +447,42 @@ export default function Home() {
                 { icon: "🎨", name: "Diseñadores" },
                 { icon: "🛒", name: "Tiendas" },
               ].map((item) => (
-                <div key={item.name} className="p-4 rounded-xl border text-center transition-all hover:scale-105 bg-neutral-800 border-neutral-700 hover:border-[#3ECF8E]">
+                <div key={item.name} className="p-4 rounded-xl border text-center transition-all hover:scale-105 bg-neutral-50 border-neutral-200 hover:border-[#3ECF8E]">
                   <span className="text-3xl mb-2 block">{item.icon}</span>
-                  <span className="text-sm font-medium text-white">{item.name}</span>
+                  <span className="text-sm font-medium text-neutral-900">{item.name}</span>
                 </div>
               ))}
             </div>
 
             <div className="mt-12 text-center">
-              <p className="text-lg text-neutral-400 mb-4">
-                <strong className="text-white">¿No ves tu industria?</strong> No importa.
+              <p className="text-lg text-neutral-600 mb-4">
+                <strong className="text-neutral-900">¿No ves tu industria?</strong> No importa.
               </p>
-              <p className="text-xl font-semibold text-white">
+              <p className="text-xl font-semibold text-neutral-900">
                 Si tenés clientes, necesitás una página web. <span className="text-[#3ECF8E]">Punto.</span>
               </p>
             </div>
           </div>
         </section>
 
-        {/* Who We Are + Technology + Process - Combined Section */}
-        <section className="py-24 sm:py-32 px-6 bg-white">
+        {/* Who We Are + Technology + Process */}
+        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             {/* Who We Are */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
               <div>
                 <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Quiénes Somos</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
                   Somos MaxDigitalCR.
                   <br />
-                  <span className="text-neutral-400">Tu equipo de desarrollo web.</span>
+                  <span className="text-neutral-500">Tu equipo de desarrollo web.</span>
                 </h2>
-                <p className="text-lg mb-6 text-neutral-600">
+                <p className="text-lg mb-6 text-neutral-400">
                   Un equipo de desarrolladores en Costa Rica especializados en crear páginas web
-                  profesionales para PyMEs y emprendedores. Usamos la misma tecnología que Netflix, Airbnb y TikTok.
+                  profesionales para PyMEs y emprendedores.
                 </p>
-                <p className="text-lg mb-8 text-neutral-600">
-                  <strong className="text-neutral-900">Antes, esto costaba millones.</strong> Hoy, gracias a
-                  herramientas open-source y la nube, te damos la misma calidad a una fracción del costo.
+                <p className="text-lg mb-8 text-neutral-400">
+                  <strong className="text-white">Comunicación directa, procesos eficientes</strong> y tu página lista en días, no en meses.
                 </p>
                 <Link
                   href="/nosotros"
@@ -459,10 +502,10 @@ export default function Home() {
                   { icon: "🔧", title: "Soporte continuo", desc: "Siempre hay alguien para ayudarte" },
                   { icon: "🇨🇷", title: "100% Ticos", desc: "Entendemos el mercado local" },
                 ].map((item) => (
-                  <div key={item.title} className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 hover:border-[#3ECF8E] transition-all">
+                  <div key={item.title} className="p-4 rounded-xl bg-neutral-800 border border-neutral-700 hover:border-[#3ECF8E] transition-all">
                     <div className="text-2xl mb-2">{item.icon}</div>
-                    <p className="font-semibold text-neutral-900">{item.title}</p>
-                    <p className="text-sm text-neutral-500">{item.desc}</p>
+                    <p className="font-semibold text-white">{item.title}</p>
+                    <p className="text-sm text-neutral-400">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -472,35 +515,35 @@ export default function Home() {
             <div className="mb-24">
               <div className="text-center mb-12">
                 <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Tecnología</p>
-                <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-4">
-                  La misma tecnología que usan los gigantes.
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Las mismas herramientas que usan los gigantes.
                 </h3>
-                <p className="text-neutral-600 max-w-2xl mx-auto">
+                <p className="text-neutral-400 max-w-2xl mx-auto">
                   Netflix, Airbnb, TikTok — todas construyen con las mismas herramientas que usamos nosotros.
                 </p>
               </div>
 
               <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
                 {[
-                  { name: "Next.js", icon: "▲", color: "bg-black" },
+                  { name: "Next.js", icon: "▲", color: "bg-white text-black" },
                   { name: "React", icon: "⚛️", color: "bg-[#61DAFB]" },
                   { name: "TypeScript", icon: "TS", color: "bg-[#3178C6]" },
-                  { name: "Vercel", icon: "▲", color: "bg-black" },
+                  { name: "Vercel", icon: "▲", color: "bg-white text-black" },
                   { name: "Supabase", icon: "⚡", color: "bg-[#3ECF8E]" },
                   { name: "Tailwind", icon: "🎨", color: "bg-[#06B6D4]" },
                 ].map((tech) => (
-                  <div key={tech.name} className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-center hover:border-[#3ECF8E] transition-all">
-                    <div className={`w-10 h-10 mx-auto rounded-lg ${tech.color} flex items-center justify-center text-white text-sm font-bold mb-2`}>
+                  <div key={tech.name} className="p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-center hover:border-[#3ECF8E] transition-all">
+                    <div className={`w-10 h-10 mx-auto rounded-lg ${tech.color} flex items-center justify-center text-sm font-bold mb-2`}>
                       {tech.icon}
                     </div>
-                    <p className="text-sm font-medium text-neutral-900">{tech.name}</p>
+                    <p className="text-sm font-medium text-white">{tech.name}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Process */}
-            <div className="rounded-3xl p-8 md:p-12 bg-neutral-900">
+            <div className="rounded-3xl p-8 md:p-12 bg-neutral-800 border border-neutral-700">
               <div className="text-center mb-12">
                 <p className="text-sm uppercase tracking-widest mb-4 text-[#3ECF8E] font-bold">Proceso Simple</p>
                 <h3 className="text-2xl sm:text-3xl font-bold text-white">
@@ -516,7 +559,7 @@ export default function Home() {
                   { step: "04", title: "Lanzamos", desc: "Tu página en vivo con soporte incluido.", icon: "🚀" },
                 ].map((item) => (
                   <div key={item.step} className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-neutral-800 border border-neutral-700 flex items-center justify-center text-2xl">
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-neutral-700 border border-neutral-600 flex items-center justify-center text-2xl">
                       {item.icon}
                     </div>
                     <span className="text-xs font-mono text-[#3ECF8E] block mb-2">{item.step}</span>
@@ -536,7 +579,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-800">
+        <section className="py-24 sm:py-32 px-6 bg-gradient-to-b from-neutral-900 to-neutral-800">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
               Cada día sin página web
