@@ -707,8 +707,8 @@ export default function Home() {
 
             <div className="mt-8 text-center">
               <p className="text-neutral-500">
-                <strong className="text-neutral-900">Nota:</strong> El hosting del primer año está incluido
-                en todos nuestros planes. Después, el costo es mínimo (aproximadamente $5-10/mes).
+                <strong className="text-neutral-900">Nota:</strong> El hosting y correo empresarial no están incluidos
+                en el precio del desarrollo. Son costos adicionales que se pagan aparte.
               </p>
             </div>
           </div>
@@ -839,7 +839,7 @@ export default function Home() {
                 { q: "¿Cuánto tiempo tardan en entregar mi página?", a: "Depende del tipo de proyecto. Landing pages: 1-3 días. Sitios catálogo: 3-7 días. E-commerce: 7-10 días. Nunca más de 10 días hábiles." },
                 { q: "¿Qué pasa si no me gusta el diseño?", a: "Con nuestro sistema de preview en tiempo real, vas viendo cada cambio. Si algo no te gusta, lo ajustamos al instante. Iteramos hasta que quedes 100% satisfecho." },
                 { q: "¿Puedo hacer cambios después de que la página esté lista?", a: "Sí. Los primeros 30 días de soporte están incluidos. Después, podés contratar un plan de mantenimiento o pagar por cambios puntuales." },
-                { q: "¿El hosting está incluido?", a: "Sí, el hosting del primer año está incluido en todos los planes. Después el costo es mínimo (aproximadamente $5-10/mes)." },
+                { q: "¿El hosting está incluido?", a: "No, el hosting y correo empresarial son costos adicionales. El hosting cuesta aproximadamente $15/mes y el correo desde $6/mes. Nosotros te ayudamos a configurar todo." },
                 { q: "¿Necesito saber de tecnología?", a: "Para nada. Nosotros nos encargamos de todo lo técnico. Vos solo nos decís qué querés y nosotros lo hacemos realidad." },
                 { q: "¿Qué métodos de pago aceptan?", a: "SINPE Móvil, transferencia bancaria, y para e-commerce configuramos el procesador de pagos que prefieras (SINPE, tarjeta, etc)." },
               ].map((item) => (
