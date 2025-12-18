@@ -145,7 +145,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Stats with Real Sources - NEW SECTION */}
+        {/* Stats with Real Sources */}
         <section className="py-24 sm:py-32 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -205,89 +205,17 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Google My Business Section */}
+        {/* Services Preview - LA SOLUCIÓN */}
         <section className="py-24 sm:py-32 px-6 bg-neutral-900">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Reputación Online</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                  Las estrellas de Google
-                  <br />
-                  <span className="text-neutral-500">venden por vos.</span>
-                </h2>
-                <p className="text-lg mb-6 text-neutral-400">
-                  Un negocio con 4.5+ estrellas genera <strong className="text-white">270% más clics</strong> que uno sin reseñas. Tu página web y tu perfil de Google My Business trabajan juntos.
-                </p>
-                <p className="text-lg mb-8 text-neutral-400">
-                  <strong className="text-white">Nosotros te ayudamos a configurar ambos</strong> para que tu negocio se vea profesional y confiable desde el primer momento.
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    "Configuración de Google My Business",
-                    "Integración con tu página web",
-                    "Estrategia para obtener más reseñas",
-                    "Widget de reseñas en tu sitio"
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-neutral-300">
-                      <CheckIcon />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="space-y-6">
-                {/* Google Review Card Mock */}
-                <div className="bg-white rounded-2xl shadow-xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">G</div>
-                    <div>
-                      <p className="font-semibold text-neutral-900">Tu Negocio</p>
-                      <div className="flex items-center gap-1">
-                        {[1,2,3,4,5].map((star) => (
-                          <svg key={star} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </svg>
-                        ))}
-                        <span className="text-sm text-neutral-500 ml-2">4.9 (127 reseñas)</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="border-t border-neutral-100 pt-4">
-                    <p className="text-sm text-neutral-600 italic">&quot;Excelente servicio, muy profesionales. Mi página quedó increíble y la entregaron super rápido. 100% recomendados.&quot;</p>
-                    <p className="text-xs text-neutral-400 mt-2">— Cliente satisfecho</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-3 gap-4 text-center">
-                  {[
-                    { number: "4.9", label: "Calificación" },
-                    { number: "270%", label: "Más clics" },
-                    { number: "88%", label: "Confían en reseñas" },
-                  ].map((item) => (
-                    <div key={item.label} className="p-4 rounded-xl bg-neutral-800 border border-neutral-700">
-                      <div className="text-2xl font-bold text-[#3ECF8E]">{item.number}</div>
-                      <p className="text-xs text-neutral-400">{item.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Services Preview */}
-        <section className="py-24 sm:py-32 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Nuestros Servicios</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
                 La página perfecta
                 <br />
-                <span className="text-neutral-400">para tu negocio.</span>
+                <span className="text-neutral-500">para tu negocio.</span>
               </h2>
-              <p className="text-xl max-w-2xl mx-auto text-neutral-600">
+              <p className="text-xl max-w-2xl mx-auto text-neutral-400">
                 Desde landing pages hasta tiendas online completas. Todas optimizadas para Google e IA.
               </p>
             </div>
@@ -362,16 +290,16 @@ export default function Home() {
         </section>
 
         {/* Pain Points Section */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
+        <section className="py-24 sm:py-32 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Sin Complicaciones</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
                 Quitamos tus preocupaciones
                 <br />
-                <span className="text-neutral-500">de la mesa.</span>
+                <span className="text-neutral-400">de la mesa.</span>
               </h2>
-              <p className="text-xl max-w-3xl mx-auto text-neutral-400">
+              <p className="text-xl max-w-3xl mx-auto text-neutral-600">
                 Sabemos que crear una página web puede parecer complicado. Por eso nos encargamos de todo.
               </p>
             </div>
@@ -409,12 +337,84 @@ export default function Home() {
                   icon: "✅"
                 },
               ].map((item) => (
-                <div key={item.worry} className="p-6 rounded-xl bg-neutral-800 border border-neutral-700 transition-all hover:border-[#3ECF8E]">
+                <div key={item.worry} className="p-6 rounded-xl bg-neutral-50 border border-neutral-200 transition-all hover:border-[#3ECF8E]">
                   <div className="text-3xl mb-4">{item.icon}</div>
-                  <p className="text-white font-semibold mb-3">{item.worry}</p>
-                  <p className="text-neutral-400 text-sm">{item.solution}</p>
+                  <p className="text-neutral-900 font-semibold mb-3">{item.worry}</p>
+                  <p className="text-neutral-600 text-sm">{item.solution}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Google My Business Section - PRUEBA SOCIAL */}
+        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Reputación Online</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+                  Las estrellas de Google
+                  <br />
+                  <span className="text-neutral-500">venden por vos.</span>
+                </h2>
+                <p className="text-lg mb-6 text-neutral-400">
+                  Un negocio con 4.5+ estrellas genera <strong className="text-white">270% más clics</strong> que uno sin reseñas. Tu página web y tu perfil de Google My Business trabajan juntos.
+                </p>
+                <p className="text-lg mb-8 text-neutral-400">
+                  <strong className="text-white">Nosotros te ayudamos a configurar ambos</strong> para que tu negocio se vea profesional y confiable desde el primer momento.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Configuración de Google My Business",
+                    "Integración con tu página web",
+                    "Estrategia para obtener más reseñas",
+                    "Widget de reseñas en tu sitio"
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-neutral-300">
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="space-y-6">
+                {/* Google Review Card Mock */}
+                <div className="bg-white rounded-2xl shadow-xl p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">G</div>
+                    <div>
+                      <p className="font-semibold text-neutral-900">Tu Negocio</p>
+                      <div className="flex items-center gap-1">
+                        {[1,2,3,4,5].map((star) => (
+                          <svg key={star} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                        <span className="text-sm text-neutral-500 ml-2">4.9 (127 reseñas)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="border-t border-neutral-100 pt-4">
+                    <p className="text-sm text-neutral-600 italic">&quot;Excelente servicio, muy profesionales. Mi página quedó increíble y la entregaron super rápido. 100% recomendados.&quot;</p>
+                    <p className="text-xs text-neutral-400 mt-2">— Cliente satisfecho</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  {[
+                    { number: "4.9", label: "Calificación" },
+                    { number: "270%", label: "Más clics" },
+                    { number: "88%", label: "Confían en reseñas" },
+                  ].map((item) => (
+                    <div key={item.label} className="p-4 rounded-xl bg-neutral-800 border border-neutral-700">
+                      <div className="text-2xl font-bold text-[#3ECF8E]">{item.number}</div>
+                      <p className="text-xs text-neutral-400">{item.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
