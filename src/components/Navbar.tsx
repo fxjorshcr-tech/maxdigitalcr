@@ -10,8 +10,15 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
-  // Determine if we're on a page with a dark hero
-  const isDarkHero = pathname === "/" || pathname === "/servicios" || pathname === "/nosotros" || pathname === "/contacto";
+  // Check if we're on English version
+  const isEnglish = pathname.startsWith('/en');
+
+  // Get the base path without /en prefix
+  const basePath = isEnglish ? pathname.replace('/en', '') || '/' : pathname;
+
+  // Determine if we're on a page with a dark hero (both Spanish and English versions)
+  const darkHeroPages = ['/', '/servicios', '/nosotros', '/contacto'];
+  const isDarkHero = darkHeroPages.includes(basePath);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,11 +34,19 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
-  const navLinks = [
+  // Navigation links with translations
+  const navLinks = isEnglish ? [
+    { href: "/en/servicios", label: "Services" },
+    { href: "/en/nosotros", label: "About" },
+    { href: "/en/contacto", label: "Contact", isCTA: true },
+  ] : [
     { href: "/servicios", label: "Servicios" },
     { href: "/nosotros", label: "Nosotros" },
     { href: "/contacto", label: "Contacto", isCTA: true },
   ];
+
+  // Home link based on language
+  const homeLink = isEnglish ? "/en" : "/";
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b transition-all duration-300 ${
@@ -42,7 +57,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center" onClick={handleLinkClick}>
+          <Link href={homeLink} className="flex items-center" onClick={handleLinkClick}>
             <Image
               src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png"
               alt="MaxDigitalCR"
@@ -78,9 +93,9 @@ export default function Navbar() {
             {/* Language Switcher */}
             <div className={`flex items-center gap-2 ml-2 border-l pl-4 ${scrolled || !isDarkHero ? 'border-neutral-300' : 'border-neutral-600'}`}>
               <Link
-                href={pathname.startsWith('/en') ? pathname.replace('/en', '') || '/' : pathname}
+                href={basePath || '/'}
                 className={`w-7 h-7 rounded-full overflow-hidden border-2 transition-all hover:scale-110 ${
-                  !pathname.startsWith('/en') ? 'border-[#3ECF8E]' : 'border-transparent opacity-60 hover:opacity-100'
+                  !isEnglish ? 'border-[#3ECF8E]' : 'border-transparent opacity-60 hover:opacity-100'
                 }`}
                 title="Español"
               >
@@ -91,9 +106,9 @@ export default function Navbar() {
                 </svg>
               </Link>
               <Link
-                href={`/en${pathname.startsWith('/en') ? pathname.replace('/en', '') : pathname}`}
+                href={`/en${basePath}`}
                 className={`w-7 h-7 rounded-full overflow-hidden border-2 transition-all hover:scale-110 ${
-                  pathname.startsWith('/en') ? 'border-[#3ECF8E]' : 'border-transparent opacity-60 hover:opacity-100'
+                  isEnglish ? 'border-[#3ECF8E]' : 'border-transparent opacity-60 hover:opacity-100'
                 }`}
                 title="English"
               >
@@ -170,13 +185,13 @@ export default function Navbar() {
               {/* Language Switcher Mobile */}
               <div className={`flex items-center gap-4 pt-4 mt-2 border-t ${scrolled || !isDarkHero ? 'border-neutral-200' : 'border-neutral-700'}`}>
                 <span className={`text-sm ${scrolled || !isDarkHero ? 'text-neutral-500' : 'text-neutral-400'}`}>
-                  Idioma:
+                  {isEnglish ? 'Language:' : 'Idioma:'}
                 </span>
                 <Link
-                  href={pathname.startsWith('/en') ? pathname.replace('/en', '') || '/' : pathname}
+                  href={basePath || '/'}
                   onClick={handleLinkClick}
                   className={`w-8 h-8 rounded-full overflow-hidden border-2 transition-all ${
-                    !pathname.startsWith('/en') ? 'border-[#3ECF8E]' : 'border-transparent opacity-60'
+                    !isEnglish ? 'border-[#3ECF8E]' : 'border-transparent opacity-60'
                   }`}
                   title="Español"
                 >
@@ -187,10 +202,10 @@ export default function Navbar() {
                   </svg>
                 </Link>
                 <Link
-                  href={`/en${pathname.startsWith('/en') ? pathname.replace('/en', '') : pathname}`}
+                  href={`/en${basePath}`}
                   onClick={handleLinkClick}
                   className={`w-8 h-8 rounded-full overflow-hidden border-2 transition-all ${
-                    pathname.startsWith('/en') ? 'border-[#3ECF8E]' : 'border-transparent opacity-60'
+                    isEnglish ? 'border-[#3ECF8E]' : 'border-transparent opacity-60'
                   }`}
                   title="English"
                 >

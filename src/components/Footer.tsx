@@ -3,11 +3,24 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const pathname = usePathname();
+  const isEnglish = pathname.startsWith('/en');
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    whatsapp: "",
+    tipo: "",
+    message: ""
+  });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,11 +29,75 @@ export default function Footer() {
     // Simulate form submission (replace with actual API call)
     setTimeout(() => {
       setStatus("sent");
-      setEmail("");
-      setMessage("");
+      setFormData({ name: "", email: "", whatsapp: "", tipo: "", message: "" });
       setTimeout(() => setStatus("idle"), 3000);
     }, 1000);
   };
+
+  // Translations
+  const t = isEnglish ? {
+    title: "MaxDigitalCR",
+    about: "Your web development team in Costa Rica. World-class technology at accessible prices.",
+    location: "📍 La Fortuna, Costa Rica",
+    nav: "Navigation",
+    home: "Home",
+    services: "Services",
+    aboutUs: "About",
+    contact: "Contact",
+    followUs: "Follow Us",
+    quickContact: "Quick Contact",
+    namePlaceholder: "Your name",
+    emailPlaceholder: "your@email.com",
+    whatsappPlaceholder: "+506 8888 8888",
+    typeLabel: "What type of website do you need?",
+    typeOptions: [
+      { value: "", label: "Select an option" },
+      { value: "landing", label: "Landing Page (₡100,000+)" },
+      { value: "catalogo", label: "Catalog Site (₡200,000+)" },
+      { value: "ecommerce", label: "E-Commerce (₡300,000+)" },
+      { value: "personalizado", label: "Custom Project" },
+      { value: "otro", label: "Other / Not sure" },
+    ],
+    messagePlaceholder: "Tell us about your project...",
+    sending: "Sending...",
+    sent: "Sent!",
+    send: "Send message",
+    response: "We respond within 24 hours.",
+    copyright: "All rights reserved.",
+    poweredBy: "Powered by"
+  } : {
+    title: "MaxDigitalCR",
+    about: "Tu equipo de desarrollo web en Costa Rica. Tecnología de clase mundial a precios accesibles.",
+    location: "📍 La Fortuna, Costa Rica",
+    nav: "Navegación",
+    home: "Inicio",
+    services: "Servicios",
+    aboutUs: "Nosotros",
+    contact: "Contacto",
+    followUs: "Síguenos",
+    quickContact: "Contacto Rápido",
+    namePlaceholder: "Tu nombre",
+    emailPlaceholder: "tu@email.com",
+    whatsappPlaceholder: "+506 8888 8888",
+    typeLabel: "¿Qué tipo de página necesitás?",
+    typeOptions: [
+      { value: "", label: "Seleccioná una opción" },
+      { value: "landing", label: "Landing Page (₡100,000+)" },
+      { value: "catalogo", label: "Sitio Catálogo (₡200,000+)" },
+      { value: "ecommerce", label: "E-Commerce (₡300,000+)" },
+      { value: "personalizado", label: "Proyecto Personalizado" },
+      { value: "otro", label: "Otro / No estoy seguro" },
+    ],
+    messagePlaceholder: "Contanos sobre tu proyecto...",
+    sending: "Enviando...",
+    sent: "¡Enviado!",
+    send: "Enviar mensaje",
+    response: "Te respondemos en menos de 24 horas.",
+    copyright: "Todos los derechos reservados.",
+    poweredBy: "Powered by"
+  };
+
+  const navPrefix = isEnglish ? "/en" : "";
 
   return (
     <footer className="bg-neutral-900 border-t border-neutral-800">
@@ -29,50 +106,50 @@ export default function Footer() {
           {/* About Us */}
           <div className="lg:col-span-1">
             <h3 className="text-lg font-bold mb-4 text-white">
-              MaxDigitalCR
+              {t.title}
             </h3>
             <p className="text-sm mb-4 text-neutral-400">
-              Tu equipo de desarrollo web en Costa Rica. Tecnología de clase mundial a precios accesibles.
+              {t.about}
             </p>
             <p className="text-sm text-neutral-500">
-              📍 La Fortuna, Costa Rica
+              {t.location}
             </p>
           </div>
 
           {/* Links */}
           <div>
             <h4 className="text-sm font-bold mb-4 text-white">
-              Navegación
+              {t.nav}
             </h4>
             <div className="space-y-2">
               <Link
-                href="/"
+                href={`${navPrefix}/`}
                 className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
               >
-                Inicio
+                {t.home}
               </Link>
               <Link
-                href="/servicios"
+                href={`${navPrefix}/servicios`}
                 className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
               >
-                Servicios
+                {t.services}
               </Link>
               <Link
-                href="/nosotros"
+                href={`${navPrefix}/nosotros`}
                 className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
               >
-                Nosotros
+                {t.aboutUs}
               </Link>
               <Link
-                href="/contacto"
+                href={`${navPrefix}/contacto`}
                 className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
               >
-                Contacto
+                {t.contact}
               </Link>
             </div>
 
             <h4 className="text-sm font-bold mt-6 mb-4 text-white">
-              Síguenos
+              {t.followUs}
             </h4>
             <div className="flex gap-3">
               <a
@@ -109,28 +186,69 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Contact Form */}
+          {/* Quick Contact Form - Expanded */}
           <div className="lg:col-span-2">
             <h4 className="text-sm font-bold mb-4 text-white">
-              Contacto Rápido
+              {t.quickContact}
             </h4>
             <form onSubmit={handleSubmit} className="space-y-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Tu email"
-                required
-                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#3ECF8E] transition-colors"
-              />
+              {/* Name and Email row */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder={t.namePlaceholder}
+                  required
+                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#3ECF8E] transition-colors"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder={t.emailPlaceholder}
+                  required
+                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#3ECF8E] transition-colors"
+                />
+              </div>
+
+              {/* WhatsApp and Type row */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <input
+                  type="tel"
+                  name="whatsapp"
+                  value={formData.whatsapp}
+                  onChange={handleChange}
+                  placeholder={t.whatsappPlaceholder}
+                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#3ECF8E] transition-colors"
+                />
+                <select
+                  name="tipo"
+                  value={formData.tipo}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-white focus:outline-none focus:border-[#3ECF8E] transition-colors"
+                >
+                  {t.typeOptions.map((opt) => (
+                    <option key={opt.value} value={opt.value} className="bg-neutral-800">
+                      {opt.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Message */}
               <textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="Tu mensaje..."
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder={t.messagePlaceholder}
                 rows={3}
                 required
                 className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#3ECF8E] transition-colors resize-none"
               />
+
               <button
                 type="submit"
                 disabled={status === "sending" || status === "sent"}
@@ -148,18 +266,18 @@ export default function Footer() {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                     </svg>
-                    Enviando...
+                    {t.sending}
                   </>
                 ) : status === "sent" ? (
                   <>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    ¡Enviado!
+                    {t.sent}
                   </>
                 ) : (
                   <>
-                    Enviar mensaje
+                    {t.send}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
@@ -168,7 +286,7 @@ export default function Footer() {
               </button>
             </form>
             <p className="text-xs text-neutral-500 mt-3">
-              Te respondemos en menos de 24 horas.
+              {t.response}
             </p>
           </div>
         </div>
@@ -177,10 +295,10 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-neutral-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-neutral-600">
-              © {new Date().getFullYear()} MaxDigitalCR. Todos los derechos reservados.
+              © {new Date().getFullYear()} MaxDigitalCR. {t.copyright}
             </p>
             <div className="flex items-center gap-2">
-              <span className="text-sm text-neutral-400">Powered by</span>
+              <span className="text-sm text-neutral-400">{t.poweredBy}</span>
               <Image
                 src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png"
                 alt="MaxDigitalCR"
