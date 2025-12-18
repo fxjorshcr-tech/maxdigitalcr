@@ -74,6 +74,27 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Language Switcher */}
+            <div className="flex items-center gap-1 ml-2 border-l pl-4 border-neutral-300">
+              <button
+                className={`text-xl hover:scale-110 transition-transform ${
+                  !pathname.startsWith('/en') ? 'opacity-100' : 'opacity-50'
+                }`}
+                title="Español"
+              >
+                🇨🇷
+              </button>
+              <Link
+                href={`/en${pathname}`}
+                className={`text-xl hover:scale-110 transition-transform ${
+                  pathname.startsWith('/en') ? 'opacity-100' : 'opacity-50'
+                }`}
+                title="English"
+              >
+                🇺🇸
+              </Link>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -131,6 +152,27 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+
+              {/* Language Switcher Mobile */}
+              <div className="flex items-center gap-4 pt-4 mt-2 border-t border-neutral-700">
+                <span className={`text-sm ${scrolled || !isDarkHero ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                  Idioma:
+                </span>
+                <button
+                  className={`text-2xl ${!pathname.startsWith('/en') ? 'opacity-100' : 'opacity-50'}`}
+                  title="Español"
+                >
+                  🇨🇷
+                </button>
+                <Link
+                  href={`/en${pathname}`}
+                  onClick={handleLinkClick}
+                  className={`text-2xl ${pathname.startsWith('/en') ? 'opacity-100' : 'opacity-50'}`}
+                  title="English"
+                >
+                  🇺🇸
+                </Link>
+              </div>
             </div>
           </div>
         )}

@@ -34,7 +34,7 @@ export default function Home() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-white">
-              <span className="whitespace-nowrap">Rápido. Profesional. Accesible.</span>
+              <span className="whitespace-nowrap">Rápido. <span className="text-[#3ECF8E]">Profesional.</span> Accesible.</span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl max-w-2xl mx-auto text-neutral-400">
               Páginas web profesionales a una fracción del costo tradicional.
@@ -99,28 +99,27 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Digital Growth Statistics Section */}
+        {/* Digital Presence Section - Combined Google + AI */}
         <section className="py-24 sm:py-32 px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">El mundo es digital</p>
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Presencia Digital</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                Tus clientes te buscan en Google.
+                Google, IA, redes sociales...
                 <br />
-                <span className="text-neutral-500">¿Te van a encontrar?</span>
+                <span className="text-neutral-500">Tus clientes te buscan en todos lados.</span>
               </h2>
               <p className="text-xl max-w-3xl mx-auto text-neutral-400">
-                En 2025, el 97% de los consumidores buscan negocios locales en Google antes de tomar una decisión de compra.
-                Si no te encuentran, simplemente no existís para ellos.
+                El 97% de los consumidores buscan negocios en Google antes de comprar. Y ahora también preguntan a ChatGPT, Perplexity y otros asistentes de IA. Si no aparecés en ninguno, simplemente no existís.
               </p>
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {[
-                { stat: "5.4B", desc: "personas usan internet en el mundo", icon: "🌍" },
-                { stat: "97%", desc: "buscan negocios en Google antes de comprar", icon: "🔍" },
-                { stat: "75%", desc: "juzgan credibilidad por el diseño web", icon: "💎" },
-                { stat: "53%", desc: "abandonan si tarda más de 3 segundos", icon: "⚡" },
+                { stat: "97%", desc: "buscan en Google antes de comprar", icon: "🔍" },
+                { stat: "1B+", desc: "usuarios preguntan a ChatGPT", icon: "🤖" },
+                { stat: "75%", desc: "juzgan credibilidad por el diseño", icon: "💎" },
+                { stat: "53%", desc: "abandonan si tarda +3 segundos", icon: "⚡" },
               ].map((item) => (
                 <div key={item.stat} className="p-6 rounded-xl border bg-neutral-800 border-neutral-700 text-center transition-all hover:border-[#3ECF8E] hover:scale-105">
                   <div className="text-3xl mb-3">{item.icon}</div>
@@ -130,68 +129,105 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="rounded-2xl p-8 bg-gradient-to-r from-[#3ECF8E]/10 to-transparent border border-[#3ECF8E]/30 text-center">
-              <p className="text-xl md:text-2xl font-semibold text-white mb-2">
-                No tener página web en 2025 es como no tener teléfono en los 90s.
-              </p>
-              <p className="text-neutral-400">
-                Tus competidores ya están online. La pregunta es: ¿vos cuándo?
-              </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="rounded-2xl p-6 bg-neutral-800 border border-neutral-700">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#3ECF8E]/20 rounded-xl flex items-center justify-center shrink-0">
+                    <span className="text-2xl">🔍</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white mb-2">Optimizados para Google</p>
+                    <p className="text-sm text-neutral-400">
+                      SEO técnico, velocidad perfecta y estructura que Google ama. Aparecés primero en los resultados.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="rounded-2xl p-6 bg-neutral-800 border border-neutral-700">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#3ECF8E]/20 rounded-xl flex items-center justify-center shrink-0">
+                    <span className="text-2xl">🤖</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white mb-2">Optimizados para IA</p>
+                    <p className="text-sm text-neutral-400">
+                      Datos estructurados y semántica correcta para que ChatGPT, Claude y Perplexity te recomienden.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* AI Section */}
+        {/* Google My Business Section */}
         <section className="py-24 sm:py-32 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">La nueva satisfacción de necesidades</p>
+                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Reputación Online</p>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
-                  La IA cambió las reglas.
+                  Las estrellas de Google
                   <br />
-                  <span className="text-neutral-400">¿Tu sitio está listo?</span>
+                  <span className="text-neutral-400">venden por vos.</span>
                 </h2>
                 <p className="text-lg mb-6 text-neutral-600">
-                  Las búsquedas ya no son solo en Google. ChatGPT, Perplexity, Claude y otros asistentes de IA
-                  responden millones de consultas diarias. Si tu sitio web no está optimizado, la IA simplemente
-                  no te menciona.
+                  Cuando alguien busca tu negocio en Google, lo primero que ve son las estrellas y reseñas de Google My Business. Un negocio con 4.5+ estrellas genera <strong className="text-neutral-900">270% más clics</strong> que uno sin reseñas.
                 </p>
                 <p className="text-lg mb-8 text-neutral-600">
-                  <strong className="text-neutral-900">Google penaliza sitios lentos y mal construidos.</strong> Los
-                  empuja al fondo de los resultados. Nosotros construimos sitios con rendimiento perfecto:
-                  carga instantánea, código limpio y estructura que la IA entiende.
+                  Tu página web y tu perfil de Google My Business trabajan juntos. Nosotros te ayudamos a configurar ambos para que tu negocio se vea profesional y confiable desde el primer momento.
                 </p>
+                <ul className="space-y-3">
+                  {[
+                    "Configuración de Google My Business",
+                    "Integración con tu página web",
+                    "Estrategia para obtener más reseñas",
+                    "Widget de reseñas en tu sitio"
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-neutral-700">
+                      <svg className="w-5 h-5 text-[#3ECF8E] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               <div className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { stat: "40%", desc: "de búsquedas serán conversacionales en 2025" },
-                    { stat: "1B+", desc: "usuarios activos de ChatGPT" },
-                    { stat: "53%", desc: "de tráfico perdido por sitios lentos" },
-                    { stat: "100", desc: "puntos en PageSpeed o Google te ignora" },
-                  ].map((item) => (
-                    <div key={item.desc} className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-center">
-                      <div className="text-2xl font-bold text-[#3ECF8E] mb-1">{item.stat}</div>
-                      <p className="text-xs text-neutral-500">{item.desc}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="p-6 rounded-xl bg-neutral-900 border border-neutral-700">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#3ECF8E]/20 rounded-xl flex items-center justify-center shrink-0">
-                      <span className="text-[#3ECF8E] text-xl">🤖</span>
-                    </div>
+                {/* Google Review Card Mock */}
+                <div className="bg-white rounded-2xl shadow-xl border border-neutral-200 p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">G</div>
                     <div>
-                      <p className="font-semibold text-white mb-1">Optimizados para IA</p>
-                      <p className="text-sm text-neutral-400">
-                        Nuestros sitios usan datos estructurados, semántica correcta y contenido
-                        que los asistentes de IA pueden leer y recomendar.
-                      </p>
+                      <p className="font-semibold text-neutral-900">Tu Negocio</p>
+                      <div className="flex items-center gap-1">
+                        {[1,2,3,4,5].map((star) => (
+                          <svg key={star} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                        <span className="text-sm text-neutral-500 ml-2">4.9 (127 reseñas)</span>
+                      </div>
                     </div>
                   </div>
+                  <div className="border-t border-neutral-100 pt-4">
+                    <p className="text-sm text-neutral-600 italic">&quot;Excelente servicio, muy profesionales. Mi página quedó increíble y la entregaron super rápido. 100% recomendados.&quot;</p>
+                    <p className="text-xs text-neutral-400 mt-2">— Cliente satisfecho</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  {[
+                    { number: "4.9", label: "Calificación" },
+                    { number: "270%", label: "Más clics" },
+                    { number: "88%", label: "Confían en reseñas" },
+                  ].map((item) => (
+                    <div key={item.label} className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+                      <div className="text-2xl font-bold text-[#3ECF8E]">{item.number}</div>
+                      <p className="text-xs text-neutral-500">{item.label}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
