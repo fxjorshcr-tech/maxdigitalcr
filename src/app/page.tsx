@@ -105,9 +105,9 @@ export default function Home() {
             <div className="text-center mb-16">
               <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">El mundo es digital</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                El mundo satisface sus necesidades en línea.
+                Tus clientes te buscan en Google.
                 <br />
-                <span className="text-neutral-500">¿Ya estás en línea?</span>
+                <span className="text-neutral-500">¿Te van a encontrar?</span>
               </h2>
               <p className="text-xl max-w-3xl mx-auto text-neutral-400">
                 En 2025, el 97% de los consumidores buscan negocios locales en Google antes de tomar una decisión de compra.
