@@ -99,8 +99,8 @@ export default function Footer() {
             <p className="text-sm text-neutral-600">
               © {new Date().getFullYear()} MaxDigitalCR. Todos los derechos reservados.
             </p>
-            <p className="text-sm text-neutral-600">
-              Powered by MaxDigitalCR
+            <p className="text-sm font-bold text-white">
+              Powered by <span className="text-[#3ECF8E]">MaxDigitalCR</span>
             </p>
           </div>
         </div>
