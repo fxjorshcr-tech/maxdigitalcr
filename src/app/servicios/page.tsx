@@ -1,159 +1,355 @@
 import Link from "next/link";
-import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Servicios | MaxDigitalCR",
-  description: "Landing pages, sitios web, sistemas de reservas y e-commerce. Desarrollo web con tecnología de clase mundial.",
-};
-
-// Technical visual components
-function WireframeCube({ className = "" }: { className?: string }) {
+// Checkmark icon component
+function CheckIcon() {
   return (
-    <svg className={className} viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.5">
-      <path d="M20 35 L50 20 L80 35 L80 65 L50 80 L20 65 Z" />
-      <path d="M20 35 L50 50 L80 35" />
-      <path d="M50 50 L50 80" />
-      <path d="M20 35 L20 65" />
-      <path d="M80 35 L80 65" />
+    <svg className="w-5 h-5 text-[#3ECF8E] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
     </svg>
   );
 }
 
-function OrbitalRings({ className = "" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.5">
-      <ellipse cx="100" cy="100" rx="80" ry="30" />
-      <ellipse cx="100" cy="100" rx="80" ry="30" transform="rotate(60 100 100)" />
-      <ellipse cx="100" cy="100" rx="80" ry="30" transform="rotate(120 100 100)" />
-      <circle cx="100" cy="100" r="8" fill="currentColor" />
-    </svg>
-  );
-}
-
-function BlueprintCorners({ className = "" }: { className?: string }) {
-  return (
-    <>
-      <div className={`absolute top-0 left-0 w-8 h-8 border-l border-t ${className}`} />
-      <div className={`absolute top-0 right-0 w-8 h-8 border-r border-t ${className}`} />
-      <div className={`absolute bottom-0 left-0 w-8 h-8 border-l border-b ${className}`} />
-      <div className={`absolute bottom-0 right-0 w-8 h-8 border-r border-b ${className}`} />
-    </>
-  );
-}
-
-export default function ServiciosPage() {
+export default function Servicios() {
   return (
     <>
       <Navbar />
 
-      <main className="bg-white pt-20">
+      <main className="bg-neutral-900">
         {/* Hero Section */}
-        <section className="py-24 sm:py-32 px-6 relative overflow-hidden bg-grid">
-          {/* Technical decorations */}
-          <WireframeCube className="absolute top-20 right-10 w-32 h-32 text-neutral-200 animate-pulse-slow hidden lg:block" />
-          <OrbitalRings className="absolute bottom-10 left-10 w-40 h-40 text-neutral-100 hidden lg:block" />
-
-          <div className="max-w-4xl mx-auto text-center relative">
-            <p className="text-xs text-neutral-400 uppercase tracking-widest mb-6">Nuestros servicios</p>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-neutral-900 leading-tight tracking-tight">
-              Lo que hacemos.
-            </h1>
-            <p className="mt-6 text-xl text-neutral-500 max-w-2xl mx-auto">
-              Sitios web de nueva generación.
+        <section className="pt-32 pb-20 px-6 bg-neutral-900">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Nuestros Servicios</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6">
+              Páginas web que
               <br />
-              Construidos con la mejor tecnología. Entregados en días.
+              <span className="text-neutral-500">impulsan tu negocio.</span>
+            </h1>
+            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+              Desde landing pages en 1 día hasta tiendas online completas.
+              Todo con la mejor tecnología y a precios accesibles.
             </p>
           </div>
         </section>
 
-        {/* Intro */}
-        <section className="py-16 px-6 border-y border-neutral-100 relative">
-          <BlueprintCorners className="border-neutral-200" />
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-lg text-neutral-600 leading-relaxed">
-              Cada negocio es diferente. Por eso no usamos plantillas.
-              <br /><br />
-              Diseñamos y desarrollamos cada proyecto desde cero, usando las mismas herramientas que impulsan a las empresas más innovadoras del mundo.
-              <br /><br />
-              <span className="text-neutral-900 font-semibold">
-                El resultado: sitios rápidos, seguros, y que crecen con tu negocio.
-              </span>
-            </p>
+        {/* What Makes Us Different */}
+        <section className="py-20 px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Nuestra diferencia</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
+                ¿Por qué somos diferentes?
+              </h2>
+              <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+                No solo hacemos páginas web. Creamos una experiencia de desarrollo única.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: "⚡",
+                  title: "Entrega ultra rápida",
+                  desc: "Landing pages en 1-3 días. Sitios catálogo en 3-7 días. E-commerce en 7-10 días. Máximo 10 días hábiles, garantizado."
+                },
+                {
+                  icon: "👀",
+                  title: "Revisión en tiempo real",
+                  desc: "Te compartimos branches de preview para que veas los cambios en tu celular al instante. Sin esperar, sin sorpresas."
+                },
+                {
+                  icon: "🤝",
+                  title: "Acompañamiento total",
+                  desc: "Estamos con vos en cada paso. Desde la primera llamada hasta después del lanzamiento. Nunca te dejamos solo."
+                },
+                {
+                  icon: "💰",
+                  title: "Precios transparentes",
+                  desc: "Sabés exactamente cuánto vas a pagar desde el día 1. Sin costos ocultos, sin sorpresas al final."
+                },
+                {
+                  icon: "🔧",
+                  title: "Soporte incluido",
+                  desc: "30 días de soporte post-lanzamiento incluidos en todos los planes. Después, planes opcionales de mantenimiento."
+                },
+                {
+                  icon: "📱",
+                  title: "100% responsive",
+                  desc: "Tu página se ve perfecta en cualquier dispositivo: celular, tablet, computadora. Sin excepción."
+                },
+              ].map((item) => (
+                <div key={item.title} className="p-6 rounded-xl bg-neutral-50 border border-neutral-200 hover:border-[#3ECF8E] transition-all">
+                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <h3 className="text-lg font-bold text-neutral-900 mb-2">{item.title}</h3>
+                  <p className="text-neutral-600 text-sm">{item.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Performance Social Proof */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900 text-white overflow-hidden relative bg-grid-dark">
+        {/* Main Services */}
+        <section id="planes" className="py-24 px-6 bg-neutral-900">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Planes y Precios</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                Elegí el plan perfecto
+                <br />
+                <span className="text-neutral-500">para tu negocio.</span>
+              </h2>
+              <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+                Todos los planes incluyen diseño responsive, SEO básico y 30 días de soporte.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Landing Page */}
+              <div className="rounded-2xl p-8 bg-neutral-800 border border-neutral-700 hover:border-[#3ECF8E] transition-all">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <span className="text-4xl">📄</span>
+                  </div>
+                  <div className="bg-[#3ECF8E]/20 text-[#3ECF8E] text-xs font-bold px-3 py-1 rounded-full">
+                    1-3 DÍAS
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Landing Page</h3>
+                <p className="text-neutral-400 mb-6">
+                  Página de alto impacto para captar clientes. Perfecta para campañas, lanzamientos o presencia básica.
+                </p>
+                <div className="mb-6">
+                  <span className="text-sm text-neutral-500">desde</span>
+                  <div className="text-4xl font-bold text-[#3ECF8E]">₡100,000</div>
+                  <span className="text-sm text-neutral-500">pago único</span>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Diseño moderno y responsive",
+                    "Hasta 5 secciones",
+                    "Formulario de contacto",
+                    "Optimizado para SEO",
+                    "Integración con WhatsApp",
+                    "30 días de soporte",
+                    "Hosting primer año incluido"
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-neutral-300">
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="p-4 bg-neutral-700/50 rounded-lg mb-6">
+                  <p className="text-xs text-neutral-400 mb-1">Ideal para:</p>
+                  <p className="text-sm text-white">Profesionales independientes, campañas de marketing, lanzamientos</p>
+                </div>
+                <Link
+                  href="/contacto"
+                  className="block text-center py-4 rounded-lg font-medium transition-all bg-neutral-700 text-white hover:bg-neutral-600"
+                >
+                  Cotizar Landing Page
+                </Link>
+              </div>
+
+              {/* Sitio Catálogo */}
+              <div className="rounded-2xl p-8 bg-neutral-800 border-2 border-[#3ECF8E] relative hover:scale-105 transition-all">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <span className="bg-[#3ECF8E] text-neutral-900 text-sm font-bold px-4 py-2 rounded-full">
+                    MÁS POPULAR
+                  </span>
+                </div>
+                <div className="flex items-center justify-between mb-6 mt-2">
+                  <div>
+                    <span className="text-4xl">📚</span>
+                  </div>
+                  <div className="bg-[#3ECF8E]/20 text-[#3ECF8E] text-xs font-bold px-3 py-1 rounded-full">
+                    3-7 DÍAS
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Sitio Catálogo</h3>
+                <p className="text-neutral-400 mb-6">
+                  Sitio web completo para mostrar tus productos o servicios. Múltiples páginas y galería de productos.
+                </p>
+                <div className="mb-6">
+                  <span className="text-sm text-neutral-500">desde</span>
+                  <div className="text-4xl font-bold text-[#3ECF8E]">₡200,000</div>
+                  <span className="text-sm text-neutral-500">pago único</span>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Todo lo de Landing Page +",
+                    "Hasta 10 páginas",
+                    "Galería de productos/servicios",
+                    "Blog opcional",
+                    "Panel de administración",
+                    "Múltiples formularios",
+                    "Integración con redes sociales"
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-neutral-300">
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="p-4 bg-neutral-700/50 rounded-lg mb-6">
+                  <p className="text-xs text-neutral-400 mb-1">Ideal para:</p>
+                  <p className="text-sm text-white">Restaurantes, hoteles, servicios profesionales, portafolios</p>
+                </div>
+                <Link
+                  href="/contacto"
+                  className="block text-center py-4 rounded-lg font-medium transition-all bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
+                >
+                  Cotizar Sitio Catálogo
+                </Link>
+              </div>
+
+              {/* E-Commerce */}
+              <div className="rounded-2xl p-8 bg-neutral-800 border border-neutral-700 hover:border-[#3ECF8E] transition-all">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <span className="text-4xl">🛒</span>
+                  </div>
+                  <div className="bg-[#3ECF8E]/20 text-[#3ECF8E] text-xs font-bold px-3 py-1 rounded-full">
+                    7-10 DÍAS
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">E-Commerce</h3>
+                <p className="text-neutral-400 mb-6">
+                  Tienda online completa con carrito de compras, pagos en línea y gestión de inventario.
+                </p>
+                <div className="mb-6">
+                  <span className="text-sm text-neutral-500">desde</span>
+                  <div className="text-4xl font-bold text-[#3ECF8E]">₡300,000</div>
+                  <span className="text-sm text-neutral-500">+ mantenimiento mensual</span>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Todo lo de Sitio Catálogo +",
+                    "Carrito de compras",
+                    "Procesador de pagos (SINPE/tarjeta)",
+                    "Gestión de inventario",
+                    "Notificaciones de pedidos",
+                    "Panel de ventas",
+                    "Mantenimiento mensual incluido"
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-neutral-300">
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="p-4 bg-neutral-700/50 rounded-lg mb-6">
+                  <p className="text-xs text-neutral-400 mb-1">Ideal para:</p>
+                  <p className="text-sm text-white">Tiendas de ropa, productos artesanales, cualquier negocio con ventas online</p>
+                </div>
+                <Link
+                  href="/contacto"
+                  className="block text-center py-4 rounded-lg font-medium transition-all bg-neutral-700 text-white hover:bg-neutral-600"
+                >
+                  Cotizar E-Commerce
+                </Link>
+              </div>
+            </div>
+
+            {/* Custom Projects */}
+            <div className="mt-12 rounded-2xl p-8 bg-gradient-to-r from-[#3ECF8E]/10 to-transparent border border-[#3ECF8E]/30">
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2">¿Necesitás algo más complejo?</h3>
+                  <p className="text-neutral-400">
+                    Desarrollamos aplicaciones web personalizadas, sistemas de reservas, dashboards,
+                    integraciones con APIs y más. Contanos tu idea.
+                  </p>
+                </div>
+                <Link
+                  href="/contacto"
+                  className="shrink-0 inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all bg-white text-neutral-900 hover:bg-neutral-100"
+                >
+                  Cotizar proyecto personalizado
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* How We Work - Preview System */}
+        <section className="py-24 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="text-sm text-neutral-500 uppercase tracking-widest mb-6">Rendimiento garantizado</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
-                  Páginas que cargan
+                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Proceso único</p>
+                <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
+                  Revisá los cambios
                   <br />
-                  <span className="text-neutral-500">en menos de 1 segundo.</span>
+                  <span className="text-neutral-400">en tiempo real.</span>
                 </h2>
-                <p className="text-lg text-neutral-400 mb-8">
-                  Cada sitio que entregamos está optimizado al máximo nivel.
-                  Rendimiento perfecto en Google PageSpeed.
+                <p className="text-lg text-neutral-600 mb-6">
+                  Olvidate de esperar semanas para ver cómo va tu página. Con nuestro sistema de
+                  preview branches, podés ver cada cambio que hacemos <strong>instantáneamente</strong> en tu celular.
                 </p>
-                <div className="flex flex-wrap gap-4">
-                  <div className="flex items-center gap-2 text-sm text-neutral-400">
-                    <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    SEO optimizado
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-neutral-400">
-                    <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    100% accesible
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-neutral-400">
-                    <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Best practices
-                  </div>
-                </div>
+                <p className="text-lg text-neutral-600 mb-8">
+                  Así trabajamos más rápido, evitamos malentendidos y te entregamos exactamente lo que querés.
+                  Es una forma de desarrollar que antes solo usaban las grandes empresas de tecnología.
+                </p>
+                <ul className="space-y-4">
+                  {[
+                    "Te compartimos un link privado para ver los cambios",
+                    "Funciona en tu celular, tablet o computadora",
+                    "Nos das feedback inmediato por WhatsApp",
+                    "Iteramos hasta que quedes 100% satisfecho"
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-neutral-700">
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              {/* Performance Metrics Display */}
-              <div className="bg-neutral-800 rounded-2xl p-8 border border-neutral-700 relative">
-                <BlueprintCorners className="border-neutral-600" />
+              <div className="bg-neutral-900 rounded-2xl p-8">
                 <div className="flex items-center gap-2 mb-6">
                   <div className="w-3 h-3 rounded-full bg-red-500" />
                   <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                  <div className="w-3 h-3 rounded-full bg-green-500" />
-                  <span className="ml-4 text-sm text-neutral-500 font-mono">PageSpeed Insights</span>
+                  <div className="w-3 h-3 rounded-full bg-[#3ECF8E]" />
+                  <span className="ml-4 text-sm font-mono text-neutral-500">preview.tunegocio.com</span>
                 </div>
-
-                <div className="grid grid-cols-2 gap-6">
-                  {[
-                    { score: 100, label: "Performance", color: "text-green-500" },
-                    { score: 100, label: "Accessibility", color: "text-green-500" },
-                    { score: 100, label: "Best Practices", color: "text-green-500" },
-                    { score: 100, label: "SEO", color: "text-green-500" },
-                  ].map((metric) => (
-                    <div key={metric.label} className="text-center">
-                      <div className={`text-4xl font-bold ${metric.color} mb-1`}>
-                        {metric.score}
-                      </div>
-                      <div className="text-xs text-neutral-500 uppercase tracking-wider">
-                        {metric.label}
-                      </div>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4 p-4 bg-neutral-800 rounded-lg">
+                    <div className="w-10 h-10 bg-[#3ECF8E] rounded-full flex items-center justify-center text-white text-lg">
+                      1
                     </div>
-                  ))}
-                </div>
-
-                <div className="mt-6 pt-6 border-t border-neutral-700">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-neutral-500">Tiempo de carga</span>
-                    <span className="text-green-500 font-mono font-bold">0.8s</span>
+                    <div>
+                      <p className="text-white font-medium">Hacemos un cambio</p>
+                      <p className="text-neutral-500 text-sm">Nuevo diseño del header</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 p-4 bg-neutral-800 rounded-lg">
+                    <div className="w-10 h-10 bg-[#3ECF8E] rounded-full flex items-center justify-center text-white text-lg">
+                      2
+                    </div>
+                    <div>
+                      <p className="text-white font-medium">Abrís el link en tu cel</p>
+                      <p className="text-neutral-500 text-sm">Ves el cambio al instante</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 p-4 bg-neutral-800 rounded-lg">
+                    <div className="w-10 h-10 bg-[#3ECF8E] rounded-full flex items-center justify-center text-white text-lg">
+                      3
+                    </div>
+                    <div>
+                      <p className="text-white font-medium">Nos escribís por WhatsApp</p>
+                      <p className="text-neutral-500 text-sm">&ldquo;Me gusta, pero cambiá el color&rdquo;</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 p-4 bg-[#3ECF8E]/20 border border-[#3ECF8E] rounded-lg">
+                    <div className="w-10 h-10 bg-[#3ECF8E] rounded-full flex items-center justify-center text-neutral-900 text-lg">
+                      ✓
+                    </div>
+                    <div>
+                      <p className="text-white font-medium">Listo en minutos</p>
+                      <p className="text-neutral-400 text-sm">Sin esperas, sin emails eternos</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -161,454 +357,226 @@ export default function ServiciosPage() {
           </div>
         </section>
 
-        {/* Service 1: Landing Pages */}
-        <section className="py-24 sm:py-32 px-6 relative bg-grid">
+        {/* Maintenance & Support */}
+        <section className="py-24 px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              <div className="relative">
-                <WireframeCube className="absolute -top-8 -left-8 w-16 h-16 text-neutral-200 hidden lg:block" />
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-neutral-100 rounded-2xl mb-6">
-                  <svg className="w-8 h-8 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
-                  Landing Pages
-                </h2>
-                <p className="text-xl text-neutral-500 mb-8">
-                  Una sola página. Un solo objetivo. Máximo impacto.
-                </p>
-
-                <div className="mb-8">
-                  <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-widest mb-4">
-                    Ideal para
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {["Lanzamientos", "Campañas", "Presencia rápida", "Validar ideas"].map((item) => (
-                      <span key={item} className="px-4 py-2 bg-neutral-100 rounded-full text-sm text-neutral-700 font-medium">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between pt-6 border-t border-neutral-200">
-                  <span className="text-sm text-neutral-500 font-mono">Entrega: 5-7 días</span>
-                  <Link
-                    href="/#contacto"
-                    className="inline-flex items-center gap-2 text-neutral-900 font-medium hover:gap-3 transition-all text-sm"
-                  >
-                    Solicitar cotización
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-
-              <div className="bg-neutral-50 rounded-2xl p-8 border border-neutral-100 relative">
-                <BlueprintCorners className="border-neutral-200" />
-                <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-widest mb-6">
-                  Incluye
-                </h3>
-                <ul className="space-y-4">
-                  {[
-                    "Diseño personalizado",
-                    "Formulario de contacto",
-                    "Correo automático de confirmación",
-                    "Optimización SEO",
-                    "Velocidad sub-segundo",
-                    "100% responsive",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-neutral-700">
-                      <svg className="w-5 h-5 text-neutral-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Service 2: Sitios Web */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900 text-white relative bg-grid-dark">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              <div className="lg:order-2 relative">
-                <OrbitalRings className="absolute -top-8 -right-8 w-24 h-24 text-neutral-700 hidden lg:block" />
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-neutral-800 rounded-2xl mb-6 border border-neutral-700">
-                  <svg className="w-8 h-8 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                  </svg>
-                </div>
-                <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                  Sitios Web
-                </h2>
-                <p className="text-xl text-neutral-400 mb-8">
-                  Tu negocio en línea. Profesional y listo para crecer.
-                </p>
-
-                <div className="mb-8">
-                  <h3 className="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">
-                    Ideal para
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {["Hoteles", "Restaurantes", "Tour operadores", "Profesionales", "Empresas"].map((item) => (
-                      <span key={item} className="px-4 py-2 bg-neutral-800 rounded-full text-sm text-neutral-300 border border-neutral-700">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between pt-6 border-t border-neutral-700">
-                  <span className="text-sm text-neutral-500 font-mono">Entrega: 7-10 días</span>
-                  <Link
-                    href="/#contacto"
-                    className="inline-flex items-center gap-2 text-white font-medium hover:gap-3 transition-all text-sm"
-                  >
-                    Solicitar cotización
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-
-              <div className="bg-neutral-800 rounded-2xl p-8 lg:order-1 border border-neutral-700 relative">
-                <BlueprintCorners className="border-neutral-600" />
-                <h3 className="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-6">
-                  Incluye
-                </h3>
-                <ul className="space-y-4">
-                  {[
-                    "Múltiples páginas (Home, Servicios, Nosotros, Contacto)",
-                    "Catálogo de productos o servicios",
-                    "Página individual por cada oferta",
-                    "Galería de fotos optimizada",
-                    "Integración con WhatsApp",
-                    "Google Analytics",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-neutral-300">
-                      <svg className="w-5 h-5 text-neutral-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Service 3: Sistemas de Reservas */}
-        <section className="py-24 sm:py-32 px-6 relative bg-dots">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              <div className="relative">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-neutral-100 rounded-2xl mb-6">
-                  <svg className="w-8 h-8 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
-                  Sistemas de Reservas
-                </h2>
-                <p className="text-xl text-neutral-500 mb-8">
-                  Tu negocio funcionando 24/7. Sin intervención manual.
-                </p>
-
-                <div className="mb-8">
-                  <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-widest mb-4">
-                    Ideal para
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {["Hoteles", "Tours y actividades", "Spas", "Servicios con citas", "Alquileres"].map((item) => (
-                      <span key={item} className="px-4 py-2 bg-neutral-100 rounded-full text-sm text-neutral-700 font-medium">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between pt-6 border-t border-neutral-200">
-                  <span className="text-sm text-neutral-500 font-mono">Entrega: 10-14 días</span>
-                  <Link
-                    href="/#contacto"
-                    className="inline-flex items-center gap-2 text-neutral-900 font-medium hover:gap-3 transition-all text-sm"
-                  >
-                    Solicitar cotización
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-
-              <div className="bg-neutral-50 rounded-2xl p-8 border border-neutral-100 relative">
-                <BlueprintCorners className="border-neutral-200" />
-                <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-widest mb-6">
-                  Incluye
-                </h3>
-                <ul className="space-y-4">
-                  {[
-                    "Todo lo del sitio web",
-                    "Formularios de reserva inteligentes",
-                    "Base de datos de clientes",
-                    "Correos automáticos de confirmación",
-                    "Panel administrativo",
-                    "Respaldos automáticos",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-neutral-700">
-                      <svg className="w-5 h-5 text-neutral-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Service 4: E-Commerce */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900 text-white relative bg-grid-dark">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              <div className="lg:order-2 relative">
-                <WireframeCube className="absolute -top-8 -right-8 w-20 h-20 text-neutral-700 hidden lg:block animate-float" />
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-neutral-800 rounded-2xl mb-6 border border-neutral-700">
-                  <svg className="w-8 h-8 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                  E-Commerce
-                </h2>
-                <p className="text-xl text-neutral-400 mb-8">
-                  Vendé en línea. Cobrá en línea. Sin complicaciones.
-                </p>
-
-                <div className="mb-8">
-                  <h3 className="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">
-                    Ideal para
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {["Tiendas", "Productos digitales", "Servicios con pago", "Negocios que escalan"].map((item) => (
-                      <span key={item} className="px-4 py-2 bg-neutral-800 rounded-full text-sm text-neutral-300 border border-neutral-700">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between pt-6 border-t border-neutral-700">
-                  <span className="text-sm text-neutral-500 font-mono">Entrega: 14-21 días</span>
-                  <Link
-                    href="/#contacto"
-                    className="inline-flex items-center gap-2 text-white font-medium hover:gap-3 transition-all text-sm"
-                  >
-                    Solicitar cotización
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-
-              <div className="bg-neutral-800 rounded-2xl p-8 lg:order-1 border border-neutral-700 relative">
-                <BlueprintCorners className="border-neutral-600" />
-                <h3 className="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-6">
-                  Incluye
-                </h3>
-                <ul className="space-y-4">
-                  {[
-                    "Todo lo anterior",
-                    "Pasarela de pagos (SINPE / Tarjeta)",
-                    "Carrito de compras",
-                    "Gestión de inventario",
-                    "Notificaciones de venta",
-                    "Términos y condiciones",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-neutral-300">
-                      <svg className="w-5 h-5 text-neutral-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Technology Section */}
-        <section className="py-24 sm:py-32 px-6 bg-grid relative">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16 relative">
-              <OrbitalRings className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 text-neutral-100 -z-10" />
-              <p className="text-xs text-neutral-400 uppercase tracking-widest mb-4">La diferencia</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
-                ¿Por qué importa la tecnología?
+            <div className="text-center mb-16">
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Después del lanzamiento</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                Mantenimiento y Soporte
               </h2>
-              <p className="text-neutral-500">
-                No todos los sitios son iguales por dentro.
+              <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+                No todas las páginas necesitan mantenimiento constante, pero todas necesitan soporte.
               </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              {/* No Maintenance Needed */}
+              <div className="rounded-2xl p-8 bg-neutral-800 border border-neutral-700">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
+                    <span className="text-2xl">📄</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Landing y Catálogo</h3>
+                    <p className="text-neutral-500">Sin mantenimiento obligatorio</p>
+                  </div>
+                </div>
+                <p className="text-neutral-400 mb-6">
+                  Las páginas estáticas (landing pages y catálogos) no requieren mantenimiento mensual.
+                  Una vez entregadas, funcionan perfectamente sin intervención.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between p-3 bg-neutral-700/50 rounded-lg">
+                    <span className="text-neutral-300">Soporte incluido</span>
+                    <span className="text-[#3ECF8E] font-medium">30 días gratis</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-neutral-700/50 rounded-lg">
+                    <span className="text-neutral-300">Cambios menores después</span>
+                    <span className="text-white font-medium">Se cotizan aparte</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Maintenance Required */}
+              <div className="rounded-2xl p-8 bg-neutral-800 border border-[#3ECF8E]">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-[#3ECF8E]/20 rounded-xl flex items-center justify-center">
+                    <span className="text-2xl">🛒</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">E-Commerce</h3>
+                    <p className="text-neutral-500">Mantenimiento mensual incluido</p>
+                  </div>
+                </div>
+                <p className="text-neutral-400 mb-6">
+                  Las tiendas online requieren mantenimiento constante: actualizaciones de seguridad,
+                  backups, monitoreo del procesador de pagos, y soporte técnico continuo.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between p-3 bg-neutral-700/50 rounded-lg">
+                    <span className="text-neutral-300">Actualizaciones de seguridad</span>
+                    <span className="text-[#3ECF8E]">✓</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-neutral-700/50 rounded-lg">
+                    <span className="text-neutral-300">Backups automáticos</span>
+                    <span className="text-[#3ECF8E]">✓</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-neutral-700/50 rounded-lg">
+                    <span className="text-neutral-300">Soporte prioritario</span>
+                    <span className="text-[#3ECF8E]">✓</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-neutral-700/50 rounded-lg">
+                    <span className="text-neutral-300">Cambios menores incluidos</span>
+                    <span className="text-[#3ECF8E]">✓</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Important Note */}
+            <div className="rounded-xl p-6 bg-neutral-800 border border-neutral-700">
+              <p className="text-center text-neutral-400">
+                <strong className="text-white">Importante:</strong> Aunque no todas las páginas requieren mantenimiento,
+                siempre es buena idea tener un plan de soporte. La tecnología cambia y tu negocio también.
+                Estamos aquí cuando nos necesités.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Additional Costs */}
+        <section className="py-24 px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Costos adicionales</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
+                Costos que corren por tu cuenta
+              </h2>
+              <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+                Somos transparentes. Estos son costos externos que vos pagás directamente a los proveedores.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {/* Domain */}
+              <div className="rounded-2xl p-8 bg-neutral-50 border border-neutral-200">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-neutral-900 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl">🌐</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-neutral-900">Dominio</h3>
+                    <p className="text-neutral-500">tunegocio.com o .cr</p>
+                  </div>
+                </div>
+                <div className="text-center py-4 bg-white rounded-lg border border-neutral-200 mb-6">
+                  <span className="text-sm text-neutral-500">aproximadamente</span>
+                  <div className="text-3xl font-bold text-neutral-900">$11-15</div>
+                  <span className="text-sm text-neutral-500">por año</span>
+                </div>
+                <p className="text-neutral-600 text-sm">
+                  El dominio es la dirección de tu página (ej: tunegocio.com). Lo registrás a tu nombre
+                  y es tuyo para siempre. Te ayudamos con el proceso de registro.
+                </p>
+              </div>
+
+              {/* Email */}
+              <div className="rounded-2xl p-8 bg-neutral-50 border border-neutral-200">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-neutral-900 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl">📧</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-neutral-900">Correo Profesional</h3>
+                    <p className="text-neutral-500">info@tunegocio.com</p>
+                  </div>
+                </div>
+                <div className="text-center py-4 bg-white rounded-lg border border-neutral-200 mb-6">
+                  <span className="text-sm text-neutral-500">desde</span>
+                  <div className="text-3xl font-bold text-neutral-900">$6</div>
+                  <span className="text-sm text-neutral-500">por cuenta / mes</span>
+                </div>
+                <p className="text-neutral-600 text-sm">
+                  Correo profesional con tu dominio (ej: info@tunegocio.com). Usamos Google Workspace
+                  o alternativas más económicas según tu presupuesto. Te ayudamos a configurarlo.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 text-center">
+              <p className="text-neutral-500">
+                <strong className="text-neutral-900">Nota:</strong> El hosting del primer año está incluido
+                en todos nuestros planes. Después, el costo es mínimo (aproximadamente $5-10/mes).
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-24 px-6 bg-neutral-900">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Preguntas frecuentes</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white">
+                ¿Tenés dudas?
+              </h2>
             </div>
 
             <div className="space-y-4">
               {[
                 {
-                  name: "Next.js + React",
-                  description: "El framework que usa TikTok, Notion, Twitch.",
-                  benefit: "Sitios que cargan instantáneamente.",
+                  q: "¿Cuánto tiempo tardan en entregar mi página?",
+                  a: "Depende del tipo de proyecto. Landing pages: 1-3 días. Sitios catálogo: 3-7 días. E-commerce: 7-10 días. Nunca más de 10 días hábiles."
                 },
                 {
-                  name: "Vercel",
-                  description: "Hosting de The Washington Post y Under Armour.",
-                  benefit: "Disponibilidad global. Velocidad extrema.",
+                  q: "¿Qué pasa si no me gusta el diseño?",
+                  a: "Con nuestro sistema de preview en tiempo real, vas viendo cada cambio. Si algo no te gusta, lo ajustamos al instante. Iteramos hasta que quedes 100% satisfecho."
                 },
                 {
-                  name: "Supabase",
-                  description: "Base de datos de Mozilla, PwC, 1Password.",
-                  benefit: "Segura. Escalable. Moderna.",
+                  q: "¿Puedo hacer cambios después de que la página esté lista?",
+                  a: "Sí. Los primeros 30 días de soporte están incluidos. Después, podés contratar un plan de mantenimiento o pagar por cambios puntuales."
                 },
                 {
-                  name: "TypeScript",
-                  description: "El lenguaje de Google, Microsoft, Slack.",
-                  benefit: "Código limpio. Menos errores.",
-                },
-              ].map((tech) => (
-                <div
-                  key={tech.name}
-                  className="p-6 bg-white border border-neutral-200 rounded-xl hover:border-neutral-400 hover:shadow-lg transition-all group"
-                >
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <h3 className="text-lg font-bold text-neutral-900 mb-1 group-hover:text-neutral-700 transition-colors">
-                        {tech.name}
-                      </h3>
-                      <p className="text-sm text-neutral-500 mb-2">
-                        {tech.description}
-                      </p>
-                      <p className="text-sm text-neutral-900 font-medium">
-                        {tech.benefit}
-                      </p>
-                    </div>
-                    <svg className="w-5 h-5 text-neutral-300 group-hover:text-neutral-500 transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12 text-center text-sm text-neutral-500 max-w-2xl mx-auto p-6 border border-dashed border-neutral-300 rounded-xl">
-              <p className="font-medium text-neutral-700 mb-4">Esto no es jerga técnica para impresionar.</p>
-              <p>
-                Es la diferencia entre un sitio que carga en 1 segundo y uno que carga en 5.
-                <br />
-                Entre uno que se cae y uno que aguanta miles de visitas.
-                <br />
-                Entre uno que se hackea y uno que está protegido por defecto.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Process Section */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-50 bg-dots relative">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <p className="text-xs text-neutral-400 uppercase tracking-widest mb-4">El proceso</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900">
-                ¿Cómo trabajamos?
-              </h2>
-            </div>
-
-            <div className="space-y-0">
-              {[
-                {
-                  step: "01",
-                  title: "Conversación",
-                  description: "Nos escribís. Hablamos de tu proyecto. Sin compromiso, sin jerga. Entendemos qué necesitás y qué querés lograr.",
+                  q: "¿El hosting está incluido?",
+                  a: "Sí, el hosting del primer año está incluido en todos los planes. Después el costo es mínimo (aproximadamente $5-10/mes)."
                 },
                 {
-                  step: "02",
-                  title: "Propuesta",
-                  description: "Te enviamos un documento claro: qué vamos a hacer, cuánto tarda, cuánto cuesta. Sin sorpresas.",
+                  q: "¿Necesito saber de tecnología?",
+                  a: "Para nada. Nosotros nos encargamos de todo lo técnico. Vos solo nos decís qué querés y nosotros lo hacemos realidad."
                 },
                 {
-                  step: "03",
-                  title: "Desarrollo",
-                  description: "Construimos. Te mostramos avances. Ajustamos juntos. No entregamos hasta que estés 100% satisfecho.",
+                  q: "¿Qué métodos de pago aceptan?",
+                  a: "SINPE Móvil, transferencia bancaria, y para e-commerce configuramos el procesador de pagos que prefieras (SINPE, tarjeta, etc)."
                 },
-                {
-                  step: "04",
-                  title: "Lanzamiento",
-                  description: "Tu sitio en vivo. Todo configurado. Todo documentado. Te explicamos cómo funciona y cómo mantenerlo.",
-                },
-              ].map((item, index) => (
-                <div key={item.step} className="flex gap-6 items-start relative">
-                  {/* Connecting line */}
-                  {index < 3 && (
-                    <div className="absolute left-8 top-16 w-px h-16 bg-neutral-200" />
-                  )}
-                  <div className="w-16 h-16 shrink-0 flex items-center justify-center bg-white border border-neutral-200 rounded-2xl font-mono text-lg text-neutral-400">
-                    {item.step}
-                  </div>
-                  <div className="pt-3 pb-12">
-                    <h3 className="text-lg font-bold text-neutral-900 mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-neutral-500">
-                      {item.description}
-                    </p>
-                  </div>
+              ].map((item) => (
+                <div key={item.q} className="rounded-xl p-6 bg-neutral-800 border border-neutral-700">
+                  <h3 className="text-lg font-semibold text-white mb-2">{item.q}</h3>
+                  <p className="text-neutral-400">{item.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section id="contacto" className="py-24 sm:py-32 px-6 bg-neutral-900 text-white relative overflow-hidden">
-          <WireframeCube className="absolute top-10 left-10 w-32 h-32 text-neutral-800 animate-pulse-slow" />
-          <OrbitalRings className="absolute bottom-10 right-10 w-48 h-48 text-neutral-800" />
-
-          <div className="max-w-xl mx-auto text-center relative">
-            <p className="text-xs text-neutral-500 uppercase tracking-widest mb-4">Empezá hoy</p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+        {/* CTA */}
+        <section className="py-24 px-6 bg-neutral-800">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
               ¿Listo para empezar?
             </h2>
-            <p className="text-neutral-400 mb-8">
-              Contanos sobre tu proyecto. Sin compromiso.
+            <p className="text-lg text-neutral-400 mb-10 max-w-2xl mx-auto">
+              Contanos tu idea y te damos una cotización sin compromiso en menos de 24 horas.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/#contacto"
-                className="inline-flex items-center justify-center gap-2 bg-white text-neutral-900 px-8 py-4 rounded-full text-sm font-medium hover:bg-neutral-100 transition-colors"
-              >
-                Contactar
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-              <a
-                href="https://wa.me/50688888888"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 border border-neutral-700 px-8 py-4 rounded-full text-sm font-medium hover:border-neutral-500 transition-colors"
-              >
-                WhatsApp
-              </a>
-            </div>
+            <Link
+              href="/contacto"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
+            >
+              Cotizar mi página
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </section>
       </main>

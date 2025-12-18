@@ -4,11 +4,9 @@ import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import type { ISourceOptions } from "@tsparticles/engine";
-import { useTheme } from "./ThemeProvider";
 
 export default function ParticleBackground() {
   const [init, setInit] = useState(false);
-  const { theme } = useTheme();
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -51,13 +49,13 @@ export default function ParticleBackground() {
       },
       particles: {
         color: {
-          value: theme === "dark" ? "#3ECF8E" : "#0a0a0a",
+          value: "#3ECF8E",
         },
         links: {
-          color: theme === "dark" ? "#3ECF8E" : "#0a0a0a",
+          color: "#3ECF8E",
           distance: 150,
           enable: true,
-          opacity: theme === "dark" ? 0.3 : 0.15,
+          opacity: 0.3,
           width: 1,
         },
         move: {
@@ -79,7 +77,7 @@ export default function ParticleBackground() {
           value: 80,
         },
         opacity: {
-          value: theme === "dark" ? 0.5 : 0.3,
+          value: 0.5,
         },
         shape: {
           type: "circle",
@@ -90,7 +88,7 @@ export default function ParticleBackground() {
       },
       detectRetina: true,
     }),
-    [theme]
+    []
   );
 
   if (!init) {
