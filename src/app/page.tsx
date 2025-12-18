@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import LogoCarousel from "@/components/LogoCarousel";
 
 // Checkmark icon component
 function CheckIcon() {
@@ -62,43 +62,7 @@ export default function Home() {
         </section>
 
         {/* Client Logos */}
-        <section className="py-16 px-6 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <p className="text-center text-sm uppercase tracking-widest mb-10 text-neutral-900 font-bold">
-              Confían en nosotros
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
-              <Image
-                src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/Logo%20CWT%20Costa%20Rica-FINAL-01.png"
-                alt="Can't Wait Travel"
-                width={200}
-                height={80}
-                className="h-14 md:h-18 w-auto"
-              />
-              <Image
-                src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/WhatsApp%20Image%202025-12-15%20at%2010.26.40%20PM.jpeg"
-                alt="Go Adventures"
-                width={200}
-                height={80}
-                className="h-14 md:h-18 w-auto"
-              />
-              <Image
-                src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/Orostudios%20CR%20Logo%20(2).webp"
-                alt="Orostudios CR"
-                width={200}
-                height={80}
-                className="h-14 md:h-18 w-auto"
-              />
-              <Image
-                src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-grupo-oroz.png"
-                alt="Grupo Oroz"
-                width={200}
-                height={80}
-                className="h-14 md:h-18 w-auto"
-              />
-            </div>
-          </div>
-        </section>
+        <LogoCarousel title="Confían en nosotros" />
 
         {/* Páginas Web Profesionales */}
         <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-neutral-900">
