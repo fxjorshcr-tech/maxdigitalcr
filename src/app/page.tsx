@@ -172,16 +172,19 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
                 {[
-                  { number: "SSL", label: "Seguridad incluida" },
-                  { number: "100%", label: "Clientes satisfechos" },
-                  { number: "24h", label: "Tiempo de respuesta" },
-                  { number: "🇨🇷", label: "100% Ticos" },
+                  { icon: "⚡", title: "Entrega rápida", desc: "Tu página lista en 1-10 días hábiles" },
+                  { icon: "💬", title: "Comunicación directa", desc: "Hablás con quien hace tu página" },
+                  { icon: "🔧", title: "Soporte continuo", desc: "Siempre hay alguien para ayudarte" },
+                  { icon: "🇨🇷", title: "100% Ticos", desc: "Entendemos el mercado local" },
                 ].map((item) => (
-                  <div key={item.label} className="p-6 rounded-xl bg-neutral-50 border border-neutral-200 text-center">
-                    <div className="text-3xl font-bold text-[#3ECF8E] mb-2">{item.number}</div>
-                    <p className="text-sm text-neutral-600">{item.label}</p>
+                  <div key={item.title} className="flex items-center gap-4 p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+                    <div className="text-2xl">{item.icon}</div>
+                    <div>
+                      <p className="font-semibold text-neutral-900">{item.title}</p>
+                      <p className="text-sm text-neutral-500">{item.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>

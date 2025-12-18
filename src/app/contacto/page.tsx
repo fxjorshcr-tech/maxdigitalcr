@@ -126,7 +126,7 @@ export default function Contacto() {
                 <div className="space-y-6 mb-12">
                   {/* WhatsApp */}
                   <a
-                    href="https://wa.me/50688888888"
+                    href="https://wa.me/50685962438"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 p-6 bg-[#25D366]/10 border border-[#25D366]/30 rounded-xl hover:bg-[#25D366]/20 transition-all"
@@ -262,7 +262,7 @@ export default function Contacto() {
               Es la forma más rápida de contactarnos. Escribinos y te respondemos al toque.
             </p>
             <a
-              href="https://wa.me/50688888888"
+              href="https://wa.me/50685962438"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-full font-medium hover:bg-[#128C7E] transition-all"

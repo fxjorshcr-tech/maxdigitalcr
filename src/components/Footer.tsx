@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -68,7 +69,7 @@ export default function Footer() {
                 hola@maxdigitalcr.com
               </a>
               <a
-                href="https://wa.me/50688888888"
+                href="https://wa.me/50685962438"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
@@ -99,9 +100,16 @@ export default function Footer() {
             <p className="text-sm text-neutral-600">
               © {new Date().getFullYear()} MaxDigitalCR. Todos los derechos reservados.
             </p>
-            <p className="text-sm font-bold text-white">
-              Powered by <span className="text-[#3ECF8E]">MaxDigitalCR</span>
-            </p>
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-neutral-400">Powered by</span>
+              <Image
+                src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png"
+                alt="MaxDigitalCR"
+                width={120}
+                height={40}
+                className="h-6 w-auto brightness-0 invert"
+              />
+            </div>
           </div>
         </div>
       </div>
