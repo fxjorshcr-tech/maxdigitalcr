@@ -17,7 +17,7 @@ export default function Navbar() {
   const basePath = isEnglish ? pathname.replace('/en', '') || '/' : pathname;
 
   // Determine if we're on a page with a dark hero (both Spanish and English versions)
-  const darkHeroPages = ['/', '/servicios', '/nosotros', '/contacto'];
+  const darkHeroPages = ['/', '/nosotros', '/contacto'];
   const isDarkHero = darkHeroPages.includes(basePath);
 
   useEffect(() => {
@@ -36,11 +36,9 @@ export default function Navbar() {
 
   // Navigation links with translations
   const navLinks = isEnglish ? [
-    { href: "/en/servicios", label: "Services" },
     { href: "/en/nosotros", label: "About" },
     { href: "/en/contacto", label: "Contact", isCTA: true },
   ] : [
-    { href: "/servicios", label: "Servicios" },
     { href: "/nosotros", label: "Nosotros" },
     { href: "/contacto", label: "Contacto", isCTA: true },
   ];

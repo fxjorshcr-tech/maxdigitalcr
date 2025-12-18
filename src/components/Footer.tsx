@@ -129,12 +129,6 @@ export default function Footer() {
                 {t.home}
               </Link>
               <Link
-                href={`${navPrefix}/servicios`}
-                className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
-              >
-                {t.services}
-              </Link>
-              <Link
                 href={`${navPrefix}/nosotros`}
                 className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
               >
