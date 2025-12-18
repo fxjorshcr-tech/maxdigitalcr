@@ -3,22 +3,30 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { useTheme } from "./ThemeProvider";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme } = useTheme();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-100">
+    <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b transition-colors duration-300 ${
+      theme === "dark"
+        ? "bg-neutral-900/80 border-neutral-800"
+        : "bg-white/80 border-neutral-100"
+    }`}>
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo - Made bigger */}
           <Link href="/" className="flex items-center">
             <Image
               src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png"
               alt="MaxDigitalCR"
-              width={180}
-              height={56}
-              className="h-14 w-auto"
+              width={220}
+              height={68}
+              className={`h-16 md:h-20 w-auto transition-all ${
+                theme === "dark" ? "brightness-0 invert" : ""
+              }`}
               priority
             />
           </Link>
@@ -27,19 +35,31 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-8">
             <Link
               href="#proyectos"
-              className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
+              className={`text-sm transition-colors ${
+                theme === "dark"
+                  ? "text-neutral-400 hover:text-white"
+                  : "text-neutral-600 hover:text-neutral-900"
+              }`}
             >
               Proyectos
             </Link>
             <Link
               href="/servicios"
-              className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
+              className={`text-sm transition-colors ${
+                theme === "dark"
+                  ? "text-neutral-400 hover:text-white"
+                  : "text-neutral-600 hover:text-neutral-900"
+              }`}
             >
               Servicios
             </Link>
             <Link
               href="#contacto"
-              className="text-sm bg-neutral-900 text-white px-5 py-2.5 rounded-full hover:bg-neutral-800 transition-colors"
+              className={`text-sm px-5 py-2.5 rounded-full transition-colors ${
+                theme === "dark"
+                  ? "bg-white text-neutral-900 hover:bg-neutral-200"
+                  : "bg-neutral-900 text-white hover:bg-neutral-800"
+              }`}
             >
               Contacto
             </Link>
@@ -52,7 +72,7 @@ export default function Navbar() {
             aria-label="Toggle menu"
           >
             <svg
-              className="w-6 h-6"
+              className={`w-6 h-6 ${theme === "dark" ? "text-white" : "text-neutral-900"}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -78,25 +98,39 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden pt-4 pb-2 border-t border-neutral-100 mt-4">
+          <div className={`md:hidden pt-4 pb-2 border-t mt-4 ${
+            theme === "dark" ? "border-neutral-800" : "border-neutral-100"
+          }`}>
             <div className="flex flex-col gap-4">
               <Link
                 href="#proyectos"
-                className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
+                className={`text-sm transition-colors ${
+                  theme === "dark"
+                    ? "text-neutral-400 hover:text-white"
+                    : "text-neutral-600 hover:text-neutral-900"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Proyectos
               </Link>
               <Link
                 href="/servicios"
-                className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
+                className={`text-sm transition-colors ${
+                  theme === "dark"
+                    ? "text-neutral-400 hover:text-white"
+                    : "text-neutral-600 hover:text-neutral-900"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Servicios
               </Link>
               <Link
                 href="#contacto"
-                className="text-sm bg-neutral-900 text-white px-5 py-2.5 rounded-full hover:bg-neutral-800 transition-colors text-center"
+                className={`text-sm px-5 py-2.5 rounded-full text-center transition-colors ${
+                  theme === "dark"
+                    ? "bg-white text-neutral-900 hover:bg-neutral-200"
+                    : "bg-neutral-900 text-white hover:bg-neutral-800"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contacto
