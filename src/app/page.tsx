@@ -7,74 +7,6 @@ import Footer from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
 import { useTheme } from "@/components/ThemeProvider";
 
-// Wireframe cube
-function WireframeCube({ className = "" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.5">
-      <path d="M 25 25 L 75 25 L 75 75 L 25 75 Z" opacity="0.3" />
-      <path d="M 15 35 L 65 35 L 65 85 L 15 85 Z" opacity="0.6" />
-      <line x1="15" y1="35" x2="25" y2="25" opacity="0.4" />
-      <line x1="65" y1="35" x2="75" y2="25" opacity="0.4" />
-      <line x1="65" y1="85" x2="75" y2="75" opacity="0.4" />
-      <line x1="15" y1="85" x2="25" y2="75" opacity="0.4" />
-    </svg>
-  );
-}
-
-// Orbital rings
-function OrbitalRings({ className = "" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 200 200" fill="none">
-      <circle cx="100" cy="100" r="80" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
-      <circle cx="100" cy="100" r="60" stroke="currentColor" strokeWidth="0.5" opacity="0.3" />
-      <circle cx="100" cy="100" r="40" stroke="currentColor" strokeWidth="0.5" opacity="0.4" />
-      <circle cx="100" cy="100" r="4" fill="currentColor" opacity="0.5" />
-      <circle cx="100" cy="20" r="3" fill="currentColor" opacity="0.4" />
-      <circle cx="160" cy="100" r="2" fill="currentColor" opacity="0.3" />
-      <circle cx="60" cy="140" r="2.5" fill="currentColor" opacity="0.35" />
-    </svg>
-  );
-}
-
-// Connection nodes for dark sections
-function ConnectionNodes() {
-  return (
-    <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <pattern id="dots" width="60" height="60" patternUnits="userSpaceOnUse">
-          <circle cx="30" cy="30" r="1" fill="rgba(255,255,255,0.15)" />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#dots)" />
-      <g stroke="rgba(255,255,255,0.1)" strokeWidth="1">
-        <line x1="10%" y1="20%" x2="30%" y2="40%" />
-        <line x1="30%" y1="40%" x2="50%" y2="30%" />
-        <line x1="70%" y1="60%" x2="90%" y2="50%" />
-      </g>
-      <g fill="rgba(255,255,255,0.2)">
-        <circle cx="10%" cy="20%" r="4" />
-        <circle cx="30%" cy="40%" r="3" />
-        <circle cx="50%" cy="30%" r="4" />
-        <circle cx="70%" cy="60%" r="3" />
-        <circle cx="90%" cy="50%" r="4" />
-      </g>
-    </svg>
-  );
-}
-
-// Blueprint corner marks
-function BlueprintCorners({ className = "" }: { className?: string }) {
-  const { theme } = useTheme();
-  return (
-    <div className={`absolute inset-4 pointer-events-none ${className}`}>
-      <div className={`absolute top-0 left-0 w-8 h-8 border-l border-t ${theme === "dark" ? "border-neutral-700" : "border-neutral-200"}`} />
-      <div className={`absolute top-0 right-0 w-8 h-8 border-r border-t ${theme === "dark" ? "border-neutral-700" : "border-neutral-200"}`} />
-      <div className={`absolute bottom-0 left-0 w-8 h-8 border-l border-b ${theme === "dark" ? "border-neutral-700" : "border-neutral-200"}`} />
-      <div className={`absolute bottom-0 right-0 w-8 h-8 border-r border-b ${theme === "dark" ? "border-neutral-700" : "border-neutral-200"}`} />
-    </div>
-  );
-}
-
 // Theme Toggle Component
 function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -103,6 +35,15 @@ function ThemeToggle() {
   );
 }
 
+// Checkmark icon component
+function CheckIcon() {
+  return (
+    <svg className="w-5 h-5 text-[#3ECF8E] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+    </svg>
+  );
+}
+
 export default function Home() {
   const { theme } = useTheme();
 
@@ -112,11 +53,8 @@ export default function Home() {
 
       <main className={`transition-colors duration-300 ${theme === "dark" ? "bg-neutral-900" : "bg-white"}`}>
         {/* Hero Section with Particles */}
-        <section className={`relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden ${theme === "dark" ? "bg-neutral-900" : "bg-white bg-grid"}`}>
+        <section className={`relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden ${theme === "dark" ? "bg-neutral-900" : "bg-white"}`}>
           <ParticleBackground />
-
-          <WireframeCube className={`absolute top-32 left-[10%] w-24 h-24 animate-float opacity-30 ${theme === "dark" ? "text-neutral-600" : "text-neutral-300"}`} />
-          <OrbitalRings className={`absolute bottom-32 right-[8%] w-40 h-40 opacity-20 ${theme === "dark" ? "text-neutral-600" : "text-neutral-300"}`} />
 
           <div className="relative z-10 max-w-4xl mx-auto text-center">
             {/* Theme Toggle in Hero */}
@@ -151,7 +89,7 @@ export default function Home() {
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#contacto"
-                className={`inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all animate-glow ${
+                className={`inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all ${
                   theme === "dark"
                     ? "bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
                     : "bg-neutral-900 text-white hover:bg-neutral-800"
@@ -163,7 +101,7 @@ export default function Home() {
                 </svg>
               </Link>
               <Link
-                href="#precio"
+                href="#precios"
                 className={`inline-flex items-center justify-center gap-2 border px-8 py-4 rounded-full text-sm font-medium transition-all ${
                   theme === "dark"
                     ? "border-neutral-700 text-white hover:border-[#3ECF8E] hover:text-[#3ECF8E]"
@@ -178,7 +116,7 @@ export default function Home() {
 
         {/* Client Logos */}
         <section className={`py-16 px-6 border-y transition-colors ${
-          theme === "dark" ? "border-neutral-800" : "border-neutral-100"
+          theme === "dark" ? "bg-neutral-800 border-neutral-700" : "bg-neutral-50 border-neutral-100"
         }`}>
           <div className="max-w-6xl mx-auto">
             <p className={`text-center text-xs uppercase tracking-widest mb-10 ${
@@ -192,28 +130,28 @@ export default function Home() {
                 alt="Can't Wait Travel"
                 width={200}
                 height={80}
-                className={`h-16 md:h-20 w-auto ${theme === "dark" ? "brightness-0 invert opacity-70" : ""}`}
+                className="h-12 md:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity"
               />
               <Image
                 src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/WhatsApp%20Image%202025-12-15%20at%2010.26.40%20PM.jpeg"
                 alt="Go Adventures"
                 width={200}
                 height={80}
-                className={`h-16 md:h-20 w-auto ${theme === "dark" ? "brightness-0 invert opacity-70" : ""}`}
+                className="h-12 md:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity"
               />
               <Image
                 src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/Orostudios%20CR%20Logo.png"
                 alt="Orostudios CR"
                 width={200}
                 height={80}
-                className={`h-16 md:h-20 w-auto ${theme === "dark" ? "brightness-0 invert opacity-70" : ""}`}
+                className="h-12 md:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity"
               />
               <Image
                 src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-grupo-oroz.png"
                 alt="Grupo Oroz"
                 width={200}
                 height={80}
-                className={`h-16 md:h-20 w-auto ${theme === "dark" ? "brightness-0 invert opacity-70" : ""}`}
+                className="h-12 md:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity"
               />
             </div>
           </div>
@@ -255,10 +193,10 @@ export default function Home() {
                 { icon: "🎨", name: "Diseñadores" },
                 { icon: "🛒", name: "Tiendas" },
               ].map((item) => (
-                <div key={item.name} className={`p-4 rounded-xl border text-center transition-colors card-hover ${
+                <div key={item.name} className={`p-4 rounded-xl border text-center transition-all hover:scale-105 ${
                   theme === "dark"
                     ? "bg-neutral-800 border-neutral-700 hover:border-[#3ECF8E]"
-                    : "bg-neutral-50 border-neutral-100 hover:border-neutral-300"
+                    : "bg-neutral-50 border-neutral-200 hover:border-neutral-400"
                 }`}>
                   <span className="text-3xl mb-2 block">{item.icon}</span>
                   <span className={`text-sm font-medium ${
@@ -277,65 +215,65 @@ export default function Home() {
         </section>
 
         {/* Professionalism Section */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900 text-white">
+        <section className={`py-24 sm:py-32 px-6 transition-colors ${
+          theme === "dark" ? "bg-neutral-800" : "bg-neutral-50"
+        }`}>
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="text-sm text-neutral-500 uppercase tracking-widest mb-6">Primera impresión</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
+                <p className={`text-sm uppercase tracking-widest mb-6 ${
+                  theme === "dark" ? "text-neutral-500" : "text-neutral-400"
+                }`}>Primera impresión</p>
+                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 ${
+                  theme === "dark" ? "text-white" : "text-neutral-900"
+                }`}>
                   Dale profesionalismo
                   <br />
-                  <span className="text-neutral-500">a tu negocio.</span>
+                  <span className={theme === "dark" ? "text-neutral-500" : "text-neutral-400"}>a tu negocio.</span>
                 </h2>
-                <p className="text-lg text-neutral-400 mb-6">
+                <p className={`text-lg mb-6 ${theme === "dark" ? "text-neutral-400" : "text-neutral-600"}`}>
                   Un cliente que busca tus servicios te juzga en segundos.
                   Sin página web, parecés improvisado. Con ella, parecés establecido.
                 </p>
-                <p className="text-lg text-neutral-400 mb-8">
-                  <strong className="text-white">Tu página web es tu carta de presentación.</strong> Es lo primero
+                <p className={`text-lg mb-8 ${theme === "dark" ? "text-neutral-400" : "text-neutral-600"}`}>
+                  <strong className={theme === "dark" ? "text-white" : "text-neutral-900"}>Tu página web es tu carta de presentación.</strong> Es lo primero
                   que ven tus clientes, y define si confían en vos o buscan a otro.
                 </p>
                 <ul className="space-y-3">
-                  <li className="flex items-center gap-3 text-neutral-300">
-                    <svg className="w-5 h-5 text-[#3ECF8E] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Generá confianza desde el primer contacto
-                  </li>
-                  <li className="flex items-center gap-3 text-neutral-300">
-                    <svg className="w-5 h-5 text-[#3ECF8E] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Mostrá tus servicios de forma clara y atractiva
-                  </li>
-                  <li className="flex items-center gap-3 text-neutral-300">
-                    <svg className="w-5 h-5 text-[#3ECF8E] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Competí de igual a igual con empresas más grandes
-                  </li>
+                  {[
+                    "Generá confianza desde el primer contacto",
+                    "Mostrá tus servicios de forma clara y atractiva",
+                    "Competí de igual a igual con empresas más grandes"
+                  ].map((item) => (
+                    <li key={item} className={`flex items-center gap-3 ${theme === "dark" ? "text-neutral-300" : "text-neutral-700"}`}>
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
                 </ul>
               </div>
 
-              <div className="bg-neutral-800 rounded-2xl p-8 border border-neutral-700">
+              <div className={`rounded-2xl p-8 border ${
+                theme === "dark" ? "bg-neutral-900 border-neutral-700" : "bg-white border-neutral-200"
+              }`}>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center shrink-0">
                       <span className="text-red-500">✗</span>
                     </div>
                     <div>
-                      <p className="font-medium text-white mb-1">Sin página web</p>
-                      <p className="text-sm text-neutral-400">&ldquo;¿Este negocio es serio? No tienen ni página...&rdquo;</p>
+                      <p className={`font-medium mb-1 ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>Sin página web</p>
+                      <p className={`text-sm ${theme === "dark" ? "text-neutral-400" : "text-neutral-500"}`}>&ldquo;¿Este negocio es serio? No tienen ni página...&rdquo;</p>
                     </div>
                   </div>
-                  <div className="border-t border-neutral-700" />
+                  <div className={`border-t ${theme === "dark" ? "border-neutral-700" : "border-neutral-200"}`} />
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-[#3ECF8E]/20 rounded-lg flex items-center justify-center shrink-0">
                       <span className="text-[#3ECF8E]">✓</span>
                     </div>
                     <div>
-                      <p className="font-medium text-white mb-1">Con página web profesional</p>
-                      <p className="text-sm text-neutral-400">&ldquo;Se ven muy profesionales, voy a contactarlos.&rdquo;</p>
+                      <p className={`font-medium mb-1 ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>Con página web profesional</p>
+                      <p className={`text-sm ${theme === "dark" ? "text-neutral-400" : "text-neutral-500"}`}>&ldquo;Se ven muy profesionales, voy a contactarlos.&rdquo;</p>
                     </div>
                   </div>
                 </div>
@@ -345,8 +283,8 @@ export default function Home() {
         </section>
 
         {/* Google My Business + Web Synergy Section */}
-        <section className={`py-24 sm:py-32 px-6 bg-grid transition-colors ${
-          theme === "dark" ? "bg-neutral-800" : "bg-neutral-50"
+        <section className={`py-24 sm:py-32 px-6 transition-colors ${
+          theme === "dark" ? "bg-neutral-900" : "bg-white"
         }`}>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -364,174 +302,127 @@ export default function Home() {
                 theme === "dark" ? "text-neutral-400" : "text-neutral-500"
               }`}>
                 Las reseñas y estrellas en Google generan confianza. Tu página web convierte esa confianza en clientes.
-                Juntos, escalan tu negocio más rápido.
               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Step 1: GMB */}
-              <div className={`rounded-2xl p-6 border shadow-sm card-hover ${
-                theme === "dark" ? "bg-neutral-900 border-neutral-700" : "bg-white border-neutral-200"
-              }`}>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="w-8 h-8 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
-                  <span className={`font-semibold ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>Te encuentran en Google</span>
-                </div>
-                <div className={`rounded-xl p-4 mb-4 ${
-                  theme === "dark" ? "bg-neutral-800" : "bg-neutral-50"
+              {[
+                {
+                  step: "1",
+                  title: "Te encuentran en Google",
+                  description: "Alguien busca tu servicio. Ve tus 5 estrellas y buenas reseñas. Quiere saber más...",
+                  highlight: false
+                },
+                {
+                  step: "2",
+                  title: "Visitan tu página web",
+                  description: "Hacen clic en tu sitio web. Ven tus servicios, precios, fotos. Les gusta lo que ven...",
+                  highlight: false
+                },
+                {
+                  step: "3",
+                  title: "Te contactan",
+                  description: "Ya confían en vos. Te escriben listos para comprar. Nuevo cliente.",
+                  highlight: true
+                }
+              ].map((item) => (
+                <div key={item.step} className={`rounded-2xl p-6 border transition-all hover:scale-105 ${
+                  theme === "dark"
+                    ? "bg-neutral-800 border-neutral-700"
+                    : "bg-neutral-50 border-neutral-200"
                 }`}>
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white font-bold">G</span>
-                    </div>
-                    <div>
-                      <p className={`font-medium text-sm ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>Tu Negocio</p>
-                      <p className="text-xs text-[#3ECF8E]">Verificado</p>
-                    </div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
+                      item.highlight
+                        ? "bg-[#3ECF8E] text-neutral-900"
+                        : theme === "dark" ? "bg-neutral-700 text-white" : "bg-neutral-200 text-neutral-900"
+                    }`}>{item.step}</span>
+                    <span className={`font-semibold ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>{item.title}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <span className="text-yellow-500">★★★★★</span>
-                    <span className={theme === "dark" ? "text-neutral-400" : "text-neutral-500"}>4.9 (127 reseñas)</span>
-                  </div>
+                  <p className={`text-sm ${theme === "dark" ? "text-neutral-400" : "text-neutral-500"}`}>
+                    {item.description}
+                  </p>
                 </div>
-                <p className={`text-sm ${theme === "dark" ? "text-neutral-400" : "text-neutral-500"}`}>
-                  Alguien busca tu servicio. Ve tus 5 estrellas y buenas reseñas. Quiere saber más...
-                </p>
-              </div>
-
-              {/* Step 2: Click to Web */}
-              <div className={`rounded-2xl p-6 border shadow-sm card-hover ${
-                theme === "dark" ? "bg-neutral-900 border-neutral-700" : "bg-white border-neutral-200"
-              }`}>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="w-8 h-8 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
-                  <span className={`font-semibold ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>Visitan tu página web</span>
-                </div>
-                <div className={`rounded-xl p-4 mb-4 text-center ${
-                  theme === "dark" ? "bg-neutral-800" : "bg-neutral-50"
-                }`}>
-                  <div className={`w-full h-20 rounded-lg flex items-center justify-center mb-2 ${
-                    theme === "dark" ? "bg-neutral-700" : "bg-neutral-200"
-                  }`}>
-                    <span className={`text-xs ${theme === "dark" ? "text-neutral-500" : "text-neutral-400"}`}>tunegocio.com</span>
-                  </div>
-                  <div className="flex justify-center gap-1">
-                    <div className={`w-8 h-1 rounded ${theme === "dark" ? "bg-neutral-600" : "bg-neutral-300"}`} />
-                    <div className={`w-8 h-1 rounded ${theme === "dark" ? "bg-neutral-600" : "bg-neutral-300"}`} />
-                    <div className={`w-8 h-1 rounded ${theme === "dark" ? "bg-neutral-600" : "bg-neutral-300"}`} />
-                  </div>
-                </div>
-                <p className={`text-sm ${theme === "dark" ? "text-neutral-400" : "text-neutral-500"}`}>
-                  Hacen clic en tu sitio web. Ven tus servicios, precios, fotos. Les gusta lo que ven...
-                </p>
-              </div>
-
-              {/* Step 3: Contact */}
-              <div className={`rounded-2xl p-6 border shadow-sm card-hover ${
-                theme === "dark" ? "bg-neutral-900 border-neutral-700" : "bg-white border-neutral-200"
-              }`}>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="w-8 h-8 bg-[#3ECF8E] text-neutral-900 rounded-full flex items-center justify-center text-sm font-bold">3</span>
-                  <span className={`font-semibold ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>Te contactan</span>
-                </div>
-                <div className="bg-[#3ECF8E]/10 rounded-xl p-4 mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center">
-                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <p className={`font-medium text-sm ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>Nuevo mensaje</p>
-                      <p className={`text-xs ${theme === "dark" ? "text-neutral-400" : "text-neutral-500"}`}>&ldquo;Hola, quiero cotizar...&rdquo;</p>
-                    </div>
-                  </div>
-                </div>
-                <p className={`text-sm ${theme === "dark" ? "text-neutral-400" : "text-neutral-500"}`}>
-                  Ya confían en vos. Te escriben listos para comprar. <strong className={theme === "dark" ? "text-white" : "text-neutral-900"}>Nuevo cliente.</strong>
-                </p>
-              </div>
+              ))}
             </div>
 
-            <div className="mt-12 bg-neutral-900 rounded-2xl p-8 text-center">
-              <p className="text-neutral-400 mb-2">El resultado</p>
-              <p className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Más visibilidad → Más confianza → Más clientes
+            <div className={`mt-12 rounded-2xl p-8 text-center ${
+              theme === "dark" ? "bg-neutral-800 border border-neutral-700" : "bg-neutral-100"
+            }`}>
+              <p className="text-2xl md:text-3xl font-bold mb-4">
+                <span className={theme === "dark" ? "text-white" : "text-neutral-900"}>Más visibilidad → Más confianza → </span>
+                <span className="text-[#3ECF8E]">Más clientes</span>
               </p>
-              <p className="text-neutral-400 max-w-2xl mx-auto">
+              <p className={theme === "dark" ? "text-neutral-400" : "text-neutral-500"}>
                 Sin página web, perdés todos esos clics. Con ella, cada reseña se convierte en una oportunidad de venta.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Performance Social Proof */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900 text-white overflow-hidden">
+        {/* Performance Section */}
+        <section className={`py-24 sm:py-32 px-6 transition-colors ${
+          theme === "dark" ? "bg-neutral-800" : "bg-neutral-50"
+        }`}>
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="text-sm text-neutral-500 uppercase tracking-widest mb-6">Velocidad que convierte</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
+                <p className={`text-sm uppercase tracking-widest mb-6 ${
+                  theme === "dark" ? "text-neutral-500" : "text-neutral-400"
+                }`}>Velocidad que convierte</p>
+                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 ${
+                  theme === "dark" ? "text-white" : "text-neutral-900"
+                }`}>
                   3 segundos.
                   <br />
-                  <span className="text-neutral-500">Es todo lo que tenés.</span>
+                  <span className={theme === "dark" ? "text-neutral-500" : "text-neutral-400"}>Es todo lo que tenés.</span>
                 </h2>
-                <p className="text-lg text-neutral-400 mb-8">
+                <p className={`text-lg mb-8 ${theme === "dark" ? "text-neutral-400" : "text-neutral-600"}`}>
                   Si tu página tarda más de 3 segundos en cargar, el 53% de los visitantes la abandona.
                   Nuestros sitios cargan en menos de 1 segundo.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <div className="flex items-center gap-2 text-sm text-neutral-400">
-                    <svg className="w-5 h-5 text-[#3ECF8E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    SEO optimizado
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-neutral-400">
-                    <svg className="w-5 h-5 text-[#3ECF8E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Totalmente accesible
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-neutral-400">
-                    <svg className="w-5 h-5 text-[#3ECF8E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Mejores prácticas
-                  </div>
+                  {["SEO optimizado", "Totalmente accesible", "Mejores prácticas"].map((item) => (
+                    <div key={item} className={`flex items-center gap-2 text-sm ${theme === "dark" ? "text-neutral-300" : "text-neutral-700"}`}>
+                      <CheckIcon />
+                      {item}
+                    </div>
+                  ))}
                 </div>
               </div>
 
               {/* Performance Metrics Display */}
-              <div className="bg-neutral-800 rounded-2xl p-8 border border-neutral-700">
+              <div className={`rounded-2xl p-8 border ${
+                theme === "dark" ? "bg-neutral-900 border-neutral-700" : "bg-white border-neutral-200"
+              }`}>
                 <div className="flex items-center gap-2 mb-6">
                   <div className="w-3 h-3 rounded-full bg-red-500" />
                   <div className="w-3 h-3 rounded-full bg-yellow-500" />
                   <div className="w-3 h-3 rounded-full bg-[#3ECF8E]" />
-                  <span className="ml-4 text-sm text-neutral-500 font-mono">PageSpeed Insights</span>
+                  <span className={`ml-4 text-sm font-mono ${theme === "dark" ? "text-neutral-500" : "text-neutral-400"}`}>PageSpeed Insights</span>
                 </div>
 
                 <div className="grid grid-cols-2 gap-6">
                   {[
-                    { score: "A+", label: "Performance", color: "text-[#3ECF8E]" },
-                    { score: "✓", label: "Accessibility", color: "text-[#3ECF8E]" },
-                    { score: "A+", label: "Best Practices", color: "text-[#3ECF8E]" },
-                    { score: "✓", label: "SEO", color: "text-[#3ECF8E]" },
+                    { score: "A+", label: "Performance" },
+                    { score: "✓", label: "Accessibility" },
+                    { score: "A+", label: "Best Practices" },
+                    { score: "✓", label: "SEO" },
                   ].map((metric) => (
                     <div key={metric.label} className="text-center">
-                      <div className={`text-4xl font-bold ${metric.color} mb-1`}>
+                      <div className="text-4xl font-bold text-[#3ECF8E] mb-1">
                         {metric.score}
                       </div>
-                      <div className="text-xs text-neutral-500 uppercase tracking-wider">
+                      <div className={`text-xs uppercase tracking-wider ${theme === "dark" ? "text-neutral-500" : "text-neutral-400"}`}>
                         {metric.label}
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-neutral-700">
+                <div className={`mt-6 pt-6 border-t ${theme === "dark" ? "border-neutral-700" : "border-neutral-200"}`}>
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-neutral-500">Tiempo de carga</span>
+                    <span className={theme === "dark" ? "text-neutral-500" : "text-neutral-400"}>Tiempo de carga</span>
                     <span className="text-[#3ECF8E] font-mono font-bold">0.8s</span>
                   </div>
                 </div>
@@ -540,7 +431,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Why You Need a Website Section */}
+        {/* Stats Section */}
         <section className={`py-24 sm:py-32 px-6 transition-colors ${
           theme === "dark" ? "bg-neutral-900" : "bg-white"
         }`}>
@@ -554,264 +445,229 @@ export default function Home() {
               }`}>
                 ¿Por qué necesitás una página web?
               </h2>
-              <p className={`text-xl max-w-2xl mx-auto ${
-                theme === "dark" ? "text-neutral-400" : "text-neutral-500"
-              }`}>
-                Los números no mienten. Sin presencia digital, tu negocio pierde oportunidades cada día.
-              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { stat: "97%", desc: "de los consumidores buscan negocios locales en internet" },
-                { stat: "75%", desc: "juzgan la credibilidad por el diseño del sitio web" },
-                { stat: "88%", desc: "no vuelven después de una mala experiencia web" },
-                { stat: "24/7", desc: "tu negocio disponible mientras dormís" },
+                { stat: "97%", desc: "buscan negocios locales en internet" },
+                { stat: "75%", desc: "juzgan credibilidad por el diseño web" },
+                { stat: "88%", desc: "no vuelven tras mala experiencia" },
+                { stat: "24/7", desc: "tu negocio siempre disponible" },
               ].map((item) => (
-                <div key={item.stat} className={`p-6 rounded-xl border card-hover ${
-                  theme === "dark" ? "bg-neutral-800 border-neutral-700" : "bg-neutral-50 border-neutral-100"
+                <div key={item.stat} className={`p-6 rounded-xl border text-center transition-all hover:scale-105 ${
+                  theme === "dark" ? "bg-neutral-800 border-neutral-700" : "bg-neutral-50 border-neutral-200"
                 }`}>
-                  <div className={`text-4xl font-bold mb-2 ${
-                    theme === "dark" ? "text-white" : "text-neutral-900"
-                  }`}>{item.stat}</div>
+                  <div className="text-3xl md:text-4xl font-bold text-[#3ECF8E] mb-2">{item.stat}</div>
                   <p className={`text-sm ${theme === "dark" ? "text-neutral-400" : "text-neutral-600"}`}>{item.desc}</p>
                 </div>
               ))}
             </div>
-
-            <div className="mt-16 bg-neutral-900 rounded-2xl p-8 md:p-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                    Tu página web es tu mejor vendedor
-                  </h3>
-                  <p className="text-neutral-400 mb-6">
-                    Trabaja las 24 horas, los 7 días de la semana. No pide vacaciones, no se enferma,
-                    y puede atender a miles de clientes al mismo tiempo. Una inversión que se paga sola.
-                  </p>
-                  <ul className="space-y-3">
-                    <li className="flex items-center gap-3 text-neutral-300">
-                      <svg className="w-5 h-5 text-[#3ECF8E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      Genera confianza y credibilidad
-                    </li>
-                    <li className="flex items-center gap-3 text-neutral-300">
-                      <svg className="w-5 h-5 text-[#3ECF8E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      Atrae clientes mientras dormís
-                    </li>
-                    <li className="flex items-center gap-3 text-neutral-300">
-                      <svg className="w-5 h-5 text-[#3ECF8E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      Te diferencia de la competencia
-                    </li>
-                  </ul>
-                </div>
-                <div className="text-center">
-                  <div className="inline-block bg-neutral-800 rounded-xl p-6 border border-neutral-700">
-                    <p className="text-sm text-neutral-500 mb-2">Retorno de inversión promedio</p>
-                    <p className="text-5xl font-bold text-[#3ECF8E]">5-10x</p>
-                    <p className="text-sm text-neutral-400 mt-2">en el primer año</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
-        {/* AI Search Section */}
-        <section className={`py-24 sm:py-32 px-6 bg-grid transition-colors ${
+        {/* Pricing Section */}
+        <section id="precios" className={`py-24 sm:py-32 px-6 transition-colors ${
           theme === "dark" ? "bg-neutral-800" : "bg-neutral-50"
         }`}>
-          <div className="max-w-4xl mx-auto text-center">
-            <p className={`text-sm uppercase tracking-widest mb-6 ${
-              theme === "dark" ? "text-neutral-500" : "text-neutral-400"
-            }`}>El futuro ya llegó</p>
-
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-8 ${
-              theme === "dark" ? "text-white" : "text-neutral-900"
-            }`}>
-              Tus clientes ya no solo buscan en Google.
-              <br />
-              <span className={theme === "dark" ? "text-neutral-500" : "text-neutral-400"}>Ahora preguntan a la IA.</span>
-            </h2>
-
-            <p className={`text-xl mb-12 max-w-2xl mx-auto ${
-              theme === "dark" ? "text-neutral-400" : "text-neutral-500"
-            }`}>
-              ChatGPT, Claude, Gemini. Las búsquedas conversacionales son el presente.
-              Cuando alguien pregunta &ldquo;¿cuál es el mejor taller en San José?&rdquo;, ¿tu negocio aparece?
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
-              {[
-                { title: "AI-Ready", desc: "Sitios optimizados para que las IA te recomienden" },
-                { title: "SEO", desc: "Aparecer primero en Google y otros buscadores" },
-                { title: "Local", desc: "Clientes cerca de vos te encuentran fácil" },
-              ].map((item) => (
-                <div key={item.title} className={`text-center p-6 rounded-xl border card-hover ${
-                  theme === "dark" ? "bg-neutral-900 border-neutral-700" : "bg-white border-neutral-200"
-                }`}>
-                  <div className={`text-3xl font-bold mb-2 ${
-                    theme === "dark" ? "text-white" : "text-neutral-900"
-                  }`}>{item.title}</div>
-                  <p className={`text-sm ${theme === "dark" ? "text-neutral-400" : "text-neutral-500"}`}>{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Myths Section (Dark) */}
-        <section className="relative py-24 sm:py-32 px-6 bg-neutral-900 text-white overflow-hidden">
-          <ConnectionNodes />
-          <div className="absolute inset-0 bg-grid-dark" />
-
-          <div className="relative z-10 max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-sm text-neutral-500 uppercase tracking-widest mb-6">Derribando barreras</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-                Las excusas que te frenan
-                <br />
-                <span className="text-neutral-500">ya no tienen sentido.</span>
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {[
-                { myth: '"Es muy caro"', truth: "Desde ₡100,000 — menos que un anuncio en radio" },
-                { myth: '"Toma mucho tiempo"', truth: "Tu sitio listo en días, no en meses" },
-                { myth: '"Es muy complicado"', truth: "Vos solo decidís, nosotros ejecutamos" },
-                { myth: '"Ya tengo redes sociales"', truth: "Las redes alquilan, tu web es tuya para siempre" },
-                { myth: '"Mi negocio es pequeño"', truth: "Los pequeños son los que más crecen con presencia web" },
-                { myth: '"No sé de tecnología"', truth: "No necesitás saber, para eso estamos nosotros" },
-              ].map((item) => (
-                <div key={item.myth} className="p-6 border border-neutral-700 rounded-xl bg-neutral-800/50 card-hover">
-                  <div className="flex items-start gap-4">
-                    <span className="text-red-500 text-xl">✗</span>
-                    <div>
-                      <p className="text-neutral-500 line-through mb-2">{item.myth}</p>
-                      <p className="text-white font-medium">{item.truth}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Urgency Section */}
-        <section className={`py-24 sm:py-32 px-6 border-b transition-colors ${
-          theme === "dark" ? "bg-neutral-900 border-neutral-800" : "bg-white border-neutral-100"
-        }`}>
-          <div className="max-w-4xl mx-auto text-center">
-            <p className={`text-sm uppercase tracking-widest mb-6 ${
-              theme === "dark" ? "text-neutral-500" : "text-neutral-400"
-            }`}>No es si, es cuándo</p>
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 ${
-              theme === "dark" ? "text-white" : "text-neutral-900"
-            }`}>
-              Cada día sin página web
-              <br />
-              <span className={theme === "dark" ? "text-neutral-500" : "text-neutral-400"}>es un cliente que perdiste.</span>
-            </h2>
-            <p className={`text-lg mb-6 max-w-2xl mx-auto ${
-              theme === "dark" ? "text-neutral-400" : "text-neutral-500"
-            }`}>
-              Mientras leés esto, alguien está buscando exactamente lo que ofrecés.
-              Si no te encuentra a vos, encuentra a tu competencia.
-            </p>
-            <p className={`text-lg font-medium mb-10 max-w-2xl mx-auto ${
-              theme === "dark" ? "text-white" : "text-neutral-700"
-            }`}>
-              La pregunta no es si necesitás una página web.
-              Es cuánto más vas a esperar para tenerla.
-            </p>
-            <Link
-              href="#contacto"
-              className={`inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all ${
-                theme === "dark"
-                  ? "bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
-                  : "bg-neutral-900 text-white hover:bg-neutral-800"
-              }`}
-            >
-              Empezar hoy
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-        </section>
-
-        {/* Price Section */}
-        <section id="precio" className={`relative py-24 sm:py-32 px-6 overflow-hidden bg-dots transition-colors ${
-          theme === "dark" ? "bg-neutral-800" : "bg-white"
-        }`}>
-          <BlueprintCorners />
-
-          <div className="relative z-10 max-w-4xl mx-auto text-center">
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 ${
-              theme === "dark" ? "text-white" : "text-neutral-900"
-            }`}>
-              Tu página web profesional
-            </h2>
-            <p className={`text-xl mb-2 ${theme === "dark" ? "text-neutral-500" : "text-neutral-400"}`}>desde</p>
-
-            <div className="my-8">
-              <span className={`text-6xl sm:text-7xl md:text-8xl font-bold ${
-                theme === "dark" ? "text-[#3ECF8E]" : "text-neutral-900"
+              <p className={`text-sm uppercase tracking-widest mb-6 ${
+                theme === "dark" ? "text-neutral-500" : "text-neutral-400"
+              }`}>Precios transparentes</p>
+              <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 ${
+                theme === "dark" ? "text-white" : "text-neutral-900"
               }`}>
-                ₡100,000
-              </span>
-              <p className={`text-lg mt-4 ${theme === "dark" ? "text-neutral-400" : "text-neutral-500"}`}>
-                Pago único · Sin mensualidades ocultas
+                Elegí el plan perfecto
+                <br />
+                <span className={theme === "dark" ? "text-neutral-500" : "text-neutral-400"}>para tu negocio.</span>
+              </h2>
+              <p className={`text-xl max-w-2xl mx-auto ${
+                theme === "dark" ? "text-neutral-400" : "text-neutral-500"
+              }`}>
+                Sin sorpresas. Sin costos ocultos. Precio justo por trabajo de calidad.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto mt-12">
-              {[
-                { icon: "⚡", title: "Tecnología", desc: "La misma que usa Netflix" },
-                { icon: "🚀", title: "Velocidad", desc: "Entregado en días" },
-                { icon: "✓", title: "Calidad", desc: "Diseño profesional" },
-              ].map((item) => (
-                <div key={item.title} className={`p-6 border rounded-xl card-hover ${
-                  theme === "dark" ? "bg-neutral-900 border-neutral-700" : "bg-white border-neutral-200"
-                }`}>
-                  <div className={`w-12 h-12 mx-auto mb-4 border rounded-lg flex items-center justify-center text-2xl ${
-                    theme === "dark" ? "border-neutral-700" : "border-neutral-200"
-                  }`}>
-                    {item.icon}
-                  </div>
-                  <h3 className={`font-semibold mb-1 ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>{item.title}</h3>
-                  <p className={`text-sm ${theme === "dark" ? "text-neutral-400" : "text-neutral-500"}`}>{item.desc}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Landing Page */}
+              <div className={`rounded-2xl p-6 border transition-all hover:scale-105 ${
+                theme === "dark" ? "bg-neutral-900 border-neutral-700" : "bg-white border-neutral-200"
+              }`}>
+                <div className="text-3xl mb-4">📄</div>
+                <h3 className={`text-xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>
+                  Landing Page
+                </h3>
+                <p className={`text-sm mb-4 ${theme === "dark" ? "text-neutral-400" : "text-neutral-500"}`}>
+                  Una página de alto impacto para captar clientes.
+                </p>
+                <div className="mb-6">
+                  <span className={`text-sm ${theme === "dark" ? "text-neutral-500" : "text-neutral-400"}`}>desde</span>
+                  <div className="text-3xl font-bold text-[#3ECF8E]">₡100,000</div>
+                  <span className={`text-sm ${theme === "dark" ? "text-neutral-500" : "text-neutral-400"}`}>pago único</span>
                 </div>
-              ))}
+                <ul className="space-y-2 mb-6">
+                  {[
+                    "Diseño responsive",
+                    "Correo profesional configurado",
+                    "Optimizado para SEO",
+                    "Formulario de contacto",
+                    "Hosting 1 año incluido"
+                  ].map((item) => (
+                    <li key={item} className={`flex items-start gap-2 text-sm ${theme === "dark" ? "text-neutral-300" : "text-neutral-700"}`}>
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="#contacto"
+                  className={`block text-center py-3 rounded-lg font-medium transition-all ${
+                    theme === "dark"
+                      ? "bg-neutral-800 text-white hover:bg-neutral-700"
+                      : "bg-neutral-100 text-neutral-900 hover:bg-neutral-200"
+                  }`}
+                >
+                  Empezar
+                </Link>
+              </div>
+
+              {/* Catálogo */}
+              <div className={`rounded-2xl p-6 border transition-all hover:scale-105 ${
+                theme === "dark" ? "bg-neutral-900 border-neutral-700" : "bg-white border-neutral-200"
+              }`}>
+                <div className="text-3xl mb-4">📚</div>
+                <h3 className={`text-xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>
+                  Sitio Catálogo
+                </h3>
+                <p className={`text-sm mb-4 ${theme === "dark" ? "text-neutral-400" : "text-neutral-500"}`}>
+                  Mostrá todos tus productos o servicios.
+                </p>
+                <div className="mb-6">
+                  <span className={`text-sm ${theme === "dark" ? "text-neutral-500" : "text-neutral-400"}`}>desde</span>
+                  <div className="text-3xl font-bold text-[#3ECF8E]">₡200,000</div>
+                  <span className={`text-sm ${theme === "dark" ? "text-neutral-500" : "text-neutral-400"}`}>pago único</span>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    "Todo lo del Landing +",
+                    "Múltiples páginas",
+                    "Base de datos",
+                    "Panel de administración",
+                    "Galería de productos"
+                  ].map((item) => (
+                    <li key={item} className={`flex items-start gap-2 text-sm ${theme === "dark" ? "text-neutral-300" : "text-neutral-700"}`}>
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="#contacto"
+                  className={`block text-center py-3 rounded-lg font-medium transition-all ${
+                    theme === "dark"
+                      ? "bg-neutral-800 text-white hover:bg-neutral-700"
+                      : "bg-neutral-100 text-neutral-900 hover:bg-neutral-200"
+                  }`}
+                >
+                  Empezar
+                </Link>
+              </div>
+
+              {/* E-Commerce */}
+              <div className={`rounded-2xl p-6 border-2 relative transition-all hover:scale-105 ${
+                theme === "dark" ? "bg-neutral-900 border-[#3ECF8E]" : "bg-white border-[#3ECF8E]"
+              }`}>
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="bg-[#3ECF8E] text-neutral-900 text-xs font-bold px-3 py-1 rounded-full">
+                    POPULAR
+                  </span>
+                </div>
+                <div className="text-3xl mb-4">🛒</div>
+                <h3 className={`text-xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>
+                  E-Commerce
+                </h3>
+                <p className={`text-sm mb-4 ${theme === "dark" ? "text-neutral-400" : "text-neutral-500"}`}>
+                  Tienda online completa con pagos.
+                </p>
+                <div className="mb-6">
+                  <span className={`text-sm ${theme === "dark" ? "text-neutral-500" : "text-neutral-400"}`}>desde</span>
+                  <div className="text-3xl font-bold text-[#3ECF8E]">₡300,000</div>
+                  <span className={`text-sm ${theme === "dark" ? "text-neutral-500" : "text-neutral-400"}`}>+ ₡25,000/mes</span>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    "Todo lo del Catálogo +",
+                    "Procesador de pagos",
+                    "Carrito de compras",
+                    "Gestión de inventario",
+                    "Mantenimiento mensual"
+                  ].map((item) => (
+                    <li key={item} className={`flex items-start gap-2 text-sm ${theme === "dark" ? "text-neutral-300" : "text-neutral-700"}`}>
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="#contacto"
+                  className="block text-center py-3 rounded-lg font-medium transition-all bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
+                >
+                  Empezar
+                </Link>
+              </div>
+
+              {/* Custom */}
+              <div className={`rounded-2xl p-6 border transition-all hover:scale-105 ${
+                theme === "dark" ? "bg-neutral-900 border-neutral-700" : "bg-white border-neutral-200"
+              }`}>
+                <div className="text-3xl mb-4">🚀</div>
+                <h3 className={`text-xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>
+                  Personalizado
+                </h3>
+                <p className={`text-sm mb-4 ${theme === "dark" ? "text-neutral-400" : "text-neutral-500"}`}>
+                  Solución a medida para tu negocio.
+                </p>
+                <div className="mb-6">
+                  <span className={`text-sm ${theme === "dark" ? "text-neutral-500" : "text-neutral-400"}`}>precio</span>
+                  <div className={`text-3xl font-bold ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>A medida</div>
+                  <span className={`text-sm ${theme === "dark" ? "text-neutral-500" : "text-neutral-400"}`}>según requerimientos</span>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    "Diseño 100% único",
+                    "Funcionalidades a medida",
+                    "Integraciones especiales",
+                    "Apps web complejas",
+                    "Soporte prioritario"
+                  ].map((item) => (
+                    <li key={item} className={`flex items-start gap-2 text-sm ${theme === "dark" ? "text-neutral-300" : "text-neutral-700"}`}>
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="#contacto"
+                  className={`block text-center py-3 rounded-lg font-medium transition-all ${
+                    theme === "dark"
+                      ? "bg-neutral-800 text-white hover:bg-neutral-700"
+                      : "bg-neutral-100 text-neutral-900 hover:bg-neutral-200"
+                  }`}
+                >
+                  Cotizar
+                </Link>
+              </div>
             </div>
 
-            <div className="mt-12">
-              <Link
-                href="#contacto"
-                className={`inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all animate-glow ${
-                  theme === "dark"
-                    ? "bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
-                    : "bg-neutral-900 text-white hover:bg-neutral-800"
-                }`}
-              >
-                Empezar ahora
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
+            <p className={`text-center mt-8 text-sm ${theme === "dark" ? "text-neutral-500" : "text-neutral-400"}`}>
+              Todos los planes incluyen: SSL, dominio (.com o .cr), y soporte post-lanzamiento.
+            </p>
           </div>
         </section>
 
-        {/* What You Get Section */}
-        <section className={`py-24 sm:py-32 px-6 border-y transition-colors ${
-          theme === "dark" ? "bg-neutral-900 border-neutral-800" : "bg-white border-neutral-100"
+        {/* What's Included Section */}
+        <section className={`py-24 sm:py-32 px-6 transition-colors ${
+          theme === "dark" ? "bg-neutral-900" : "bg-white"
         }`}>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -827,29 +683,24 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { icon: "🌐", title: "Dominio personalizado", description: "tunegocio.com — profesional y fácil de recordar para tus clientes" },
-                { icon: "📱", title: "Diseño responsive", description: "Se ve perfecto en celular, tablet y computadora" },
-                { icon: "🔒", title: "SSL incluido", description: "Conexión segura (https) que genera confianza y mejora SEO" },
-                { icon: "⚡", title: "Velocidad extrema", description: "Carga en menos de 1 segundo para no perder visitantes" },
-                { icon: "🔍", title: "SEO básico", description: "Optimizado para aparecer en Google desde el día uno" },
-                { icon: "💬", title: "Soporte incluido", description: "30 días de soporte post-lanzamiento sin costo adicional" },
+                { icon: "🌐", title: "Dominio", desc: "tunegocio.com — profesional y memorable" },
+                { icon: "📱", title: "Responsive", desc: "Perfecto en móvil, tablet y desktop" },
+                { icon: "🔒", title: "SSL/HTTPS", desc: "Conexión segura que genera confianza" },
+                { icon: "⚡", title: "Ultra rápido", desc: "Carga en menos de 1 segundo" },
+                { icon: "🔍", title: "SEO", desc: "Optimizado para aparecer en Google" },
+                { icon: "💬", title: "Soporte", desc: "30 días post-lanzamiento incluidos" },
               ].map((feature) => (
-                <div key={feature.title} className={`relative p-8 border rounded-xl transition-colors group card-hover ${
-                  theme === "dark" ? "border-neutral-700 hover:border-[#3ECF8E]" : "border-neutral-200 hover:border-neutral-400"
+                <div key={feature.title} className={`p-6 rounded-xl border transition-all hover:scale-105 ${
+                  theme === "dark" ? "bg-neutral-800 border-neutral-700" : "bg-neutral-50 border-neutral-200"
                 }`}>
-                  <BlueprintCorners className="opacity-0 group-hover:opacity-100 transition-opacity !inset-2" />
-                  <div className="text-4xl mb-6">
-                    {feature.icon}
-                  </div>
-                  <h3 className={`text-lg font-semibold mb-2 ${
-                    theme === "dark" ? "text-white" : "text-neutral-900"
-                  }`}>
+                  <div className="text-3xl mb-4">{feature.icon}</div>
+                  <h3 className={`text-lg font-semibold mb-2 ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>
                     {feature.title}
                   </h3>
                   <p className={`text-sm ${theme === "dark" ? "text-neutral-400" : "text-neutral-500"}`}>
-                    {feature.description}
+                    {feature.desc}
                   </p>
                 </div>
               ))}
@@ -857,16 +708,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Stack Section */}
-        <section className={`relative py-24 sm:py-32 px-6 overflow-hidden transition-colors ${
+        {/* Tech Stack Section */}
+        <section className={`py-24 sm:py-32 px-6 transition-colors ${
           theme === "dark" ? "bg-neutral-800" : "bg-neutral-50"
         }`}>
-          <div className="absolute inset-0 bg-grid opacity-50" />
-          <WireframeCube className={`absolute top-20 right-[5%] w-32 h-32 opacity-30 ${
-            theme === "dark" ? "text-neutral-600" : "text-neutral-300"
-          }`} />
-
-          <div className="relative z-10 max-w-6xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${
               theme === "dark" ? "text-white" : "text-neutral-900"
             }`}>
@@ -892,10 +738,10 @@ export default function Home() {
               ].map((tech) => (
                 <div
                   key={tech.name}
-                  className={`group flex items-center gap-3 px-5 py-3 rounded-full border transition-all card-hover ${
+                  className={`flex items-center gap-3 px-5 py-3 rounded-full border transition-all hover:scale-105 ${
                     theme === "dark"
-                      ? "bg-neutral-900 border-neutral-700 hover:border-[#3ECF8E]"
-                      : "bg-white border-neutral-200 hover:border-neutral-400 hover:shadow-sm"
+                      ? "bg-neutral-900 border-neutral-700"
+                      : "bg-white border-neutral-200"
                   }`}
                 >
                   <span className={`w-8 h-8 rounded-lg ${tech.color} flex items-center justify-center text-xs font-bold`}>
@@ -912,66 +758,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services Section */}
+        {/* Process Section */}
         <section className={`py-24 sm:py-32 px-6 transition-colors ${
           theme === "dark" ? "bg-neutral-900" : "bg-white"
-        }`}>
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className={`text-3xl sm:text-4xl font-bold ${
-                theme === "dark" ? "text-white" : "text-neutral-900"
-              }`}>
-                ¿Qué construimos?
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { title: "Landing Pages", description: "Una página. Máximo impacto.", icon: "📄" },
-                { title: "Sitios Web", description: "Tu negocio en línea. Profesional.", icon: "🌐" },
-                { title: "Reservas", description: "Automatizá tu operación.", icon: "📅" },
-                { title: "E-Commerce", description: "Vendé 24/7.", icon: "🛒" },
-              ].map((service) => (
-                <div
-                  key={service.title}
-                  className={`group p-8 border rounded-xl transition-all card-hover ${
-                    theme === "dark"
-                      ? "bg-neutral-800 border-neutral-700 hover:border-[#3ECF8E]"
-                      : "bg-white border-neutral-200 hover:border-neutral-900"
-                  }`}
-                >
-                  <div className="text-4xl mb-4">{service.icon}</div>
-                  <h3 className={`text-lg font-semibold mb-2 ${
-                    theme === "dark" ? "text-white" : "text-neutral-900"
-                  }`}>
-                    {service.title}
-                  </h3>
-                  <p className={`text-sm ${theme === "dark" ? "text-neutral-400" : "text-neutral-500"}`}>
-                    {service.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center mt-12">
-              <Link
-                href="/servicios"
-                className={`inline-flex items-center gap-2 font-medium hover:gap-3 transition-all ${
-                  theme === "dark" ? "text-[#3ECF8E]" : "text-neutral-900"
-                }`}
-              >
-                Explorar servicios
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Process Section */}
-        <section className={`py-24 sm:py-32 px-6 bg-dots transition-colors ${
-          theme === "dark" ? "bg-neutral-800" : "bg-neutral-50"
         }`}>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -987,18 +776,16 @@ export default function Home() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { step: "01", title: "Hablamos", description: "Entendemos tu proyecto" },
-                { step: "02", title: "Proponemos", description: "Sin sorpresas" },
-                { step: "03", title: "Construimos", description: "Rápido y bien" },
-                { step: "04", title: "Lanzamos", description: "Tu sitio en vivo" },
+                { step: "01", title: "Hablamos", desc: "Entendemos tu proyecto" },
+                { step: "02", title: "Proponemos", desc: "Sin sorpresas" },
+                { step: "03", title: "Construimos", desc: "Rápido y bien" },
+                { step: "04", title: "Lanzamos", desc: "Tu sitio en vivo" },
               ].map((item) => (
                 <div key={item.step} className="text-center">
-                  <div className={`w-16 h-16 mx-auto mb-4 border rounded-xl flex items-center justify-center ${
-                    theme === "dark" ? "border-neutral-700 bg-neutral-900" : "border-neutral-200 bg-white"
+                  <div className={`w-16 h-16 mx-auto mb-4 rounded-xl flex items-center justify-center ${
+                    theme === "dark" ? "bg-neutral-800" : "bg-neutral-100"
                   }`}>
-                    <span className={`text-xl font-mono font-bold ${
-                      theme === "dark" ? "text-[#3ECF8E]" : "text-neutral-900"
-                    }`}>{item.step}</span>
+                    <span className="text-xl font-mono font-bold text-[#3ECF8E]">{item.step}</span>
                   </div>
                   <span className={`text-sm font-semibold block ${
                     theme === "dark" ? "text-white" : "text-neutral-900"
@@ -1008,7 +795,7 @@ export default function Home() {
                   <span className={`text-xs block mt-1 ${
                     theme === "dark" ? "text-neutral-500" : "text-neutral-500"
                   }`}>
-                    {item.description}
+                    {item.desc}
                   </span>
                 </div>
               ))}
@@ -1016,13 +803,45 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section id="contacto" className={`relative py-24 sm:py-32 px-6 border-t overflow-hidden transition-colors ${
-          theme === "dark" ? "bg-neutral-900 border-neutral-800" : "bg-white border-neutral-100"
+        {/* CTA Section */}
+        <section className={`py-24 sm:py-32 px-6 transition-colors ${
+          theme === "dark" ? "bg-neutral-800" : "bg-neutral-50"
         }`}>
-          <div className="absolute inset-0 bg-grid opacity-30" />
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 ${
+              theme === "dark" ? "text-white" : "text-neutral-900"
+            }`}>
+              Cada día sin página web
+              <br />
+              <span className={theme === "dark" ? "text-neutral-500" : "text-neutral-400"}>es un cliente que perdiste.</span>
+            </h2>
+            <p className={`text-lg mb-10 max-w-2xl mx-auto ${
+              theme === "dark" ? "text-neutral-400" : "text-neutral-500"
+            }`}>
+              Mientras leés esto, alguien está buscando exactamente lo que ofrecés.
+              Si no te encuentra a vos, encuentra a tu competencia.
+            </p>
+            <Link
+              href="#contacto"
+              className={`inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all ${
+                theme === "dark"
+                  ? "bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
+                  : "bg-neutral-900 text-white hover:bg-neutral-800"
+              }`}
+            >
+              Empezar hoy
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        </section>
 
-          <div className="relative z-10 max-w-xl mx-auto">
+        {/* Contact Section */}
+        <section id="contacto" className={`py-24 sm:py-32 px-6 transition-colors ${
+          theme === "dark" ? "bg-neutral-900" : "bg-white"
+        }`}>
+          <div className="max-w-xl mx-auto">
             <div className="text-center mb-12">
               <h2 className={`text-3xl sm:text-4xl font-bold ${
                 theme === "dark" ? "text-white" : "text-neutral-900"
@@ -1034,8 +853,8 @@ export default function Home() {
               </p>
             </div>
 
-            <form className={`space-y-6 p-8 rounded-xl border ${
-              theme === "dark" ? "bg-neutral-800 border-neutral-700" : "bg-white border-neutral-200"
+            <form className={`space-y-6 p-8 rounded-2xl border ${
+              theme === "dark" ? "bg-neutral-800 border-neutral-700" : "bg-neutral-50 border-neutral-200"
             }`}>
               <div>
                 <label htmlFor="nombre" className={`block text-sm font-medium mb-2 ${
@@ -1050,7 +869,7 @@ export default function Home() {
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all ${
                     theme === "dark"
                       ? "bg-neutral-900 border-neutral-700 text-white placeholder-neutral-500"
-                      : "bg-neutral-50 border-neutral-200"
+                      : "bg-white border-neutral-200 text-neutral-900"
                   }`}
                   placeholder="Tu nombre"
                 />
@@ -1069,7 +888,7 @@ export default function Home() {
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all ${
                     theme === "dark"
                       ? "bg-neutral-900 border-neutral-700 text-white placeholder-neutral-500"
-                      : "bg-neutral-50 border-neutral-200"
+                      : "bg-white border-neutral-200 text-neutral-900"
                   }`}
                   placeholder="+506 8888 8888"
                 />
@@ -1088,7 +907,7 @@ export default function Home() {
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all resize-none ${
                     theme === "dark"
                       ? "bg-neutral-900 border-neutral-700 text-white placeholder-neutral-500"
-                      : "bg-neutral-50 border-neutral-200"
+                      : "bg-white border-neutral-200 text-neutral-900"
                   }`}
                   placeholder="¿Qué tenés en mente?"
                 />

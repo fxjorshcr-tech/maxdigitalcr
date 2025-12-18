@@ -34,30 +34,20 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <Link
-              href="#proyectos"
+              href="#precios"
               className={`text-sm transition-colors ${
                 theme === "dark"
                   ? "text-neutral-400 hover:text-white"
                   : "text-neutral-600 hover:text-neutral-900"
               }`}
             >
-              Proyectos
-            </Link>
-            <Link
-              href="/servicios"
-              className={`text-sm transition-colors ${
-                theme === "dark"
-                  ? "text-neutral-400 hover:text-white"
-                  : "text-neutral-600 hover:text-neutral-900"
-              }`}
-            >
-              Servicios
+              Precios
             </Link>
             <Link
               href="#contacto"
               className={`text-sm px-5 py-2.5 rounded-full transition-colors ${
                 theme === "dark"
-                  ? "bg-white text-neutral-900 hover:bg-neutral-200"
+                  ? "bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
                   : "bg-neutral-900 text-white hover:bg-neutral-800"
               }`}
             >
@@ -103,7 +93,7 @@ export default function Navbar() {
           }`}>
             <div className="flex flex-col gap-4">
               <Link
-                href="#proyectos"
+                href="#precios"
                 className={`text-sm transition-colors ${
                   theme === "dark"
                     ? "text-neutral-400 hover:text-white"
@@ -111,24 +101,13 @@ export default function Navbar() {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Proyectos
-              </Link>
-              <Link
-                href="/servicios"
-                className={`text-sm transition-colors ${
-                  theme === "dark"
-                    ? "text-neutral-400 hover:text-white"
-                    : "text-neutral-600 hover:text-neutral-900"
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Servicios
+                Precios
               </Link>
               <Link
                 href="#contacto"
                 className={`text-sm px-5 py-2.5 rounded-full text-center transition-colors ${
                   theme === "dark"
-                    ? "bg-white text-neutral-900 hover:bg-neutral-200"
+                    ? "bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
                     : "bg-neutral-900 text-white hover:bg-neutral-800"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
