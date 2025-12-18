@@ -103,14 +103,14 @@ export default function Home() {
         <section className="py-24 sm:py-32 px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Nuestra Propuesta</p>
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Páginas Web Profesionales</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                Tecnología de clase mundial.
+                Creamos tu página web.
                 <br />
-                <span className="text-neutral-500">Precio accesible. Tiempo récord.</span>
+                <span className="text-neutral-500">Rápido, accesible y con la mejor tecnología.</span>
               </h2>
               <p className="text-xl max-w-3xl mx-auto text-neutral-400">
-                Usamos las mismas herramientas que Netflix y Airbnb, pero las hacemos accesibles para negocios locales. Páginas optimizadas para Google e IA desde el día 1.
+                Diseñamos y desarrollamos páginas web profesionales usando las mismas herramientas que Netflix y Airbnb — pero a precios accesibles para negocios locales.
               </p>
             </div>
 
