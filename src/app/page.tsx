@@ -33,8 +33,8 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-white">
-              <span className="whitespace-nowrap">Rápido. <span className="text-[#3ECF8E]">Profesional.</span> Accesible.</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-white">
+              Rápido. <span className="text-[#3ECF8E]">Profesional.</span> Accesible.
             </h1>
             <p className="mt-6 text-lg sm:text-xl max-w-2xl mx-auto text-neutral-400">
               Páginas web profesionales a una fracción del costo tradicional.
@@ -100,7 +100,7 @@ export default function Home() {
         </section>
 
         {/* Nuestra Propuesta - NEW SECTION */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
+        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Páginas Web Profesionales</p>
@@ -120,9 +120,9 @@ export default function Home() {
                 { icon: "💰", title: "Desde ₡100k", desc: "Fracción del costo de agencias tradicionales." },
                 { icon: "🔧", title: "Soporte incluido", desc: "30 días de soporte post-lanzamiento gratis." },
               ].map((item) => (
-                <div key={item.title} className="p-8 rounded-2xl bg-neutral-800 border border-neutral-700 text-center hover:border-[#3ECF8E] transition-all">
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="text-2xl font-bold text-[#3ECF8E] mb-2">{item.title}</h3>
+                <div key={item.title} className="p-6 sm:p-8 rounded-2xl bg-neutral-800 border border-neutral-700 text-center hover:border-[#3ECF8E] transition-all">
+                  <div className="text-3xl sm:text-4xl mb-4">{item.icon}</div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#3ECF8E] mb-2">{item.title}</h3>
                   <p className="text-neutral-400">{item.desc}</p>
                 </div>
               ))}
@@ -146,7 +146,7 @@ export default function Home() {
         </section>
 
         {/* Stats with Real Sources */}
-        <section className="py-24 sm:py-32 px-6 bg-white">
+        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">La Realidad</p>
@@ -184,12 +184,12 @@ export default function Home() {
                   icon: "⚡"
                 },
               ].map((item) => (
-                <div key={item.stat} className="p-8 rounded-2xl bg-neutral-50 border border-neutral-200 hover:border-[#3ECF8E] transition-all">
-                  <div className="flex items-start gap-4">
-                    <div className="text-4xl">{item.icon}</div>
+                <div key={item.stat} className="p-5 sm:p-8 rounded-2xl bg-neutral-50 border border-neutral-200 hover:border-[#3ECF8E] transition-all">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="text-3xl sm:text-4xl">{item.icon}</div>
                     <div>
-                      <div className="text-4xl md:text-5xl font-bold text-[#3ECF8E] mb-2">{item.stat}</div>
-                      <p className="text-lg text-neutral-700 mb-3">{item.desc}</p>
+                      <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#3ECF8E] mb-2">{item.stat}</div>
+                      <p className="text-base sm:text-lg text-neutral-700 mb-3">{item.desc}</p>
                       <p className="text-sm text-neutral-400 italic">— {item.source}</p>
                     </div>
                   </div>
@@ -206,7 +206,7 @@ export default function Home() {
         </section>
 
         {/* Services Preview - LA SOLUCIÓN */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
+        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Nuestros Servicios</p>
@@ -290,7 +290,7 @@ export default function Home() {
         </section>
 
         {/* Pain Points Section */}
-        <section className="py-24 sm:py-32 px-6 bg-white">
+        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Sin Complicaciones</p>
@@ -348,7 +348,7 @@ export default function Home() {
         </section>
 
         {/* Google My Business Section - PRUEBA SOCIAL */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
+        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -420,7 +420,7 @@ export default function Home() {
         </section>
 
         {/* Who Is This For Section */}
-        <section className="py-24 sm:py-32 px-6 bg-white">
+        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Para Todos</p>
@@ -466,7 +466,7 @@ export default function Home() {
         </section>
 
         {/* Who We Are + Technology + Process */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
+        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             {/* Who We Are */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
@@ -579,7 +579,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 sm:py-32 px-6 bg-gradient-to-b from-neutral-900 to-neutral-800">
+        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-to-b from-neutral-900 to-neutral-800">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
               Cada día sin página web
