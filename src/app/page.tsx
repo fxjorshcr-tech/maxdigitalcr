@@ -60,7 +60,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Client Logos - WHITE BACKGROUND, FULL COLOR */}
+        {/* Client Logos */}
         <section className="py-16 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <p className="text-center text-sm uppercase tracking-widest mb-10 text-neutral-900 font-bold">
@@ -99,22 +99,22 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Digital Presence Section - Combined Google + AI */}
+        {/* Digital Presence Section - Problem + Solution Connected */}
         <section className="py-24 sm:py-32 px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Presencia Digital</p>
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">El Problema</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                Google, IA, redes sociales...
+                Tus clientes te buscan
                 <br />
-                <span className="text-neutral-500">Tus clientes te buscan en todos lados.</span>
+                <span className="text-neutral-500">en todos lados.</span>
               </h2>
               <p className="text-xl max-w-3xl mx-auto text-neutral-400">
-                El 97% de los consumidores buscan negocios en Google antes de comprar. Y ahora también preguntan a ChatGPT, Perplexity y otros asistentes de IA. Si no aparecés en ninguno, simplemente no existís.
+                El 97% buscan en Google antes de comprar. Ahora también preguntan a ChatGPT y otros asistentes de IA. Si no aparecés, simplemente no existís.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
               {[
                 { stat: "97%", desc: "buscan en Google antes de comprar", icon: "🔍" },
                 { stat: "1B+", desc: "usuarios preguntan a ChatGPT", icon: "🤖" },
@@ -129,32 +129,33 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-2xl p-6 bg-neutral-800 border border-neutral-700">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#3ECF8E]/20 rounded-xl flex items-center justify-center shrink-0">
-                    <span className="text-2xl">🔍</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-white mb-2">Optimizados para Google</p>
-                    <p className="text-sm text-neutral-400">
-                      SEO técnico, velocidad perfecta y estructura que Google ama. Aparecés primero en los resultados.
-                    </p>
-                  </div>
-                </div>
+            {/* The Solution - Connected */}
+            <div className="rounded-3xl p-8 md:p-12 bg-gradient-to-br from-[#3ECF8E]/10 to-neutral-800 border border-[#3ECF8E]/30">
+              <div className="text-center mb-10">
+                <p className="text-sm uppercase tracking-widest mb-4 text-[#3ECF8E] font-bold">Nuestra Solución</p>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Creamos páginas optimizadas para todo esto.
+                </h3>
+                <p className="text-neutral-400 max-w-2xl mx-auto">
+                  Cada página que hacemos está diseñada para que te encuentren en Google, en IA, y para que conviertan visitantes en clientes.
+                </p>
               </div>
-              <div className="rounded-2xl p-6 bg-neutral-800 border border-neutral-700">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#3ECF8E]/20 rounded-xl flex items-center justify-center shrink-0">
-                    <span className="text-2xl">🤖</span>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  { icon: "🔍", title: "SEO técnico", desc: "Primeros en Google" },
+                  { icon: "🤖", title: "Optimizado para IA", desc: "ChatGPT te recomienda" },
+                  { icon: "⚡", title: "Velocidad < 1 seg", desc: "Nadie abandona tu sitio" },
+                  { icon: "💎", title: "Diseño profesional", desc: "Credibilidad instantánea" },
+                ].map((item) => (
+                  <div key={item.title} className="text-center p-4">
+                    <div className="w-14 h-14 mx-auto mb-4 bg-[#3ECF8E]/20 rounded-xl flex items-center justify-center">
+                      <span className="text-2xl">{item.icon}</span>
+                    </div>
+                    <p className="font-semibold text-white mb-1">{item.title}</p>
+                    <p className="text-sm text-neutral-400">{item.desc}</p>
                   </div>
-                  <div>
-                    <p className="font-semibold text-white mb-2">Optimizados para IA</p>
-                    <p className="text-sm text-neutral-400">
-                      Datos estructurados y semántica correcta para que ChatGPT, Claude y Perplexity te recomienden.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -172,10 +173,10 @@ export default function Home() {
                   <span className="text-neutral-400">venden por vos.</span>
                 </h2>
                 <p className="text-lg mb-6 text-neutral-600">
-                  Cuando alguien busca tu negocio en Google, lo primero que ve son las estrellas y reseñas de Google My Business. Un negocio con 4.5+ estrellas genera <strong className="text-neutral-900">270% más clics</strong> que uno sin reseñas.
+                  Un negocio con 4.5+ estrellas genera <strong className="text-neutral-900">270% más clics</strong> que uno sin reseñas. Tu página web y tu perfil de Google My Business trabajan juntos.
                 </p>
                 <p className="text-lg mb-8 text-neutral-600">
-                  Tu página web y tu perfil de Google My Business trabajan juntos. Nosotros te ayudamos a configurar ambos para que tu negocio se vea profesional y confiable desde el primer momento.
+                  <strong className="text-neutral-900">Nosotros te ayudamos a configurar ambos</strong> para que tu negocio se vea profesional y confiable desde el primer momento.
                 </p>
                 <ul className="space-y-3">
                   {[
@@ -185,9 +186,7 @@ export default function Home() {
                     "Widget de reseñas en tu sitio"
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3 text-neutral-700">
-                      <svg className="w-5 h-5 text-[#3ECF8E] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
+                      <CheckIcon />
                       {item}
                     </li>
                   ))}
@@ -234,53 +233,86 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Who We Are Section */}
+        {/* Services Preview - Moved up for coherence */}
         <section className="py-24 sm:py-32 px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Quiénes somos</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                  Somos MaxDigitalCR.
-                  <br />
-                  <span className="text-neutral-500">Tu equipo de desarrollo web.</span>
-                </h2>
-                <p className="text-lg mb-6 text-neutral-400">
-                  Somos un equipo de desarrolladores en Costa Rica especializados en crear páginas web
-                  profesionales para PyMEs y emprendedores. Combinamos tecnología de clase mundial con
-                  un profundo entendimiento del mercado local.
-                </p>
-                <p className="text-lg mb-8 text-neutral-400">
-                  <strong className="text-white">Somos ágiles, directos y enfocados en resultados.</strong> Comunicación
-                  clara, procesos eficientes y tu página lista en días, no en meses.
-                </p>
-                <Link
-                  href="/nosotros"
-                  className="inline-flex items-center gap-2 text-[#3ECF8E] font-medium hover:underline"
-                >
-                  Conocé más sobre nosotros
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
+            <div className="text-center mb-16">
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Nuestros Servicios</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+                La página perfecta
+                <br />
+                <span className="text-neutral-500">para tu negocio.</span>
+              </h2>
+              <p className="text-xl max-w-2xl mx-auto text-neutral-400">
+                Desde landing pages hasta tiendas online completas. Todas optimizadas para Google e IA.
+              </p>
+            </div>
 
-              <div className="space-y-4">
-                {[
-                  { icon: "⚡", title: "Entrega rápida", desc: "Tu página lista en 1-10 días hábiles" },
-                  { icon: "💬", title: "Comunicación directa", desc: "Hablás con quien hace tu página" },
-                  { icon: "🔧", title: "Soporte continuo", desc: "Siempre hay alguien para ayudarte" },
-                  { icon: "🇨🇷", title: "100% Ticos", desc: "Entendemos el mercado local" },
-                ].map((item) => (
-                  <div key={item.title} className="flex items-center gap-4 p-4 rounded-xl bg-neutral-800 border border-neutral-700">
-                    <div className="text-2xl">{item.icon}</div>
-                    <div>
-                      <p className="font-semibold text-white">{item.title}</p>
-                      <p className="text-sm text-neutral-400">{item.desc}</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              {[
+                {
+                  title: "Landing Page",
+                  price: "₡100,000",
+                  time: "1-3 días",
+                  desc: "Página de alto impacto para captar clientes.",
+                  features: ["Diseño responsive", "SEO + IA optimizado", "Formulario de contacto"]
+                },
+                {
+                  title: "Sitio Catálogo",
+                  price: "₡200,000",
+                  time: "3-7 días",
+                  desc: "Mostrá todos tus productos o servicios.",
+                  features: ["Múltiples páginas", "Google My Business", "Panel admin"],
+                  popular: true
+                },
+                {
+                  title: "E-Commerce",
+                  price: "₡300,000",
+                  time: "7-10 días",
+                  desc: "Tienda online completa con pagos.",
+                  features: ["Carrito de compras", "Procesador de pagos", "Inventario"]
+                },
+              ].map((service) => (
+                <div key={service.title} className={`rounded-2xl p-6 border transition-all hover:scale-105 ${
+                  service.popular
+                    ? "bg-neutral-800 border-[#3ECF8E] border-2 relative"
+                    : "bg-neutral-800 border-neutral-700"
+                }`}>
+                  {service.popular && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                      <span className="bg-[#3ECF8E] text-neutral-900 text-xs font-bold px-3 py-1 rounded-full">
+                        MÁS POPULAR
+                      </span>
                     </div>
+                  )}
+                  <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
+                  <p className="text-sm text-neutral-400 mb-4">{service.desc}</p>
+                  <div className="mb-4">
+                    <span className="text-3xl font-bold text-[#3ECF8E]">{service.price}</span>
+                    <span className="text-neutral-500 text-sm ml-2">• {service.time}</span>
                   </div>
-                ))}
-              </div>
+                  <ul className="space-y-2">
+                    {service.features.map((f) => (
+                      <li key={f} className="flex items-center gap-2 text-sm text-neutral-300">
+                        <CheckIcon />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Link
+                href="/servicios"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
+              >
+                Ver todos los servicios
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
             </div>
           </div>
         </section>
@@ -289,7 +321,7 @@ export default function Home() {
         <section className="py-24 sm:py-32 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Sin complicaciones</p>
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Sin Complicaciones</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
                 Quitamos tus preocupaciones
                 <br />
@@ -347,7 +379,7 @@ export default function Home() {
         <section className="py-24 sm:py-32 px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Soluciones para todos</p>
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Para Todos</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
                 ¿Para quién es esto?
               </h2>
@@ -389,195 +421,116 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services Preview */}
+        {/* Who We Are + Technology + Process - Combined Section */}
         <section className="py-24 sm:py-32 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Nuestros servicios</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
-                La página perfecta
-                <br />
-                <span className="text-neutral-400">para tu negocio.</span>
-              </h2>
-              <p className="text-xl max-w-2xl mx-auto text-neutral-600">
-                Desde landing pages hasta tiendas online completas. Entregadas en tiempo récord.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              {[
-                {
-                  title: "Landing Page",
-                  price: "₡100,000",
-                  time: "1-3 días",
-                  desc: "Página de alto impacto para captar clientes.",
-                  features: ["Diseño responsive", "Formulario de contacto", "SEO optimizado"]
-                },
-                {
-                  title: "Sitio Catálogo",
-                  price: "₡200,000",
-                  time: "3-7 días",
-                  desc: "Mostrá todos tus productos o servicios.",
-                  features: ["Múltiples páginas", "Galería de productos", "Panel admin"],
-                  popular: true
-                },
-                {
-                  title: "E-Commerce",
-                  price: "₡300,000",
-                  time: "7-10 días",
-                  desc: "Tienda online completa con pagos.",
-                  features: ["Carrito de compras", "Procesador de pagos", "Inventario"]
-                },
-              ].map((service) => (
-                <div key={service.title} className={`rounded-2xl p-6 border transition-all hover:scale-105 ${
-                  service.popular
-                    ? "bg-neutral-900 border-[#3ECF8E] border-2 relative"
-                    : "bg-neutral-900 border-neutral-700"
-                }`}>
-                  {service.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <span className="bg-[#3ECF8E] text-neutral-900 text-xs font-bold px-3 py-1 rounded-full">
-                        MÁS POPULAR
-                      </span>
-                    </div>
-                  )}
-                  <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
-                  <p className="text-sm text-neutral-400 mb-4">{service.desc}</p>
-                  <div className="mb-4">
-                    <span className="text-3xl font-bold text-[#3ECF8E]">{service.price}</span>
-                    <span className="text-neutral-500 text-sm ml-2">• {service.time}</span>
-                  </div>
-                  <ul className="space-y-2">
-                    {service.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm text-neutral-300">
-                        <CheckIcon />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center">
-              <Link
-                href="/servicios"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
-              >
-                Ver todos los servicios
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Technology Section */}
-        <section className="py-24 sm:py-32 px-6 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Who We Are */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
               <div>
-                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Tecnología de punta</p>
+                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Quiénes Somos</p>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
-                  La misma tecnología
+                  Somos MaxDigitalCR.
                   <br />
-                  <span className="text-neutral-400">que usan los gigantes.</span>
+                  <span className="text-neutral-400">Tu equipo de desarrollo web.</span>
                 </h2>
                 <p className="text-lg mb-6 text-neutral-600">
-                  Netflix, Airbnb, TikTok, Uber — todas construyen sus aplicaciones con las mismas
-                  herramientas que usamos nosotros.
+                  Un equipo de desarrolladores en Costa Rica especializados en crear páginas web
+                  profesionales para PyMEs y emprendedores. Usamos la misma tecnología que Netflix, Airbnb y TikTok.
                 </p>
                 <p className="text-lg mb-8 text-neutral-600">
                   <strong className="text-neutral-900">Antes, esto costaba millones.</strong> Hoy, gracias a
-                  herramientas open-source y la nube, podemos darte la misma calidad a una fracción
-                  del costo y en tiempo récord.
+                  herramientas open-source y la nube, te damos la misma calidad a una fracción del costo.
                 </p>
-                <ul className="space-y-3">
-                  {[
-                    "Sitios que cargan en menos de 1 segundo",
-                    "Escalables para miles de visitantes",
-                    "Seguros con certificado SSL incluido",
-                    "Optimizados para Google desde el día 1"
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-neutral-700">
-                      <CheckIcon />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <Link
+                  href="/nosotros"
+                  className="inline-flex items-center gap-2 text-[#3ECF8E] font-medium hover:underline"
+                >
+                  Conocé más sobre nosotros
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { name: "Next.js", desc: "Framework de React", icon: "▲", color: "bg-black" },
-                  { name: "React", desc: "Interfaz de usuario", icon: "⚛️", color: "bg-[#61DAFB]" },
-                  { name: "TypeScript", desc: "Código robusto", icon: "TS", color: "bg-[#3178C6]" },
-                  { name: "Vercel", desc: "Deploy global", icon: "▲", color: "bg-black" },
-                  { name: "Supabase", desc: "Base de datos", icon: "⚡", color: "bg-[#3ECF8E]" },
-                  { name: "Tailwind", desc: "Diseño moderno", icon: "🎨", color: "bg-[#06B6D4]" },
-                ].map((tech) => (
-                  <div
-                    key={tech.name}
-                    className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 hover:border-[#3ECF8E] transition-all"
-                  >
-                    <div className={`w-10 h-10 rounded-lg ${tech.color} flex items-center justify-center text-white text-sm font-bold mb-3`}>
-                      {tech.icon}
-                    </div>
-                    <h3 className="text-neutral-900 font-semibold">{tech.name}</h3>
-                    <p className="text-sm text-neutral-500">{tech.desc}</p>
+                  { icon: "⚡", title: "Entrega rápida", desc: "1-10 días hábiles" },
+                  { icon: "💬", title: "Comunicación directa", desc: "Hablás con quien hace tu página" },
+                  { icon: "🔧", title: "Soporte continuo", desc: "Siempre hay alguien para ayudarte" },
+                  { icon: "🇨🇷", title: "100% Ticos", desc: "Entendemos el mercado local" },
+                ].map((item) => (
+                  <div key={item.title} className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 hover:border-[#3ECF8E] transition-all">
+                    <div className="text-2xl mb-2">{item.icon}</div>
+                    <p className="font-semibold text-neutral-900">{item.title}</p>
+                    <p className="text-sm text-neutral-500">{item.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
-        </section>
 
-        {/* Process Section */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Proceso simple</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white">
-                Así trabajamos.
-              </h2>
-              <p className="mt-4 text-neutral-400">
-                Simple. Transparente. Efectivo.
-              </p>
+            {/* Technology */}
+            <div className="mb-24">
+              <div className="text-center mb-12">
+                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Tecnología</p>
+                <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-4">
+                  La misma tecnología que usan los gigantes.
+                </h3>
+                <p className="text-neutral-600 max-w-2xl mx-auto">
+                  Netflix, Airbnb, TikTok — todas construyen con las mismas herramientas que usamos nosotros.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+                {[
+                  { name: "Next.js", icon: "▲", color: "bg-black" },
+                  { name: "React", icon: "⚛️", color: "bg-[#61DAFB]" },
+                  { name: "TypeScript", icon: "TS", color: "bg-[#3178C6]" },
+                  { name: "Vercel", icon: "▲", color: "bg-black" },
+                  { name: "Supabase", icon: "⚡", color: "bg-[#3ECF8E]" },
+                  { name: "Tailwind", icon: "🎨", color: "bg-[#06B6D4]" },
+                ].map((tech) => (
+                  <div key={tech.name} className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-center hover:border-[#3ECF8E] transition-all">
+                    <div className={`w-10 h-10 mx-auto rounded-lg ${tech.color} flex items-center justify-center text-white text-sm font-bold mb-2`}>
+                      {tech.icon}
+                    </div>
+                    <p className="text-sm font-medium text-neutral-900">{tech.name}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="relative">
-              {/* Connection Line */}
-              <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#3ECF8E]/30 to-transparent -translate-y-1/2" />
+            {/* Process */}
+            <div className="rounded-3xl p-8 md:p-12 bg-neutral-900">
+              <div className="text-center mb-12">
+                <p className="text-sm uppercase tracking-widest mb-4 text-[#3ECF8E] font-bold">Proceso Simple</p>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                  Así trabajamos.
+                </h3>
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 {[
-                  { step: "01", title: "Hablamos", desc: "Nos contás tu idea y entendemos exactamente qué necesitás.", icon: "💬" },
-                  { step: "02", title: "Proponemos", desc: "Te presentamos un plan claro con precio fijo. Sin sorpresas.", icon: "📋" },
-                  { step: "03", title: "Construimos", desc: "Desarrollamos mientras ves el progreso en tiempo real.", icon: "🔨" },
-                  { step: "04", title: "Lanzamos", desc: "Tu página en vivo. Te enseñamos a usarla y damos soporte.", icon: "🚀" },
+                  { step: "01", title: "Hablamos", desc: "Nos contás tu idea y entendemos qué necesitás.", icon: "💬" },
+                  { step: "02", title: "Proponemos", desc: "Plan claro con precio fijo. Sin sorpresas.", icon: "📋" },
+                  { step: "03", title: "Construimos", desc: "Desarrollamos mientras ves el progreso.", icon: "🔨" },
+                  { step: "04", title: "Lanzamos", desc: "Tu página en vivo con soporte incluido.", icon: "🚀" },
                 ].map((item) => (
-                  <div key={item.step} className="relative text-center">
-                    <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-neutral-800 border border-neutral-700 flex flex-col items-center justify-center relative z-10 transition-all hover:border-[#3ECF8E] hover:scale-110">
-                      <span className="text-2xl">{item.icon}</span>
+                  <div key={item.step} className="text-center">
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-neutral-800 border border-neutral-700 flex items-center justify-center text-2xl">
+                      {item.icon}
                     </div>
                     <span className="text-xs font-mono text-[#3ECF8E] block mb-2">{item.step}</span>
-                    <span className="text-lg font-semibold block text-white">
-                      {item.title}
-                    </span>
-                    <p className="text-sm mt-2 text-neutral-400 max-w-[200px] mx-auto">
-                      {item.desc}
-                    </p>
+                    <span className="text-lg font-semibold block text-white">{item.title}</span>
+                    <p className="text-sm mt-2 text-neutral-400">{item.desc}</p>
                   </div>
                 ))}
               </div>
-            </div>
 
-            <div className="mt-16 text-center">
-              <p className="text-neutral-400 mb-6">¿El resultado?</p>
-              <p className="text-2xl font-bold text-white">
-                Tu página lista en <span className="text-[#3ECF8E]">1-10 días hábiles</span>
-              </p>
+              <div className="mt-12 text-center">
+                <p className="text-2xl font-bold text-white">
+                  Tu página lista en <span className="text-[#3ECF8E]">1-10 días hábiles</span>
+                </p>
+              </div>
             </div>
           </div>
         </section>

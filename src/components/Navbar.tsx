@@ -76,23 +76,37 @@ export default function Navbar() {
             ))}
 
             {/* Language Switcher */}
-            <div className="flex items-center gap-1 ml-2 border-l pl-4 border-neutral-300">
-              <button
-                className={`text-xl hover:scale-110 transition-transform ${
-                  !pathname.startsWith('/en') ? 'opacity-100' : 'opacity-50'
+            <div className={`flex items-center gap-2 ml-2 border-l pl-4 ${scrolled || !isDarkHero ? 'border-neutral-300' : 'border-neutral-600'}`}>
+              <Link
+                href={pathname.startsWith('/en') ? pathname.replace('/en', '') || '/' : pathname}
+                className={`w-7 h-7 rounded-full overflow-hidden border-2 transition-all hover:scale-110 ${
+                  !pathname.startsWith('/en') ? 'border-[#3ECF8E]' : 'border-transparent opacity-60 hover:opacity-100'
                 }`}
                 title="Español"
               >
-                🇨🇷
-              </button>
+                <svg viewBox="0 0 512 512" className="w-full h-full">
+                  <rect fill="#002b7f" width="512" height="512"/>
+                  <rect fill="#fff" y="102.4" width="512" height="307.2"/>
+                  <rect fill="#ce1126" y="170.7" width="512" height="170.7"/>
+                </svg>
+              </Link>
               <Link
-                href={`/en${pathname}`}
-                className={`text-xl hover:scale-110 transition-transform ${
-                  pathname.startsWith('/en') ? 'opacity-100' : 'opacity-50'
+                href={`/en${pathname.startsWith('/en') ? pathname.replace('/en', '') : pathname}`}
+                className={`w-7 h-7 rounded-full overflow-hidden border-2 transition-all hover:scale-110 ${
+                  pathname.startsWith('/en') ? 'border-[#3ECF8E]' : 'border-transparent opacity-60 hover:opacity-100'
                 }`}
                 title="English"
               >
-                🇺🇸
+                <svg viewBox="0 0 512 512" className="w-full h-full">
+                  <rect fill="#bd3d44" width="512" height="512"/>
+                  <rect fill="#fff" y="39.4" width="512" height="39.4"/>
+                  <rect fill="#fff" y="118.2" width="512" height="39.4"/>
+                  <rect fill="#fff" y="197" width="512" height="39.4"/>
+                  <rect fill="#fff" y="275.8" width="512" height="39.4"/>
+                  <rect fill="#fff" y="354.6" width="512" height="39.4"/>
+                  <rect fill="#fff" y="433.4" width="512" height="39.4"/>
+                  <rect fill="#192f5d" width="204.8" height="275.8"/>
+                </svg>
               </Link>
             </div>
           </div>
@@ -154,23 +168,42 @@ export default function Navbar() {
               ))}
 
               {/* Language Switcher Mobile */}
-              <div className="flex items-center gap-4 pt-4 mt-2 border-t border-neutral-700">
+              <div className={`flex items-center gap-4 pt-4 mt-2 border-t ${scrolled || !isDarkHero ? 'border-neutral-200' : 'border-neutral-700'}`}>
                 <span className={`text-sm ${scrolled || !isDarkHero ? 'text-neutral-500' : 'text-neutral-400'}`}>
                   Idioma:
                 </span>
-                <button
-                  className={`text-2xl ${!pathname.startsWith('/en') ? 'opacity-100' : 'opacity-50'}`}
+                <Link
+                  href={pathname.startsWith('/en') ? pathname.replace('/en', '') || '/' : pathname}
+                  onClick={handleLinkClick}
+                  className={`w-8 h-8 rounded-full overflow-hidden border-2 transition-all ${
+                    !pathname.startsWith('/en') ? 'border-[#3ECF8E]' : 'border-transparent opacity-60'
+                  }`}
                   title="Español"
                 >
-                  🇨🇷
-                </button>
+                  <svg viewBox="0 0 512 512" className="w-full h-full">
+                    <rect fill="#002b7f" width="512" height="512"/>
+                    <rect fill="#fff" y="102.4" width="512" height="307.2"/>
+                    <rect fill="#ce1126" y="170.7" width="512" height="170.7"/>
+                  </svg>
+                </Link>
                 <Link
-                  href={`/en${pathname}`}
+                  href={`/en${pathname.startsWith('/en') ? pathname.replace('/en', '') : pathname}`}
                   onClick={handleLinkClick}
-                  className={`text-2xl ${pathname.startsWith('/en') ? 'opacity-100' : 'opacity-50'}`}
+                  className={`w-8 h-8 rounded-full overflow-hidden border-2 transition-all ${
+                    pathname.startsWith('/en') ? 'border-[#3ECF8E]' : 'border-transparent opacity-60'
+                  }`}
                   title="English"
                 >
-                  🇺🇸
+                  <svg viewBox="0 0 512 512" className="w-full h-full">
+                    <rect fill="#bd3d44" width="512" height="512"/>
+                    <rect fill="#fff" y="39.4" width="512" height="39.4"/>
+                    <rect fill="#fff" y="118.2" width="512" height="39.4"/>
+                    <rect fill="#fff" y="197" width="512" height="39.4"/>
+                    <rect fill="#fff" y="275.8" width="512" height="39.4"/>
+                    <rect fill="#fff" y="354.6" width="512" height="39.4"/>
+                    <rect fill="#fff" y="433.4" width="512" height="39.4"/>
+                    <rect fill="#192f5d" width="204.8" height="275.8"/>
+                  </svg>
                 </Link>
               </div>
             </div>
