@@ -5,6 +5,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 // Checkmark icon component
 function CheckIcon() {
@@ -117,7 +118,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {[
                 { icon: "⚡", title: "1-10 días", desc: "Tu página lista en tiempo récord. No meses de espera." },
-                { icon: "💰", title: "Desde ₡100k", desc: "Fracción del costo de agencias tradicionales." },
+                { icon: "💰", title: "Desde ₡100.000", desc: "Fracción del costo de agencias tradicionales." },
                 { icon: "🔧", title: "Soporte incluido", desc: "30 días de soporte post-lanzamiento gratis." },
               ].map((item) => (
                 <div key={item.title} className="p-6 sm:p-8 rounded-2xl bg-neutral-800 border border-neutral-700 text-center hover:border-[#3ECF8E] transition-all">
@@ -604,6 +605,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }
