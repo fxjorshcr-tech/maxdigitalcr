@@ -82,7 +82,7 @@ export default function Home() {
                 className="h-14 md:h-18 w-auto"
               />
               <Image
-                src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/Orostudios%20CR%20Logo.png"
+                src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/Orostudios%20CR%20Logo.webp"
                 alt="Orostudios CR"
                 width={200}
                 height={80}
