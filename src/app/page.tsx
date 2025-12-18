@@ -141,24 +141,81 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Who We Are Section */}
+        {/* AI Section */}
         <section className="py-24 sm:py-32 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Quiénes somos</p>
+                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">La nueva satisfacción de necesidades</p>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
-                  Somos MaxDigitalCR.
+                  La IA cambió las reglas.
                   <br />
-                  <span className="text-neutral-400">Tu equipo de desarrollo web.</span>
+                  <span className="text-neutral-400">¿Tu sitio está listo?</span>
                 </h2>
                 <p className="text-lg mb-6 text-neutral-600">
+                  Las búsquedas ya no son solo en Google. ChatGPT, Perplexity, Claude y otros asistentes de IA
+                  responden millones de consultas diarias. Si tu sitio web no está optimizado, la IA simplemente
+                  no te menciona.
+                </p>
+                <p className="text-lg mb-8 text-neutral-600">
+                  <strong className="text-neutral-900">Google penaliza sitios lentos y mal construidos.</strong> Los
+                  empuja al fondo de los resultados. Nosotros construimos sitios con rendimiento perfecto:
+                  carga instantánea, código limpio y estructura que la IA entiende.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { stat: "40%", desc: "de búsquedas serán conversacionales en 2025" },
+                    { stat: "1B+", desc: "usuarios activos de ChatGPT" },
+                    { stat: "53%", desc: "de tráfico perdido por sitios lentos" },
+                    { stat: "100", desc: "puntos en PageSpeed o Google te ignora" },
+                  ].map((item) => (
+                    <div key={item.desc} className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-center">
+                      <div className="text-2xl font-bold text-[#3ECF8E] mb-1">{item.stat}</div>
+                      <p className="text-xs text-neutral-500">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="p-6 rounded-xl bg-neutral-900 border border-neutral-700">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-[#3ECF8E]/20 rounded-xl flex items-center justify-center shrink-0">
+                      <span className="text-[#3ECF8E] text-xl">🤖</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-white mb-1">Optimizados para IA</p>
+                      <p className="text-sm text-neutral-400">
+                        Nuestros sitios usan datos estructurados, semántica correcta y contenido
+                        que los asistentes de IA pueden leer y recomendar.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Who We Are Section */}
+        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Quiénes somos</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+                  Somos MaxDigitalCR.
+                  <br />
+                  <span className="text-neutral-500">Tu equipo de desarrollo web.</span>
+                </h2>
+                <p className="text-lg mb-6 text-neutral-400">
                   Somos un equipo de desarrolladores en Costa Rica especializados en crear páginas web
                   profesionales para PyMEs y emprendedores. Combinamos tecnología de clase mundial con
                   un profundo entendimiento del mercado local.
                 </p>
-                <p className="text-lg mb-8 text-neutral-600">
-                  <strong className="text-neutral-900">Somos ágiles, directos y enfocados en resultados.</strong> Comunicación
+                <p className="text-lg mb-8 text-neutral-400">
+                  <strong className="text-white">Somos ágiles, directos y enfocados en resultados.</strong> Comunicación
                   clara, procesos eficientes y tu página lista en días, no en meses.
                 </p>
                 <Link
@@ -179,11 +236,11 @@ export default function Home() {
                   { icon: "🔧", title: "Soporte continuo", desc: "Siempre hay alguien para ayudarte" },
                   { icon: "🇨🇷", title: "100% Ticos", desc: "Entendemos el mercado local" },
                 ].map((item) => (
-                  <div key={item.title} className="flex items-center gap-4 p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+                  <div key={item.title} className="flex items-center gap-4 p-4 rounded-xl bg-neutral-800 border border-neutral-700">
                     <div className="text-2xl">{item.icon}</div>
                     <div>
-                      <p className="font-semibold text-neutral-900">{item.title}</p>
-                      <p className="text-sm text-neutral-500">{item.desc}</p>
+                      <p className="font-semibold text-white">{item.title}</p>
+                      <p className="text-sm text-neutral-400">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -193,16 +250,16 @@ export default function Home() {
         </section>
 
         {/* Pain Points Section */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
+        <section className="py-24 sm:py-32 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Sin complicaciones</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
                 Quitamos tus preocupaciones
                 <br />
-                <span className="text-neutral-500">de la mesa.</span>
+                <span className="text-neutral-400">de la mesa.</span>
               </h2>
-              <p className="text-xl max-w-3xl mx-auto text-neutral-400">
+              <p className="text-xl max-w-3xl mx-auto text-neutral-600">
                 Sabemos que crear una página web puede parecer complicado. Por eso nos encargamos de todo.
               </p>
             </div>
@@ -240,25 +297,25 @@ export default function Home() {
                   icon: "✅"
                 },
               ].map((item) => (
-                <div key={item.worry} className="p-6 rounded-xl bg-neutral-800 border border-neutral-700 transition-all hover:border-[#3ECF8E]">
+                <div key={item.worry} className="p-6 rounded-xl bg-neutral-50 border border-neutral-200 transition-all hover:border-[#3ECF8E] hover:shadow-lg">
                   <div className="text-3xl mb-4">{item.icon}</div>
-                  <p className="text-white font-semibold mb-3">{item.worry}</p>
-                  <p className="text-neutral-400 text-sm">{item.solution}</p>
+                  <p className="text-neutral-900 font-semibold mb-3">{item.worry}</p>
+                  <p className="text-neutral-600 text-sm">{item.solution}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Who Is This For Section - WHITE */}
-        <section className="py-24 sm:py-32 px-6 bg-white">
+        {/* Who Is This For Section */}
+        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-widest mb-6 text-neutral-500 font-bold">Soluciones para todos</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Soluciones para todos</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
                 ¿Para quién es esto?
               </h2>
-              <p className="text-xl max-w-2xl mx-auto text-neutral-500">
+              <p className="text-xl max-w-2xl mx-auto text-neutral-400">
                 Si tenés un negocio y querés crecer, necesitás presencia digital.
               </p>
             </div>
@@ -278,18 +335,18 @@ export default function Home() {
                 { icon: "🎨", name: "Diseñadores" },
                 { icon: "🛒", name: "Tiendas" },
               ].map((item) => (
-                <div key={item.name} className="p-4 rounded-xl border text-center transition-all hover:scale-105 bg-neutral-50 border-neutral-200 hover:border-[#3ECF8E] hover:shadow-lg">
+                <div key={item.name} className="p-4 rounded-xl border text-center transition-all hover:scale-105 bg-neutral-800 border-neutral-700 hover:border-[#3ECF8E]">
                   <span className="text-3xl mb-2 block">{item.icon}</span>
-                  <span className="text-sm font-medium text-neutral-700">{item.name}</span>
+                  <span className="text-sm font-medium text-white">{item.name}</span>
                 </div>
               ))}
             </div>
 
             <div className="mt-12 text-center">
-              <p className="text-lg text-neutral-600 mb-4">
-                <strong className="text-neutral-900">¿No ves tu industria?</strong> No importa.
+              <p className="text-lg text-neutral-400 mb-4">
+                <strong className="text-white">¿No ves tu industria?</strong> No importa.
               </p>
-              <p className="text-xl font-semibold text-neutral-900">
+              <p className="text-xl font-semibold text-white">
                 Si tenés clientes, necesitás una página web. <span className="text-[#3ECF8E]">Punto.</span>
               </p>
             </div>
@@ -297,16 +354,16 @@ export default function Home() {
         </section>
 
         {/* Services Preview */}
-        <section className="py-24 sm:py-32 px-6 bg-neutral-900">
+        <section className="py-24 sm:py-32 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Nuestros servicios</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
                 La página perfecta
                 <br />
-                <span className="text-neutral-500">para tu negocio.</span>
+                <span className="text-neutral-400">para tu negocio.</span>
               </h2>
-              <p className="text-xl max-w-2xl mx-auto text-neutral-400">
+              <p className="text-xl max-w-2xl mx-auto text-neutral-600">
                 Desde landing pages hasta tiendas online completas. Entregadas en tiempo récord.
               </p>
             </div>
@@ -338,8 +395,8 @@ export default function Home() {
               ].map((service) => (
                 <div key={service.title} className={`rounded-2xl p-6 border transition-all hover:scale-105 ${
                   service.popular
-                    ? "bg-neutral-800 border-[#3ECF8E] border-2 relative"
-                    : "bg-neutral-800 border-neutral-700"
+                    ? "bg-neutral-900 border-[#3ECF8E] border-2 relative"
+                    : "bg-neutral-900 border-neutral-700"
                 }`}>
                   {service.popular && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
