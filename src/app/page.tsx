@@ -174,10 +174,10 @@ export default function Home() {
 
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { number: "⚡", label: "Entrega express" },
-                  { number: "10", label: "Días máximo de entrega" },
+                  { number: "1-10", label: "Días de entrega" },
                   { number: "100%", label: "Clientes satisfechos" },
                   { number: "24h", label: "Tiempo de respuesta" },
+                  { number: "🇨🇷", label: "100% Ticos" },
                 ].map((item) => (
                   <div key={item.label} className="p-6 rounded-xl bg-neutral-50 border border-neutral-200 text-center">
                     <div className="text-3xl font-bold text-[#3ECF8E] mb-2">{item.number}</div>

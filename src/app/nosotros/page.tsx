@@ -218,10 +218,10 @@ export default function Nosotros() {
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { number: "⚡", label: "Entrega express" },
+                { number: "1-10", label: "Días de entrega" },
                 { number: "100%", label: "Clientes satisfechos" },
-                { number: "10", label: "Días máximo de entrega" },
                 { number: "24h", label: "Tiempo de respuesta" },
+                { number: "🇨🇷", label: "100% Ticos" },
               ].map((item) => (
                 <div key={item.label} className="p-6 rounded-xl bg-neutral-800 border border-neutral-700 text-center">
                   <div className="text-4xl font-bold text-[#3ECF8E] mb-2">{item.number}</div>
