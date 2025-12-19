@@ -91,6 +91,7 @@ export default function Footer() {
     response: "We respond within 24 hours.",
     copyright: "All rights reserved.",
     poweredBy: "Powered by",
+    tagline: "Professional web development 🇨🇷",
     modalTitle: "Message Sent!",
     modalMessage: "Thank you for contacting us. We'll get back to you within 24 hours.",
     modalClose: "Got it!"
@@ -124,6 +125,7 @@ export default function Footer() {
     response: "Te respondemos en menos de 24 horas.",
     copyright: "Todos los derechos reservados.",
     poweredBy: "Powered by",
+    tagline: "Desarrollo web profesional 🇨🇷",
     modalTitle: "¡Mensaje Enviado!",
     modalMessage: "Gracias por contactarnos. Te responderemos en menos de 24 horas.",
     modalClose: "¡Entendido!"
@@ -325,16 +327,40 @@ export default function Footer() {
             <p className="text-sm text-neutral-600">
               © {new Date().getFullYear()} MaxDigitalCR. {t.copyright}
             </p>
-            <div className="flex items-center gap-4">
-              <span className="text-2xl font-medium text-neutral-400">{t.poweredBy}</span>
-              <Image
-                src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png"
-                alt="MaxDigitalCR"
-                width={300}
-                height={100}
-                className="h-16 w-auto brightness-0 invert"
-              />
-            </div>
+            {/* Powered by Card - Glassmorphism */}
+            <a
+              href="https://maxdigitalcr.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative"
+            >
+              {/* Glow effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#3ECF8E] via-emerald-500 to-[#3ECF8E] rounded-2xl opacity-20 group-hover:opacity-40 blur-lg transition-all duration-500" />
+
+              {/* Card */}
+              <div className="relative px-6 py-4 bg-neutral-800/50 backdrop-blur-xl border border-neutral-700/50 rounded-xl overflow-hidden group-hover:border-[#3ECF8E]/30 transition-all duration-300">
+                {/* Shine effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+                </div>
+
+                <div className="relative flex flex-col items-center gap-2">
+                  <span className="text-xs uppercase tracking-widest text-neutral-500 group-hover:text-[#3ECF8E]/70 transition-colors">
+                    {t.poweredBy}
+                  </span>
+                  <Image
+                    src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png"
+                    alt="MaxDigitalCR"
+                    width={200}
+                    height={60}
+                    className="h-10 w-auto brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
+                  />
+                  <span className="text-[10px] text-neutral-600 group-hover:text-neutral-400 transition-colors">
+                    {t.tagline}
+                  </span>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
