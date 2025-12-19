@@ -17,6 +17,7 @@ export default function Footer() {
     message: ""
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [showModal, setShowModal] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -47,6 +48,7 @@ export default function Footer() {
       if (response.ok) {
         setStatus("sent");
         setFormData({ name: "", email: "", whatsapp: "", tipo: "", message: "" });
+        setShowModal(true);
         setTimeout(() => setStatus("idle"), 3000);
       } else {
         setStatus("error");
@@ -88,7 +90,10 @@ export default function Footer() {
     send: "Send message",
     response: "We respond within 24 hours.",
     copyright: "All rights reserved.",
-    poweredBy: "Powered by"
+    poweredBy: "Powered by",
+    modalTitle: "Message Sent!",
+    modalMessage: "Thank you for contacting us. We'll get back to you within 24 hours.",
+    modalClose: "Got it!"
   } : {
     title: "MaxDigitalCR",
     about: "Tu equipo de desarrollo web en Costa Rica. Tecnología de clase mundial a precios accesibles.",
@@ -118,7 +123,10 @@ export default function Footer() {
     send: "Enviar mensaje",
     response: "Te respondemos en menos de 24 horas.",
     copyright: "Todos los derechos reservados.",
-    poweredBy: "Powered by"
+    poweredBy: "Powered by",
+    modalTitle: "¡Mensaje Enviado!",
+    modalMessage: "Gracias por contactarnos. Te responderemos en menos de 24 horas.",
+    modalClose: "¡Entendido!"
   };
 
   const navPrefix = isEnglish ? "/en" : "";
@@ -339,6 +347,55 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Success Modal */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fadeIn">
+          <div className="bg-neutral-900 border border-neutral-700 rounded-2xl p-8 max-w-md w-full shadow-2xl animate-scaleIn">
+            {/* Success Icon */}
+            <div className="w-20 h-20 mx-auto mb-6 bg-[#3ECF8E]/20 rounded-full flex items-center justify-center">
+              <svg className="w-10 h-10 text-[#3ECF8E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+
+            {/* Title */}
+            <h3 className="text-2xl font-bold text-white text-center mb-3">
+              {t.modalTitle}
+            </h3>
+
+            {/* Message */}
+            <p className="text-neutral-400 text-center mb-8">
+              {t.modalMessage}
+            </p>
+
+            {/* Close Button */}
+            <button
+              onClick={() => setShowModal(false)}
+              className="w-full py-3 px-6 bg-[#3ECF8E] text-neutral-900 font-semibold rounded-lg hover:bg-[#2eb67d] transition-colors"
+            >
+              {t.modalClose}
+            </button>
+          </div>
+        </div>
+      )}
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+          from { opacity: 0; transform: scale(0.9); }
+          to { opacity: 1; transform: scale(1); }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.2s ease-out;
+        }
+        .animate-scaleIn {
+          animation: scaleIn 0.3s ease-out;
+        }
+      `}</style>
     </footer>
   );
 }
