@@ -26,12 +26,36 @@ export default function Footer() {
     e.preventDefault();
     setStatus("sending");
 
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-      setStatus("sent");
-      setFormData({ name: "", email: "", whatsapp: "", tipo: "", message: "" });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "e64e2899-46a4-408d-93a7-2b6b277188df",
+          subject: `Nuevo contacto desde MaxDigitalCR: ${formData.name}`,
+          from_name: "MaxDigitalCR Website",
+          name: formData.name,
+          email: formData.email,
+          whatsapp: formData.whatsapp || "No proporcionado",
+          tipo_pagina: formData.tipo || "No especificado",
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setStatus("sent");
+        setFormData({ name: "", email: "", whatsapp: "", tipo: "", message: "" });
+        setTimeout(() => setStatus("idle"), 3000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 3000);
+      }
+    } catch {
+      setStatus("error");
       setTimeout(() => setStatus("idle"), 3000);
-    }, 1000);
+    }
   };
 
   // Translations
