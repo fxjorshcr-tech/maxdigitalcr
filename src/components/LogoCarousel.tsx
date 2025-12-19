@@ -59,7 +59,7 @@ export default function LogoCarousel({ title = "Confían en nosotros" }: LogoCar
                   alt={logo.alt}
                   width={160}
                   height={64}
-                  className="h-12 w-auto object-contain"
+                  className="h-12 w-auto object-contain grayscale"
                 />
               </div>
             ))}
@@ -71,7 +71,7 @@ export default function LogoCarousel({ title = "Confían en nosotros" }: LogoCar
                   alt={logo.alt}
                   width={160}
                   height={64}
-                  className="h-12 w-auto object-contain"
+                  className="h-12 w-auto object-contain grayscale"
                 />
               </div>
             ))}
