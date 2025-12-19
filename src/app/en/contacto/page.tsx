@@ -1,10 +1,62 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    whatsapp: "",
+    tipo: "",
+    message: ""
+  });
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [showModal, setShowModal] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "e64e2899-46a4-408d-93a7-2b6b277188df",
+          subject: `New contact from MaxDigitalCR: ${formData.name}`,
+          from_name: "MaxDigitalCR Website",
+          name: formData.name,
+          email: formData.email,
+          whatsapp: formData.whatsapp || "Not provided",
+          website_type: formData.tipo || "Not specified",
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setStatus("sent");
+        setFormData({ name: "", email: "", whatsapp: "", tipo: "", message: "" });
+        setShowModal(true);
+        setTimeout(() => setStatus("idle"), 3000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 3000);
+      }
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 3000);
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -32,15 +84,17 @@ export default function Contact() {
               {/* Contact Form */}
               <div>
                 <h2 className="text-2xl font-bold text-neutral-900 mb-6">Send us a message</h2>
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="nombre" className="block text-sm font-medium mb-2 text-neutral-700">
+                    <label htmlFor="name" className="block text-sm font-medium mb-2 text-neutral-700">
                       Name *
                     </label>
                     <input
                       type="text"
-                      id="nombre"
-                      name="nombre"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all text-neutral-900"
                       placeholder="Your name"
@@ -55,6 +109,8 @@ export default function Contact() {
                       type="email"
                       id="email"
                       name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all text-neutral-900"
                       placeholder="you@email.com"
@@ -69,6 +125,8 @@ export default function Contact() {
                       type="tel"
                       id="whatsapp"
                       name="whatsapp"
+                      value={formData.whatsapp}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all text-neutral-900"
                       placeholder="+1 555 123 4567"
                     />
@@ -81,6 +139,8 @@ export default function Contact() {
                     <select
                       id="tipo"
                       name="tipo"
+                      value={formData.tipo}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all text-neutral-900 bg-white"
                     >
                       <option value="">Select an option</option>
@@ -93,13 +153,15 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="mensaje" className="block text-sm font-medium mb-2 text-neutral-700">
+                    <label htmlFor="message" className="block text-sm font-medium mb-2 text-neutral-700">
                       Tell us about your project *
                     </label>
                     <textarea
-                      id="mensaje"
-                      name="mensaje"
+                      id="message"
+                      name="message"
                       rows={5}
+                      value={formData.message}
+                      onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all resize-none text-neutral-900"
                       placeholder="What do you have in mind? Tell us about your business, what you want to achieve, and any details that help us better understand your project."
@@ -108,9 +170,33 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-lg font-medium transition-all bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
+                    disabled={status === "sending" || status === "sent"}
+                    className={`w-full py-4 rounded-lg font-medium transition-all flex items-center justify-center gap-2 ${
+                      status === "sent"
+                        ? "bg-green-500 text-white"
+                        : status === "sending"
+                        ? "bg-neutral-300 text-neutral-500 cursor-wait"
+                        : "bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
+                    }`}
                   >
-                    Send message
+                    {status === "sending" ? (
+                      <>
+                        <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                        </svg>
+                        Sending...
+                      </>
+                    ) : status === "sent" ? (
+                      <>
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        Sent!
+                      </>
+                    ) : (
+                      "Send message"
+                    )}
                   </button>
 
                   <p className="text-sm text-neutral-500 text-center">
@@ -145,7 +231,7 @@ export default function Contact() {
 
                   {/* Email */}
                   <a
-                    href="mailto:hola@maxdigitalcr.com"
+                    href="mailto:info@maxdigitalcr.com"
                     className="flex items-center gap-4 p-6 bg-neutral-50 border border-neutral-200 rounded-xl hover:bg-neutral-100 transition-all"
                   >
                     <div className="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center shrink-0">
@@ -156,7 +242,7 @@ export default function Contact() {
                     <div>
                       <p className="font-semibold text-neutral-900">Email</p>
                       <p className="text-neutral-600">For formal inquiries</p>
-                      <p className="text-[#3ECF8E] font-medium">hola@maxdigitalcr.com</p>
+                      <p className="text-[#3ECF8E] font-medium">info@maxdigitalcr.com</p>
                     </div>
                   </a>
 
@@ -240,7 +326,7 @@ export default function Contact() {
 
             <div className="mt-8 text-center">
               <Link
-                href="/en/servicios"
+                href="/en"
                 className="inline-flex items-center gap-2 text-[#3ECF8E] font-medium hover:underline"
               >
                 See all our services and pricing
@@ -275,6 +361,48 @@ export default function Contact() {
           </div>
         </section>
       </main>
+
+      {/* Success Modal */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+          <div
+            className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl"
+            style={{ animation: "scaleIn 0.3s ease-out" }}
+          >
+            {/* Success Icon */}
+            <div className="w-20 h-20 mx-auto mb-6 bg-[#3ECF8E]/20 rounded-full flex items-center justify-center">
+              <svg className="w-10 h-10 text-[#3ECF8E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+
+            {/* Title */}
+            <h3 className="text-2xl font-bold text-neutral-900 text-center mb-3">
+              Message Sent!
+            </h3>
+
+            {/* Message */}
+            <p className="text-neutral-600 text-center mb-8">
+              Thank you for contacting us. We&apos;ll get back to you within 24 hours.
+            </p>
+
+            {/* Close Button */}
+            <button
+              onClick={() => setShowModal(false)}
+              className="w-full py-3 px-6 bg-[#3ECF8E] text-neutral-900 font-semibold rounded-lg hover:bg-[#2eb67d] transition-colors"
+            >
+              Got it!
+            </button>
+          </div>
+        </div>
+      )}
+
+      <style jsx>{`
+        @keyframes scaleIn {
+          from { opacity: 0; transform: scale(0.9); }
+          to { opacity: 1; transform: scale(1); }
+        }
+      `}</style>
 
       <Footer />
     </>
