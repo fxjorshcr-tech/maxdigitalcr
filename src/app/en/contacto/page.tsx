@@ -248,7 +248,7 @@ export default function Contact() {
 
                   {/* Instagram */}
                   <a
-                    href="https://instagram.com/maxdigitalcr"
+                    href="https://www.instagram.com/maxdigitalcr/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 p-6 bg-neutral-50 border border-neutral-200 rounded-xl hover:bg-neutral-100 transition-all"
