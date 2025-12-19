@@ -334,14 +334,14 @@ export default function Footer() {
             <p className="text-sm text-neutral-600">
               © {new Date().getFullYear()} MaxDigitalCR. {t.copyright}
             </p>
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-neutral-400">{t.poweredBy}</span>
+            <div className="flex items-center gap-4">
+              <span className="text-2xl font-medium text-neutral-400">{t.poweredBy}</span>
               <Image
                 src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png"
                 alt="MaxDigitalCR"
-                width={120}
-                height={40}
-                className="h-6 w-auto brightness-0 invert"
+                width={300}
+                height={100}
+                className="h-16 w-auto brightness-0 invert"
               />
             </div>
           </div>
