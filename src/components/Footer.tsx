@@ -334,18 +334,18 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="group relative"
             >
-              {/* Glow effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#3ECF8E] via-emerald-500 to-[#3ECF8E] rounded-2xl opacity-20 group-hover:opacity-40 blur-lg transition-all duration-500" />
+              {/* Glow effect - more subtle */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#3ECF8E] to-emerald-500 rounded-2xl opacity-0 group-hover:opacity-60 transition-all duration-500" />
 
               {/* Card */}
-              <div className="relative px-6 py-4 bg-neutral-800/50 backdrop-blur-xl border border-neutral-700/50 rounded-xl overflow-hidden group-hover:border-[#3ECF8E]/30 transition-all duration-300">
+              <div className="relative px-8 py-5 bg-neutral-800/80 border border-neutral-700 rounded-xl overflow-hidden group-hover:border-[#3ECF8E]/50 transition-all duration-300">
                 {/* Shine effect */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+                  <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                 </div>
 
-                <div className="relative flex flex-col items-center gap-2">
-                  <span className="text-xs uppercase tracking-widest text-neutral-500 group-hover:text-[#3ECF8E]/70 transition-colors">
+                <div className="relative flex flex-col items-center gap-3">
+                  <span className="text-xs uppercase tracking-widest text-neutral-400 group-hover:text-[#3ECF8E] transition-colors font-medium">
                     {t.poweredBy}
                   </span>
                   <Image
@@ -353,9 +353,9 @@ export default function Footer() {
                     alt="MaxDigitalCR"
                     width={200}
                     height={60}
-                    className="h-10 w-auto brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
+                    className="h-12 w-auto brightness-0 invert group-hover:scale-105 transition-transform duration-300"
                   />
-                  <span className="text-[10px] text-neutral-600 group-hover:text-neutral-400 transition-colors">
+                  <span className="text-xs text-neutral-500 group-hover:text-neutral-300 transition-colors">
                     {t.tagline}
                   </span>
                 </div>
