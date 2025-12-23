@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   keywords: ["desarrollo web", "Costa Rica", "Next.js", "React", "landing pages", "e-commerce"],
   authors: [{ name: "MaxDigitalCR" }],
   icons: {
-    icon: "/md-transparente.png",
-    shortcut: "/md-transparente.png",
-    apple: "/md-transparente.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
   openGraph: {
     title: "MaxDigitalCR | Desarrollo Web de Nueva Generación",
