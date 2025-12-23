@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   description: "Creá en días. Escalá sin límites. Desarrollo web con tecnología de clase mundial en Costa Rica.",
   keywords: ["desarrollo web", "Costa Rica", "Next.js", "React", "landing pages", "e-commerce"],
   authors: [{ name: "MaxDigitalCR" }],
+  icons: {
+    icon: "/md-transparente.png",
+    shortcut: "/md-transparente.png",
+    apple: "/md-transparente.png",
+  },
   openGraph: {
     title: "MaxDigitalCR | Desarrollo Web de Nueva Generación",
     description: "Creá en días. Escalá sin límites. Desarrollo web con tecnología de clase mundial.",
