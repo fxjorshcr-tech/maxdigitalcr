@@ -358,8 +358,81 @@ export default function HomeEN() {
           </div>
         </section>
 
-        {/* Unique Process Section */}
+        {/* FREE CONSULTATION */}
         <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Free Consultation</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
+                  We analyze your website
+                  <br />
+                  <span className="text-neutral-400">at no cost.</span>
+                </h2>
+                <p className="text-lg mb-6 text-neutral-600">
+                  Already have a website but feel it&apos;s not working? <strong className="text-neutral-900">We help you identify what&apos;s failing.</strong>
+                </p>
+                <p className="text-lg mb-8 text-neutral-600">
+                  We do a complete analysis of your current site and tell you exactly what you can improve to get more customers.
+                </p>
+                <ul className="space-y-4 mb-8">
+                  {[
+                    "Loading speed analysis",
+                    "Design and usability review",
+                    "Basic SEO evaluation",
+                    "Mobile experience review",
+                    "Personalized recommendations"
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-neutral-700">
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/en/contacto"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
+                >
+                  Request free consultation
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
+
+              <div className="bg-neutral-900 rounded-2xl p-6 sm:p-8">
+                <div className="text-center mb-8">
+                  <div className="text-5xl mb-4">🔍</div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Complete Diagnosis</h3>
+                  <p className="text-neutral-400">We deliver a report with:</p>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    { icon: "⚡", title: "Speed", desc: "Is your site loading fast or losing visitors?" },
+                    { icon: "📱", title: "Mobile", desc: "Does it look good on phones? 70% of traffic comes from there." },
+                    { icon: "🔍", title: "SEO", desc: "Can Google find your page?" },
+                    { icon: "🎯", title: "Conversion", desc: "Do visitors know what to do when they arrive?" },
+                  ].map((item) => (
+                    <div key={item.title} className="flex items-center gap-4 p-4 bg-neutral-800 rounded-lg">
+                      <div className="text-2xl">{item.icon}</div>
+                      <div>
+                        <p className="text-white font-medium">{item.title}</p>
+                        <p className="text-neutral-500 text-sm">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 p-4 bg-[#3ECF8E]/20 border border-[#3ECF8E] rounded-lg text-center">
+                  <p className="text-white font-medium">100% Free, no commitment</p>
+                  <p className="text-neutral-400 text-sm">We just want to help you improve</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Unique Process Section */}
+        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -496,15 +569,125 @@ export default function HomeEN() {
           </div>
         </section>
 
-        {/* Industries Section */}
+        {/* GOOGLE ANALYTICS & SEARCH CONSOLE */}
         <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Solutions for Everyone</p>
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Measure Your Success</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
+                We install Google Analytics
+                <br />
+                <span className="text-neutral-400">and Search Console.</span>
+              </h2>
+              <p className="text-xl max-w-3xl mx-auto text-neutral-600">
+                Having a website is not enough. <strong className="text-neutral-900">You need to know what&apos;s happening on it.</strong> We set up Google tools so you can make data-driven decisions.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              {/* Google Analytics */}
+              <div className="rounded-2xl p-6 sm:p-8 bg-neutral-50 border border-neutral-200 hover:border-[#3ECF8E] transition-all">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 bg-orange-500 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-2xl">📊</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-neutral-900">Google Analytics</h3>
+                    <p className="text-neutral-500">Know your visitors</p>
+                  </div>
+                </div>
+                <p className="text-neutral-600 mb-6">
+                  Discover who visits your page, where they come from, what pages they view and how long they stay. <strong className="text-neutral-900">Key information to grow your business.</strong>
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "How many people visit your site",
+                    "What country/city they come from",
+                    "Which pages are most popular",
+                    "How long they spend on your site",
+                    "If they visit from mobile or desktop"
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-neutral-700">
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Search Console */}
+              <div className="rounded-2xl p-6 sm:p-8 bg-neutral-50 border border-neutral-200 hover:border-[#3ECF8E] transition-all">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 bg-blue-500 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-2xl">🔍</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-neutral-900">Google Search Console</h3>
+                    <p className="text-neutral-500">Appear on Google</p>
+                  </div>
+                </div>
+                <p className="text-neutral-600 mb-6">
+                  See how people find you on Google, what words they search and what position you appear in. <strong className="text-neutral-900">Essential to improve your visibility.</strong>
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "What keywords find you",
+                    "What position you appear in Google",
+                    "How many times you appear in searches",
+                    "If there are errors Google detects",
+                    "Submit your sitemap for indexing"
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-neutral-700">
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Why it matters */}
+            <div className="rounded-2xl p-6 sm:p-8 bg-neutral-900">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <div className="lg:col-span-2">
+                  <h3 className="text-2xl font-bold text-white mb-4">Why is this important?</h3>
+                  <p className="text-neutral-400 mb-4">
+                    Without data, you&apos;re making decisions blindly. With Google Analytics and Search Console you can:
+                  </p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {[
+                      "Know if your investment is working",
+                      "Identify what content to create",
+                      "Understand your audience",
+                      "Improve your position on Google"
+                    ].map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-neutral-300">
+                        <CheckIcon />
+                        <span className="text-sm">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="text-center">
+                  <div className="inline-block p-6 bg-[#3ECF8E]/20 border border-[#3ECF8E] rounded-xl">
+                    <p className="text-[#3ECF8E] font-bold text-lg mb-2">Included FREE</p>
+                    <p className="text-neutral-400 text-sm">in all our plans</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Industries Section */}
+        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-neutral-900">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Solutions for Everyone</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
                 Who is this for?
               </h2>
-              <p className="text-lg sm:text-xl max-w-2xl mx-auto text-neutral-600">
+              <p className="text-lg sm:text-xl max-w-2xl mx-auto text-neutral-400">
                 If you have a business and want to grow, you need a digital presence.
               </p>
             </div>
@@ -532,10 +715,10 @@ export default function HomeEN() {
             </div>
 
             <div className="mt-12 text-center">
-              <p className="text-lg text-neutral-600 mb-4">
-                <strong className="text-neutral-900">Don&apos;t see your industry?</strong> No problem.
+              <p className="text-lg text-neutral-400 mb-4">
+                <strong className="text-white">Don&apos;t see your industry?</strong> No problem.
               </p>
-              <p className="text-xl font-semibold text-neutral-900">
+              <p className="text-xl font-semibold text-white">
                 If you have customers, you need a website. <span className="text-[#3ECF8E]">Period.</span>
               </p>
             </div>
