@@ -437,16 +437,16 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Proceso único</p>
-                <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
+                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
                   Revisá los cambios
                   <br />
                   <span className="text-neutral-400">en tiempo real.</span>
                 </h2>
-                <p className="text-lg text-neutral-600 mb-6">
+                <p className="text-lg text-neutral-400 mb-6">
                   Olvidate de esperar semanas para ver cómo va tu página. Con nuestro sistema de
-                  preview branches, podés ver cada cambio que hacemos <strong>instantáneamente</strong> en tu celular.
+                  preview branches, podés ver cada cambio que hacemos <strong className="text-white">instantáneamente</strong> en tu celular.
                 </p>
-                <p className="text-lg text-neutral-600 mb-8">
+                <p className="text-lg text-neutral-400 mb-8">
                   Así trabajamos más rápido, evitamos malentendidos y te entregamos exactamente lo que querés.
                 </p>
                 <ul className="space-y-4">
@@ -683,10 +683,10 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Para Todos</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
                 ¿Para quién es esto?
               </h2>
-              <p className="text-xl max-w-2xl mx-auto text-neutral-600">
+              <p className="text-xl max-w-2xl mx-auto text-neutral-400">
                 Si tenés un negocio y querés crecer, necesitás presencia digital.
               </p>
             </div>
@@ -714,10 +714,10 @@ export default function Home() {
             </div>
 
             <div className="mt-12 text-center">
-              <p className="text-lg text-neutral-600 mb-4">
-                <strong className="text-neutral-900">¿No ves tu industria?</strong> No importa.
+              <p className="text-lg text-neutral-400 mb-4">
+                <strong className="text-white">¿No ves tu industria?</strong> No importa.
               </p>
-              <p className="text-xl font-semibold text-neutral-900">
+              <p className="text-xl font-semibold text-white">
                 Si tenés clientes, necesitás una página web. <span className="text-[#3ECF8E]">Punto.</span>
               </p>
             </div>
