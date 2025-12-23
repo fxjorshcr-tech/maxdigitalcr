@@ -893,10 +893,20 @@ export default function Home() {
                   { icon: "⚡", title: "Entrega rápida", desc: "1-10 días hábiles" },
                   { icon: "💬", title: "Comunicación directa", desc: "Hablás con quien hace tu página" },
                   { icon: "🔧", title: "Soporte continuo", desc: "Siempre hay alguien para ayudarte" },
-                  { icon: "🇨🇷", title: "100% Ticos", desc: "Entendemos el mercado local" },
+                  { icon: "cr-flag", title: "100% Ticos", desc: "Entendemos el mercado local" },
                 ].map((item) => (
                   <div key={item.title} className="p-4 rounded-xl bg-neutral-800 border border-neutral-700 hover:border-[#3ECF8E] transition-all">
-                    <div className="text-2xl mb-2">{item.icon}</div>
+                    {item.icon === "cr-flag" ? (
+                      <div className="w-8 h-6 mb-2 rounded overflow-hidden flex flex-col">
+                        <div className="h-1 bg-[#002b7f]" />
+                        <div className="h-1 bg-white" />
+                        <div className="h-2 bg-[#ce1126]" />
+                        <div className="h-1 bg-white" />
+                        <div className="h-1 bg-[#002b7f]" />
+                      </div>
+                    ) : (
+                      <div className="text-2xl mb-2">{item.icon}</div>
+                    )}
                     <p className="font-semibold text-white">{item.title}</p>
                     <p className="text-sm text-neutral-400">{item.desc}</p>
                   </div>

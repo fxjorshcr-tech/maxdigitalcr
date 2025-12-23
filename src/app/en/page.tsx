@@ -437,15 +437,15 @@ export default function HomeEN() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Unique Process</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
                   Preview in
                   <br />
                   <span className="text-neutral-400">real time.</span>
                 </h2>
-                <p className="text-lg mb-6 text-neutral-600">
-                  Unlike other agencies that show you a final design after weeks of waiting, <strong className="text-neutral-900">we give you a private link from day one</strong> where you can see your website progress.
+                <p className="text-lg mb-6 text-neutral-400">
+                  Unlike other agencies that show you a final design after weeks of waiting, <strong className="text-white">we give you a private link from day one</strong> where you can see your website progress.
                 </p>
-                <p className="text-lg mb-8 text-neutral-600">
+                <p className="text-lg mb-8 text-neutral-400">
                   Each change we make is reflected immediately. You can comment, suggest changes, and see how your site evolves in real time.
                 </p>
                 <ul className="space-y-3">
@@ -455,7 +455,7 @@ export default function HomeEN() {
                     "Comment and suggest changes directly",
                     "Never wait to see progress"
                   ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-neutral-700">
+                    <li key={item} className="flex items-center gap-3 text-neutral-300">
                       <CheckIcon />
                       {item}
                     </li>
@@ -728,54 +728,67 @@ export default function HomeEN() {
         {/* Maintenance Section */}
         <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Maintenance and Support</p>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                  Your website
-                  <br />
-                  <span className="text-neutral-500">always up to date.</span>
-                </h2>
-                <p className="text-lg mb-6 text-neutral-400">
-                  Once your website is live, we continue supporting you. Our maintenance plan includes everything you need to keep your site running and secure.
-                </p>
-                <div className="p-6 rounded-xl bg-neutral-800 border border-neutral-700 mb-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-lg font-bold text-white">Monthly Maintenance</span>
-                    <span className="text-2xl font-bold text-[#3ECF8E]">$15/mo</span>
+            <div className="text-center mb-16">
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">After Launch</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                Maintenance and Support
+              </h2>
+              <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+                Not all websites need constant maintenance, but all need support.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              {/* No Maintenance Needed */}
+              <div className="rounded-2xl p-6 sm:p-8 bg-neutral-800 border border-neutral-700">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
+                    <span className="text-2xl">📄</span>
                   </div>
-                  <ul className="space-y-2">
-                    {[
-                      "Managed hosting",
-                      "Security updates",
-                      "Daily backups",
-                      "Technical support",
-                      "Minor content changes"
-                    ].map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-sm text-neutral-300">
-                        <CheckIcon />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Landing & Catalog</h3>
+                    <p className="text-neutral-500">No mandatory maintenance</p>
+                  </div>
+                </div>
+                <p className="text-neutral-400 mb-6">
+                  Static pages (landing pages and catalogs) don&apos;t require monthly maintenance.
+                  Once delivered, they work perfectly without intervention.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between p-3 bg-neutral-700/50 rounded-lg">
+                    <span className="text-neutral-300">Support included</span>
+                    <span className="text-[#3ECF8E] font-medium">30 days free</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-neutral-700/50 rounded-lg">
+                    <span className="text-neutral-300">Minor changes after</span>
+                    <span className="text-white font-medium">Quoted separately</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="space-y-4">
-                {[
-                  { icon: "🛡️", title: "Security", desc: "Monitoring and protection against attacks. Your site always secure." },
-                  { icon: "💾", title: "Backups", desc: "Daily automatic copies. If something fails, we restore in minutes." },
-                  { icon: "🔄", title: "Updates", desc: "Security updates and improvements without extra charges." },
-                  { icon: "💬", title: "Priority Support", desc: "Direct WhatsApp. Fast response for any issue." },
-                ].map((item) => (
-                  <div key={item.title} className="flex items-start gap-4 p-4 rounded-xl bg-neutral-800 border border-neutral-700">
-                    <div className="text-2xl">{item.icon}</div>
-                    <div>
-                      <p className="font-semibold text-white">{item.title}</p>
-                      <p className="text-sm text-neutral-400">{item.desc}</p>
-                    </div>
+              {/* Maintenance Required */}
+              <div className="rounded-2xl p-6 sm:p-8 bg-neutral-800 border border-[#3ECF8E]">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-[#3ECF8E]/20 rounded-xl flex items-center justify-center">
+                    <span className="text-2xl">🛒</span>
                   </div>
-                ))}
+                  <div>
+                    <h3 className="text-xl font-bold text-white">E-Commerce</h3>
+                    <p className="text-neutral-500">Monthly maintenance included</p>
+                  </div>
+                </div>
+                <p className="text-neutral-400 mb-6">
+                  Online stores require constant maintenance: security updates,
+                  backups, payment processor monitoring, and ongoing technical support.
+                </p>
+                <div className="space-y-3">
+                  {["Security updates", "Automatic backups", "Priority support", "Minor changes included"].map((item) => (
+                    <div key={item} className="flex items-center justify-between p-3 bg-neutral-700/50 rounded-lg">
+                      <span className="text-neutral-300">{item}</span>
+                      <span className="text-[#3ECF8E]">✓</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -861,10 +874,20 @@ export default function HomeEN() {
                   { icon: "⚡", title: "Fast delivery", desc: "1-10 business days" },
                   { icon: "💬", title: "Direct communication", desc: "Talk to who builds your site" },
                   { icon: "🔧", title: "Ongoing support", desc: "There's always someone to help" },
-                  { icon: "🇨🇷", title: "100% Costa Rican", desc: "We understand the local market" },
+                  { icon: "cr-flag", title: "100% Costa Rican", desc: "We understand the local market" },
                 ].map((item) => (
                   <div key={item.title} className="p-4 rounded-xl bg-neutral-800 border border-neutral-700 hover:border-[#3ECF8E] transition-all">
-                    <div className="text-2xl mb-2">{item.icon}</div>
+                    {item.icon === "cr-flag" ? (
+                      <div className="w-8 h-6 mb-2 rounded overflow-hidden flex flex-col">
+                        <div className="h-1 bg-[#002b7f]" />
+                        <div className="h-1 bg-white" />
+                        <div className="h-2 bg-[#ce1126]" />
+                        <div className="h-1 bg-white" />
+                        <div className="h-1 bg-[#002b7f]" />
+                      </div>
+                    ) : (
+                      <div className="text-2xl mb-2">{item.icon}</div>
+                    )}
                     <p className="font-semibold text-white">{item.title}</p>
                     <p className="text-sm text-neutral-400">{item.desc}</p>
                   </div>
