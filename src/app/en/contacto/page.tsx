@@ -59,20 +59,18 @@ export default function Contact() {
     setStatus("sending");
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          access_key: "e64e2899-46a4-408d-93a7-2b6b277188df",
-          subject: `New contact from MaxDigitalCR: ${formData.name}`,
-          from_name: "MaxDigitalCR Website",
           name: formData.name,
           email: formData.email,
-          whatsapp: formData.whatsapp || "Not provided",
-          website_type: formData.tipo || "Not specified",
+          whatsapp: formData.whatsapp,
+          tipo: formData.tipo,
           message: formData.message,
+          honeypot: honeypot,
         }),
       });
 
