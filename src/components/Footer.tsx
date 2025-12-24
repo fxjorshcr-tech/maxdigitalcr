@@ -16,15 +16,49 @@ export default function Footer() {
     tipo: "",
     message: ""
   });
+  const [honeypot, setHoneypot] = useState(""); // Honeypot anti-bot field
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [showModal, setShowModal] = useState(false);
+  const [validationError, setValidationError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    setValidationError("");
+  };
+
+  // Stricter email validation
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    return emailRegex.test(email);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Anti-spam: If honeypot is filled, it's a bot
+    if (honeypot) {
+      setStatus("sent");
+      setShowModal(true);
+      setTimeout(() => setStatus("idle"), 3000);
+      return;
+    }
+
+    // Validations
+    if (formData.name.trim().length < 2) {
+      setValidationError(isEnglish ? "Name must be at least 2 characters" : "El nombre debe tener al menos 2 caracteres");
+      return;
+    }
+
+    if (!isValidEmail(formData.email)) {
+      setValidationError(isEnglish ? "Please enter a valid email address" : "Por favor ingresá un email válido");
+      return;
+    }
+
+    if (formData.message.trim().length < 10) {
+      setValidationError(isEnglish ? "Message must be at least 10 characters" : "El mensaje debe tener al menos 10 caracteres");
+      return;
+    }
+
     setStatus("sending");
 
     try {
@@ -222,6 +256,24 @@ export default function Footer() {
               {t.quickContact}
             </h4>
             <form onSubmit={handleSubmit} className="space-y-3">
+              {/* Hidden honeypot field - bots fill it, humans don't see it */}
+              <input
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                className="hidden"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+
+              {/* Validation error message */}
+              {validationError && (
+                <div className="p-3 bg-red-900/30 border border-red-700 rounded-lg text-red-400 text-sm">
+                  {validationError}
+                </div>
+              )}
+
               {/* Name and Email row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <input
