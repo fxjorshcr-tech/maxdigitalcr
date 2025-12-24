@@ -13,15 +13,49 @@ export default function Contacto() {
     tipo: "",
     mensaje: ""
   });
+  const [honeypot, setHoneypot] = useState(""); // Campo honeypot anti-bot
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [showModal, setShowModal] = useState(false);
+  const [validationError, setValidationError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    setValidationError("");
+  };
+
+  // Validación de email más estricta
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    return emailRegex.test(email);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Anti-spam: Si el honeypot está lleno, es un bot
+    if (honeypot) {
+      setStatus("sent");
+      setShowModal(true);
+      setTimeout(() => setStatus("idle"), 3000);
+      return;
+    }
+
+    // Validaciones
+    if (formData.nombre.trim().length < 2) {
+      setValidationError("El nombre debe tener al menos 2 caracteres");
+      return;
+    }
+
+    if (!isValidEmail(formData.email)) {
+      setValidationError("Por favor ingresá un email válido");
+      return;
+    }
+
+    if (formData.mensaje.trim().length < 10) {
+      setValidationError("El mensaje debe tener al menos 10 caracteres");
+      return;
+    }
+
     setStatus("sending");
 
     try {
@@ -85,6 +119,24 @@ export default function Contacto() {
               <div>
                 <h2 className="text-2xl font-bold text-neutral-900 mb-6">Envianos un mensaje</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Campo honeypot oculto - los bots lo llenan, humanos no lo ven */}
+                  <input
+                    type="text"
+                    name="website"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+
+                  {/* Mensaje de error de validación */}
+                  {validationError && (
+                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                      {validationError}
+                    </div>
+                  )}
+
                   <div>
                     <label htmlFor="nombre" className="block text-sm font-medium mb-2 text-neutral-700">
                       Nombre *

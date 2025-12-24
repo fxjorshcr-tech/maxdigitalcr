@@ -13,15 +13,49 @@ export default function Contact() {
     tipo: "",
     message: ""
   });
+  const [honeypot, setHoneypot] = useState(""); // Honeypot anti-bot field
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [showModal, setShowModal] = useState(false);
+  const [validationError, setValidationError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    setValidationError("");
+  };
+
+  // Stricter email validation
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    return emailRegex.test(email);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Anti-spam: If honeypot is filled, it's a bot
+    if (honeypot) {
+      setStatus("sent");
+      setShowModal(true);
+      setTimeout(() => setStatus("idle"), 3000);
+      return;
+    }
+
+    // Validations
+    if (formData.name.trim().length < 2) {
+      setValidationError("Name must be at least 2 characters");
+      return;
+    }
+
+    if (!isValidEmail(formData.email)) {
+      setValidationError("Please enter a valid email address");
+      return;
+    }
+
+    if (formData.message.trim().length < 10) {
+      setValidationError("Message must be at least 10 characters");
+      return;
+    }
+
     setStatus("sending");
 
     try {
@@ -85,6 +119,24 @@ export default function Contact() {
               <div>
                 <h2 className="text-2xl font-bold text-neutral-900 mb-6">Send us a message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Hidden honeypot field - bots fill it, humans don't see it */}
+                  <input
+                    type="text"
+                    name="website"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+
+                  {/* Validation error message */}
+                  {validationError && (
+                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                      {validationError}
+                    </div>
+                  )}
+
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2 text-neutral-700">
                       Name *
