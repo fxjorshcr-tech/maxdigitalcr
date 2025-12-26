@@ -47,18 +47,27 @@ export default function Navbar() {
   const homeLink = isEnglish ? "/en" : "/";
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b transition-all duration-300 ${
-      scrolled || !isDarkHero
-        ? "bg-white/90 border-neutral-200"
-        : "bg-neutral-900/80 border-neutral-800"
-    }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b transition-all duration-300 ${
+        scrolled || !isDarkHero
+          ? "bg-white/90 border-neutral-200"
+          : "bg-neutral-900/80 border-neutral-800"
+      }`}
+      role="navigation"
+      aria-label={isEnglish ? "Main navigation" : "Navegación principal"}
+    >
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href={homeLink} className="flex items-center" onClick={handleLinkClick}>
+          <Link
+            href={homeLink}
+            className="flex items-center"
+            onClick={handleLinkClick}
+            aria-label={isEnglish ? "MaxDigitalCR - Go to homepage" : "MaxDigitalCR - Ir a página principal"}
+          >
             <Image
               src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png"
-              alt="MaxDigitalCR"
+              alt="MaxDigitalCR - Desarrollo Web Profesional en Costa Rica"
               width={220}
               height={68}
               className={`h-14 md:h-16 w-auto transition-all ${
@@ -165,7 +174,11 @@ export default function Navbar() {
             <button
               className="p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
+              aria-label={isMenuOpen
+                ? (isEnglish ? "Close menu" : "Cerrar menú")
+                : (isEnglish ? "Open menu" : "Abrir menú")}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
               <svg
                 className={`w-6 h-6 ${scrolled || !isDarkHero ? "text-neutral-900" : "text-white"}`}
@@ -195,9 +208,12 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className={`md:hidden pt-4 pb-2 border-t mt-4 ${
-            scrolled || !isDarkHero ? "border-neutral-200" : "border-neutral-800"
-          }`}>
+          <div
+            id="mobile-menu"
+            className={`md:hidden pt-4 pb-2 border-t mt-4 ${
+              scrolled || !isDarkHero ? "border-neutral-200" : "border-neutral-800"
+            }`}
+          >
             <div className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <Link

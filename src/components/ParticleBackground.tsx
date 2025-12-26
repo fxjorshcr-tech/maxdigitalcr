@@ -7,13 +7,24 @@ import type { ISourceOptions } from "@tsparticles/engine";
 
 export default function ParticleBackground() {
   const [init, setInit] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Detect mobile devices for performance optimization
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || 'ontouchstart' in window);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
     }).then(() => {
       setInit(true);
     });
+
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const options: ISourceOptions = useMemo(
@@ -23,15 +34,17 @@ export default function ParticleBackground() {
           value: "transparent",
         },
       },
-      fpsLimit: 120,
+      // Lower FPS on mobile for better battery life
+      fpsLimit: isMobile ? 30 : 60,
       interactivity: {
         events: {
+          // Disable hover effects on mobile for better performance
           onHover: {
-            enable: true,
+            enable: !isMobile,
             mode: "grab",
           },
           onClick: {
-            enable: true,
+            enable: !isMobile,
             mode: "push",
           },
         },
@@ -43,7 +56,7 @@ export default function ParticleBackground() {
             },
           },
           push: {
-            quantity: 4,
+            quantity: 2,
           },
         },
       },
@@ -53,7 +66,7 @@ export default function ParticleBackground() {
         },
         links: {
           color: "#3ECF8E",
-          distance: 150,
+          distance: isMobile ? 120 : 150,
           enable: true,
           opacity: 0.3,
           width: 1,
@@ -65,7 +78,8 @@ export default function ParticleBackground() {
             default: "bounce",
           },
           random: false,
-          speed: 1,
+          // Slower movement on mobile
+          speed: isMobile ? 0.5 : 1,
           straight: false,
         },
         number: {
@@ -74,7 +88,8 @@ export default function ParticleBackground() {
             width: 1920,
             height: 1080,
           },
-          value: 80,
+          // Fewer particles on mobile for better performance
+          value: isMobile ? 30 : 60,
         },
         opacity: {
           value: 0.5,
@@ -83,14 +98,17 @@ export default function ParticleBackground() {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 3 },
+          value: { min: 1, max: isMobile ? 2 : 3 },
         },
       },
       detectRetina: true,
+      // Reduce canvas updates on mobile
+      smooth: !isMobile,
     }),
-    []
+    [isMobile]
   );
 
+  // Don't render particles on very small screens or if not initialized
   if (!init) {
     return null;
   }
@@ -100,6 +118,7 @@ export default function ParticleBackground() {
       id="tsparticles"
       className="absolute inset-0 -z-10"
       options={options}
+      aria-hidden="true"
     />
   );
 }
