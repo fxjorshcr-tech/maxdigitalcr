@@ -59,22 +59,25 @@ export default function Contact() {
     setStatus("sending");
 
     try {
-      const response = await fetch("/api/contact", {
+      // Send directly to Web3Forms from the client
+      const formDataToSend = new FormData();
+      formDataToSend.append("access_key", "e64e2899-46a4-408d-93a7-2b6b277188df");
+      formDataToSend.append("subject", `New contact from MaxDigitalCR: ${formData.name}`);
+      formDataToSend.append("from_name", "MaxDigitalCR Website");
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("whatsapp", formData.whatsapp || "Not provided");
+      formDataToSend.append("tipo_pagina", formData.tipo || "Not specified");
+      formDataToSend.append("message", formData.message);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          whatsapp: formData.whatsapp,
-          tipo: formData.tipo,
-          message: formData.message,
-          honeypot: honeypot,
-        }),
+        body: formDataToSend,
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (data.success) {
         setStatus("sent");
         setFormData({ name: "", email: "", whatsapp: "", tipo: "", message: "" });
         setShowModal(true);
