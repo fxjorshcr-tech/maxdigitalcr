@@ -6,7 +6,7 @@ const WEB3FORMS_API_KEY = process.env.WEB3FORMS_API_KEY || "e64e2899-46a4-408d-9
 // Rate limiting simple (en memoria - para producción usar Redis)
 const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
 const RATE_LIMIT_WINDOW = 60000; // 1 minuto
-const RATE_LIMIT_MAX = 3; // máximo 3 envíos por minuto por IP
+const RATE_LIMIT_MAX = 5; // máximo 5 envíos por minuto por IP
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
@@ -46,7 +46,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const body = await request.json();
+    let body;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json(
+        { success: false, message: "Invalid request body" },
+        { status: 400 }
+      );
+    }
+
     const { name, email, whatsapp, tipo, message, honeypot } = body;
 
     // Anti-spam: Si el honeypot está lleno, fingir éxito
@@ -77,10 +86,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Enviar a Web3Forms
-    const response = await fetch("https://api.web3forms.com/submit", {
+    const web3Response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Accept": "application/json",
       },
       body: JSON.stringify({
         access_key: WEB3FORMS_API_KEY,
@@ -94,17 +104,21 @@ export async function POST(request: NextRequest) {
       }),
     });
 
-    if (response.ok) {
+    const responseData = await web3Response.json();
+
+    if (web3Response.ok && responseData.success) {
       return NextResponse.json({ success: true });
     } else {
+      console.error("Web3Forms error:", responseData);
       return NextResponse.json(
-        { success: false, message: "Failed to send message" },
+        { success: false, message: responseData.message || "Failed to send message" },
         { status: 500 }
       );
     }
-  } catch {
+  } catch (error) {
+    console.error("Contact API error:", error);
     return NextResponse.json(
-      { success: false, message: "Server error" },
+      { success: false, message: "Server error. Please try again." },
       { status: 500 }
     );
   }
