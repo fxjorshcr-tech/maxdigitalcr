@@ -183,6 +183,182 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Google My Business Section */}
+        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-neutral-900">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Reputación Online</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+                  Las estrellas de Google
+                  <br />
+                  <span className="text-neutral-500">venden por vos.</span>
+                </h2>
+                <p className="text-lg mb-6 text-neutral-400">
+                  Un negocio con 4.5+ estrellas genera <strong className="text-white">270% más clics</strong> que uno sin reseñas. Tu página web y tu perfil de Google My Business trabajan juntos.
+                </p>
+                <p className="text-lg mb-8 text-neutral-400">
+                  <strong className="text-white">Nosotros te ayudamos a configurar ambos</strong> para que tu negocio se vea profesional y confiable desde el primer momento.
+                </p>
+                <ul className="space-y-3">
+                  {["Configuración de Google My Business", "Integración con tu página web", "Estrategia para obtener más reseñas", "Widget de reseñas en tu sitio"].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-neutral-300">
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="space-y-6">
+                <div className="bg-white rounded-2xl shadow-xl p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">G</div>
+                    <div>
+                      <p className="font-semibold text-neutral-900">Tu Negocio</p>
+                      <div className="flex items-center gap-1">
+                        {[1,2,3,4,5].map((star) => (
+                          <svg key={star} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                        <span className="text-sm text-neutral-500 ml-2">4.9 (127 reseñas)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="border-t border-neutral-100 pt-4">
+                    <p className="text-sm text-neutral-600 italic">&quot;Excelente servicio, muy profesionales. Mi página quedó increíble y la entregaron super rápido. 100% recomendados.&quot;</p>
+                    <p className="text-xs text-neutral-400 mt-2">— Cliente satisfecho</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  {[
+                    { number: "4.9", label: "Calificación" },
+                    { number: "270%", label: "Más clics" },
+                    { number: "88%", label: "Confían en reseñas" },
+                  ].map((item) => (
+                    <div key={item.label} className="p-4 rounded-xl bg-neutral-800 border border-neutral-700">
+                      <div className="text-2xl font-bold text-[#3ECF8E]">{item.number}</div>
+                      <p className="text-xs text-neutral-400">{item.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Google Analytics & Search Console */}
+        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Medí tu Éxito</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
+                Instalamos Google Analytics
+                <br />
+                <span className="text-neutral-400">y Search Console.</span>
+              </h2>
+              <p className="text-xl max-w-3xl mx-auto text-neutral-600">
+                No basta con tener una página web. <strong className="text-neutral-900">Necesitás saber qué está pasando en ella.</strong> Te configuramos las herramientas de Google para que tomes decisiones basadas en datos.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              {/* Google Analytics */}
+              <div className="rounded-2xl p-6 sm:p-8 bg-neutral-50 border border-neutral-200 hover:border-[#3ECF8E] transition-all">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 bg-orange-500 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-2xl">📊</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-neutral-900">Google Analytics</h3>
+                    <p className="text-neutral-500">Conocé a tus visitantes</p>
+                  </div>
+                </div>
+                <p className="text-neutral-600 mb-6">
+                  Descubrí quién visita tu página, de dónde vienen, qué páginas ven y cuánto tiempo se quedan. <strong className="text-neutral-900">Información clave para hacer crecer tu negocio.</strong>
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Cuántas personas visitan tu sitio",
+                    "De qué país/ciudad vienen",
+                    "Qué páginas son las más populares",
+                    "Cuánto tiempo pasan en tu sitio",
+                    "Si entran desde celular o computadora"
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-neutral-700">
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Search Console */}
+              <div className="rounded-2xl p-6 sm:p-8 bg-neutral-50 border border-neutral-200 hover:border-[#3ECF8E] transition-all">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 bg-blue-500 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-2xl">🔍</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-neutral-900">Google Search Console</h3>
+                    <p className="text-neutral-500">Aparecé en Google</p>
+                  </div>
+                </div>
+                <p className="text-neutral-600 mb-6">
+                  Mirá cómo te encuentra la gente en Google, qué palabras buscan y en qué posición aparecés. <strong className="text-neutral-900">Esencial para mejorar tu visibilidad.</strong>
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Qué palabras clave te encuentran",
+                    "En qué posición aparecés en Google",
+                    "Cuántas veces aparecés en búsquedas",
+                    "Si hay errores que Google detecta",
+                    "Enviar tu sitemap para indexación"
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-neutral-700">
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Why it matters */}
+            <div className="rounded-2xl p-6 sm:p-8 bg-neutral-900">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <div className="lg:col-span-2">
+                  <h3 className="text-2xl font-bold text-white mb-4">¿Por qué es importante?</h3>
+                  <p className="text-neutral-400 mb-4">
+                    Sin datos, estás tomando decisiones a ciegas. Con Google Analytics y Search Console podés:
+                  </p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {[
+                      "Saber si tu inversión está funcionando",
+                      "Identificar qué contenido crear",
+                      "Entender a tu audiencia",
+                      "Mejorar tu posición en Google"
+                    ].map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-neutral-300">
+                        <CheckIcon />
+                        <span className="text-sm">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="text-center">
+                  <div className="inline-block p-6 bg-[#3ECF8E]/20 border border-[#3ECF8E] rounded-xl">
+                    <p className="text-[#3ECF8E] font-bold text-lg mb-2">Incluido GRATIS</p>
+                    <p className="text-neutral-400 text-sm">en todos nuestros planes</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Industries */}
         <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-neutral-900">
           <div className="max-w-6xl mx-auto">
