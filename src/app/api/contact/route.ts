@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// API key segura en el servidor - no expuesta al cliente
-const WEB3FORMS_API_KEY = process.env.WEB3FORMS_API_KEY || "e64e2899-46a4-408d-93a7-2b6b277188df";
+// API key segura en el servidor
+const WEB3FORMS_API_KEY = "e64e2899-46a4-408d-93a7-2b6b277188df";
 
-// Rate limiting simple (en memoria - para producción usar Redis)
+// Rate limiting simple (en memoria)
 const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
 const RATE_LIMIT_WINDOW = 60000; // 1 minuto
 const RATE_LIMIT_MAX = 5; // máximo 5 envíos por minuto por IP
@@ -85,28 +85,39 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Enviar a Web3Forms
+    // Preparar datos para Web3Forms
+    const formData = new FormData();
+    formData.append("access_key", WEB3FORMS_API_KEY);
+    formData.append("subject", `Nuevo contacto desde MaxDigitalCR: ${name}`);
+    formData.append("from_name", "MaxDigitalCR Website");
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("whatsapp", whatsapp || "No proporcionado");
+    formData.append("tipo_pagina", tipo || "No especificado");
+    formData.append("message", message);
+
+    // Enviar a Web3Forms usando FormData
     const web3Response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify({
-        access_key: WEB3FORMS_API_KEY,
-        subject: `Nuevo contacto desde MaxDigitalCR: ${name}`,
-        from_name: "MaxDigitalCR Website",
-        name: name,
-        email: email,
-        whatsapp: whatsapp || "No proporcionado",
-        tipo_pagina: tipo || "No especificado",
-        message: message,
-      }),
+      body: formData,
     });
 
-    const responseData = await web3Response.json();
+    // Leer respuesta como texto primero
+    const responseText = await web3Response.text();
 
-    if (web3Response.ok && responseData.success) {
+    // Intentar parsear como JSON
+    let responseData;
+    try {
+      responseData = JSON.parse(responseText);
+    } catch {
+      console.error("Web3Forms returned non-JSON response:", responseText.substring(0, 500));
+      return NextResponse.json(
+        { success: false, message: "Error connecting to email service" },
+        { status: 500 }
+      );
+    }
+
+    if (responseData.success) {
       return NextResponse.json({ success: true });
     } else {
       console.error("Web3Forms error:", responseData);
