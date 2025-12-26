@@ -135,6 +135,13 @@ export default function Contact() {
                     </div>
                   )}
 
+                  {/* Server error message */}
+                  {status === "error" && (
+                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                      There was an error sending your message. Please try again or contact us via WhatsApp.
+                    </div>
+                  )}
+
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2 text-neutral-700">
                       Name *
