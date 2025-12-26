@@ -62,18 +62,19 @@ export default function Footer() {
     setStatus("sending");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://formspree.io/f/mojqqzly", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json",
         },
         body: JSON.stringify({
-          name: formData.name,
+          nombre: formData.name,
           email: formData.email,
-          whatsapp: formData.whatsapp,
-          tipo: formData.tipo,
-          message: formData.message,
-          honeypot: honeypot,
+          whatsapp: formData.whatsapp || "No proporcionado",
+          tipo_pagina: formData.tipo || "No especificado",
+          mensaje: formData.message,
+          _subject: `Nuevo contacto desde MaxDigitalCR (Footer): ${formData.name}`,
         }),
       });
 
