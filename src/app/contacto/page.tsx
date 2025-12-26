@@ -25,20 +25,19 @@ export default function Contacto() {
     setStatus("sending");
 
     try {
-      const response = await fetch("https://formspree.io/f/mojqqzly", {
+      const formDataToSend = new FormData();
+      formDataToSend.append("access_key", "e64e2899-46a4-408d-93a7-2b6b277188df");
+      formDataToSend.append("subject", `Nuevo contacto desde MaxDigitalCR: ${formData.nombre}`);
+      formDataToSend.append("from_name", "MaxDigitalCR Website");
+      formDataToSend.append("name", formData.nombre);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("whatsapp", formData.whatsapp || "No proporcionado");
+      formDataToSend.append("tipo_pagina", formData.tipo || "No especificado");
+      formDataToSend.append("message", formData.mensaje);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
-        body: JSON.stringify({
-          nombre: formData.nombre,
-          email: formData.email,
-          whatsapp: formData.whatsapp || "No proporcionado",
-          tipo_pagina: formData.tipo || "No especificado",
-          mensaje: formData.mensaje,
-          _subject: `Nuevo contacto desde MaxDigitalCR: ${formData.nombre}`,
-        }),
+        body: formDataToSend,
       });
 
       if (response.ok) {
