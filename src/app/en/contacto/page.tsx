@@ -13,71 +13,36 @@ export default function Contact() {
     tipo: "",
     message: ""
   });
-  const [honeypot, setHoneypot] = useState(""); // Honeypot anti-bot field
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [showModal, setShowModal] = useState(false);
-  const [validationError, setValidationError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
-    setValidationError("");
-  };
-
-  // Stricter email validation
-  const isValidEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-    return emailRegex.test(email);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Anti-spam: If honeypot is filled, it's a bot
-    if (honeypot) {
-      setStatus("sent");
-      setShowModal(true);
-      setTimeout(() => setStatus("idle"), 3000);
-      return;
-    }
-
-    // Validations
-    if (formData.name.trim().length < 2) {
-      setValidationError("Name must be at least 2 characters");
-      return;
-    }
-
-    if (!isValidEmail(formData.email)) {
-      setValidationError("Please enter a valid email address");
-      return;
-    }
-
-    if (formData.message.trim().length < 10) {
-      setValidationError("Message must be at least 10 characters");
-      return;
-    }
-
     setStatus("sending");
 
     try {
-      // Send directly to Web3Forms from the client
-      const formDataToSend = new FormData();
-      formDataToSend.append("access_key", "e64e2899-46a4-408d-93a7-2b6b277188df");
-      formDataToSend.append("subject", `New contact from MaxDigitalCR: ${formData.name}`);
-      formDataToSend.append("from_name", "MaxDigitalCR Website");
-      formDataToSend.append("name", formData.name);
-      formDataToSend.append("email", formData.email);
-      formDataToSend.append("whatsapp", formData.whatsapp || "Not provided");
-      formDataToSend.append("tipo_pagina", formData.tipo || "Not specified");
-      formDataToSend.append("message", formData.message);
-
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formDataToSend,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "e64e2899-46a4-408d-93a7-2b6b277188df",
+          subject: `New contact from MaxDigitalCR: ${formData.name}`,
+          from_name: "MaxDigitalCR Website",
+          name: formData.name,
+          email: formData.email,
+          whatsapp: formData.whatsapp || "Not provided",
+          website_type: formData.tipo || "Not specified",
+          message: formData.message,
+        }),
       });
 
-      const data = await response.json();
-
-      if (data.success) {
+      if (response.ok) {
         setStatus("sent");
         setFormData({ name: "", email: "", whatsapp: "", tipo: "", message: "" });
         setShowModal(true);
@@ -120,31 +85,6 @@ export default function Contact() {
               <div>
                 <h2 className="text-2xl font-bold text-neutral-900 mb-6">Send us a message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Hidden honeypot field - bots fill it, humans don't see it */}
-                  <input
-                    type="text"
-                    name="website"
-                    value={honeypot}
-                    onChange={(e) => setHoneypot(e.target.value)}
-                    className="hidden"
-                    tabIndex={-1}
-                    autoComplete="off"
-                  />
-
-                  {/* Validation error message */}
-                  {validationError && (
-                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
-                      {validationError}
-                    </div>
-                  )}
-
-                  {/* Server error message */}
-                  {status === "error" && (
-                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
-                      There was an error sending your message. Please try again or contact us via WhatsApp.
-                    </div>
-                  )}
-
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2 text-neutral-700">
                       Name *
