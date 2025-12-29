@@ -224,7 +224,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://facebook.com/maxdigitalcr"
+                href="https://www.facebook.com/profile.php?id=61585468526315"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[#1877F2] flex items-center justify-center text-white hover:scale-110 transition-all"
@@ -235,7 +235,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://instagram.com/maxdigitalcr"
+                href="https://www.instagram.com/maxdigitalcostarica/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 flex items-center justify-center text-white hover:scale-110 transition-all"
