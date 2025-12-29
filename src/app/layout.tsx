@@ -20,11 +20,13 @@ const jsonLd = {
         "height": 512
       },
       "sameAs": [
-        "https://wa.me/50685680801"
+        "https://wa.me/50685962438",
+        "https://www.facebook.com/profile.php?id=61585468526315",
+        "https://www.instagram.com/maxdigitalcostarica/"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+506-8568-0801",
+        "telephone": "+506-8596-2438",
         "contactType": "sales",
         "availableLanguage": ["Spanish", "English"]
       }
@@ -35,7 +37,7 @@ const jsonLd = {
       "name": "MaxDigitalCR",
       "description": "Agencia de desarrollo web profesional en Costa Rica. Creamos landing pages, catálogos digitales y e-commerce con tecnología Next.js y React.",
       "url": "https://www.maxdigitalcr.com",
-      "telephone": "+506-8568-0801",
+      "telephone": "+506-8596-2438",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
