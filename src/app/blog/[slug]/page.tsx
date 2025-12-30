@@ -135,10 +135,10 @@ export default async function ArticlePage({ params }: PageProps) {
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/60 to-neutral-900/30" />
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 pb-12 pt-32 w-full">
+        <div className="relative z-10 max-w-4xl mx-auto px-6 pb-8 md:pb-12 pt-28 md:pt-32 w-full">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-neutral-300 hover:text-white transition-colors mb-6"
+            className="inline-flex items-center gap-2 text-neutral-300 hover:text-white transition-colors mb-4 md:mb-6 text-sm"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -146,16 +146,16 @@ export default async function ArticlePage({ params }: PageProps) {
             Volver al blog
           </Link>
 
-          <div className="flex items-center gap-3 text-sm text-neutral-300 mb-4">
-            <span className="px-3 py-1 bg-[#3ECF8E]/20 text-[#3ECF8E] rounded-full font-medium">
+          <div className="flex flex-wrap items-center gap-2 md:gap-3 text-xs md:text-sm text-neutral-300 mb-3 md:mb-4">
+            <span className="px-2 md:px-3 py-1 bg-[#3ECF8E]/20 text-[#3ECF8E] rounded-full font-medium">
               {article.category}
             </span>
             <span>{formatDate(article.date, "es")}</span>
-            <span>·</span>
+            <span className="hidden md:inline">·</span>
             <span>{article.readTime} de lectura</span>
           </div>
 
-          <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+          <h1 className="text-2xl md:text-5xl font-bold text-white leading-tight">
             {article.title}
           </h1>
         </div>
