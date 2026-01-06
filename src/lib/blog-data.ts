@@ -32,6 +32,7 @@ export const BLOG_IMAGES = {
   article1: "https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/blog1-emprendedor%20(2).webp",
   article2: "https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/better-web-optimizada.webp",
   article3: "https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/2026-web-rapida.webp",
+  article4: "https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/google-my-bussines.webp",
 };
 
 // Datos del blog en Español
@@ -41,7 +42,7 @@ export const blogDataES: BlogData = {
     subtitle: "Recursos y consejos",
     description: "Artículos, guías y tendencias para impulsar tu presencia digital y hacer crecer tu negocio en Costa Rica.",
   },
-  categories: ["Todos", "Negocios", "Diseño Web", "Tendencias"],
+  categories: ["Todos", "Negocios", "Diseño Web", "Tendencias", "Marketing"],
   cta: {
     title: "¿Listo para tener tu página web?",
     description: "Convertimos tu idea en una página web profesional en días, no meses.",
@@ -56,7 +57,7 @@ export const blogDataEN: BlogData = {
     subtitle: "Resources and tips",
     description: "Articles, guides, and trends to boost your digital presence and grow your business in Costa Rica.",
   },
-  categories: ["All", "Business", "Web Design", "Trends"],
+  categories: ["All", "Business", "Web Design", "Trends", "Marketing"],
   cta: {
     title: "Ready to get your website?",
     description: "We turn your idea into a professional website in days, not months.",
@@ -377,6 +378,80 @@ No esperes a que tu página web se vea anticuada para actualizarla. Las tendenci
 **Contactanos hoy** y llevá tu presencia digital al siguiente nivel. El futuro de tu negocio empieza con una página web moderna y profesional.
     `,
   },
+  {
+    slug: "google-my-business-iman-clientes-locales",
+    title: "Google My Business: El imán de clientes locales que estás ignorando (y cómo las reseñas definen tu éxito)",
+    description: "Descubre por qué tu Perfil de Negocio de Google es tu fachada digital más importante y cómo las reseñas pueden hacer o deshacer tu negocio local.",
+    category: "Marketing",
+    author: "MaxDigitalCR",
+    date: "2026-01-06",
+    image: BLOG_IMAGES.article4,
+    readTime: "8 min",
+    featured: true,
+    content: `
+## Introducción
+
+Imaginá esta escena: Un cliente potencial en tu zona saca su celular y busca "restaurante italiano cerca de mí", "mecánico de confianza en [Tu Ciudad]" o "tienda de repuestos abierta ahora".
+
+¿Qué aparece en los primeros resultados? Exacto, el mapa de Google con tres empresas destacadas. Si tu negocio no está ahí, o peor aún, si está pero con información incompleta y una calificación de 3 estrellas, acabas de perder un cliente sin siquiera saberlo.
+
+En la era digital, tu **"Perfil de Negocio de Google"** (anteriormente Google My Business) es tu fachada digital más importante. No se trata solo de aparecer en el mapa; se trata de destacar, inspirar confianza y convencer al usuario de que sos la mejor opción.
+
+En este artículo, exploraremos por qué tener un perfil optimizado y una estrategia activa de reseñas no es opcional, sino vital para la supervivencia de tu negocio local en Costa Rica.
+
+## 1. No basta con "estar": La importancia de la Optimización
+
+Muchos dueños de negocio crean su perfil, ponen el nombre y el teléfono, y se olvidan del tema. Este es un error grave. Un perfil incompleto le dice a Google (y a tus clientes) que tu negocio quizás no sea muy activo o profesional.
+
+**Un perfil optimizado funciona como un vendedor 24/7.** Para lograrlo, necesitás:
+
+### Información NAP consistente
+Nombre, Dirección y Teléfono (NAP en inglés) deben ser idénticos en Google, en tu página web y en tus redes sociales. Google premia la consistencia.
+
+### Horarios actualizados
+Nada frustra más a un cliente que viajar a tu local porque Google decía "Abierto" y encontrarlo cerrado. Actualizá siempre los feriados.
+
+### Fotos de alta calidad
+Los negocios con fotos reciben un **42% más de solicitudes de indicaciones** para llegar en Google Maps y un **35% más de clics** a sus sitios web. Mostrá tu fachada, tu equipo, tus productos y el interior de tu local.
+
+### Sección de Servicios/Productos
+Detallá qué vendés. Esto ayuda a Google a mostrarte cuando la gente busca servicios específicos, no solo el nombre de tu empresa.
+
+### Publicaciones (Google Posts)
+Usá esta función para anunciar ofertas, eventos o novedades directamente en tu perfil de Google.
+
+## 2. El poder de la prueba social: Las Reseñas (Reviews)
+
+Hoy en día, las reseñas online son el "boca a boca" digital. De hecho, **el 88% de los consumidores confían tanto en las reseñas online como en las recomendaciones personales**.
+
+### Las estrellas importan, pero cómo las gestionás importa más
+
+**La cantidad y la frecuencia:** No sirve tener cinco reseñas de hace 3 años. Necesitás un flujo constante de opiniones recientes. Esto le indica a Google que tu negocio está vivo y es relevante hoy.
+
+**Responder es obligatorio:** Este es el punto donde fallan la mayoría de las PYMES. Debés responder a TODAS las reseñas, las buenas y, especialmente, las malas.
+
+- **A las buenas:** Agradecé. Crea lealtad.
+- **A las malas:** Respondé con profesionalismo, empatía y ofrece una solución offline. Esto no es para convencer al cliente enojado, es para mostrarle a los cientos de futuros clientes que leen esa respuesta que te preocupás por el servicio y que das la cara cuando hay problemas.
+
+**Una calificación de 4.8 estrellas con 200 reseñas y respuestas activas del dueño es infinitamente más poderosa que una calificación de 5.0 perfecta con solo 2 reseñas.**
+
+## 3. La sinergia: Tu Web + Google My Business
+
+Google My Business no reemplaza tu página web. Ambos trabajan en conjunto.
+
+Tu perfil de GMB es el "gancho" rápido en el mapa. Tu página web (optimizada, rápida y profesional, como las que hacemos en MaxDigitalCR) es donde "cerrás la venta", mostrás tu catálogo completo y capturás los datos del cliente.
+
+**Un enlace a una página web moderna y rápida desde tu perfil de Google mejora significativamente tu posicionamiento local y tu credibilidad.**
+
+## Conclusión
+
+Tu perfil de Google es, a menudo, la primera interacción que un cliente tiene con tu marca. **¿Qué imagen estás proyectando?** ¿La de un negocio activo, confiable y querido por sus clientes, o la de un local abandonado digitalmente?
+
+No dejes que tu competencia se lleve a los clientes que buscan en tu zona. Optimizar tu presencia en Google Maps y gestionar tus reseñas es una de las inversiones de marketing con mejor retorno que podés hacer.
+
+**Si no sabés por dónde empezar, o no tenés tiempo para gestionar tu perfil y responder reseñas, en MaxDigitalCR podemos ayudarte a dominar tu presencia local.**
+    `,
+  },
 ];
 
 // Artículos en Inglés
@@ -690,6 +765,80 @@ All this **from $200** and ready in **1-10 days**.
 Don't wait for your website to look outdated to update it. The 2026 trends are already here, and businesses that adopt them first will have a competitive advantage.
 
 **Contact us today** and take your digital presence to the next level. The future of your business starts with a modern, professional website.
+    `,
+  },
+  {
+    slug: "google-my-business-local-customer-magnet",
+    title: "Google My Business: The Local Customer Magnet You're Ignoring (and How Reviews Define Your Success)",
+    description: "Discover why your Google Business Profile is your most important digital storefront and how reviews can make or break your local business.",
+    category: "Marketing",
+    author: "MaxDigitalCR",
+    date: "2026-01-06",
+    image: BLOG_IMAGES.article4,
+    readTime: "8 min",
+    featured: true,
+    content: `
+## Introduction
+
+Picture this scene: A potential customer in your area pulls out their phone and searches for "Italian restaurant near me", "trusted mechanic in [Your City]" or "auto parts store open now".
+
+What appears in the first results? Exactly, Google Maps with three featured businesses. If your business isn't there, or worse, if it is but with incomplete information and a 3-star rating, you just lost a customer without even knowing it.
+
+In the digital age, your **"Google Business Profile"** (formerly Google My Business) is your most important digital storefront. It's not just about appearing on the map; it's about standing out, inspiring trust, and convincing users that you're the best choice.
+
+In this article, we'll explore why having an optimized profile and an active review strategy is not optional, but vital for your local business survival in Costa Rica.
+
+## 1. Being there isn't enough: The importance of Optimization
+
+Many business owners create their profile, add the name and phone number, and forget about it. This is a serious mistake. An incomplete profile tells Google (and your customers) that your business might not be very active or professional.
+
+**An optimized profile works like a 24/7 salesperson.** To achieve this, you need:
+
+### Consistent NAP information
+Name, Address, and Phone number must be identical on Google, your website, and social media. Google rewards consistency.
+
+### Updated hours
+Nothing frustrates a customer more than traveling to your location because Google said "Open" only to find it closed. Always update your hours for holidays.
+
+### High-quality photos
+Businesses with photos receive **42% more requests for directions** on Google Maps and **35% more clicks** to their websites. Show your storefront, your team, your products, and your interior.
+
+### Services/Products section
+Detail what you sell. This helps Google show you when people search for specific services, not just your company name.
+
+### Posts (Google Posts)
+Use this feature to announce offers, events, or news directly on your Google profile.
+
+## 2. The power of social proof: Reviews
+
+Today, online reviews are the digital "word of mouth". In fact, **88% of consumers trust online reviews as much as personal recommendations**.
+
+### Stars matter, but how you manage them matters more
+
+**Quantity and frequency:** Five reviews from 3 years ago won't cut it. You need a constant flow of recent opinions. This tells Google that your business is alive and relevant today.
+
+**Responding is mandatory:** This is where most SMEs fail. You must respond to ALL reviews, the good ones and especially the bad ones.
+
+- **To the good ones:** Say thank you. It creates loyalty.
+- **To the bad ones:** Respond with professionalism, empathy, and offer an offline solution. This isn't to convince the angry customer, it's to show the hundreds of future customers reading that response that you care about service and face problems head-on.
+
+**A 4.8-star rating with 200 reviews and active owner responses is infinitely more powerful than a perfect 5.0 rating with only 2 reviews.**
+
+## 3. The synergy: Your Website + Google My Business
+
+Google My Business doesn't replace your website. Both work together.
+
+Your GMB profile is the quick "hook" on the map. Your website (optimized, fast, and professional, like the ones we create at MaxDigitalCR) is where you "close the sale", show your complete catalog, and capture customer data.
+
+**A link to a modern and fast website from your Google profile significantly improves your local ranking and credibility.**
+
+## Conclusion
+
+Your Google profile is often the first interaction a customer has with your brand. **What image are you projecting?** That of an active, trustworthy business loved by its customers, or a digitally abandoned location?
+
+Don't let your competition take the customers searching in your area. Optimizing your Google Maps presence and managing your reviews is one of the best-return marketing investments you can make.
+
+**If you don't know where to start, or don't have time to manage your profile and respond to reviews, at MaxDigitalCR we can help you dominate your local presence.**
     `,
   },
 ];
