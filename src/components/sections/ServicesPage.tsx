@@ -1,0 +1,320 @@
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import PricingSection from "./PricingSection";
+import VisibilitySection from "./VisibilitySection";
+import CTASection from "./CTASection";
+import { SectionHeader, FeatureCard, FAQItem, CheckIcon, Icon } from "@/components/ui";
+import { getHomeData, SITE } from "@/lib/data";
+
+const copy = {
+  es: {
+    contact: "/contacto",
+    badge: "Servicios",
+    h1: "Páginas web que",
+    h1b: "traen clientes.",
+    intro: "Desde una landing page en 1 a 3 días hasta una tienda en línea completa. Precio cerrado antes de empezar y todo lo necesario para que te encuentren.",
+    diffBadge: "Cómo trabajamos",
+    diffTitle: "Lo que podés esperar de nosotros.",
+    pricingBadge: "Planes y precios",
+    pricingTitle: "Elegí el plan",
+    pricingHighlight: "que se ajusta a tu negocio.",
+    pricingDesc: "Todos incluyen diseño responsive, SEO técnico, perfil de Google y 30 días de soporte.",
+    customTitle: "¿Necesitás algo a la medida?",
+    customDesc: "Sistemas de reservas, dashboards, integraciones con APIs, aplicaciones web. Contanos qué necesitás y te decimos si podemos y cuánto cuesta.",
+    customCta: "Cotizar proyecto a la medida",
+    previewBadge: "Vista previa en tiempo real",
+    previewTitle: "Ves cada cambio",
+    previewHighlight: "antes de que se publique.",
+    previewP1: "No esperás semanas para ver cómo va tu página. Con cada cambio te compartimos un enlace privado que abrís en tu celular.",
+    previewP2: "Así evitamos malentendidos, trabajamos más rápido y te entregamos exactamente lo que pediste.",
+    previewItems: ["Enlace privado con cada avance", "Funciona en celular, tablet o computadora", "Comentás por WhatsApp", "Ajustamos el mismo día"],
+    previewSteps: [
+      { n: "1", t: "Hacemos un cambio", d: "Nuevo diseño del encabezado" },
+      { n: "2", t: "Abrís el enlace en tu celular", d: "Ves el cambio al instante" },
+      { n: "3", t: "Comentás por WhatsApp", d: "“Me gusta, pero cambiá el color”" },
+    ],
+    previewDone: { t: "Listo en minutos", d: "Sin esperas ni correos eternos" },
+    maintBadge: "Después del lanzamiento",
+    maintTitle: "Mantenimiento y soporte",
+    maintDesc: "No todas las páginas necesitan mantenimiento mensual, pero todas necesitan a alguien que responda.",
+    staticTitle: "Landing y catálogo",
+    staticSub: "Sin mantenimiento obligatorio",
+    staticDesc: "Una vez publicadas funcionan sin intervención. Si querés cambios después de los 30 días de soporte, se cotizan por separado o con un plan mensual opcional.",
+    staticRows: [["Soporte incluido", "30 días"], ["Cambios menores después", "Se cotizan aparte"], ["Plan mensual opcional", "Desde ₡15.000"]],
+    storeTitle: "Tienda en línea",
+    storeSub: "Mantenimiento mensual incluido",
+    storeDesc: "Una tienda maneja pagos e inventario y necesita actualizaciones de seguridad, respaldos y monitoreo del procesador de pagos.",
+    storeRows: ["Actualizaciones de seguridad", "Respaldos automáticos", "Soporte prioritario", "Cambios menores incluidos"],
+    costsBadge: "Costos adicionales",
+    costsTitle: "Lo que pagás aparte, directo al proveedor",
+    costsDesc: "Estos costos son externos, van a tu nombre y no pasan por nosotros. Te ayudamos a configurarlos.",
+    domain: { title: "Dominio", sub: "tunegocio.com o .cr", pre: "aproximadamente", price: "$12 a $15", per: "por año", desc: "Es la dirección de tu página. Se registra a tu nombre y es tuyo mientras lo renovés." },
+    email: { title: "Correo profesional", sub: "info@tunegocio.com", pre: "desde", price: "$6", per: "por cuenta al mes", desc: "Correo con tu dominio, con Google Workspace o una alternativa más económica según tu presupuesto." },
+    hosting: { title: "Hosting", sub: "después del primer año", pre: "aproximadamente", price: "$5 a $10", per: "al mes", desc: "El primer año está incluido en todos los planes. Después se paga directo a Vercel o al proveedor que elijamos." },
+    faqBadge: "Preguntas frecuentes",
+    faqTitle: "Antes de contratar",
+    cta: { title: "¿Listo para empezar?", description: "Contanos qué hace tu negocio y te enviamos una cotización cerrada en menos de 24 horas.", cta: "Cotizar mi página" },
+  },
+  en: {
+    contact: "/en/contacto",
+    badge: "Services",
+    h1: "Websites that",
+    h1b: "bring in customers.",
+    intro: "From a landing page in 1 to 3 days to a complete online store. Fixed price before we start and everything you need to be found.",
+    diffBadge: "How we work",
+    diffTitle: "What you can expect from us.",
+    pricingBadge: "Plans and pricing",
+    pricingTitle: "Pick the plan",
+    pricingHighlight: "that fits your business.",
+    pricingDesc: "All include responsive design, technical SEO, Google profile and 30 days of support.",
+    customTitle: "Need something custom?",
+    customDesc: "Booking systems, dashboards, API integrations, web apps. Tell us what you need and we will tell you if we can do it and what it costs.",
+    customCta: "Quote a custom project",
+    previewBadge: "Real-time preview",
+    previewTitle: "See every change",
+    previewHighlight: "before it goes live.",
+    previewP1: "You do not wait weeks to see how your site is going. With every change we share a private link you open on your phone.",
+    previewP2: "That way we avoid misunderstandings, work faster and deliver exactly what you asked for.",
+    previewItems: ["Private link with every step", "Works on phone, tablet or computer", "You comment on WhatsApp", "We adjust the same day"],
+    previewSteps: [
+      { n: "1", t: "We make a change", d: "New header design" },
+      { n: "2", t: "You open the link on your phone", d: "You see the change instantly" },
+      { n: "3", t: "You comment on WhatsApp", d: "“I like it, but change the color”" },
+    ],
+    previewDone: { t: "Done in minutes", d: "No waiting, no endless emails" },
+    maintBadge: "After launch",
+    maintTitle: "Maintenance and support",
+    maintDesc: "Not every site needs monthly maintenance, but every site needs someone who answers.",
+    staticTitle: "Landing and catalog",
+    staticSub: "No mandatory maintenance",
+    staticDesc: "Once published they run without intervention. If you want changes after the 30 days of support, they are quoted separately or through an optional monthly plan.",
+    staticRows: [["Support included", "30 days"], ["Minor changes afterwards", "Quoted separately"], ["Optional monthly plan", "From $30"]],
+    storeTitle: "Online store",
+    storeSub: "Monthly maintenance included",
+    storeDesc: "A store handles payments and inventory and needs security updates, backups and payment processor monitoring.",
+    storeRows: ["Security updates", "Automatic backups", "Priority support", "Minor changes included"],
+    costsBadge: "Additional costs",
+    costsTitle: "What you pay separately, directly to the provider",
+    costsDesc: "These costs are external, in your name and do not go through us. We help you set them up.",
+    domain: { title: "Domain", sub: "yourbusiness.com or .cr", pre: "approximately", price: "$12 to $15", per: "per year", desc: "It is your site's address. Registered in your name and yours as long as you renew it." },
+    email: { title: "Business email", sub: "info@yourbusiness.com", pre: "from", price: "$6", per: "per account per month", desc: "Email on your domain, with Google Workspace or a cheaper alternative depending on your budget." },
+    hosting: { title: "Hosting", sub: "after the first year", pre: "approximately", price: "$5 to $10", per: "per month", desc: "The first year is included in every plan. After that it is paid directly to Vercel or the provider we choose." },
+    faqBadge: "Frequently asked questions",
+    faqTitle: "Before you hire",
+    cta: { title: "Ready to start?", description: "Tell us what your business does and we will send a fixed quote within 24 hours.", cta: "Get a quote" },
+  },
+};
+
+interface CostInfo { title: string; sub: string; pre: string; price: string; per: string; desc: string }
+
+function CostCard({ c, icon }: { c: CostInfo; icon: "globe" | "mail" | "monitor" }) {
+  return (
+    <div className="rounded-2xl p-6 sm:p-8 bg-neutral-50 border border-neutral-200">
+      <div className="flex items-center gap-4 mb-6">
+        <div className="w-12 h-12 bg-neutral-900 rounded-xl flex items-center justify-center text-white">
+          <Icon name={icon} size={22} />
+        </div>
+        <div>
+          <h3 className="text-xl font-bold text-neutral-900">{c.title}</h3>
+          <p className="text-neutral-500">{c.sub}</p>
+        </div>
+      </div>
+      <div className="text-center py-4 bg-white rounded-lg border border-neutral-200 mb-6">
+        <span className="text-sm text-neutral-500">{c.pre}</span>
+        <div className="text-3xl font-bold text-neutral-900">{c.price}</div>
+        <span className="text-sm text-neutral-500">{c.per}</span>
+      </div>
+      <p className="text-neutral-600 text-sm">{c.desc}</p>
+    </div>
+  );
+}
+
+export default function ServicesPage({ lang }: { lang: "es" | "en" }) {
+  const data = getHomeData(lang);
+  const t = copy[lang];
+
+  return (
+    <>
+      <Navbar />
+      <main className="bg-neutral-900">
+        <section className="pt-32 pb-20 px-4 sm:px-6 bg-neutral-900">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">{t.badge}</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6">
+              {t.h1}
+              <br />
+              <span className="text-neutral-500">{t.h1b}</span>
+            </h1>
+            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">{t.intro}</p>
+          </div>
+        </section>
+
+        <section className="py-20 px-4 sm:px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <SectionHeader badge={t.diffBadge} title={t.diffTitle} />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {data.differences.map((item) => (
+                <FeatureCard key={item.title} {...item} dark={false} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <PricingSection
+          badge={t.pricingBadge}
+          title={t.pricingTitle}
+          titleHighlight={t.pricingHighlight}
+          description={t.pricingDesc}
+          plans={data.pricing}
+          notes={data.pricingNotes}
+          pricesUpdated={SITE.pricesUpdated[lang]}
+          customProjectTitle={t.customTitle}
+          customProjectDesc={t.customDesc}
+          customProjectCta={t.customCta}
+          ctaLink={t.contact}
+          lang={lang}
+        />
+
+        <VisibilitySection data={data.visibility} />
+
+        {/* Preview system */}
+        <section className="py-24 px-4 sm:px-6 bg-neutral-50">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-sm uppercase tracking-widest mb-6 text-[#2eb67d] font-bold">{t.previewBadge}</p>
+                <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
+                  {t.previewTitle}
+                  <br />
+                  <span className="text-neutral-400">{t.previewHighlight}</span>
+                </h2>
+                <p className="text-lg text-neutral-600 mb-6">{t.previewP1}</p>
+                <p className="text-lg text-neutral-600 mb-8">{t.previewP2}</p>
+                <ul className="space-y-4">
+                  {t.previewItems.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-neutral-700">
+                      <CheckIcon />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-neutral-900 rounded-2xl p-6 sm:p-8">
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-3 h-3 rounded-full bg-neutral-600" />
+                  <div className="w-3 h-3 rounded-full bg-neutral-600" />
+                  <div className="w-3 h-3 rounded-full bg-[#3ECF8E]" />
+                  <span className="ml-4 text-sm font-mono text-neutral-500">preview.tunegocio.com</span>
+                </div>
+                <div className="space-y-4">
+                  {t.previewSteps.map((s) => (
+                    <div key={s.n} className="flex items-center gap-4 p-4 bg-neutral-800 rounded-lg">
+                      <div className="w-10 h-10 bg-neutral-700 rounded-full flex items-center justify-center text-[#3ECF8E] font-bold">{s.n}</div>
+                      <div>
+                        <p className="text-white font-medium">{s.t}</p>
+                        <p className="text-neutral-500 text-sm">{s.d}</p>
+                      </div>
+                    </div>
+                  ))}
+                  <div className="flex items-center gap-4 p-4 bg-[#3ECF8E]/10 border border-[#3ECF8E]/50 rounded-lg">
+                    <div className="w-10 h-10 bg-[#3ECF8E] rounded-full flex items-center justify-center text-neutral-900">
+                      <Icon name="check" size={20} />
+                    </div>
+                    <div>
+                      <p className="text-white font-medium">{t.previewDone.t}</p>
+                      <p className="text-neutral-400 text-sm">{t.previewDone.d}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Maintenance */}
+        <section className="py-24 px-4 sm:px-6 bg-neutral-900">
+          <div className="max-w-6xl mx-auto">
+            <SectionHeader badge={t.maintBadge} title={t.maintTitle} description={t.maintDesc} dark />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="rounded-2xl p-6 sm:p-8 bg-neutral-800 border border-neutral-700">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-neutral-700/60 rounded-xl flex items-center justify-center text-[#3ECF8E]">
+                    <Icon name="layers" size={22} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">{t.staticTitle}</h3>
+                    <p className="text-neutral-500">{t.staticSub}</p>
+                  </div>
+                </div>
+                <p className="text-neutral-400 mb-6">{t.staticDesc}</p>
+                <div className="space-y-3">
+                  {t.staticRows.map(([k, v]) => (
+                    <div key={k} className="flex items-center justify-between p-3 bg-neutral-700/50 rounded-lg">
+                      <span className="text-neutral-300">{k}</span>
+                      <span className="text-white font-medium">{v}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-2xl p-6 sm:p-8 bg-neutral-800 border border-[#3ECF8E]/60">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-[#3ECF8E]/15 rounded-xl flex items-center justify-center text-[#3ECF8E]">
+                    <Icon name="cart" size={22} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">{t.storeTitle}</h3>
+                    <p className="text-neutral-500">{t.storeSub}</p>
+                  </div>
+                </div>
+                <p className="text-neutral-400 mb-6">{t.storeDesc}</p>
+                <div className="space-y-3">
+                  {t.storeRows.map((k) => (
+                    <div key={k} className="flex items-center justify-between p-3 bg-neutral-700/50 rounded-lg">
+                      <span className="text-neutral-300">{k}</span>
+                      <Icon name="check" size={18} className="text-[#3ECF8E]" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Additional costs */}
+        <section className="py-24 px-4 sm:px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <SectionHeader badge={t.costsBadge} title={t.costsTitle} description={t.costsDesc} />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <CostCard c={t.domain} icon="globe" />
+              <CostCard c={t.email} icon="mail" />
+              <CostCard c={t.hosting} icon="monitor" />
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-24 px-4 sm:px-6 bg-neutral-50">
+          <div className="max-w-4xl mx-auto">
+            <SectionHeader badge={t.faqBadge} title={t.faqTitle} />
+            <div className="space-y-4">
+              {data.faq.map((item) => (
+                <FAQItem key={item.q} question={item.q} answer={item.a} />
+              ))}
+            </div>
+            <p className="mt-8 text-center text-neutral-600">
+              <Link href={t.contact} className="font-medium text-[#2eb67d] hover:underline">
+                {lang === "es" ? "¿Otra pregunta? Escribinos." : "Another question? Write to us."}
+              </Link>
+            </p>
+          </div>
+        </section>
+
+        <CTASection {...t.cta} ctaLink={t.contact} />
+      </main>
+      <Footer />
+      <WhatsAppButton />
+    </>
+  );
+}

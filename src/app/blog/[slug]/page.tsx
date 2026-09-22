@@ -65,8 +65,6 @@ function parseContent(content: string): string {
     // Lists
     .replace(/^- (.*$)/gm, '<li class="ml-4 mb-2 text-neutral-700">$1</li>')
     .replace(/(<li.*<\/li>\n?)+/g, '<ul class="list-disc pl-6 my-4">$&</ul>')
-    // Checkmarks
-    .replace(/- ✅ (.*$)/gm, '<li class="flex items-start gap-2 mb-2"><span class="text-[#3ECF8E] mt-1">✅</span><span class="text-neutral-700">$1</span></li>')
     // Paragraphs (lines that don't start with < and aren't empty)
     .replace(/^(?!<|$|\s*$)(.+)$/gm, '<p class="text-neutral-700 leading-relaxed mb-4">$1</p>')
     // Clean up empty paragraphs
