@@ -221,11 +221,11 @@ El error más costoso es **no tener página web por miedo o desconocimiento**. C
 
 En lugar de preocuparte por cada uno de estos errores, dejá que expertos se encarguen. En MaxDigitalCR:
 
-- ✅ Creamos páginas 100% responsive
-- ✅ Garantizamos velocidad de carga óptima
-- ✅ Diseñamos con las últimas tendencias
-- ✅ Incluimos CTAs estratégicos
-- ✅ Implementamos SEO técnico desde el inicio
+- Creamos páginas 100% responsive
+- Garantizamos velocidad de carga óptima
+- Diseñamos con las últimas tendencias
+- Incluimos CTAs estratégicos
+- Implementamos SEO técnico desde el inicio
 
 Todo esto **desde ₡100.000** y listo en **1-10 días**.
 
@@ -362,11 +362,11 @@ Intentar implementar todas estas tendencias por tu cuenta puede ser abrumador. A
 **La buena noticia:** en MaxDigitalCR ya estamos implementando estas tendencias en todos nuestros proyectos.
 
 Cuando trabajás con nosotros, obtenés:
-- ✅ Diseño minimalista y moderno
-- ✅ Micro-interacciones profesionales
-- ✅ Velocidad optimizada (Core Web Vitals)
-- ✅ Accesibilidad incluida
-- ✅ Tecnología de última generación (Next.js, React)
+- Diseño minimalista y moderno
+- Micro-interacciones profesionales
+- Velocidad optimizada (Core Web Vitals)
+- Accesibilidad incluida
+- Tecnología de última generación (Next.js, React)
 
 Todo esto **desde ₡100.000** y listo en **1-10 días**.
 
@@ -536,11 +536,11 @@ The most costly mistake is **not having a website due to fear or lack of knowled
 
 Instead of worrying about each of these mistakes, let experts handle it. At MaxDigitalCR:
 
-- ✅ We create 100% responsive pages
-- ✅ We guarantee optimal loading speed
-- ✅ We design with the latest trends
-- ✅ We include strategic CTAs
-- ✅ We implement technical SEO from the start
+- We create 100% responsive pages
+- We guarantee optimal loading speed
+- We design with the latest trends
+- We include strategic CTAs
+- We implement technical SEO from the start
 
 All this **from $200** and ready in **1-10 days**.
 
@@ -677,11 +677,11 @@ Trying to implement all these trends on your own can be overwhelming. Plus, the 
 **The good news:** at MaxDigitalCR we're already implementing these trends in all our projects.
 
 When you work with us, you get:
-- ✅ Minimalist and modern design
-- ✅ Professional micro-interactions
-- ✅ Optimized speed (Core Web Vitals)
-- ✅ Accessibility included
-- ✅ Latest generation technology (Next.js, React)
+- Minimalist and modern design
+- Professional micro-interactions
+- Optimized speed (Core Web Vitals)
+- Accessibility included
+- Latest generation technology (Next.js, React)
 
 All this **from $200** and ready in **1-10 days**.
 

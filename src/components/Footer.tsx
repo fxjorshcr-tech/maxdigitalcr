@@ -95,11 +95,13 @@ export default function Footer() {
   // Translations
   const t = isEnglish ? {
     title: "MaxDigitalCR",
-    about: "Your web development team in Costa Rica. World-class technology at accessible prices.",
-    location: "📍 La Fortuna, Costa Rica",
+    about: "Web design and development agency in La Fortuna, Costa Rica. Landing pages, catalog sites and online stores for local businesses.",
+    location: "La Fortuna, Alajuela, Costa Rica",
     nav: "Navigation",
     home: "Home",
     services: "Services",
+    portfolio: "Portfolio",
+    blog: "Blog",
     aboutUs: "About",
     contact: "Contact",
     followUs: "Follow Us",
@@ -123,17 +125,19 @@ export default function Footer() {
     response: "We respond within 24 hours.",
     copyright: "All rights reserved.",
     poweredBy: "Powered by",
-    tagline: "Professional web development 🇨🇷",
+    tagline: "Web development in Costa Rica",
     modalTitle: "Message Sent!",
     modalMessage: "Thank you for contacting us. We'll get back to you within 24 hours.",
     modalClose: "Got it!"
   } : {
     title: "MaxDigitalCR",
-    about: "Tu equipo de desarrollo web en Costa Rica. Tecnología de clase mundial a precios accesibles.",
-    location: "📍 La Fortuna, Costa Rica",
+    about: "Agencia de diseño y desarrollo web en La Fortuna, Costa Rica. Landing pages, sitios catálogo y tiendas en línea para negocios locales.",
+    location: "La Fortuna, Alajuela, Costa Rica",
     nav: "Navegación",
     home: "Inicio",
     services: "Servicios",
+    portfolio: "Portafolio",
+    blog: "Blog",
     aboutUs: "Nosotros",
     contact: "Contacto",
     followUs: "Síguenos",
@@ -157,7 +161,7 @@ export default function Footer() {
     response: "Te respondemos en menos de 24 horas.",
     copyright: "Todos los derechos reservados.",
     poweredBy: "Powered by",
-    tagline: "Desarrollo web profesional 🇨🇷",
+    tagline: "Desarrollo web en Costa Rica",
     modalTitle: "¡Mensaje Enviado!",
     modalMessage: "Gracias por contactarnos. Te responderemos en menos de 24 horas.",
     modalClose: "¡Entendido!"
@@ -177,9 +181,11 @@ export default function Footer() {
             <p className="text-sm mb-4 text-neutral-400">
               {t.about}
             </p>
-            <p className="text-sm text-neutral-500">
-              {t.location}
-            </p>
+            <address className="not-italic text-sm text-neutral-500 space-y-1">
+              <p>{t.location}</p>
+              <p><a href="https://wa.me/50685962438" className="hover:text-[#3ECF8E]">+506 8596 2438</a></p>
+              <p><a href="mailto:info@maxdigitalcr.com" className="hover:text-[#3ECF8E]">info@maxdigitalcr.com</a></p>
+            </address>
           </div>
 
           {/* Links */}
@@ -193,6 +199,24 @@ export default function Footer() {
                 className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
               >
                 {t.home}
+              </Link>
+              <Link
+                href={`${navPrefix}/portafolio`}
+                className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
+              >
+                {t.portfolio}
+              </Link>
+              <Link
+                href={`${navPrefix}/servicios`}
+                className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
+              >
+                {t.services}
+              </Link>
+              <Link
+                href={`${navPrefix}/blog`}
+                className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
+              >
+                {t.blog}
               </Link>
               <Link
                 href={`${navPrefix}/nosotros`}

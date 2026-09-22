@@ -1,120 +1,9 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import { organizationJsonLd } from "@/lib/schema";
 
 const GA_MEASUREMENT_ID = "G-F86DTXXD46";
-
-// Schema.org structured data for LocalBusiness
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.maxdigitalcr.com/#organization",
-      "name": "MaxDigitalCR",
-      "url": "https://www.maxdigitalcr.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png",
-        "width": 512,
-        "height": 512
-      },
-      "sameAs": [
-        "https://wa.me/50685962438",
-        "https://www.facebook.com/profile.php?id=61585468526315",
-        "https://www.instagram.com/maxdigitalcostarica/"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+506-8596-2438",
-        "contactType": "sales",
-        "availableLanguage": ["Spanish", "English"]
-      }
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://www.maxdigitalcr.com/#localbusiness",
-      "name": "MaxDigitalCR",
-      "description": "Agencia de desarrollo web profesional en Costa Rica. Creamos landing pages, catálogos digitales y e-commerce con tecnología Next.js y React.",
-      "url": "https://www.maxdigitalcr.com",
-      "telephone": "+506-8596-2438",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "CR",
-        "addressRegion": "Costa Rica"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 9.9281,
-        "longitude": -84.0907
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "18:00"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Costa Rica"
-      },
-      "serviceType": ["Web Development", "Landing Pages", "E-commerce", "Digital Catalogs"]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.maxdigitalcr.com/#website",
-      "url": "https://www.maxdigitalcr.com",
-      "name": "MaxDigitalCR",
-      "description": "Desarrollo web profesional en Costa Rica",
-      "publisher": {
-        "@id": "https://www.maxdigitalcr.com/#organization"
-      },
-      "inLanguage": ["es", "en"]
-    },
-    {
-      "@type": "Service",
-      "serviceType": "Web Development",
-      "provider": {
-        "@id": "https://www.maxdigitalcr.com/#organization"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Costa Rica"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Servicios de Desarrollo Web",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Landing Page Profesional",
-              "description": "Página web de una sola página optimizada para conversiones"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Catálogo Digital",
-              "description": "Sitio web multi-página para mostrar productos o servicios"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "E-commerce",
-              "description": "Tienda en línea completa con carrito de compras"
-            }
-          }
-        ]
-      }
-    }
-  ]
-};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.maxdigitalcr.com"),
@@ -122,14 +11,15 @@ export const metadata: Metadata = {
     default: "MaxDigitalCR | Desarrollo Web Profesional en Costa Rica",
     template: "%s | MaxDigitalCR"
   },
-  description: "Agencia de desarrollo web en Costa Rica. Creamos landing pages, catálogos digitales y tiendas e-commerce con Next.js y React. Entrega en 1-10 días. Precios accesibles.",
+  description: "Agencia de diseño y desarrollo web en La Fortuna, Costa Rica. Landing pages desde ₡100.000, sitios catálogo y tiendas en línea, entregados en 1 a 10 días hábiles con Google Business y Search Console incluidos.",
   keywords: [
     "desarrollo web Costa Rica",
     "diseño web profesional",
     "landing pages Costa Rica",
     "e-commerce Costa Rica",
     "tienda online Costa Rica",
-    "páginas web baratas",
+    "páginas web La Fortuna",
+    "cuánto cuesta una página web en Costa Rica",
     "desarrollo Next.js",
     "React Costa Rica",
     "agencia digital Costa Rica",
@@ -160,7 +50,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "MaxDigitalCR | Desarrollo Web Profesional en Costa Rica",
-    description: "Creamos landing pages, catálogos y e-commerce con tecnología de clase mundial. Entrega en 1-10 días.",
+    description: "Landing pages, sitios catálogo y tiendas en línea para negocios de Costa Rica. Entrega en 1 a 10 días hábiles, precios desde ₡100.000.",
     locale: "es_CR",
     alternateLocale: ["en_US"],
     type: "website",
@@ -193,8 +83,14 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Add your Google Search Console verification code here
-    // google: "your-verification-code",
+    // Set these in Vercel (Settings > Environment Variables) after creating the
+    // properties. See docs/presencia-digital.md for the step-by-step.
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+      : {}),
+    ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { other: { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION } }
+      : {}),
   },
 };
 
@@ -222,7 +118,7 @@ export default function RootLayout({
       <body className="antialiased font-sans">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
         />
         {children}
       </body>
