@@ -13,19 +13,19 @@ interface PortfolioSectionProps {
 const copy = {
   es: {
     badge: "Páginas que hemos hecho",
-    title: "Sitios reales, en producción,",
-    highlight: "para negocios reales de Costa Rica.",
+    title: "Sitios en producción",
+    highlight: "para negocios de Costa Rica.",
     description:
-      "Cada uno de estos sitios está en línea hoy. Hacé clic para verlos funcionando en tu propio celular o computadora.",
+      "Todos en línea hoy. Abrilos desde tu celular.",
     cta: "Ver todos los proyectos",
     count: (n: number) => `${n} sitios publicados`,
   },
   en: {
     badge: "Websites we have built",
-    title: "Real sites, live in production,",
-    highlight: "for real businesses in Costa Rica.",
+    title: "Sites in production",
+    highlight: "for businesses in Costa Rica.",
     description:
-      "Every one of these sites is online today. Click through and see them working on your own phone or computer.",
+      "All live today. Open them from your phone.",
     cta: "See all projects",
     count: (n: number) => `${n} published sites`,
   },

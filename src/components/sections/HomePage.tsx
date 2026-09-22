@@ -24,7 +24,7 @@ const labels = {
     processFoot: "Tu sitio en línea en",
     processFootHighlight: "días, no meses",
     statsBadge: "Por qué importa",
-    statsTitle: "Tus clientes te buscan en internet",
+    statsTitle: "Tus clientes te buscan",
     statsHighlight: "antes de llamarte.",
     counters: [
       { to: portfolioProjects.length, suffix: "", label: "sitios en producción" },
@@ -34,10 +34,10 @@ const labels = {
     ],
     industriesBadge: "Para quién",
     industriesTitle: "Negocios con los que trabajamos.",
-    industriesDesc: "Si tenés clientes que te buscan en Google antes de comprar, esto es para vos.",
-    industriesFoot: "¿No ves tu industria? Escribinos igual. El proceso es el mismo.",
+    industriesDesc: "Negocios cuyos clientes los buscan en internet antes de decidir.",
+    industriesFoot: "Si tu rubro no está en la lista, el proceso es el mismo.",
     faqBadge: "Preguntas frecuentes",
-    faqTitle: "Lo que todo el mundo pregunta antes de contratar.",
+    faqTitle: "Lo que se pregunta antes de contratar.",
   },
   en: {
     contact: "/en/contacto",
@@ -47,7 +47,7 @@ const labels = {
     processFoot: "Your site live in",
     processFootHighlight: "days, not months",
     statsBadge: "Why it matters",
-    statsTitle: "Your customers look you up online",
+    statsTitle: "Your customers look you up",
     statsHighlight: "before they call.",
     counters: [
       { to: portfolioProjects.length, suffix: "", label: "sites in production" },
@@ -57,10 +57,10 @@ const labels = {
     ],
     industriesBadge: "Who it is for",
     industriesTitle: "Businesses we work with.",
-    industriesDesc: "If you have customers who look you up on Google before buying, this is for you.",
-    industriesFoot: "Do not see your industry? Write to us anyway. The process is the same.",
+    industriesDesc: "Businesses whose customers look them up online before deciding.",
+    industriesFoot: "If your trade is not on the list, the process is the same.",
     faqBadge: "Frequently asked questions",
-    faqTitle: "What everyone asks before hiring.",
+    faqTitle: "What gets asked before hiring.",
   },
 };
 
