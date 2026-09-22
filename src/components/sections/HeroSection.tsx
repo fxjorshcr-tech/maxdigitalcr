@@ -49,7 +49,7 @@ export default function HeroSection({
         </Reveal>
 
         <Reveal delay={100}>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] leading-[1.05] tracking-tight text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl leading-[1.08] tracking-tight text-white">
             {title}
             <br />
             <span className="text-shimmer">{titleHighlight}</span>
