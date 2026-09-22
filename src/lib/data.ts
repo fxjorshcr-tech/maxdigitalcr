@@ -131,7 +131,7 @@ export const homeDataES: HomeData = {
     title: "Tu negocio, bien puesto",
     titleHighlight: "en internet.",
     description:
-      "Escuchamos qué querés lograr, te recomendamos qué sitio te conviene y lo construimos en días, con la tecnología de los sitios grandes y un precio pensado para negocios de Costa Rica.",
+      "Escuchamos qué querés lograr, te recomendamos el sitio que te conviene y lo construimos en días. Tecnología de primer nivel, precio para negocios de Costa Rica.",
     cta: "Hablemos",
     ctaSecondary: "Ver sitios que hemos hecho",
     proof: ["7 sitios en producción", "Entrega en días, no meses", "Desde ₡100.000"],
@@ -142,14 +142,14 @@ export const homeDataES: HomeData = {
     title: "Primero escuchamos.",
     titleHighlight: "Después recomendamos.",
     description:
-      "No vendemos plantillas. Antes de diseñar nada, entendemos tu negocio, tus clientes y cómo te compran. Con eso te decimos qué tipo de sitio necesitás, qué no necesitás y en qué orden conviene hacerlo.",
+      "Antes de diseñar, entendemos tu negocio, tus clientes y cómo te compran. Con eso te decimos qué sitio necesitás, qué no, y en qué orden conviene hacerlo.",
     steps: [
       { icon: "messageCircle", title: "Nos contás tu negocio", desc: "Qué vendés, a quién, cómo te contactan hoy y qué querés que cambie." },
-      { icon: "target", title: "Te damos una recomendación honesta", desc: "Qué páginas, qué funciones y qué canales. Si algo no lo necesitás, te lo decimos." },
+      { icon: "target", title: "Te damos una recomendación honesta", desc: "Qué páginas, qué funciones, qué canales. Solo lo que te sirve." },
       { icon: "clipboard", title: "Plan claro con precio cerrado", desc: "Alcance, plazo y costo por escrito en menos de 24 horas." },
     ],
     quote: "La mayoría de los negocios no necesita un sitio más grande. Necesita uno que la gente encuentre y entienda en cinco segundos.",
-    quoteBy: "Nuestra regla número uno",
+    quoteBy: "Nuestra regla",
   },
 
   visibility: {
@@ -157,16 +157,16 @@ export const homeDataES: HomeData = {
     title: "Google, Apple, Bing",
     titleHighlight: "y las respuestas de la IA.",
     description:
-      "Hoy tus clientes no solo buscan en Google. Preguntan a Siri, a ChatGPT, a Copilot. Cada sitio que hacemos sale con su presencia completa configurada para que aparezcas en todos esos lugares con los mismos datos.",
+      "Tus clientes ya no buscan solo en Google. Preguntan a Siri, a ChatGPT, a Copilot. Tu sitio sale con la presencia configurada en todos, con los mismos datos.",
     items: [
-      { icon: "mapPin", title: "Google Business Profile", desc: "Google Maps, el panel local, reseñas y enlace a tu sitio. Lo que ve alguien que busca tu rubro cerca." },
-      { icon: "compass", title: "Apple Business Connect", desc: "Apple Maps y Siri en todos los iPhone. La mayoría de turistas que llegan a Costa Rica usa iPhone." },
-      { icon: "globe", title: "Bing Places", desc: "Alimenta a Copilot y a la búsqueda de ChatGPT. Sin esto, no existís para esos asistentes." },
-      { icon: "sparkles", title: "Optimización para búsquedas con IA", desc: "Datos estructurados y contenido que ChatGPT, Gemini y Perplexity pueden leer, entender y citar." },
+      { icon: "mapPin", title: "Google Business Profile", desc: "Google Maps, panel local, reseñas y enlace a tu sitio." },
+      { icon: "compass", title: "Apple Business Connect", desc: "Apple Maps y Siri. La mayoría de turistas que llegan a Costa Rica usa iPhone." },
+      { icon: "globe", title: "Bing Places", desc: "Alimenta a Copilot y a la búsqueda web de ChatGPT." },
+      { icon: "sparkles", title: "Optimización para búsquedas con IA", desc: "Datos estructurados que ChatGPT, Gemini y Perplexity leen y citan." },
       { icon: "search", title: "Google Search Console", desc: "Indexación verificada y visibilidad de con qué búsquedas te encuentran." },
       { icon: "barChart", title: "Google Analytics", desc: "Cuánta gente te visita, de dónde viene y qué hace en tu sitio." },
     ],
-    footnote: "Todo se configura en tus propias cuentas. Los perfiles son tuyos.",
+    footnote: "Todo en tus propias cuentas. Los perfiles son tuyos.",
   },
 
   offer: {
@@ -174,14 +174,14 @@ export const homeDataES: HomeData = {
     title: "Tecnología de primer nivel,",
     titleHighlight: "a precio de negocio local.",
     description:
-      "Usamos la misma base técnica que sitios de alto tráfico para entregar páginas rápidas, seguras y fáciles de encontrar. En días o semanas, no meses. Y con un precio accesible para negocios en Costa Rica.",
+      "La misma base técnica de los sitios de alto tráfico: rápidos, seguros y fáciles de encontrar. En días o semanas. Con un precio accesible para negocios en Costa Rica.",
     pillars: [
-      { icon: "code", label: "Tecnología", value: "Next.js y React", desc: "Sitios que cargan en menos de 2 segundos, sin plugins que se rompen." },
+      { icon: "code", label: "Tecnología", value: "Next.js y React", desc: "Carga en menos de 2 segundos. Sin plugins que se rompen." },
       { icon: "clock", label: "Tiempo", value: "Días, no meses", desc: "Landing pages en 1 a 3 días. Sitios completos en 1 a 2 semanas." },
       { icon: "wallet", label: "Precio", value: "Desde ₡100.000", desc: "Cotización cerrada antes de empezar. Sin sorpresas." },
     ],
     from: "₡100.000",
-    fromNote: "Precio de partida para una landing page. El costo final depende de páginas, contenido e integraciones. Te decimos el número exacto antes de empezar.",
+    fromNote: "Precio de partida para una landing page. El costo final depende de páginas, contenido e integraciones, y lo conocés antes de empezar.",
     cta: "Pedir cotización",
     types: [
       { icon: "layout", title: "Landing page", desc: "Una página enfocada en que te contacten. Campañas, lanzamientos, profesionales." },
@@ -193,17 +193,17 @@ export const homeDataES: HomeData = {
 
   support: {
     badge: "Acompañamiento",
-    title: "No te entregamos un sitio",
-    titleHighlight: "y desaparecemos.",
+    title: "Seguimos con vos",
+    titleHighlight: "después del lanzamiento.",
     description:
-      "Después del lanzamiento seguimos ahí. Soporte técnico constante para tu página y asesoría en todo lo que hace falta alrededor para que funcione de verdad.",
+      "Soporte técnico para tu sitio y asesoría en todo lo que lo rodea: perfiles, reseñas, posicionamiento.",
     items: [
-      { icon: "wrench", title: "Soporte técnico constante", desc: "Ajustes, correcciones y dudas sobre tu sitio. Respondemos por WhatsApp." },
-      { icon: "mapPin", title: "Google, Apple y Bing Business", desc: "Te ayudamos a crear, verificar y mantener los perfiles al día." },
-      { icon: "star", title: "Estrategia de reseñas", desc: "Cómo pedirlas, cuándo y qué responder. Las reseñas venden por vos." },
+      { icon: "wrench", title: "Soporte técnico constante", desc: "Ajustes, correcciones y dudas. Por WhatsApp." },
+      { icon: "mapPin", title: "Google, Apple y Bing Business", desc: "Creamos, verificamos y mantenemos los perfiles al día." },
+      { icon: "star", title: "Estrategia de reseñas", desc: "Cómo pedirlas, cuándo y qué responder." },
       { icon: "search", title: "Posicionamiento", desc: "Qué contenido crear, qué directorios importan y cómo leer Search Console." },
-      { icon: "shield", title: "Dominio, correo y hosting", desc: "Todo a tu nombre. Te explicamos qué pagás, a quién y por qué." },
-      { icon: "refresh", title: "Mantenimiento opcional", desc: "Plan mensual si querés cambios frecuentes o una tienda que requiere monitoreo." },
+      { icon: "shield", title: "Dominio, correo y hosting", desc: "Todo a tu nombre. Sabés qué pagás y a quién." },
+      { icon: "refresh", title: "Mantenimiento opcional", desc: "Plan mensual para cambios frecuentes o tiendas en línea." },
     ],
   },
 
@@ -211,15 +211,15 @@ export const homeDataES: HomeData = {
     badge: "Hablemos",
     title: "Por donde te quede",
     titleHighlight: "más cómodo.",
-    description: "Contanos qué hace tu negocio. Te respondemos en menos de 24 horas con una recomendación y un precio.",
+    description: "Contanos qué hace tu negocio. En menos de 24 horas tenés recomendación y precio.",
     whatsapp: "WhatsApp",
-    whatsappDesc: "El más rápido. Escribinos y seguimos por ahí.",
+    whatsappDesc: "El más rápido.",
     email: "Correo",
-    emailDesc: "Para consultas más formales o enviar material.",
+    emailDesc: "Para consultas formales o enviar material.",
     form: "Formulario",
-    formDesc: "Dejanos los datos y te escribimos nosotros.",
+    formDesc: "Dejanos tus datos y te escribimos.",
     social: "Redes",
-    socialDesc: "Instagram y Facebook. Ahí publicamos cada sitio nuevo.",
+    socialDesc: "Ahí publicamos cada sitio nuevo.",
     response: "Respondemos en menos de 24 horas, lunes a viernes.",
   },
 
@@ -279,8 +279,8 @@ export const homeDataES: HomeData = {
   audit: {
     badge: "Revisión sin costo",
     title: "¿Ya tenés página web?",
-    titleHighlight: "Te decimos qué está fallando.",
-    description: "Revisamos tu sitio actual y te enviamos un informe corto con lo que está frenando tus visitas y contactos.",
+    titleHighlight: "Lo revisamos sin costo.",
+    description: "Un informe corto con lo que frena tus visitas y contactos, en orden de prioridad.",
     items: ["Velocidad de carga en celular", "Cómo te ve Google y si estás indexado", "Experiencia en móvil", "Claridad del mensaje y llamados a la acción", "Recomendaciones concretas, en orden de prioridad"],
     cta: "Pedir revisión gratis",
     reportTitle: "Qué revisamos",
@@ -292,7 +292,7 @@ export const homeDataES: HomeData = {
       { icon: "target", title: "Conversión", desc: "Si el visitante entiende en 5 segundos qué hacés y cómo contactarte." },
     ],
     free: "Sin costo y sin compromiso",
-    freeNote: "Si tu sitio está bien, te lo decimos igual.",
+    freeNote: "Si tu sitio está bien, también te lo decimos.",
   },
 
   faq: [
@@ -352,7 +352,7 @@ export const homeDataES: HomeData = {
 
   cta: {
     title: "Hablemos de tu negocio.",
-    description: "Contanos qué hacés y qué querés lograr. Te respondemos en menos de 24 horas con una recomendación y un precio cerrado.",
+    description: "Contanos qué hacés y qué querés lograr. En menos de 24 horas tenés recomendación y precio cerrado.",
     cta: "Hablemos",
   },
 };
@@ -366,7 +366,7 @@ export const homeDataEN: HomeData = {
     title: "Your business, properly",
     titleHighlight: "on the internet.",
     description:
-      "We listen to what you want to achieve, recommend the site that fits and build it in days, with the technology big sites use and a price made for businesses in Costa Rica.",
+      "We listen to what you want to achieve, recommend the site that fits and build it in days. First-class technology, priced for businesses in Costa Rica.",
     cta: "Let's talk",
     ctaSecondary: "See sites we have built",
     proof: ["7 sites in production", "Delivered in days, not months", "From $200"],
@@ -377,14 +377,14 @@ export const homeDataEN: HomeData = {
     title: "First we listen.",
     titleHighlight: "Then we recommend.",
     description:
-      "We do not sell templates. Before designing anything we understand your business, your customers and how they buy from you. Then we tell you what kind of site you need, what you do not need, and in what order to do it.",
+      "Before designing, we understand your business, your customers and how they buy from you. Then we tell you what site you need, what you do not, and in what order to do it.",
     steps: [
       { icon: "messageCircle", title: "You tell us about your business", desc: "What you sell, to whom, how people reach you today and what you want to change." },
-      { icon: "target", title: "We give an honest recommendation", desc: "Which pages, which features, which channels. If you do not need something, we say so." },
+      { icon: "target", title: "We give an honest recommendation", desc: "Which pages, which features, which channels. Only what serves you." },
       { icon: "clipboard", title: "Clear plan with a fixed price", desc: "Scope, timeline and cost in writing within 24 hours." },
     ],
     quote: "Most businesses do not need a bigger website. They need one people can find and understand in five seconds.",
-    quoteBy: "Our number one rule",
+    quoteBy: "Our rule",
   },
 
   visibility: {
@@ -392,16 +392,16 @@ export const homeDataEN: HomeData = {
     title: "Google, Apple, Bing",
     titleHighlight: "and AI answers.",
     description:
-      "Your customers no longer search only on Google. They ask Siri, ChatGPT, Copilot. Every site we build ships with its full presence configured so you appear in all those places with the same data.",
+      "Your customers no longer search only on Google. They ask Siri, ChatGPT, Copilot. Your site ships with its presence configured in all of them, with the same data.",
     items: [
-      { icon: "mapPin", title: "Google Business Profile", desc: "Google Maps, the local panel, reviews and a link to your site. What someone searching your trade nearby sees." },
-      { icon: "compass", title: "Apple Business Connect", desc: "Apple Maps and Siri on every iPhone. Most tourists arriving in Costa Rica use an iPhone." },
-      { icon: "globe", title: "Bing Places", desc: "Feeds Copilot and ChatGPT search. Without it, you do not exist for those assistants." },
-      { icon: "sparkles", title: "AI search optimization", desc: "Structured data and content that ChatGPT, Gemini and Perplexity can read, understand and cite." },
+      { icon: "mapPin", title: "Google Business Profile", desc: "Google Maps, local panel, reviews and a link to your site." },
+      { icon: "compass", title: "Apple Business Connect", desc: "Apple Maps and Siri. Most tourists arriving in Costa Rica use an iPhone." },
+      { icon: "globe", title: "Bing Places", desc: "Feeds Copilot and ChatGPT web search." },
+      { icon: "sparkles", title: "AI search optimization", desc: "Structured data that ChatGPT, Gemini and Perplexity read and cite." },
       { icon: "search", title: "Google Search Console", desc: "Verified indexing and visibility into which searches bring people to you." },
       { icon: "barChart", title: "Google Analytics", desc: "How many people visit, where they come from and what they do on your site." },
     ],
-    footnote: "Everything is set up in your own accounts. The profiles are yours.",
+    footnote: "All in your own accounts. The profiles are yours.",
   },
 
   offer: {
@@ -409,14 +409,14 @@ export const homeDataEN: HomeData = {
     title: "First-class technology,",
     titleHighlight: "at a local business price.",
     description:
-      "We use the same technical base as high-traffic sites to deliver fast, secure pages that are easy to find. In days or weeks, not months. At a price businesses in Costa Rica can afford.",
+      "The same technical base as high-traffic sites: fast, secure and easy to find. In days or weeks. At a price businesses in Costa Rica can afford.",
     pillars: [
-      { icon: "code", label: "Technology", value: "Next.js and React", desc: "Sites that load in under 2 seconds, no plugins that break." },
+      { icon: "code", label: "Technology", value: "Next.js and React", desc: "Loads in under 2 seconds. No plugins that break." },
       { icon: "clock", label: "Time", value: "Days, not months", desc: "Landing pages in 1 to 3 days. Full sites in 1 to 2 weeks." },
       { icon: "wallet", label: "Price", value: "From $200", desc: "Fixed quote before we start. No surprises." },
     ],
     from: "$200",
-    fromNote: "Starting price for a landing page. The final cost depends on pages, content and integrations. We tell you the exact number before we start.",
+    fromNote: "Starting price for a landing page. The final cost depends on pages, content and integrations, and you know it before we start.",
     cta: "Request a quote",
     types: [
       { icon: "layout", title: "Landing page", desc: "One page focused on getting you contacted. Campaigns, launches, professionals." },
@@ -428,17 +428,17 @@ export const homeDataEN: HomeData = {
 
   support: {
     badge: "Ongoing support",
-    title: "We do not hand over a site",
-    titleHighlight: "and disappear.",
+    title: "We stay with you",
+    titleHighlight: "after launch.",
     description:
-      "After launch we stay around. Constant technical support for your site and advice on everything around it that makes it actually work.",
+      "Technical support for your site and advice on everything around it: profiles, reviews, ranking.",
     items: [
-      { icon: "wrench", title: "Constant technical support", desc: "Adjustments, fixes and questions about your site. We answer on WhatsApp." },
-      { icon: "mapPin", title: "Google, Apple and Bing Business", desc: "We help you create, verify and keep the profiles up to date." },
-      { icon: "star", title: "Review strategy", desc: "How to ask, when, and what to reply. Reviews sell for you." },
+      { icon: "wrench", title: "Constant technical support", desc: "Adjustments, fixes and questions. On WhatsApp." },
+      { icon: "mapPin", title: "Google, Apple and Bing Business", desc: "We create, verify and keep the profiles up to date." },
+      { icon: "star", title: "Review strategy", desc: "How to ask, when, and what to reply." },
       { icon: "search", title: "Ranking", desc: "What content to create, which directories matter and how to read Search Console." },
-      { icon: "shield", title: "Domain, email and hosting", desc: "All in your name. We explain what you pay, to whom and why." },
-      { icon: "refresh", title: "Optional maintenance", desc: "Monthly plan if you want frequent changes or run a store that needs monitoring." },
+      { icon: "shield", title: "Domain, email and hosting", desc: "All in your name. You know what you pay and to whom." },
+      { icon: "refresh", title: "Optional maintenance", desc: "Monthly plan for frequent changes or online stores." },
     ],
   },
 
@@ -446,15 +446,15 @@ export const homeDataEN: HomeData = {
     badge: "Let's talk",
     title: "Whichever way",
     titleHighlight: "suits you best.",
-    description: "Tell us what your business does. We reply within 24 hours with a recommendation and a price.",
+    description: "Tell us what your business does. Within 24 hours you have a recommendation and a price.",
     whatsapp: "WhatsApp",
-    whatsappDesc: "The fastest. Write to us and we continue there.",
+    whatsappDesc: "The fastest.",
     email: "Email",
     emailDesc: "For more formal inquiries or sending material.",
     form: "Form",
     formDesc: "Leave your details and we write to you.",
     social: "Social",
-    socialDesc: "Instagram and Facebook. We post every new site there.",
+    socialDesc: "We post every new site there.",
     response: "We reply within 24 hours, Monday to Friday.",
   },
 
@@ -514,8 +514,8 @@ export const homeDataEN: HomeData = {
   audit: {
     badge: "Free review",
     title: "Already have a website?",
-    titleHighlight: "We tell you what is failing.",
-    description: "We review your current site and send you a short report on what is holding back your visits and inquiries.",
+    titleHighlight: "We review it for free.",
+    description: "A short report on what holds back your visits and inquiries, in priority order.",
     items: ["Mobile load speed", "How Google sees you and whether you are indexed", "Mobile experience", "Message clarity and calls to action", "Concrete recommendations, in priority order"],
     cta: "Request free review",
     reportTitle: "What we check",
@@ -527,7 +527,7 @@ export const homeDataEN: HomeData = {
       { icon: "target", title: "Conversion", desc: "Whether a visitor understands in 5 seconds what you do and how to reach you." },
     ],
     free: "No cost, no commitment",
-    freeNote: "If your site is fine, we tell you that too.",
+    freeNote: "If your site is fine, we say so.",
   },
 
   faq: [
@@ -548,7 +548,7 @@ export const homeDataEN: HomeData = {
 
   cta: {
     title: "Let's talk about your business.",
-    description: "Tell us what you do and what you want to achieve. We reply within 24 hours with a recommendation and a fixed price.",
+    description: "Tell us what you do and what you want to achieve. Within 24 hours you have a recommendation and a fixed price.",
     cta: "Let's talk",
   },
 };

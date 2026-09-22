@@ -145,7 +145,7 @@ export default async function ArticlePageEN({ params }: PageProps) {
           </Link>
 
           <div className="flex flex-wrap items-center gap-2 md:gap-3 text-xs md:text-sm text-neutral-300 mb-3 md:mb-4">
-            <span className="px-2 md:px-3 py-1 bg-[#3ECF8E]/20 text-[#3ECF8E] rounded-full font-medium">
+            <span className="px-2 md:px-3 py-1 bg-brand/20 text-brand rounded-full font-medium">
               {article.category}
             </span>
             <span>{formatDate(article.date, "en")}</span>
@@ -171,7 +171,7 @@ export default async function ArticlePageEN({ params }: PageProps) {
           <div className="mt-12 pt-8 border-t border-neutral-200">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-[#3ECF8E] rounded-full flex items-center justify-center text-white font-bold text-lg">
+                <div className="w-12 h-12 bg-brand rounded-full flex items-center justify-center text-white font-bold text-lg">
                   M
                 </div>
                 <div>
@@ -243,10 +243,10 @@ export default async function ArticlePageEN({ params }: PageProps) {
                     />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <span className="text-xs text-[#3ECF8E] font-medium">
+                    <span className="text-xs text-brand font-medium">
                       {related.category}
                     </span>
-                    <h3 className="font-semibold text-neutral-900 group-hover:text-[#3ECF8E] transition-colors line-clamp-2 mt-1">
+                    <h3 className="font-semibold text-neutral-900 group-hover:text-brand transition-colors line-clamp-2 mt-1">
                       {related.title}
                     </h3>
                     <p className="text-sm text-neutral-500 mt-1">

@@ -9,7 +9,7 @@ interface ClientMarqueeProps {
 export default function ClientMarquee({ label }: ClientMarqueeProps) {
   const items = portfolioProjects.map((p) => (
     <span key={p.slug} className="inline-flex items-center gap-3 text-neutral-500">
-      <span className="h-1.5 w-1.5 rounded-full bg-[#3ECF8E]" />
+      <span className="h-1.5 w-1.5 rounded-full bg-gradient-brand" />
       <span className="text-lg sm:text-xl font-semibold tracking-tight text-neutral-300">{p.name}</span>
       <span className="hidden sm:inline text-sm font-mono text-neutral-600">{p.domain}</span>
     </span>

@@ -18,8 +18,8 @@ export default function FAQItem({ question, answer, dark = false, defaultOpen = 
       open={defaultOpen}
       className={`group rounded-xl border transition-all ${
         dark
-          ? "bg-neutral-800 border-neutral-700 open:border-[#3ECF8E]/60"
-          : "bg-neutral-50 border-neutral-200 open:border-[#3ECF8E]"
+          ? "bg-neutral-800 border-neutral-700 open:border-brand/60"
+          : "bg-neutral-50 border-neutral-200 open:border-brand"
       }`}
     >
       <summary

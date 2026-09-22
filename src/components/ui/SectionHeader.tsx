@@ -18,7 +18,7 @@ export default function SectionHeader({
   return (
     <div className={`${center ? "text-center" : ""} mb-16`}>
       {badge && (
-        <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">
+        <p className="text-sm uppercase tracking-widest mb-6 text-brand font-bold">
           {badge}
         </p>
       )}
@@ -27,7 +27,7 @@ export default function SectionHeader({
         {titleHighlight && (
           <>
             <br />
-            <span className={dark ? "text-neutral-500" : "text-neutral-400"}>{titleHighlight}</span>
+            <span className={dark ? "text-gradient" : "text-gradient-dark"}>{titleHighlight}</span>
           </>
         )}
       </h2>

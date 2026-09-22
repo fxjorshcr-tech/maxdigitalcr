@@ -89,7 +89,7 @@ export default function Navbar() {
                 href={link.href}
                 className={
                   link.isCTA
-                    ? "text-sm px-5 py-2.5 rounded-full transition-colors bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
+                    ? "text-sm px-5 py-2.5 rounded-full transition-colors bg-brand text-neutral-900 hover:bg-brand-dark"
                     : `text-sm transition-colors ${
                         scrolled || !isDarkHero
                           ? "text-neutral-600 hover:text-neutral-900"
@@ -106,7 +106,7 @@ export default function Navbar() {
               <Link
                 href={basePath || '/'}
                 className={`w-7 h-7 rounded-full overflow-hidden border-2 transition-all hover:scale-110 ${
-                  !isEnglish ? 'border-[#3ECF8E]' : 'border-transparent opacity-60 hover:opacity-100'
+                  !isEnglish ? 'border-brand' : 'border-transparent opacity-60 hover:opacity-100'
                 }`}
                 title="Español"
               >
@@ -119,7 +119,7 @@ export default function Navbar() {
               <Link
                 href={`/en${basePath}`}
                 className={`w-7 h-7 rounded-full overflow-hidden border-2 transition-all hover:scale-110 ${
-                  isEnglish ? 'border-[#3ECF8E]' : 'border-transparent opacity-60 hover:opacity-100'
+                  isEnglish ? 'border-brand' : 'border-transparent opacity-60 hover:opacity-100'
                 }`}
                 title="English"
               >
@@ -144,7 +144,7 @@ export default function Navbar() {
               <Link
                 href={basePath || '/'}
                 className={`w-6 h-6 rounded-full overflow-hidden border-2 transition-all ${
-                  !isEnglish ? 'border-[#3ECF8E]' : 'border-transparent opacity-70'
+                  !isEnglish ? 'border-brand' : 'border-transparent opacity-70'
                 }`}
                 title="Español"
               >
@@ -157,7 +157,7 @@ export default function Navbar() {
               <Link
                 href={`/en${basePath}`}
                 className={`w-6 h-6 rounded-full overflow-hidden border-2 transition-all ${
-                  isEnglish ? 'border-[#3ECF8E]' : 'border-transparent opacity-70'
+                  isEnglish ? 'border-brand' : 'border-transparent opacity-70'
                 }`}
                 title="English"
               >
@@ -226,7 +226,7 @@ export default function Navbar() {
                   onClick={handleLinkClick}
                   className={
                     link.isCTA
-                      ? "text-sm px-5 py-3 rounded-full text-center transition-colors bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
+                      ? "text-sm px-5 py-3 rounded-full text-center transition-colors bg-brand text-neutral-900 hover:bg-brand-dark"
                       : `text-sm py-2 transition-colors ${
                           scrolled || !isDarkHero
                             ? "text-neutral-600 hover:text-neutral-900"
@@ -247,7 +247,7 @@ export default function Navbar() {
                   href={basePath || '/'}
                   onClick={handleLinkClick}
                   className={`w-8 h-8 rounded-full overflow-hidden border-2 transition-all ${
-                    !isEnglish ? 'border-[#3ECF8E]' : 'border-transparent opacity-60'
+                    !isEnglish ? 'border-brand' : 'border-transparent opacity-60'
                   }`}
                   title="Español"
                 >
@@ -261,7 +261,7 @@ export default function Navbar() {
                   href={`/en${basePath}`}
                   onClick={handleLinkClick}
                   className={`w-8 h-8 rounded-full overflow-hidden border-2 transition-all ${
-                    isEnglish ? 'border-[#3ECF8E]' : 'border-transparent opacity-60'
+                    isEnglish ? 'border-brand' : 'border-transparent opacity-60'
                   }`}
                   title="English"
                 >

@@ -20,7 +20,7 @@ export default function BlogCTA({ data, lang = "es" }: BlogCTAProps) {
         </p>
         <Link
           href={contactUrl}
-          className="inline-flex items-center gap-2 px-8 py-4 bg-[#3ECF8E] text-neutral-900 font-semibold rounded-full hover:bg-[#2eb67d] transition-colors"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-brand text-neutral-900 font-semibold rounded-full hover:bg-brand-dark transition-colors"
         >
           {data.cta.button}
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

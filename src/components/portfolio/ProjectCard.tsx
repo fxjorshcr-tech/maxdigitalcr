@@ -20,7 +20,7 @@ export default function ProjectCard({ project, lang = "es", priority = false }: 
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block rounded-2xl border border-neutral-200 bg-white overflow-hidden transition-all duration-300 hover:border-[#3ECF8E] hover:shadow-xl hover:-translate-y-1"
+      className="group block rounded-2xl border border-neutral-200 bg-white overflow-hidden transition-all duration-300 hover:border-brand-2 hover:shadow-xl hover:-translate-y-1"
       aria-label={`${project.name} – ${visitLabel}`}
     >
       {/* Browser frame */}
@@ -64,13 +64,13 @@ export default function ProjectCard({ project, lang = "es", priority = false }: 
       <div className="p-5 sm:p-6">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <p className="text-xs uppercase tracking-widest text-[#2eb67d] font-semibold mb-1">
+            <p className="text-xs uppercase tracking-widest text-brand-dark font-semibold mb-1">
               {project.industry[lang]}
             </p>
             <h3 className="text-lg font-bold text-neutral-900 leading-tight">{project.name}</h3>
             <p className="text-sm text-neutral-500 mt-1">{project.location}</p>
           </div>
-          <span className="shrink-0 inline-flex items-center gap-1 text-sm font-medium text-neutral-700 group-hover:text-[#2eb67d] transition-colors">
+          <span className="shrink-0 inline-flex items-center gap-1 text-sm font-medium text-neutral-700 group-hover:text-brand-2-dark transition-colors">
             {visitLabel}
             <Icon name="arrowUpRight" size={16} />
           </span>

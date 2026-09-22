@@ -39,8 +39,8 @@ export default function HeroSection({
         <Reveal>
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-8 bg-white/5 border border-white/10 backdrop-blur">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-[#3ECF8E] opacity-75 animate-ping" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#3ECF8E]" />
+              <span className="absolute inline-flex h-full w-full rounded-full bg-brand opacity-75 animate-ping" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
             </span>
             <span className="text-sm font-medium text-neutral-300">{badge}</span>
           </div>
@@ -62,7 +62,7 @@ export default function HeroSection({
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href={ctaLink}
-              className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d] hover:shadow-[0_0_40px_rgba(62,207,142,0.45)]"
+              className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all bg-brand text-neutral-900 hover:shadow-[0_0_40px_rgba(62,207,142,0.45)] hover:bg-gradient-brand"
             >
               {cta}
               <Icon name="arrowRight" size={16} className="transition-transform group-hover:translate-x-1" />
@@ -81,7 +81,7 @@ export default function HeroSection({
             <ul className="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-neutral-400">
               {proof.map((item) => (
                 <li key={item} className="inline-flex items-center gap-2">
-                  <Icon name="checkCircle" size={16} className="text-[#3ECF8E]" />
+                  <Icon name="checkCircle" size={16} className="text-brand" />
                   {item}
                 </li>
               ))}

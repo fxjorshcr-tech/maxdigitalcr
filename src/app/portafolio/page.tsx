@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 const stats = [
   { value: String(portfolioProjects.length), label: "sitios en producción" },
-  { value: "1 a 10", label: "días hábiles de entrega" },
+  { value: "1 a 3", label: "días para una landing page" },
   { value: "4", label: "industrias distintas" },
   { value: "2+", label: "idiomas por sitio" },
 ];
@@ -54,11 +54,11 @@ export default function PortafolioPage() {
       <main className="bg-neutral-900">
         <section className="pt-32 pb-16 px-4 sm:px-6 bg-neutral-900">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Portafolio</p>
+            <p className="text-sm uppercase tracking-widest mb-6 text-brand font-bold">Portafolio</p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6">
               Sitios que hemos hecho.
               <br />
-              <span className="text-neutral-500">Todos en línea hoy.</span>
+              <span className="text-gradient">Todos en línea hoy.</span>
             </h1>
             <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
               Cada proyecto de esta página es un negocio real de Costa Rica que hoy recibe clientes desde su sitio.
@@ -90,15 +90,15 @@ export default function PortafolioPage() {
                 "Versión en inglés para captar visitantes extranjeros",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-neutral-700">
-                  <Icon name="checkCircle" size={20} className="shrink-0 mt-0.5 text-[#2eb67d]" />
+                  <Icon name="checkCircle" size={20} className="shrink-0 mt-0.5 text-brand-dark" />
                   {item}
                 </li>
               ))}
             </ul>
             <p className="mt-8 text-neutral-600">
               ¿Querés saber cuánto costaría un sitio así para tu negocio?{" "}
-              <Link href="/#planes" className="font-medium text-[#2eb67d] hover:underline">
-                Mirá los planes y precios
+              <Link href="/#planes" className="font-medium text-brand-dark hover:underline">
+                Mirá cómo trabajamos
               </Link>{" "}
               o escribinos directamente.
             </p>

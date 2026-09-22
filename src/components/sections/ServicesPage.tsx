@@ -15,14 +15,14 @@ const copy = {
     badge: "Servicios",
     h1: "Páginas web que",
     h1b: "traen clientes.",
-    intro: "Desde una landing page en 1 a 3 días hasta una tienda en línea completa. Precio cerrado antes de empezar y todo lo necesario para que te encuentren.",
+    intro: "De una landing page en días a una tienda en línea completa. Precio cerrado antes de empezar y presencia configurada para que te encuentren.",
     diffBadge: "Cómo trabajamos",
     diffTitle: "Lo que podés esperar de nosotros.",
     previewBadge: "Vista previa en tiempo real",
     previewTitle: "Ves cada cambio",
     previewHighlight: "antes de que se publique.",
-    previewP1: "No esperás semanas para ver cómo va tu página. Con cada cambio te compartimos un enlace privado que abrís en tu celular.",
-    previewP2: "Así evitamos malentendidos, trabajamos más rápido y te entregamos exactamente lo que pediste.",
+    previewP1: "Con cada cambio recibís un enlace privado que abrís en tu celular.",
+    previewP2: "Menos malentendidos, más velocidad, y el resultado que pediste.",
     previewItems: ["Enlace privado con cada avance", "Funciona en celular, tablet o computadora", "Comentás por WhatsApp", "Ajustamos el mismo día"],
     previewSteps: [
       { n: "1", t: "Hacemos un cambio", d: "Nuevo diseño del encabezado" },
@@ -32,7 +32,7 @@ const copy = {
     previewDone: { t: "Listo en minutos", d: "Sin esperas ni correos eternos" },
     maintBadge: "Después del lanzamiento",
     maintTitle: "Mantenimiento y soporte",
-    maintDesc: "No todas las páginas necesitan mantenimiento mensual, pero todas necesitan a alguien que responda.",
+    maintDesc: "Siempre hay alguien que responde. El plan mensual, solo si tu sitio lo necesita.",
     staticTitle: "Landing y catálogo",
     staticSub: "Sin mantenimiento obligatorio",
     staticDesc: "Una vez publicadas funcionan sin intervención. Si querés cambios después de los 30 días de soporte, se cotizan por separado o con un plan mensual opcional.",
@@ -56,14 +56,14 @@ const copy = {
     badge: "Services",
     h1: "Websites that",
     h1b: "bring in customers.",
-    intro: "From a landing page in 1 to 3 days to a complete online store. Fixed price before we start and everything you need to be found.",
+    intro: "From a landing page in days to a complete online store. Fixed price before we start and presence configured so you are found.",
     diffBadge: "How we work",
     diffTitle: "What you can expect from us.",
     previewBadge: "Real-time preview",
     previewTitle: "See every change",
     previewHighlight: "before it goes live.",
-    previewP1: "You do not wait weeks to see how your site is going. With every change we share a private link you open on your phone.",
-    previewP2: "That way we avoid misunderstandings, work faster and deliver exactly what you asked for.",
+    previewP1: "With every change you get a private link you open on your phone.",
+    previewP2: "Fewer misunderstandings, more speed, and the result you asked for.",
     previewItems: ["Private link with every step", "Works on phone, tablet or computer", "You comment on WhatsApp", "We adjust the same day"],
     previewSteps: [
       { n: "1", t: "We make a change", d: "New header design" },
@@ -73,7 +73,7 @@ const copy = {
     previewDone: { t: "Done in minutes", d: "No waiting, no endless emails" },
     maintBadge: "After launch",
     maintTitle: "Maintenance and support",
-    maintDesc: "Not every site needs monthly maintenance, but every site needs someone who answers.",
+    maintDesc: "There is always someone who answers. The monthly plan, only if your site needs it.",
     staticTitle: "Landing and catalog",
     staticSub: "No mandatory maintenance",
     staticDesc: "Once published they run without intervention. If you want changes after the 30 days of support, they are quoted separately or through an optional monthly plan.",
@@ -128,11 +128,11 @@ export default function ServicesPage({ lang }: { lang: "es" | "en" }) {
       <main className="bg-neutral-900">
         <section className="pt-32 pb-20 px-4 sm:px-6 bg-neutral-900">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">{t.badge}</p>
+            <p className="text-sm uppercase tracking-widest mb-6 text-brand font-bold">{t.badge}</p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6">
               {t.h1}
               <br />
-              <span className="text-neutral-500">{t.h1b}</span>
+              <span className="text-gradient">{t.h1b}</span>
             </h1>
             <p className="text-xl text-neutral-400 max-w-2xl mx-auto">{t.intro}</p>
           </div>
@@ -160,11 +160,11 @@ export default function ServicesPage({ lang }: { lang: "es" | "en" }) {
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="text-sm uppercase tracking-widest mb-6 text-[#2eb67d] font-bold">{t.previewBadge}</p>
+                <p className="text-sm uppercase tracking-widest mb-6 text-brand-dark font-bold">{t.previewBadge}</p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
                   {t.previewTitle}
                   <br />
-                  <span className="text-neutral-400">{t.previewHighlight}</span>
+                  <span className="text-gradient-dark">{t.previewHighlight}</span>
                 </h2>
                 <p className="text-lg text-neutral-600 mb-6">{t.previewP1}</p>
                 <p className="text-lg text-neutral-600 mb-8">{t.previewP2}</p>
@@ -181,21 +181,21 @@ export default function ServicesPage({ lang }: { lang: "es" | "en" }) {
                 <div className="flex items-center gap-2 mb-6">
                   <div className="w-3 h-3 rounded-full bg-neutral-600" />
                   <div className="w-3 h-3 rounded-full bg-neutral-600" />
-                  <div className="w-3 h-3 rounded-full bg-[#3ECF8E]" />
+                  <div className="w-3 h-3 rounded-full bg-brand" />
                   <span className="ml-4 text-sm font-mono text-neutral-500">preview.tunegocio.com</span>
                 </div>
                 <div className="space-y-4">
                   {t.previewSteps.map((s) => (
                     <div key={s.n} className="flex items-center gap-4 p-4 bg-neutral-800 rounded-lg">
-                      <div className="w-10 h-10 bg-neutral-700 rounded-full flex items-center justify-center text-[#3ECF8E] font-bold">{s.n}</div>
+                      <div className="w-10 h-10 bg-neutral-700 rounded-full flex items-center justify-center text-brand font-bold">{s.n}</div>
                       <div>
                         <p className="text-white font-medium">{s.t}</p>
                         <p className="text-neutral-500 text-sm">{s.d}</p>
                       </div>
                     </div>
                   ))}
-                  <div className="flex items-center gap-4 p-4 bg-[#3ECF8E]/10 border border-[#3ECF8E]/50 rounded-lg">
-                    <div className="w-10 h-10 bg-[#3ECF8E] rounded-full flex items-center justify-center text-neutral-900">
+                  <div className="flex items-center gap-4 p-4 bg-brand/10 border border-brand/50 rounded-lg">
+                    <div className="w-10 h-10 bg-brand rounded-full flex items-center justify-center text-neutral-900">
                       <Icon name="check" size={20} />
                     </div>
                     <div>
@@ -216,7 +216,7 @@ export default function ServicesPage({ lang }: { lang: "es" | "en" }) {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="rounded-2xl p-6 sm:p-8 bg-neutral-800 border border-neutral-700">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-neutral-700/60 rounded-xl flex items-center justify-center text-[#3ECF8E]">
+                  <div className="w-12 h-12 bg-neutral-700/60 rounded-xl flex items-center justify-center text-brand">
                     <Icon name="layers" size={22} />
                   </div>
                   <div>
@@ -234,9 +234,9 @@ export default function ServicesPage({ lang }: { lang: "es" | "en" }) {
                   ))}
                 </div>
               </div>
-              <div className="rounded-2xl p-6 sm:p-8 bg-neutral-800 border border-[#3ECF8E]/60">
+              <div className="rounded-2xl p-6 sm:p-8 bg-neutral-800 border border-brand/60">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-[#3ECF8E]/15 rounded-xl flex items-center justify-center text-[#3ECF8E]">
+                  <div className="w-12 h-12 bg-brand/15 rounded-xl flex items-center justify-center text-brand">
                     <Icon name="cart" size={22} />
                   </div>
                   <div>
@@ -249,7 +249,7 @@ export default function ServicesPage({ lang }: { lang: "es" | "en" }) {
                   {t.storeRows.map((k) => (
                     <div key={k} className="flex items-center justify-between p-3 bg-neutral-700/50 rounded-lg">
                       <span className="text-neutral-300">{k}</span>
-                      <Icon name="check" size={18} className="text-[#3ECF8E]" />
+                      <Icon name="check" size={18} className="text-brand" />
                     </div>
                   ))}
                 </div>
@@ -280,7 +280,7 @@ export default function ServicesPage({ lang }: { lang: "es" | "en" }) {
               ))}
             </div>
             <p className="mt-8 text-center text-neutral-600">
-              <Link href={t.contact} className="font-medium text-[#2eb67d] hover:underline">
+              <Link href={t.contact} className="font-medium text-brand-dark hover:underline">
                 {lang === "es" ? "¿Otra pregunta? Escribinos." : "Another question? Write to us."}
               </Link>
             </p>

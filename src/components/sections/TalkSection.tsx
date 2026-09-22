@@ -27,7 +27,7 @@ export default function TalkSection({ data, contactLink = "/contacto" }: TalkSec
       value: SITE.email,
       href: `mailto:${SITE.email}`,
       external: false,
-      accent: "bg-neutral-900 text-white",
+      accent: "bg-brand-2 text-neutral-900",
     },
     {
       icon: "fileText" as const,
@@ -36,7 +36,7 @@ export default function TalkSection({ data, contactLink = "/contacto" }: TalkSec
       value: contactLink.includes("/en") ? "Open form" : "Abrir formulario",
       href: contactLink,
       external: false,
-      accent: "bg-[#3ECF8E] text-neutral-900",
+      accent: "bg-brand text-neutral-900",
     },
     {
       icon: "users" as const,
@@ -45,7 +45,7 @@ export default function TalkSection({ data, contactLink = "/contacto" }: TalkSec
       value: "@maxdigitalcostarica",
       href: SITE.social.instagram,
       external: true,
-      accent: "bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 text-white",
+      accent: "bg-gradient-brand text-neutral-900",
     },
   ];
 
@@ -59,11 +59,11 @@ export default function TalkSection({ data, contactLink = "/contacto" }: TalkSec
       <div className="relative max-w-6xl mx-auto">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">{data.badge}</p>
+            <p className="text-sm uppercase tracking-widest mb-6 text-brand font-bold">{data.badge}</p>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight mb-6">
               {data.title}
               <br />
-              <span className="text-neutral-500">{data.titleHighlight}</span>
+              <span className="text-gradient">{data.titleHighlight}</span>
             </h2>
             <p className="text-lg text-neutral-400 leading-relaxed">{data.description}</p>
           </div>
@@ -78,14 +78,14 @@ export default function TalkSection({ data, contactLink = "/contacto" }: TalkSec
                 </div>
                 <h3 className="text-xl font-bold mb-1">{c.title}</h3>
                 <p className="text-sm text-neutral-400 leading-relaxed mb-5">{c.desc}</p>
-                <p className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-[#3ECF8E] group-hover:gap-2.5 transition-all">
+                <p className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-brand group-hover:gap-2.5 transition-all">
                   {c.value}
                   <Icon name="arrowUpRight" size={14} />
                 </p>
               </>
             );
             const cls =
-              "group h-full flex flex-col rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur p-6 sm:p-7 transition-all hover:border-[#3ECF8E]/60 hover:bg-white/[0.08] hover:-translate-y-1";
+              "group h-full flex flex-col rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur p-6 sm:p-7 transition-all hover:border-brand/60 hover:bg-white/[0.08] hover:-translate-y-1";
             return (
               <Reveal key={c.title} delay={i * 90}>
                 {c.external ? (
@@ -104,7 +104,7 @@ export default function TalkSection({ data, contactLink = "/contacto" }: TalkSec
 
         <Reveal delay={300}>
           <p className="mt-10 text-center text-sm text-neutral-500 flex items-center justify-center gap-2">
-            <Icon name="clock" size={16} className="text-[#3ECF8E]" />
+            <Icon name="clock" size={16} className="text-brand" />
             {data.response}
           </p>
         </Reveal>
