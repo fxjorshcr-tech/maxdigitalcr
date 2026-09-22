@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 const stats = [
   { value: String(portfolioProjects.length), label: "sites in production" },
-  { value: "1 to 10", label: "business days to deliver" },
+  { value: "1 to 3", label: "days for a landing page" },
   { value: "4", label: "different industries" },
   { value: "2+", label: "languages per site" },
 ];
@@ -54,11 +54,11 @@ export default function PortfolioPageEN() {
       <main className="bg-neutral-900">
         <section className="pt-32 pb-16 px-4 sm:px-6 bg-neutral-900">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Portfolio</p>
+            <p className="text-sm uppercase tracking-widest mb-6 text-brand font-bold">Portfolio</p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6">
               Sites we have built.
               <br />
-              <span className="text-neutral-500">All live today.</span>
+              <span className="text-gradient">All live today.</span>
             </h1>
             <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
               Every project on this page is a real Costa Rican business that gets customers from its website today.
@@ -90,15 +90,15 @@ export default function PortfolioPageEN() {
                 "English version to capture foreign visitors",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-neutral-700">
-                  <Icon name="checkCircle" size={20} className="shrink-0 mt-0.5 text-[#2eb67d]" />
+                  <Icon name="checkCircle" size={20} className="shrink-0 mt-0.5 text-brand-dark" />
                   {item}
                 </li>
               ))}
             </ul>
             <p className="mt-8 text-neutral-600">
               Want to know what a site like this would cost for your business?{" "}
-              <Link href="/en#planes" className="font-medium text-[#2eb67d] hover:underline">
-                See plans and pricing
+              <Link href="/en#planes" className="font-medium text-brand-dark hover:underline">
+                See how we work
               </Link>{" "}
               or write to us directly.
             </p>

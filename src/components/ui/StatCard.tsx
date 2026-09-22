@@ -9,9 +9,9 @@ interface StatCardProps {
 
 export default function StatCard({ stat, desc, source, icon }: StatCardProps) {
   return (
-    <div className="p-5 sm:p-8 rounded-2xl bg-neutral-50 border border-neutral-200 hover:border-[#3ECF8E] transition-all">
+    <div className="p-5 sm:p-8 rounded-2xl bg-neutral-50 border border-neutral-200 hover:border-brand transition-all">
       <div className="flex items-start gap-4 sm:gap-5">
-        <div className="shrink-0 w-11 h-11 rounded-lg bg-white border border-neutral-200 flex items-center justify-center text-[#2eb67d]">
+        <div className="shrink-0 w-11 h-11 rounded-lg bg-white border border-neutral-200 flex items-center justify-center text-brand-dark">
           <Icon name={icon} size={22} />
         </div>
         <div>

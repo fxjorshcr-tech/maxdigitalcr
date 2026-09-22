@@ -63,7 +63,7 @@ export default function Contacto() {
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-6 bg-neutral-900">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Contacto</p>
+            <p className="text-sm uppercase tracking-widest mb-6 text-brand font-bold">Contacto</p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6">
               ¿Tenés un proyecto?
               <br />
@@ -94,7 +94,7 @@ export default function Contacto() {
                       value={formData.nombre}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all text-neutral-900"
+                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all text-neutral-900"
                       placeholder="Tu nombre"
                     />
                   </div>
@@ -110,7 +110,7 @@ export default function Contacto() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all text-neutral-900"
+                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all text-neutral-900"
                       placeholder="tu@email.com"
                     />
                   </div>
@@ -125,7 +125,7 @@ export default function Contacto() {
                       name="whatsapp"
                       value={formData.whatsapp}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all text-neutral-900"
+                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all text-neutral-900"
                       placeholder="+506 8888 8888"
                     />
                   </div>
@@ -139,7 +139,7 @@ export default function Contacto() {
                       name="tipo"
                       value={formData.tipo}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all text-neutral-900 bg-white"
+                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all text-neutral-900 bg-white"
                     >
                       <option value="">Seleccioná una opción</option>
                       <option value="landing">Landing Page</option>
@@ -161,7 +161,7 @@ export default function Contacto() {
                       value={formData.mensaje}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all resize-none text-neutral-900"
+                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all resize-none text-neutral-900"
                       placeholder="¿Qué tenés en mente? Contanos sobre tu negocio, qué querés lograr, y cualquier detalle que nos ayude a entender mejor tu proyecto."
                     />
                   </div>
@@ -174,7 +174,7 @@ export default function Contacto() {
                         ? "bg-green-500 text-white"
                         : status === "sending"
                         ? "bg-neutral-300 text-neutral-500 cursor-wait"
-                        : "bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
+                        : "bg-brand text-neutral-900 hover:bg-brand-dark"
                     }`}
                   >
                     {status === "sending" ? (
@@ -240,7 +240,7 @@ export default function Contacto() {
                     <div>
                       <p className="font-semibold text-neutral-900">Email</p>
                       <p className="text-neutral-600">Para consultas formales</p>
-                      <p className="text-[#3ECF8E] font-medium">info@maxdigitalcr.com</p>
+                      <p className="text-brand font-medium">info@maxdigitalcr.com</p>
                     </div>
                   </a>
 
@@ -278,7 +278,7 @@ export default function Contacto() {
                     <div>
                       <p className="font-semibold text-neutral-900">Instagram</p>
                       <p className="text-neutral-600">Seguinos para ver nuestro trabajo</p>
-                      <p className="text-[#3ECF8E] font-medium">@maxdigitalcostarica</p>
+                      <p className="text-brand font-medium">@maxdigitalcostarica</p>
                     </div>
                   </a>
                 </div>
@@ -309,7 +309,7 @@ export default function Contacto() {
         <section className="py-20 px-6 bg-neutral-900">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Antes de contactar</p>
+              <p className="text-sm uppercase tracking-widest mb-6 text-brand font-bold">Antes de contactar</p>
               <h2 className="text-3xl font-bold text-white">
                 Preguntas frecuentes
               </h2>
@@ -344,7 +344,7 @@ export default function Contacto() {
             <div className="mt-8 text-center">
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 text-[#3ECF8E] font-medium hover:underline"
+                className="inline-flex items-center gap-2 text-brand font-medium hover:underline"
               >
                 Ver todos nuestros servicios y precios
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -387,8 +387,8 @@ export default function Contacto() {
             style={{ animation: "scaleIn 0.3s ease-out" }}
           >
             {/* Success Icon */}
-            <div className="w-20 h-20 mx-auto mb-6 bg-[#3ECF8E]/20 rounded-full flex items-center justify-center">
-              <svg className="w-10 h-10 text-[#3ECF8E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-20 h-20 mx-auto mb-6 bg-brand/20 rounded-full flex items-center justify-center">
+              <svg className="w-10 h-10 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
@@ -406,7 +406,7 @@ export default function Contacto() {
             {/* Close Button */}
             <button
               onClick={() => setShowModal(false)}
-              className="w-full py-3 px-6 bg-[#3ECF8E] text-neutral-900 font-semibold rounded-lg hover:bg-[#2eb67d] transition-colors"
+              className="w-full py-3 px-6 bg-brand text-neutral-900 font-semibold rounded-lg hover:bg-brand-dark transition-colors"
             >
               ¡Entendido!
             </button>

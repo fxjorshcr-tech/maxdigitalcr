@@ -41,7 +41,7 @@ export default function PortfolioSection({ lang = "es", all = false, showHeader 
       <div className="max-w-6xl mx-auto">
         {showHeader && (
           <div className="text-center mb-12 sm:mb-16">
-            <p className="text-sm uppercase tracking-widest mb-6 text-[#2eb67d] font-bold">{t.badge}</p>
+            <p className="text-sm uppercase tracking-widest mb-6 text-brand-dark font-bold">{t.badge}</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-neutral-900">
               {t.title}
               <br />

@@ -63,7 +63,7 @@ export default function Contact() {
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-6 bg-neutral-900">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Contact</p>
+            <p className="text-sm uppercase tracking-widest mb-6 text-brand font-bold">Contact</p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6">
               Have a project?
               <br />
@@ -94,7 +94,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all text-neutral-900"
+                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all text-neutral-900"
                       placeholder="Your name"
                     />
                   </div>
@@ -110,7 +110,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all text-neutral-900"
+                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all text-neutral-900"
                       placeholder="you@email.com"
                     />
                   </div>
@@ -125,7 +125,7 @@ export default function Contact() {
                       name="whatsapp"
                       value={formData.whatsapp}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all text-neutral-900"
+                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all text-neutral-900"
                       placeholder="+1 555 123 4567"
                     />
                   </div>
@@ -139,7 +139,7 @@ export default function Contact() {
                       name="tipo"
                       value={formData.tipo}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all text-neutral-900 bg-white"
+                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all text-neutral-900 bg-white"
                     >
                       <option value="">Select an option</option>
                       <option value="landing">Landing Page ($200+)</option>
@@ -161,7 +161,7 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all resize-none text-neutral-900"
+                      className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all resize-none text-neutral-900"
                       placeholder="What do you have in mind? Tell us about your business, what you want to achieve, and any details that help us better understand your project."
                     />
                   </div>
@@ -174,7 +174,7 @@ export default function Contact() {
                         ? "bg-green-500 text-white"
                         : status === "sending"
                         ? "bg-neutral-300 text-neutral-500 cursor-wait"
-                        : "bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
+                        : "bg-brand text-neutral-900 hover:bg-brand-dark"
                     }`}
                   >
                     {status === "sending" ? (
@@ -240,7 +240,7 @@ export default function Contact() {
                     <div>
                       <p className="font-semibold text-neutral-900">Email</p>
                       <p className="text-neutral-600">For formal inquiries</p>
-                      <p className="text-[#3ECF8E] font-medium">info@maxdigitalcr.com</p>
+                      <p className="text-brand font-medium">info@maxdigitalcr.com</p>
                     </div>
                   </a>
 
@@ -278,7 +278,7 @@ export default function Contact() {
                     <div>
                       <p className="font-semibold text-neutral-900">Instagram</p>
                       <p className="text-neutral-600">Follow us to see our work</p>
-                      <p className="text-[#3ECF8E] font-medium">@maxdigitalcostarica</p>
+                      <p className="text-brand font-medium">@maxdigitalcostarica</p>
                     </div>
                   </a>
                 </div>
@@ -309,7 +309,7 @@ export default function Contact() {
         <section className="py-20 px-6 bg-neutral-900">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">Before You Contact</p>
+              <p className="text-sm uppercase tracking-widest mb-6 text-brand font-bold">Before You Contact</p>
               <h2 className="text-3xl font-bold text-white">
                 Frequently asked questions
               </h2>
@@ -344,7 +344,7 @@ export default function Contact() {
             <div className="mt-8 text-center">
               <Link
                 href="/en"
-                className="inline-flex items-center gap-2 text-[#3ECF8E] font-medium hover:underline"
+                className="inline-flex items-center gap-2 text-brand font-medium hover:underline"
               >
                 See all our services
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -387,8 +387,8 @@ export default function Contact() {
             style={{ animation: "scaleIn 0.3s ease-out" }}
           >
             {/* Success Icon */}
-            <div className="w-20 h-20 mx-auto mb-6 bg-[#3ECF8E]/20 rounded-full flex items-center justify-center">
-              <svg className="w-10 h-10 text-[#3ECF8E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-20 h-20 mx-auto mb-6 bg-brand/20 rounded-full flex items-center justify-center">
+              <svg className="w-10 h-10 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
@@ -406,7 +406,7 @@ export default function Contact() {
             {/* Close Button */}
             <button
               onClick={() => setShowModal(false)}
-              className="w-full py-3 px-6 bg-[#3ECF8E] text-neutral-900 font-semibold rounded-lg hover:bg-[#2eb67d] transition-colors"
+              className="w-full py-3 px-6 bg-brand text-neutral-900 font-semibold rounded-lg hover:bg-brand-dark transition-colors"
             >
               Got it!
             </button>

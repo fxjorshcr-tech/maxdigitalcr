@@ -183,8 +183,8 @@ export default function Footer() {
             </p>
             <address className="not-italic text-sm text-neutral-500 space-y-1">
               <p>{t.location}</p>
-              <p><a href="https://wa.me/50685962438" className="hover:text-[#3ECF8E]">+506 8596 2438</a></p>
-              <p><a href="mailto:info@maxdigitalcr.com" className="hover:text-[#3ECF8E]">info@maxdigitalcr.com</a></p>
+              <p><a href="https://wa.me/50685962438" className="hover:text-brand">+506 8596 2438</a></p>
+              <p><a href="mailto:info@maxdigitalcr.com" className="hover:text-brand">info@maxdigitalcr.com</a></p>
             </address>
           </div>
 
@@ -196,37 +196,37 @@ export default function Footer() {
             <div className="space-y-2">
               <Link
                 href={`${navPrefix}/`}
-                className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
+                className="block text-sm transition-colors text-neutral-400 hover:text-brand"
               >
                 {t.home}
               </Link>
               <Link
                 href={`${navPrefix}/portafolio`}
-                className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
+                className="block text-sm transition-colors text-neutral-400 hover:text-brand"
               >
                 {t.portfolio}
               </Link>
               <Link
                 href={`${navPrefix}/servicios`}
-                className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
+                className="block text-sm transition-colors text-neutral-400 hover:text-brand"
               >
                 {t.services}
               </Link>
               <Link
                 href={`${navPrefix}/blog`}
-                className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
+                className="block text-sm transition-colors text-neutral-400 hover:text-brand"
               >
                 {t.blog}
               </Link>
               <Link
                 href={`${navPrefix}/nosotros`}
-                className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
+                className="block text-sm transition-colors text-neutral-400 hover:text-brand"
               >
                 {t.aboutUs}
               </Link>
               <Link
                 href={`${navPrefix}/contacto`}
-                className="block text-sm transition-colors text-neutral-400 hover:text-[#3ECF8E]"
+                className="block text-sm transition-colors text-neutral-400 hover:text-brand"
               >
                 {t.contact}
               </Link>
@@ -305,7 +305,7 @@ export default function Footer() {
                   onChange={handleChange}
                   placeholder={t.namePlaceholder}
                   required
-                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#3ECF8E] transition-colors"
+                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-brand transition-colors"
                 />
                 <input
                   type="email"
@@ -314,7 +314,7 @@ export default function Footer() {
                   onChange={handleChange}
                   placeholder={t.emailPlaceholder}
                   required
-                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#3ECF8E] transition-colors"
+                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-brand transition-colors"
                 />
               </div>
 
@@ -326,13 +326,13 @@ export default function Footer() {
                   value={formData.whatsapp}
                   onChange={handleChange}
                   placeholder={t.whatsappPlaceholder}
-                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#3ECF8E] transition-colors"
+                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-brand transition-colors"
                 />
                 <select
                   name="tipo"
                   value={formData.tipo}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-white focus:outline-none focus:border-[#3ECF8E] transition-colors"
+                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-white focus:outline-none focus:border-brand transition-colors"
                 >
                   {t.typeOptions.map((opt) => (
                     <option key={opt.value} value={opt.value} className="bg-neutral-800">
@@ -350,7 +350,7 @@ export default function Footer() {
                 placeholder={t.messagePlaceholder}
                 rows={3}
                 required
-                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#3ECF8E] transition-colors resize-none"
+                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-brand transition-colors resize-none"
               />
 
               <button
@@ -361,7 +361,7 @@ export default function Footer() {
                     ? "bg-green-500 text-white"
                     : status === "sending"
                     ? "bg-neutral-700 text-neutral-400 cursor-wait"
-                    : "bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
+                    : "bg-brand text-neutral-900 hover:bg-brand-dark"
                 }`}
               >
                 {status === "sending" ? (
@@ -409,17 +409,17 @@ export default function Footer() {
               className="group relative"
             >
               {/* Glow effect - more subtle */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#3ECF8E] to-emerald-500 rounded-2xl opacity-0 group-hover:opacity-60 transition-all duration-500" />
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-brand to-emerald-500 rounded-2xl opacity-0 group-hover:opacity-60 transition-all duration-500" />
 
               {/* Card */}
-              <div className="relative px-8 py-5 bg-neutral-800/80 border border-neutral-700 rounded-xl overflow-hidden group-hover:border-[#3ECF8E]/50 transition-all duration-300">
+              <div className="relative px-8 py-5 bg-neutral-800/80 border border-neutral-700 rounded-xl overflow-hidden group-hover:border-brand/50 transition-all duration-300">
                 {/* Shine effect */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                 </div>
 
                 <div className="relative flex flex-col items-center gap-3">
-                  <span className="text-xs uppercase tracking-widest text-neutral-400 group-hover:text-[#3ECF8E] transition-colors font-medium">
+                  <span className="text-xs uppercase tracking-widest text-neutral-400 group-hover:text-brand transition-colors font-medium">
                     {t.poweredBy}
                   </span>
                   <Image
@@ -444,8 +444,8 @@ export default function Footer() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fadeIn">
           <div className="bg-neutral-900 border border-neutral-700 rounded-2xl p-8 max-w-md w-full shadow-2xl animate-scaleIn">
             {/* Success Icon */}
-            <div className="w-20 h-20 mx-auto mb-6 bg-[#3ECF8E]/20 rounded-full flex items-center justify-center">
-              <svg className="w-10 h-10 text-[#3ECF8E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-20 h-20 mx-auto mb-6 bg-brand/20 rounded-full flex items-center justify-center">
+              <svg className="w-10 h-10 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
@@ -463,7 +463,7 @@ export default function Footer() {
             {/* Close Button */}
             <button
               onClick={() => setShowModal(false)}
-              className="w-full py-3 px-6 bg-[#3ECF8E] text-neutral-900 font-semibold rounded-lg hover:bg-[#2eb67d] transition-colors"
+              className="w-full py-3 px-6 bg-brand text-neutral-900 font-semibold rounded-lg hover:bg-brand-dark transition-colors"
             >
               {t.modalClose}
             </button>

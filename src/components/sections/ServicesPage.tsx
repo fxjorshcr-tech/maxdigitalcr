@@ -128,11 +128,11 @@ export default function ServicesPage({ lang }: { lang: "es" | "en" }) {
       <main className="bg-neutral-900">
         <section className="pt-32 pb-20 px-4 sm:px-6 bg-neutral-900">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">{t.badge}</p>
+            <p className="text-sm uppercase tracking-widest mb-6 text-brand font-bold">{t.badge}</p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6">
               {t.h1}
               <br />
-              <span className="text-neutral-500">{t.h1b}</span>
+              <span className="text-gradient">{t.h1b}</span>
             </h1>
             <p className="text-xl text-neutral-400 max-w-2xl mx-auto">{t.intro}</p>
           </div>
@@ -160,11 +160,11 @@ export default function ServicesPage({ lang }: { lang: "es" | "en" }) {
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="text-sm uppercase tracking-widest mb-6 text-[#2eb67d] font-bold">{t.previewBadge}</p>
+                <p className="text-sm uppercase tracking-widest mb-6 text-brand-dark font-bold">{t.previewBadge}</p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
                   {t.previewTitle}
                   <br />
-                  <span className="text-neutral-400">{t.previewHighlight}</span>
+                  <span className="text-gradient-dark">{t.previewHighlight}</span>
                 </h2>
                 <p className="text-lg text-neutral-600 mb-6">{t.previewP1}</p>
                 <p className="text-lg text-neutral-600 mb-8">{t.previewP2}</p>
@@ -181,21 +181,21 @@ export default function ServicesPage({ lang }: { lang: "es" | "en" }) {
                 <div className="flex items-center gap-2 mb-6">
                   <div className="w-3 h-3 rounded-full bg-neutral-600" />
                   <div className="w-3 h-3 rounded-full bg-neutral-600" />
-                  <div className="w-3 h-3 rounded-full bg-[#3ECF8E]" />
+                  <div className="w-3 h-3 rounded-full bg-brand" />
                   <span className="ml-4 text-sm font-mono text-neutral-500">preview.tunegocio.com</span>
                 </div>
                 <div className="space-y-4">
                   {t.previewSteps.map((s) => (
                     <div key={s.n} className="flex items-center gap-4 p-4 bg-neutral-800 rounded-lg">
-                      <div className="w-10 h-10 bg-neutral-700 rounded-full flex items-center justify-center text-[#3ECF8E] font-bold">{s.n}</div>
+                      <div className="w-10 h-10 bg-neutral-700 rounded-full flex items-center justify-center text-brand font-bold">{s.n}</div>
                       <div>
                         <p className="text-white font-medium">{s.t}</p>
                         <p className="text-neutral-500 text-sm">{s.d}</p>
                       </div>
                     </div>
                   ))}
-                  <div className="flex items-center gap-4 p-4 bg-[#3ECF8E]/10 border border-[#3ECF8E]/50 rounded-lg">
-                    <div className="w-10 h-10 bg-[#3ECF8E] rounded-full flex items-center justify-center text-neutral-900">
+                  <div className="flex items-center gap-4 p-4 bg-brand/10 border border-brand/50 rounded-lg">
+                    <div className="w-10 h-10 bg-brand rounded-full flex items-center justify-center text-neutral-900">
                       <Icon name="check" size={20} />
                     </div>
                     <div>
@@ -216,7 +216,7 @@ export default function ServicesPage({ lang }: { lang: "es" | "en" }) {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="rounded-2xl p-6 sm:p-8 bg-neutral-800 border border-neutral-700">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-neutral-700/60 rounded-xl flex items-center justify-center text-[#3ECF8E]">
+                  <div className="w-12 h-12 bg-neutral-700/60 rounded-xl flex items-center justify-center text-brand">
                     <Icon name="layers" size={22} />
                   </div>
                   <div>
@@ -234,9 +234,9 @@ export default function ServicesPage({ lang }: { lang: "es" | "en" }) {
                   ))}
                 </div>
               </div>
-              <div className="rounded-2xl p-6 sm:p-8 bg-neutral-800 border border-[#3ECF8E]/60">
+              <div className="rounded-2xl p-6 sm:p-8 bg-neutral-800 border border-brand/60">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-[#3ECF8E]/15 rounded-xl flex items-center justify-center text-[#3ECF8E]">
+                  <div className="w-12 h-12 bg-brand/15 rounded-xl flex items-center justify-center text-brand">
                     <Icon name="cart" size={22} />
                   </div>
                   <div>
@@ -249,7 +249,7 @@ export default function ServicesPage({ lang }: { lang: "es" | "en" }) {
                   {t.storeRows.map((k) => (
                     <div key={k} className="flex items-center justify-between p-3 bg-neutral-700/50 rounded-lg">
                       <span className="text-neutral-300">{k}</span>
-                      <Icon name="check" size={18} className="text-[#3ECF8E]" />
+                      <Icon name="check" size={18} className="text-brand" />
                     </div>
                   ))}
                 </div>
@@ -280,7 +280,7 @@ export default function ServicesPage({ lang }: { lang: "es" | "en" }) {
               ))}
             </div>
             <p className="mt-8 text-center text-neutral-600">
-              <Link href={t.contact} className="font-medium text-[#2eb67d] hover:underline">
+              <Link href={t.contact} className="font-medium text-brand-dark hover:underline">
                 {lang === "es" ? "¿Otra pregunta? Escribinos." : "Another question? Write to us."}
               </Link>
             </p>

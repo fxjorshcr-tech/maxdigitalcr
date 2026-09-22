@@ -97,11 +97,11 @@ export default function HomePage({ lang }: { lang: "es" | "en" }) {
             <Reveal>
               <div className="rounded-3xl p-6 sm:p-10 md:p-14 bg-white/[0.03] border border-white/10 gradient-border">
                 <div className="text-center mb-12">
-                  <p className="text-sm uppercase tracking-widest mb-4 text-[#3ECF8E] font-bold">{t.processBadge}</p>
+                  <p className="text-sm uppercase tracking-widest mb-4 text-brand font-bold">{t.processBadge}</p>
                   <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">{t.processTitle}</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-                  <div className="hidden md:block absolute top-7 left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-[#3ECF8E]/40 to-transparent" />
+                  <div className="hidden md:block absolute top-7 left-[12%] right-[12%] h-px bg-gradient-to-r from-brand/0 via-brand/60 to-brand-2/0" />
                   {data.process.map((item, i) => (
                     <Reveal key={item.step} delay={i * 100}>
                       <ProcessStep {...item} />
@@ -110,7 +110,7 @@ export default function HomePage({ lang }: { lang: "es" | "en" }) {
                 </div>
                 <div className="mt-12 text-center">
                   <p className="text-xl sm:text-2xl font-bold">
-                    {t.processFoot} <span className="text-[#3ECF8E]">{t.processFootHighlight}</span>
+                    {t.processFoot} <span className="text-gradient">{t.processFootHighlight}</span>
                   </p>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function HomePage({ lang }: { lang: "es" | "en" }) {
               {t.counters.map((c, i) => (
                 <Reveal key={c.label} delay={i * 80}>
                   <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center">
-                    <Counter to={c.to} suffix={c.suffix} className="text-4xl font-bold tracking-tight text-[#3ECF8E]" />
+                    <Counter to={c.to} suffix={c.suffix} className="text-4xl font-bold tracking-tight text-gradient" />
                     <p className="mt-2 text-sm text-neutral-400">{c.label}</p>
                   </div>
                 </Reveal>
@@ -138,8 +138,8 @@ export default function HomePage({ lang }: { lang: "es" | "en" }) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {data.stats.map((item, i) => (
                 <Reveal key={item.stat} delay={i * 80}>
-                  <div className="h-full p-6 sm:p-8 rounded-2xl bg-neutral-50 border border-neutral-200 hover:border-[#3ECF8E] transition-all flex items-start gap-5">
-                    <div className="shrink-0 w-11 h-11 rounded-lg bg-white border border-neutral-200 flex items-center justify-center text-[#2eb67d]">
+                  <div className="h-full p-6 sm:p-8 rounded-2xl bg-neutral-50 border border-neutral-200 hover:border-brand transition-all flex items-start gap-5">
+                    <div className="shrink-0 w-11 h-11 rounded-lg bg-white border border-neutral-200 flex items-center justify-center text-brand-dark">
                       <Icon name={item.icon} size={22} />
                     </div>
                     <div>
@@ -163,8 +163,8 @@ export default function HomePage({ lang }: { lang: "es" | "en" }) {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
               {data.industries.map((item, i) => (
                 <Reveal key={item.name} delay={i * 40}>
-                  <div className="group p-5 rounded-2xl border text-center transition-all bg-white border-neutral-200 hover:border-[#3ECF8E] hover:-translate-y-1 hover:shadow-lg">
-                    <div className="mx-auto mb-3 w-11 h-11 rounded-xl bg-neutral-100 flex items-center justify-center text-neutral-700 group-hover:bg-[#3ECF8E] group-hover:text-neutral-900 transition-colors">
+                  <div className="group p-5 rounded-2xl border text-center transition-all bg-white border-neutral-200 hover:border-brand hover:-translate-y-1 hover:shadow-lg">
+                    <div className="mx-auto mb-3 w-11 h-11 rounded-xl bg-neutral-100 flex items-center justify-center text-neutral-700 group-hover:bg-gradient-brand group-hover:text-neutral-900 transition-colors">
                       <Icon name={item.icon} size={20} />
                     </div>
                     <span className="text-sm font-medium text-neutral-900">{item.name}</span>

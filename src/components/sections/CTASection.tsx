@@ -24,7 +24,7 @@ export default function CTASection({
         </p>
         <Link
           href={ctaLink}
-          className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]"
+          className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all bg-brand text-neutral-900 hover:bg-brand-dark"
         >
           {cta}
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

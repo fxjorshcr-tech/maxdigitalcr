@@ -136,11 +136,11 @@ export default function AboutPage({ lang }: { lang: "es" | "en" }) {
       <main className="bg-neutral-900">
         <section className="pt-32 pb-20 px-4 sm:px-6 bg-neutral-900">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-sm uppercase tracking-widest mb-6 text-[#3ECF8E] font-bold">{t.badge}</p>
+            <p className="text-sm uppercase tracking-widest mb-6 text-brand font-bold">{t.badge}</p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6">
               {t.h1}
               <br />
-              <span className="text-neutral-500">{t.h1b}</span>
+              <span className="text-gradient">{t.h1b}</span>
             </h1>
             <p className="text-xl text-neutral-400 max-w-3xl mx-auto">{t.intro}</p>
           </div>
@@ -149,7 +149,7 @@ export default function AboutPage({ lang }: { lang: "es" | "en" }) {
         <section className="py-24 px-4 sm:px-6 bg-white">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#2eb67d] font-bold">{t.storyBadge}</p>
+              <p className="text-sm uppercase tracking-widest mb-6 text-brand-dark font-bold">{t.storyBadge}</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">{t.storyTitle}</h2>
               <p className="text-lg text-neutral-600 mb-6">{t.storyP1}</p>
               <p className="text-lg text-neutral-600 mb-6">{t.storyP2}</p>
@@ -160,7 +160,7 @@ export default function AboutPage({ lang }: { lang: "es" | "en" }) {
                 <div key={p.t}>
                   {i > 0 && <div className="border-t border-neutral-700 mb-6" />}
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#3ECF8E]/15 rounded-xl flex items-center justify-center shrink-0 text-[#3ECF8E]">
+                    <div className="w-12 h-12 bg-brand/15 rounded-xl flex items-center justify-center shrink-0 text-brand">
                       <Icon name={p.icon} size={22} />
                     </div>
                     <div>
@@ -220,7 +220,7 @@ export default function AboutPage({ lang }: { lang: "es" | "en" }) {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {t.numbers.map((item) => (
                 <div key={item.l} className="p-6 rounded-xl bg-neutral-800 border border-neutral-700 text-center">
-                  <div className="text-4xl font-bold text-[#3ECF8E] mb-2">{item.n}</div>
+                  <div className="text-4xl font-bold text-brand mb-2">{item.n}</div>
                   <p className="text-neutral-400">{item.l}</p>
                 </div>
               ))}
@@ -233,11 +233,11 @@ export default function AboutPage({ lang }: { lang: "es" | "en" }) {
         <section className="py-24 px-4 sm:px-6 bg-white">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-sm uppercase tracking-widest mb-6 text-[#2eb67d] font-bold">{t.locBadge}</p>
+              <p className="text-sm uppercase tracking-widest mb-6 text-brand-dark font-bold">{t.locBadge}</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
                 {t.locTitle}
                 <br />
-                <span className="text-neutral-400">{t.locHighlight}</span>
+                <span className="text-gradient-dark">{t.locHighlight}</span>
               </h2>
               <p className="text-lg text-neutral-600 mb-6">{t.locP1}</p>
               <p className="text-lg text-neutral-600">{t.locP2}</p>
@@ -245,7 +245,7 @@ export default function AboutPage({ lang }: { lang: "es" | "en" }) {
             <div className="grid grid-cols-2 gap-4">
               {t.locCards.map((c) => (
                 <div key={c.l} className="p-6 rounded-xl bg-neutral-50 border border-neutral-200 text-center">
-                  <div className="mx-auto mb-3 w-11 h-11 rounded-lg bg-white border border-neutral-200 flex items-center justify-center text-[#2eb67d]">
+                  <div className="mx-auto mb-3 w-11 h-11 rounded-lg bg-white border border-neutral-200 flex items-center justify-center text-brand-dark">
                     <Icon name={c.icon} size={22} />
                   </div>
                   <p className="font-medium text-neutral-900">{c.l}</p>
@@ -260,11 +260,11 @@ export default function AboutPage({ lang }: { lang: "es" | "en" }) {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">{t.ctaTitle}</h2>
             <p className="text-lg text-neutral-400 mb-10 max-w-2xl mx-auto">{t.ctaDesc}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href={t.contact} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all bg-[#3ECF8E] text-neutral-900 hover:bg-[#2eb67d]">
+              <Link href={t.contact} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all bg-brand text-neutral-900 hover:bg-brand-dark">
                 {t.ctaPrimary}
                 <Icon name="arrowRight" size={16} />
               </Link>
-              <Link href={t.services} className="inline-flex items-center justify-center gap-2 border px-8 py-4 rounded-full text-sm font-medium transition-all border-neutral-600 text-white hover:border-[#3ECF8E] hover:text-[#3ECF8E]">
+              <Link href={t.services} className="inline-flex items-center justify-center gap-2 border px-8 py-4 rounded-full text-sm font-medium transition-all border-neutral-600 text-white hover:border-brand hover:text-brand">
                 {t.ctaSecondary}
               </Link>
             </div>
