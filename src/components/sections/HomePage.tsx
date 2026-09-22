@@ -10,8 +10,8 @@ import OfferSection from "./OfferSection";
 import SupportSection from "./SupportSection";
 import AuditSection from "./AuditSection";
 import TalkSection from "./TalkSection";
-import { Reveal, Counter } from "@/components/motion";
-import { SectionHeader, FAQItem, ProcessStep, Icon } from "@/components/ui";
+import { Reveal, Counter, ProcessTimeline } from "@/components/motion";
+import { SectionHeader, FAQItem, Icon } from "@/components/ui";
 import { getHomeData } from "@/lib/data";
 import { portfolioProjects } from "@/lib/portfolio";
 
@@ -100,14 +100,7 @@ export default function HomePage({ lang }: { lang: "es" | "en" }) {
                   <p className="text-sm uppercase tracking-widest mb-4 text-brand font-bold">{t.processBadge}</p>
                   <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">{t.processTitle}</h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-                  <div className="hidden md:block absolute top-7 left-[12%] right-[12%] h-px bg-gradient-to-r from-brand/0 via-brand/60 to-brand-2/0" />
-                  {data.process.map((item, i) => (
-                    <Reveal key={item.step} delay={i * 100}>
-                      <ProcessStep {...item} />
-                    </Reveal>
-                  ))}
-                </div>
+                <ProcessTimeline steps={data.process} />
                 <div className="mt-12 text-center">
                   <p className="text-xl sm:text-2xl font-bold">
                     {t.processFoot} <span className="text-gradient">{t.processFootHighlight}</span>

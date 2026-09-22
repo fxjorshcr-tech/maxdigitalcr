@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Icon from "@/components/ui/Icon";
 import ProjectCard from "./ProjectCard";
+import { ScrollFan } from "@/components/motion";
 import { getFeaturedProjects, portfolioProjects, type Lang } from "@/lib/portfolio";
 
 interface PortfolioSectionProps {
@@ -51,11 +52,13 @@ export default function PortfolioSection({ lang = "es", all = false, showHeader 
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <ScrollFan className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {projects.map((project, i) => (
-            <ProjectCard key={project.slug} project={project} lang={lang} priority={i < 2} />
+            <div key={project.slug} data-fan-card className="will-change-transform">
+              <ProjectCard project={project} lang={lang} priority={i < 2} />
+            </div>
           ))}
-        </div>
+        </ScrollFan>
 
         {!all && (
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">

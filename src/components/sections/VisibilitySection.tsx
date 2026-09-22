@@ -1,4 +1,5 @@
 import { Reveal, Spotlight } from "@/components/motion";
+import AiAnswerDemo from "@/components/motion/AiAnswerDemo";
 import { Icon } from "@/components/ui";
 import type { HomeData } from "@/lib/data";
 
@@ -12,23 +13,35 @@ interface VisibilitySectionProps {
  * Left: a stylized "where you show up" panel. Right: the six items.
  */
 export default function VisibilitySection({ data, lang = "es" }: VisibilitySectionProps) {
-  const mock =
+  const demo =
     lang === "es"
       ? {
-          query: "mejor hotel boutique en La Fortuna",
-          ai: "Según los datos de Google, Apple y Bing, una opción muy bien valorada es",
-          biz: "Tu negocio",
-          maps: "Abierto ahora · 4.9 · La Fortuna",
-          siri: "Siri encontró tu negocio en Apple Maps",
-          bing: "Copilot cita tu sitio como fuente",
+          scenarios: [
+            { query: "mejor hotel boutique en La Fortuna", answer: "Según Google, Apple Maps y Bing, una opción muy bien valorada cerca del volcán es", business: "Tu hotel", meta: "Abierto ahora · 4.9 · La Fortuna" },
+            { query: "tour de cataratas con guía certificado", answer: "Un operador con reseñas recientes y guía naturalista certificado es", business: "Tu tour", meta: "Desde $55 · 5.0 · La Fortuna" },
+            { query: "dónde comer casado en La Fortuna", answer: "Entre los lugares mejor calificados por locales aparece", business: "Tu restaurante", meta: "Abierto hasta las 21:00 · 4.8" },
+          ],
+          sources: [
+            { icon: "mapPin" as const, label: "Google Business" },
+            { icon: "compass" as const, label: "Apple Maps" },
+            { icon: "globe" as const, label: "Bing Places" },
+            { icon: "fileText" as const, label: "tu-sitio.com" },
+          ],
+          sourcesLabel: "Fuentes",
         }
       : {
-          query: "best boutique hotel in La Fortuna",
-          ai: "Based on Google, Apple and Bing data, a highly rated option is",
-          biz: "Your business",
-          maps: "Open now · 4.9 · La Fortuna",
-          siri: "Siri found your business on Apple Maps",
-          bing: "Copilot cites your site as a source",
+          scenarios: [
+            { query: "best boutique hotel in La Fortuna", answer: "Based on Google, Apple Maps and Bing, a highly rated option near the volcano is", business: "Your hotel", meta: "Open now · 4.9 · La Fortuna" },
+            { query: "waterfall tour with certified guide", answer: "An operator with recent reviews and a certified naturalist guide is", business: "Your tour", meta: "From $55 · 5.0 · La Fortuna" },
+            { query: "where to eat casado in La Fortuna", answer: "Among the places locals rate highest is", business: "Your restaurant", meta: "Open until 9 pm · 4.8" },
+          ],
+          sources: [
+            { icon: "mapPin" as const, label: "Google Business" },
+            { icon: "compass" as const, label: "Apple Maps" },
+            { icon: "globe" as const, label: "Bing Places" },
+            { icon: "fileText" as const, label: "your-site.com" },
+          ],
+          sourcesLabel: "Sources",
         };
 
   return (
@@ -50,47 +63,9 @@ export default function VisibilitySection({ data, lang = "es" }: VisibilitySecti
         </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Illustration: an AI answer citing the business, with map/siri/copilot chips */}
+          {/* Live assistant demo */}
           <Reveal className="lg:col-span-5">
-            <div className="relative">
-              <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur p-6 gradient-border">
-                <div className="flex items-center gap-2 text-xs text-neutral-400 mb-4">
-                  <Icon name="sparkles" size={14} className="text-brand" />
-                  <span className="font-mono">{mock.query}</span>
-                </div>
-                <p className="text-sm text-neutral-300 leading-relaxed">
-                  {mock.ai}{" "}
-                  <span className="inline-flex items-center gap-1 rounded-md bg-brand/15 border border-brand/40 px-1.5 py-0.5 text-brand font-semibold">
-                    {mock.biz}
-                    <Icon name="externalLink" size={12} />
-                  </span>
-                  .
-                </p>
-                <div className="mt-5 rounded-xl bg-neutral-900 border border-white/10 p-4 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-brand/15 flex items-center justify-center text-brand">
-                    <Icon name="mapPin" size={20} />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="font-semibold truncate">{mock.biz}</p>
-                    <p className="text-xs text-neutral-400 truncate">{mock.maps}</p>
-                  </div>
-                  <div className="ml-auto flex gap-0.5 text-brand">
-                    {[0, 1, 2, 3, 4].map((i) => (
-                      <Icon key={i} name="star" size={12} className="fill-current" />
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="float-slow absolute -right-3 -top-6 sm:-right-8 rounded-full border border-white/10 bg-neutral-900/90 backdrop-blur px-4 py-2 text-xs text-neutral-300 shadow-xl flex items-center gap-2">
-                <Icon name="compass" size={14} className="text-brand-2" />
-                {mock.siri}
-              </div>
-              <div className="float-slow [animation-delay:-3s] absolute -left-3 -bottom-6 sm:-left-8 rounded-full border border-white/10 bg-neutral-900/90 backdrop-blur px-4 py-2 text-xs text-neutral-300 shadow-xl flex items-center gap-2">
-                <Icon name="globe" size={14} className="text-brand-2" />
-                {mock.bing}
-              </div>
-            </div>
+            <AiAnswerDemo scenarios={demo.scenarios} sources={demo.sources} sourcesLabel={demo.sourcesLabel} />
           </Reveal>
 
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">

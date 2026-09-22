@@ -1,9 +1,25 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Source_Serif_4, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import { organizationJsonLd } from "@/lib/schema";
 
 const GA_MEASUREMENT_ID = "G-F86DTXXD46";
+
+// Tipografía: serif editorial para titulares, sans limpia para texto.
+const display = Source_Serif_4({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
+  display: "swap",
+});
+const sans = Instrument_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.maxdigitalcr.com"),
@@ -100,7 +116,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" className={`${display.variable} ${sans.variable}`}>
       <head>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}

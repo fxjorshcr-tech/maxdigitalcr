@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Icon from "@/components/ui/Icon";
 import { Reveal } from "@/components/motion";
+import HeroObjectLoader from "@/components/three/HeroObjectLoader";
 
 interface HeroSectionProps {
   badge: string;
@@ -35,7 +36,8 @@ export default function HeroSection({
       </div>
       <div className="absolute inset-0 bg-grid-dark opacity-40 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center">
+      <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="lg:col-span-7 text-center lg:text-left">
         <Reveal>
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-8 bg-white/5 border border-white/10 backdrop-blur">
             <span className="relative flex h-2 w-2">
@@ -47,7 +49,7 @@ export default function HeroSection({
         </Reveal>
 
         <Reveal delay={100}>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl leading-[1.08] tracking-tight text-white">
             {title}
             <br />
             <span className="text-shimmer">{titleHighlight}</span>
@@ -55,11 +57,11 @@ export default function HeroSection({
         </Reveal>
 
         <Reveal delay={200}>
-          <p className="mt-8 text-lg sm:text-xl max-w-2xl mx-auto text-neutral-400 leading-relaxed">{description}</p>
+          <p className="mt-8 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0 text-neutral-400 leading-relaxed">{description}</p>
         </Reveal>
 
         <Reveal delay={300}>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <Link
               href={ctaLink}
               className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all bg-brand text-neutral-900 hover:shadow-[0_0_40px_rgba(62,207,142,0.45)] hover:bg-gradient-brand"
@@ -78,7 +80,7 @@ export default function HeroSection({
 
         {proof.length > 0 && (
           <Reveal delay={450}>
-            <ul className="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-neutral-400">
+            <ul className="mt-14 flex flex-wrap items-center justify-center lg:justify-start gap-x-8 gap-y-3 text-sm text-neutral-400">
               {proof.map((item) => (
                 <li key={item} className="inline-flex items-center gap-2">
                   <Icon name="checkCircle" size={16} className="text-brand" />
@@ -88,6 +90,12 @@ export default function HeroSection({
             </ul>
           </Reveal>
         )}
+        </div>
+
+        {/* 3D object (desktop only, loads after first paint) */}
+        <div className="hidden lg:block lg:col-span-5 relative h-[520px]">
+          <HeroObjectLoader />
+        </div>
       </div>
 
       {/* Bottom fade into next section */}
