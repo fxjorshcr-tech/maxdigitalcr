@@ -39,12 +39,12 @@ export default function Navbar() {
     { href: "/en/portafolio", label: "Portfolio" },
     { href: "/en/blog", label: "Blog" },
     { href: "/en/nosotros", label: "About" },
-    { href: "/en/contacto", label: "Contact", isCTA: true },
+    { href: "/en/contacto", label: "Let's talk", isCTA: true },
   ] : [
     { href: "/portafolio", label: "Portafolio" },
     { href: "/blog", label: "Blog" },
     { href: "/nosotros", label: "Nosotros" },
-    { href: "/contacto", label: "Contacto", isCTA: true },
+    { href: "/contacto", label: "Hablemos", isCTA: true },
   ];
 
   // Home link based on language

@@ -1,17 +1,20 @@
 # MaxDigitalCR
 
-> MaxDigitalCR es una agencia de diseño y desarrollo web en La Fortuna de San Carlos, Costa Rica. Crea landing pages, sitios catálogo y tiendas en línea para pequeños y medianos negocios de todo el país, con entrega en 1 a 10 días hábiles, precios fijos desde ₡100.000 (USD 200) y configuración de Google Business Profile, Google Search Console, Bing Places, Apple Business Connect y datos estructurados incluida en todos los planes.
+> MaxDigitalCR es una agencia de diseño y desarrollo web en La Fortuna de San Carlos, Costa Rica. Crea landing pages, sitios catálogo y tiendas en línea para pequeños y medianos negocios de todo el país, con asesoría inicial, entrega en días, precio cerrado desde ₡100.000 (USD 200) y configuración de Google Business Profile, Google Search Console, Bing Places, Apple Business Connect y datos estructurados incluida en todos los planes.
 
 Contacto: WhatsApp +506 8596 2438 · info@maxdigitalcr.com · https://www.maxdigitalcr.com
 Ubicación: La Fortuna, Alajuela, Costa Rica. Atiende clientes en todo Costa Rica de forma remota.
 Idiomas: español e inglés.
 
-## Servicios y precios (actualizado setiembre 2026)
+## Servicios
 
-- Landing Page: desde ₡100.000 (USD 200), pago único, entrega en 1 a 3 días hábiles. Hasta 5 secciones, formulario, WhatsApp, SEO técnico, hosting y SSL el primer año, 30 días de soporte.
-- Sitio Catálogo: desde ₡200.000 (USD 400), pago único, entrega en 3 a 7 días hábiles. Hasta 10 páginas, galerías, blog opcional, panel para editar contenido, español e inglés opcional.
-- Tienda en línea: desde ₡300.000 (USD 600) más mantenimiento mensual, entrega en 7 a 10 días hábiles. Carrito, pagos con SINPE Móvil o tarjeta, inventario, notificaciones de pedidos.
-- Proyectos a la medida (sistemas de reservas, dashboards, integraciones): cotización individual.
+Empezamos con una asesoría: escuchamos qué vende el negocio, a quién y cómo lo contactan, y recomendamos el tipo de sitio que conviene. Precio cerrado por escrito en menos de 24 horas.
+
+- Landing page: una página enfocada en captar contactos. Entrega en 1 a 3 días hábiles. Desde ₡100.000 (USD 200).
+- Sitio completo (catálogo): varias páginas para hoteles, tours, restaurantes, servicios o bienes raíces, con galerías, formularios y panel para editar contenido. Entrega en 1 a 2 semanas.
+- Tienda en línea: carrito, pagos con SINPE Móvil o tarjeta, inventario y pedidos. Entrega en unas 2 semanas. Incluye mantenimiento mensual.
+- Proyectos a la medida: sistemas de reservas, dashboards, integraciones. Cotización individual.
+- Todo plan incluye: hosting y SSL el primer año, SEO técnico, datos estructurados, Google Business Profile, Apple Business Connect, Bing Places, Search Console, Analytics y 30 días de soporte.
 - No incluido: dominio (aprox. USD 12 a 15 al año), correo profesional (desde USD 6 por cuenta al mes), hosting después del primer año (aprox. USD 5 a 10 al mes).
 
 ## Páginas

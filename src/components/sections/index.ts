@@ -1,8 +1,12 @@
 export { default as HeroSection } from "./HeroSection";
-export { default as PricingSection } from "./PricingSection";
 export { default as CTASection } from "./CTASection";
+export { default as ClientMarquee } from "./ClientMarquee";
+export { default as AdvisorySection } from "./AdvisorySection";
 export { default as VisibilitySection } from "./VisibilitySection";
+export { default as OfferSection } from "./OfferSection";
+export { default as SupportSection } from "./SupportSection";
 export { default as AuditSection } from "./AuditSection";
+export { default as TalkSection } from "./TalkSection";
 export { default as HomePage } from "./HomePage";
 export { default as ServicesPage } from "./ServicesPage";
 export { default as AboutPage } from "./AboutPage";

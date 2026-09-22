@@ -16,42 +16,29 @@ const WEBSITE_ID = `${SITE.url}/#website`;
  * profiles are live (see docs/presencia-digital.md).
  */
 export function organizationJsonLd() {
-  const offers = (["landing", "catalog", "ecommerce"] as const).map((id) => {
-    const es = homeDataES.pricing[id];
-    const en = homeDataEN.pricing[id];
-    return {
-      "@type": "Offer",
-      name: es.title,
-      description: es.description,
-      itemOffered: {
-        "@type": "Service",
-        name: es.title,
-        alternateName: en.title,
-        serviceType: "Web design and development",
-        description: es.description,
-        provider: { "@id": ORG_ID },
-        areaServed: { "@type": "Country", name: "Costa Rica" },
-      },
-      priceSpecification: [
-        {
-          "@type": "PriceSpecification",
-          price: es.priceNumeric,
-          minPrice: es.priceNumeric,
-          priceCurrency: "CRC",
-          description: `desde ${es.price}, ${es.priceNote}`,
-        },
-        {
-          "@type": "PriceSpecification",
-          price: en.priceNumeric,
-          minPrice: en.priceNumeric,
-          priceCurrency: "USD",
-          description: `from ${en.price}, ${en.priceNote}`,
-        },
-      ],
-      availability: "https://schema.org/InStock",
-      url: `${SITE.url}/#planes`,
-    };
-  });
+  const services = homeDataES.offer.types.map((t, i) => ({
+    "@type": "Offer",
+    name: t.title,
+    description: t.desc,
+    itemOffered: {
+      "@type": "Service",
+      name: t.title,
+      alternateName: homeDataEN.offer.types[i]?.title,
+      serviceType: "Web design and development",
+      description: t.desc,
+      provider: { "@id": ORG_ID },
+      areaServed: { "@type": "Country", name: "Costa Rica" },
+    },
+    ...(i === 0
+      ? {
+          priceSpecification: [
+            { "@type": "PriceSpecification", minPrice: SITE.fromPrice.crc, priceCurrency: "CRC", description: `desde ${SITE.fromPrice.crcLabel}` },
+            { "@type": "PriceSpecification", minPrice: SITE.fromPrice.usd, priceCurrency: "USD", description: `from ${SITE.fromPrice.usdLabel}` },
+          ],
+        }
+      : {}),
+    url: `${SITE.url}/servicios`,
+  }));
 
   return {
     "@context": "https://schema.org",
@@ -65,8 +52,8 @@ export function organizationJsonLd() {
         logo: { "@type": "ImageObject", url: LOGO, width: 512, height: 512 },
         image: LOGO,
         description:
-          "MaxDigitalCR es una agencia de diseño y desarrollo web en La Fortuna de San Carlos, Costa Rica. Crea landing pages, sitios catálogo y tiendas en línea para pequeños y medianos negocios, con entrega en 1 a 10 días hábiles, precios fijos desde ₡100.000 y configuración de Google Business Profile, Search Console y datos estructurados incluida.",
-        slogan: "Páginas web para negocios de Costa Rica que necesitan más clientes.",
+          "MaxDigitalCR es una agencia de diseño y desarrollo web en La Fortuna de San Carlos, Costa Rica. Crea landing pages, sitios catálogo y tiendas en línea para pequeños y medianos negocios, con asesoría inicial, entrega en días, precio cerrado desde ₡100.000 y configuración de Google Business Profile, Apple Business Connect, Bing Places, Search Console y datos estructurados incluida.",
+        slogan: "Tu negocio, bien puesto en internet.",
         telephone: SITE.phoneIntl,
         email: SITE.email,
         address: {
@@ -83,7 +70,7 @@ export function organizationJsonLd() {
           { "@type": "AdministrativeArea", name: "Guanacaste" },
           { "@type": "City", name: "San José" },
         ],
-        priceRange: "₡100.000 - ₡300.000+",
+        priceRange: "desde ₡100.000",
         currenciesAccepted: "CRC, USD",
         paymentAccepted: "SINPE Móvil, transferencia bancaria, PayPal",
         knowsLanguage: ["es", "en"],
@@ -115,7 +102,7 @@ export function organizationJsonLd() {
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Servicios de desarrollo web",
-          itemListElement: offers,
+          itemListElement: services,
         },
       },
       {
