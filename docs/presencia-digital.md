@@ -47,7 +47,7 @@ Es lo que alimenta Google Maps, el panel local de Google, AI Overviews y Gemini.
 6. Verificación: en Costa Rica suele pedir **verificación por video**. Tené a mano: cédula jurídica o patente (o factura de Hacienda), algo con el logo (tarjeta, laptop con sticker, camiseta), y mostrá herramientas de trabajo (computadora con el código de un sitio).
 7. Después de verificar, completar **todo**:
    - Descripción (750 caracteres): usar la descripción corta canónica y ampliar con servicios y zona.
-   - Servicios: uno por plan con precio "desde" en colones (Landing Page ₡100.000, Sitio Catálogo ₡200.000, Tienda en línea ₡300.000).
+   - Servicios: Landing page, Sitio completo, Tienda en línea, Proyecto a la medida. Solo en Landing page poné "desde ₡100.000"; en los demás dejá el precio vacío.
    - Horario: lunes a viernes 8:00 a 18:00.
    - Teléfono, sitio web, enlace de WhatsApp como "enlace de citas".
    - Logo + mínimo 10 fotos: capturas de los sitios hechos (las de `/public/portfolio`), foto tuya trabajando, foto de La Fortuna.
@@ -126,7 +126,6 @@ Sin esto no sabés si Google te indexa ni con qué te encuentran.
 | JSON-LD ItemList del portafolio | Hecho | `src/lib/schema.ts` |
 | Frase de entidad "MaxDigitalCR es una agencia de..." en el primer párrafo de Nosotros | Hecho | `AboutPage.tsx` |
 | Respuestas directas en las 2 primeras frases de cada FAQ | Hecho | `src/lib/data.ts` |
-| Fecha visible "Precios actualizados: setiembre 2026" | Hecho | sección de precios |
 | `llms.txt` con resumen, servicios, precios y sitios hechos | Hecho | `public/llms.txt` |
 | hreflang es/en en sitemap y metadata | Hecho | `sitemap.ts`, `layout.tsx` |
 | FAQ en HTML nativo (`<details>`) sin depender de JavaScript | Hecho | `FAQItem.tsx` |
@@ -135,7 +134,7 @@ Sin esto no sabés si Google te indexa ni con qué te encuentran.
 
 - Agregar las URLs de Google Maps, Bing y Apple a `sameAs` cuando existan.
 - Crear un perfil de **LinkedIn** de empresa y una página personal tuya como fundador. Los modelos usan LinkedIn para verificar que la empresa es real. Después agregar un bloque `Person` (fundador) en `schema.ts` con tu nombre y enlace.
-- Actualizar `SITE.pricesUpdated` en `src/lib/data.ts` cada vez que cambien los precios (mínimo cada 3 meses aunque no cambien, para señal de frescura).
+- Revisar el precio de partida (`SITE.fromPrice` en `src/lib/data.ts`) y el texto del FAQ de precios cada 3 meses.
 
 ---
 

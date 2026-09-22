@@ -319,7 +319,7 @@ export default function Contact() {
               {[
                 {
                   q: "How much does a website cost?",
-                  a: "Prices start at $200 for landing pages, $400 for catalog sites, and $600 for e-commerce. The final price depends on the specific features you need."
+                  a: "Projects start from $200 (₡100,000). The final price depends on the type of site, number of pages and integrations. You get a fixed quote within 24 hours."
                 },
                 {
                   q: "How long does it take to respond?",
@@ -346,7 +346,7 @@ export default function Contact() {
                 href="/en"
                 className="inline-flex items-center gap-2 text-[#3ECF8E] font-medium hover:underline"
               >
-                See all our services and pricing
+                See all our services
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

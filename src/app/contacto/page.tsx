@@ -142,9 +142,9 @@ export default function Contacto() {
                       className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3ECF8E] focus:border-transparent transition-all text-neutral-900 bg-white"
                     >
                       <option value="">Seleccioná una opción</option>
-                      <option value="landing">Landing Page (₡100,000+)</option>
-                      <option value="catalogo">Sitio Catálogo (₡200,000+)</option>
-                      <option value="ecommerce">E-Commerce (₡300,000+)</option>
+                      <option value="landing">Landing Page</option>
+                      <option value="catalogo">Sitio Catálogo</option>
+                      <option value="ecommerce">Tienda en línea</option>
                       <option value="personalizado">Proyecto Personalizado</option>
                       <option value="otro">Otro / No estoy seguro</option>
                     </select>
@@ -319,7 +319,7 @@ export default function Contacto() {
               {[
                 {
                   q: "¿Cuánto cuesta una página web?",
-                  a: "Los precios empiezan en ₡100,000 para landing pages, ₡200,000 para sitios catálogo, y ₡300,000 para e-commerce. El precio final depende de las funcionalidades específicas que necesités."
+                  a: "Los proyectos empiezan desde ₡100.000. El precio final depende del tipo de sitio, la cantidad de páginas y las integraciones. Te enviamos una cotización cerrada en menos de 24 horas."
                 },
                 {
                   q: "¿Cuánto tardan en responder?",

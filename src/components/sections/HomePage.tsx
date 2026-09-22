@@ -3,41 +3,35 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PortfolioSection from "@/components/portfolio/PortfolioSection";
 import HeroSection from "./HeroSection";
-import PricingSection from "./PricingSection";
+import ClientMarquee from "./ClientMarquee";
+import AdvisorySection from "./AdvisorySection";
 import VisibilitySection from "./VisibilitySection";
+import OfferSection from "./OfferSection";
+import SupportSection from "./SupportSection";
 import AuditSection from "./AuditSection";
-import CTASection from "./CTASection";
-import { SectionHeader, FeatureCard, StatCard, FAQItem, ProcessStep, Icon } from "@/components/ui";
-import { getHomeData, SITE } from "@/lib/data";
+import TalkSection from "./TalkSection";
+import { Reveal, Counter } from "@/components/motion";
+import { SectionHeader, FAQItem, ProcessStep, Icon } from "@/components/ui";
+import { getHomeData } from "@/lib/data";
+import { portfolioProjects } from "@/lib/portfolio";
 
 const labels = {
   es: {
     contact: "/contacto",
-    servicesBadge: "Qué hacemos",
-    servicesTitle: "Tres tipos de sitio.",
-    servicesHighlight: "Uno se ajusta a tu negocio.",
-    servicesDesc: "Sitios rápidos, fáciles de encontrar y hechos a la medida del negocio. Sin plantillas genéricas.",
-    statsBadge: "Por qué importa",
-    statsTitle: "Tus clientes te buscan en internet",
-    statsHighlight: "antes de llamarte.",
-    statsFoot: "Si no aparecés, o aparecés con un sitio lento y viejo, esa llamada se la lleva otro.",
-    pricingBadge: "Planes y precios",
-    pricingTitle: "Precios claros,",
-    pricingHighlight: "desde el primer mensaje.",
-    pricingDesc: "Todos los planes incluyen diseño responsive, SEO técnico, perfil de Google y 30 días de soporte.",
-    customTitle: "¿Necesitás algo a la medida?",
-    customDesc: "Sistemas de reservas, dashboards, integraciones con APIs, aplicaciones web. Contanos qué necesitás y te decimos si podemos y cuánto cuesta.",
-    customCta: "Cotizar proyecto a la medida",
-    diffBadge: "Cómo trabajamos",
-    diffTitle: "Lo que podés esperar",
-    diffHighlight: "de trabajar con nosotros.",
+    marquee: "Sitios en producción hoy",
     processBadge: "Proceso",
     processTitle: "Cuatro pasos, sin vueltas.",
     processFoot: "Tu sitio en línea en",
-    processFootHighlight: "1 a 10 días hábiles",
-    techBadge: "Tecnología",
-    techTitle: "Construido con herramientas modernas, no con plantillas.",
-    techDesc: "Usamos la misma base técnica que sitios de alto tráfico: rápida, segura y sin plugins que se rompen.",
+    processFootHighlight: "días, no meses",
+    statsBadge: "Por qué importa",
+    statsTitle: "Tus clientes te buscan en internet",
+    statsHighlight: "antes de llamarte.",
+    counters: [
+      { to: portfolioProjects.length, suffix: "", label: "sitios en producción" },
+      { to: 24, suffix: " h", label: "tiempo máximo de respuesta" },
+      { to: 2, suffix: " s", label: "o menos de carga en celular" },
+      { to: 30, suffix: " días", label: "de soporte incluido" },
+    ],
     industriesBadge: "Para quién",
     industriesTitle: "Negocios con los que trabajamos.",
     industriesDesc: "Si tenés clientes que te buscan en Google antes de comprar, esto es para vos.",
@@ -47,31 +41,20 @@ const labels = {
   },
   en: {
     contact: "/en/contacto",
-    servicesBadge: "What we do",
-    servicesTitle: "Three types of site.",
-    servicesHighlight: "One fits your business.",
-    servicesDesc: "Fast sites, easy to find and built around the business. No generic templates.",
-    statsBadge: "Why it matters",
-    statsTitle: "Your customers look you up online",
-    statsHighlight: "before they call.",
-    statsFoot: "If you do not show up, or show up with a slow, dated site, someone else gets that call.",
-    pricingBadge: "Plans and pricing",
-    pricingTitle: "Clear prices,",
-    pricingHighlight: "from the first message.",
-    pricingDesc: "Every plan includes responsive design, technical SEO, Google profile and 30 days of support.",
-    customTitle: "Need something custom?",
-    customDesc: "Booking systems, dashboards, API integrations, web apps. Tell us what you need and we will tell you if we can do it and what it costs.",
-    customCta: "Quote a custom project",
-    diffBadge: "How we work",
-    diffTitle: "What you can expect",
-    diffHighlight: "from working with us.",
+    marquee: "Sites in production today",
     processBadge: "Process",
     processTitle: "Four steps, no runaround.",
     processFoot: "Your site live in",
-    processFootHighlight: "1 to 10 business days",
-    techBadge: "Technology",
-    techTitle: "Built with modern tools, not templates.",
-    techDesc: "We use the same technical base as high-traffic sites: fast, secure and free of plugins that break.",
+    processFootHighlight: "days, not months",
+    statsBadge: "Why it matters",
+    statsTitle: "Your customers look you up online",
+    statsHighlight: "before they call.",
+    counters: [
+      { to: portfolioProjects.length, suffix: "", label: "sites in production" },
+      { to: 24, suffix: " h", label: "maximum response time" },
+      { to: 2, suffix: " s", label: "or less to load on mobile" },
+      { to: 30, suffix: " days", label: "of support included" },
+    ],
     industriesBadge: "Who it is for",
     industriesTitle: "Businesses we work with.",
     industriesDesc: "If you have customers who look you up on Google before buying, this is for you.",
@@ -89,129 +72,107 @@ export default function HomePage({ lang }: { lang: "es" | "en" }) {
     <>
       <Navbar />
 
-      <main className="bg-neutral-900">
+      <main className="bg-neutral-950">
         <HeroSection {...data.hero} ctaLink={t.contact} />
+        <ClientMarquee label={t.marquee} />
 
-        {/* Real work, right after the hero */}
+        {/* 1. Asesoría empresarial */}
+        <AdvisorySection data={data.advisory} />
+
+        {/* 2. Páginas que hemos hecho */}
         <PortfolioSection lang={lang} />
 
-        {/* Services */}
-        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-neutral-900">
+        {/* 3. La nueva forma de aparecer */}
+        <VisibilitySection data={data.visibility} lang={lang} />
+
+        {/* 4. Tecnología, tiempo y precio accesible */}
+        <OfferSection data={data.offer} ctaLink={t.contact} lang={lang} />
+
+        {/* 5. Acompañamiento */}
+        <SupportSection data={data.support} />
+
+        {/* Proceso + contadores */}
+        <section className="relative py-20 sm:py-28 px-4 sm:px-6 bg-neutral-950 text-white overflow-hidden">
           <div className="max-w-6xl mx-auto">
-            <SectionHeader
-              badge={t.servicesBadge}
-              title={t.servicesTitle}
-              titleHighlight={t.servicesHighlight}
-              description={t.servicesDesc}
-              dark
-            />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              {data.services.map((item) => (
-                <FeatureCard key={item.title} {...item} variant="large" />
-              ))}
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {data.techFeatures.map((item) => (
-                <FeatureCard key={item.title} {...item} variant="small" />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing */}
-        <PricingSection
-          badge={t.pricingBadge}
-          title={t.pricingTitle}
-          titleHighlight={t.pricingHighlight}
-          description={t.pricingDesc}
-          plans={data.pricing}
-          notes={data.pricingNotes}
-          pricesUpdated={SITE.pricesUpdated[lang]}
-          customProjectTitle={t.customTitle}
-          customProjectDesc={t.customDesc}
-          customProjectCta={t.customCta}
-          ctaLink={t.contact}
-          lang={lang}
-        />
-
-        {/* Visibility: Google, Maps, AI */}
-        <VisibilitySection data={data.visibility} />
-
-        {/* How we work */}
-        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-neutral-900">
-          <div className="max-w-6xl mx-auto">
-            <SectionHeader badge={t.diffBadge} title={t.diffTitle} titleHighlight={t.diffHighlight} dark />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {data.differences.map((item) => (
-                <FeatureCard key={item.title} {...item} />
-              ))}
-            </div>
-
-            {/* Process */}
-            <div className="mt-16 rounded-3xl p-6 sm:p-8 md:p-12 bg-neutral-800 border border-neutral-700">
-              <div className="text-center mb-12">
-                <p className="text-sm uppercase tracking-widest mb-4 text-[#3ECF8E] font-bold">{t.processBadge}</p>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white">{t.processTitle}</h3>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                {data.process.map((item) => (
-                  <ProcessStep key={item.step} {...item} />
-                ))}
-              </div>
-              <div className="mt-12 text-center">
-                <p className="text-xl sm:text-2xl font-bold text-white">
-                  {t.processFoot} <span className="text-[#3ECF8E]">{t.processFootHighlight}</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Stats */}
-        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <SectionHeader badge={t.statsBadge} title={t.statsTitle} titleHighlight={t.statsHighlight} />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-              {data.stats.map((item) => (
-                <StatCard key={item.stat} {...item} />
-              ))}
-            </div>
-            <p className="mt-12 text-center text-lg text-neutral-600 max-w-2xl mx-auto">{t.statsFoot}</p>
-          </div>
-        </section>
-
-        {/* Industries + technology */}
-        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-neutral-900">
-          <div className="max-w-6xl mx-auto">
-            <SectionHeader badge={t.industriesBadge} title={t.industriesTitle} description={t.industriesDesc} dark />
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-              {data.industries.map((item) => (
-                <div
-                  key={item.name}
-                  className="p-4 rounded-xl border text-center transition-all bg-neutral-800 border-neutral-700 hover:border-[#3ECF8E]"
-                >
-                  <div className="mx-auto mb-3 w-10 h-10 rounded-lg bg-neutral-700/60 flex items-center justify-center text-[#3ECF8E]">
-                    <Icon name={item.icon} size={20} />
-                  </div>
-                  <span className="text-sm font-medium text-white">{item.name}</span>
+            <Reveal>
+              <div className="rounded-3xl p-6 sm:p-10 md:p-14 bg-white/[0.03] border border-white/10 gradient-border">
+                <div className="text-center mb-12">
+                  <p className="text-sm uppercase tracking-widest mb-4 text-[#3ECF8E] font-bold">{t.processBadge}</p>
+                  <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">{t.processTitle}</h2>
                 </div>
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                  <div className="hidden md:block absolute top-7 left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-[#3ECF8E]/40 to-transparent" />
+                  {data.process.map((item, i) => (
+                    <Reveal key={item.step} delay={i * 100}>
+                      <ProcessStep {...item} />
+                    </Reveal>
+                  ))}
+                </div>
+                <div className="mt-12 text-center">
+                  <p className="text-xl sm:text-2xl font-bold">
+                    {t.processFoot} <span className="text-[#3ECF8E]">{t.processFootHighlight}</span>
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+            <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+              {t.counters.map((c, i) => (
+                <Reveal key={c.label} delay={i * 80}>
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center">
+                    <Counter to={c.to} suffix={c.suffix} className="text-4xl font-bold tracking-tight text-[#3ECF8E]" />
+                    <p className="mt-2 text-sm text-neutral-400">{c.label}</p>
+                  </div>
+                </Reveal>
               ))}
             </div>
-            <p className="mt-8 text-center text-neutral-400">{t.industriesFoot}</p>
+          </div>
+        </section>
 
-            <div className="mt-20 text-center">
-              <p className="text-sm uppercase tracking-widest mb-4 text-[#3ECF8E] font-bold">{t.techBadge}</p>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">{t.techTitle}</h3>
-              <p className="text-neutral-400 max-w-2xl mx-auto mb-10">{t.techDesc}</p>
-              <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-                {data.technologies.map((tech) => (
-                  <div key={tech.name} className="p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-center">
-                    <p className="text-sm font-semibold text-white">{tech.name}</p>
-                    <p className="text-xs text-neutral-500 mt-1">{tech.role}</p>
+        {/* Stats with sources */}
+        <section className="py-20 sm:py-28 px-4 sm:px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <Reveal>
+              <SectionHeader badge={t.statsBadge} title={t.statsTitle} titleHighlight={t.statsHighlight} />
+            </Reveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {data.stats.map((item, i) => (
+                <Reveal key={item.stat} delay={i * 80}>
+                  <div className="h-full p-6 sm:p-8 rounded-2xl bg-neutral-50 border border-neutral-200 hover:border-[#3ECF8E] transition-all flex items-start gap-5">
+                    <div className="shrink-0 w-11 h-11 rounded-lg bg-white border border-neutral-200 flex items-center justify-center text-[#2eb67d]">
+                      <Icon name={item.icon} size={22} />
+                    </div>
+                    <div>
+                      <div className="text-4xl sm:text-5xl font-bold tracking-tight text-neutral-900 mb-2">{item.stat}</div>
+                      <p className="text-neutral-700 mb-2">{item.desc}</p>
+                      <p className="text-xs text-neutral-400">{lang === "es" ? "Fuente" : "Source"}: {item.source}</p>
+                    </div>
                   </div>
-                ))}
-              </div>
+                </Reveal>
+              ))}
             </div>
+          </div>
+        </section>
+
+        {/* Industries */}
+        <section className="py-20 sm:py-28 px-4 sm:px-6 bg-neutral-50">
+          <div className="max-w-6xl mx-auto">
+            <Reveal>
+              <SectionHeader badge={t.industriesBadge} title={t.industriesTitle} description={t.industriesDesc} />
+            </Reveal>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+              {data.industries.map((item, i) => (
+                <Reveal key={item.name} delay={i * 40}>
+                  <div className="group p-5 rounded-2xl border text-center transition-all bg-white border-neutral-200 hover:border-[#3ECF8E] hover:-translate-y-1 hover:shadow-lg">
+                    <div className="mx-auto mb-3 w-11 h-11 rounded-xl bg-neutral-100 flex items-center justify-center text-neutral-700 group-hover:bg-[#3ECF8E] group-hover:text-neutral-900 transition-colors">
+                      <Icon name={item.icon} size={20} />
+                    </div>
+                    <span className="text-sm font-medium text-neutral-900">{item.name}</span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+            <p className="mt-8 text-center text-neutral-500">{t.industriesFoot}</p>
           </div>
         </section>
 
@@ -219,18 +180,23 @@ export default function HomePage({ lang }: { lang: "es" | "en" }) {
         <AuditSection data={data.audit} ctaLink={t.contact} />
 
         {/* FAQ */}
-        <section id="faq" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-neutral-50">
+        <section id="faq" className="py-20 sm:py-28 px-4 sm:px-6 bg-neutral-50">
           <div className="max-w-4xl mx-auto">
-            <SectionHeader badge={t.faqBadge} title={t.faqTitle} />
-            <div className="space-y-4">
+            <Reveal>
+              <SectionHeader badge={t.faqBadge} title={t.faqTitle} />
+            </Reveal>
+            <div className="space-y-3">
               {data.faq.map((item, i) => (
-                <FAQItem key={item.q} question={item.q} answer={item.a} defaultOpen={i === 0} />
+                <Reveal key={item.q} delay={Math.min(i, 6) * 50}>
+                  <FAQItem question={item.q} answer={item.a} defaultOpen={i === 0} />
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
 
-        <CTASection title={data.cta.title} description={data.cta.description} cta={data.cta.cta} ctaLink={t.contact} />
+        {/* 6. Hablemos */}
+        <TalkSection data={data.talk} contactLink={t.contact} />
       </main>
 
       <Footer />

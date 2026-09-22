@@ -2,11 +2,12 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import PricingSection from "./PricingSection";
+import OfferSection from "./OfferSection";
+import SupportSection from "./SupportSection";
 import VisibilitySection from "./VisibilitySection";
 import CTASection from "./CTASection";
 import { SectionHeader, FeatureCard, FAQItem, CheckIcon, Icon } from "@/components/ui";
-import { getHomeData, SITE } from "@/lib/data";
+import { getHomeData } from "@/lib/data";
 
 const copy = {
   es: {
@@ -17,13 +18,6 @@ const copy = {
     intro: "Desde una landing page en 1 a 3 días hasta una tienda en línea completa. Precio cerrado antes de empezar y todo lo necesario para que te encuentren.",
     diffBadge: "Cómo trabajamos",
     diffTitle: "Lo que podés esperar de nosotros.",
-    pricingBadge: "Planes y precios",
-    pricingTitle: "Elegí el plan",
-    pricingHighlight: "que se ajusta a tu negocio.",
-    pricingDesc: "Todos incluyen diseño responsive, SEO técnico, perfil de Google y 30 días de soporte.",
-    customTitle: "¿Necesitás algo a la medida?",
-    customDesc: "Sistemas de reservas, dashboards, integraciones con APIs, aplicaciones web. Contanos qué necesitás y te decimos si podemos y cuánto cuesta.",
-    customCta: "Cotizar proyecto a la medida",
     previewBadge: "Vista previa en tiempo real",
     previewTitle: "Ves cada cambio",
     previewHighlight: "antes de que se publique.",
@@ -42,7 +36,7 @@ const copy = {
     staticTitle: "Landing y catálogo",
     staticSub: "Sin mantenimiento obligatorio",
     staticDesc: "Una vez publicadas funcionan sin intervención. Si querés cambios después de los 30 días de soporte, se cotizan por separado o con un plan mensual opcional.",
-    staticRows: [["Soporte incluido", "30 días"], ["Cambios menores después", "Se cotizan aparte"], ["Plan mensual opcional", "Desde ₡15.000"]],
+    staticRows: [["Soporte incluido", "30 días"], ["Cambios menores después", "Se cotizan aparte"], ["Plan mensual opcional", "Se cotiza según el sitio"]],
     storeTitle: "Tienda en línea",
     storeSub: "Mantenimiento mensual incluido",
     storeDesc: "Una tienda maneja pagos e inventario y necesita actualizaciones de seguridad, respaldos y monitoreo del procesador de pagos.",
@@ -65,13 +59,6 @@ const copy = {
     intro: "From a landing page in 1 to 3 days to a complete online store. Fixed price before we start and everything you need to be found.",
     diffBadge: "How we work",
     diffTitle: "What you can expect from us.",
-    pricingBadge: "Plans and pricing",
-    pricingTitle: "Pick the plan",
-    pricingHighlight: "that fits your business.",
-    pricingDesc: "All include responsive design, technical SEO, Google profile and 30 days of support.",
-    customTitle: "Need something custom?",
-    customDesc: "Booking systems, dashboards, API integrations, web apps. Tell us what you need and we will tell you if we can do it and what it costs.",
-    customCta: "Quote a custom project",
     previewBadge: "Real-time preview",
     previewTitle: "See every change",
     previewHighlight: "before it goes live.",
@@ -90,7 +77,7 @@ const copy = {
     staticTitle: "Landing and catalog",
     staticSub: "No mandatory maintenance",
     staticDesc: "Once published they run without intervention. If you want changes after the 30 days of support, they are quoted separately or through an optional monthly plan.",
-    staticRows: [["Support included", "30 days"], ["Minor changes afterwards", "Quoted separately"], ["Optional monthly plan", "From $30"]],
+    staticRows: [["Support included", "30 days"], ["Minor changes afterwards", "Quoted separately"], ["Optional monthly plan", "Quoted per site"]],
     storeTitle: "Online store",
     storeSub: "Monthly maintenance included",
     storeDesc: "A store handles payments and inventory and needs security updates, backups and payment processor monitoring.",
@@ -162,22 +149,11 @@ export default function ServicesPage({ lang }: { lang: "es" | "en" }) {
           </div>
         </section>
 
-        <PricingSection
-          badge={t.pricingBadge}
-          title={t.pricingTitle}
-          titleHighlight={t.pricingHighlight}
-          description={t.pricingDesc}
-          plans={data.pricing}
-          notes={data.pricingNotes}
-          pricesUpdated={SITE.pricesUpdated[lang]}
-          customProjectTitle={t.customTitle}
-          customProjectDesc={t.customDesc}
-          customProjectCta={t.customCta}
-          ctaLink={t.contact}
-          lang={lang}
-        />
+        <OfferSection data={data.offer} ctaLink={t.contact} lang={lang} />
 
-        <VisibilitySection data={data.visibility} />
+        <VisibilitySection data={data.visibility} lang={lang} />
+
+        <SupportSection data={data.support} />
 
         {/* Preview system */}
         <section className="py-24 px-4 sm:px-6 bg-neutral-50">
