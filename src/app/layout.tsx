@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Source_Serif_4, Instrument_Sans } from "next/font/google";
 import "./globals.css";
@@ -51,11 +51,6 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
-  },
   alternates: {
     canonical: "https://www.maxdigitalcr.com",
     languages: {
@@ -74,10 +69,10 @@ export const metadata: Metadata = {
     siteName: "MaxDigitalCR",
     images: [
       {
-        url: "https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png",
-        width: 512,
-        height: 512,
-        alt: "MaxDigitalCR - Desarrollo Web Profesional"
+        url: "/brand/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "MaxDigital CR - Desarrollo Web Profesional"
       }
     ]
   },
@@ -85,7 +80,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MaxDigitalCR | Desarrollo Web Profesional",
     description: "Agencia de desarrollo web en Costa Rica. Landing pages, e-commerce y catálogos digitales.",
-    images: ["https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png"],
+    images: ["/brand/og-image.png"],
   },
   robots: {
     index: true,
@@ -108,6 +103,10 @@ export const metadata: Metadata = {
       ? { other: { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION } }
       : {}),
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0D1117",
 };
 
 export default function RootLayout({

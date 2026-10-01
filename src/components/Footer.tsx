@@ -423,11 +423,11 @@ export default function Footer() {
                     {t.poweredBy}
                   </span>
                   <Image
-                    src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png"
-                    alt="MaxDigitalCR"
-                    width={200}
-                    height={60}
-                    className="h-12 w-auto brightness-0 invert group-hover:scale-105 transition-transform duration-300"
+                    src="/brand/logo-maxdigitalcr-blanco.svg"
+                    alt="MaxDigital CR"
+                    width={330}
+                    height={32}
+                    className="h-6 md:h-8 w-auto group-hover:scale-105 transition-transform duration-300"
                   />
                   <span className="text-xs text-neutral-500 group-hover:text-neutral-300 transition-colors">
                     {t.tagline}

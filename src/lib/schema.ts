@@ -1,7 +1,7 @@
 import { homeDataES, homeDataEN, SITE, type FAQ } from "./data";
 import { portfolioProjects, getProjectImage } from "./portfolio";
 
-const LOGO = "https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png";
+const LOGO = `${SITE.url}/brand/logo-maxdigitalcr.png`;
 
 const ORG_ID = `${SITE.url}/#organization`;
 const WEBSITE_ID = `${SITE.url}/#website`;

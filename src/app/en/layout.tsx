@@ -41,10 +41,10 @@ export const metadata: Metadata = {
     siteName: "MaxDigitalCR",
     images: [
       {
-        url: "https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png",
-        width: 512,
-        height: 512,
-        alt: "MaxDigitalCR - Professional Web Development"
+        url: "/brand/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "MaxDigital CR - Professional Web Development"
       }
     ]
   },
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MaxDigitalCR | Professional Web Development",
     description: "Web development agency in Costa Rica. Landing pages, e-commerce, and digital catalogs.",
-    images: ["https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png"],
+    images: ["/brand/og-image.png"],
   },
 };
 

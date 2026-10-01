@@ -70,13 +70,11 @@ export default function Navbar() {
             aria-label={isEnglish ? "MaxDigitalCR - Go to homepage" : "MaxDigitalCR - Ir a página principal"}
           >
             <Image
-              src="https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png"
-              alt="MaxDigitalCR - Desarrollo Web Profesional en Costa Rica"
-              width={220}
-              height={68}
-              className={`h-14 md:h-16 w-auto transition-all ${
-                scrolled || !isDarkHero ? "" : "brightness-0 invert"
-              }`}
+              src={scrolled || !isDarkHero ? "/brand/logo-maxdigitalcr.svg" : "/brand/logo-maxdigitalcr-blanco.svg"}
+              alt="MaxDigital CR"
+              width={330}
+              height={32}
+              className="h-[22px] md:h-8 w-auto object-contain object-left transition-all"
               priority
             />
           </Link>

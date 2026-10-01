@@ -106,7 +106,7 @@ export default async function ArticlePageEN({ params }: PageProps) {
       name: "MaxDigitalCR",
       logo: {
         "@type": "ImageObject",
-        url: "https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/logo-max-transparente.png",
+        url: "https://www.maxdigitalcr.com/brand/logo-maxdigitalcr.png",
       },
     },
   };
