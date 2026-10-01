@@ -2,8 +2,8 @@ import type { IconName } from "@/components/ui/Icon";
 
 // Colores del tema
 export const THEME = {
-  primary: "#3ECF8E",
-  primaryHover: "#2eb67d",
+  primary: "#C6F135",
+  primaryHover: "#76A700",
 } as const;
 
 export const SITE = {

@@ -5,8 +5,8 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, MeshDistortMaterial } from "@react-three/drei";
 import type { Group, Mesh } from "three";
 
-const GREEN = "#3ECF8E";
-const CYAN = "#22d3ee";
+const GREEN = "#C6F135";
+const CYAN = "#3ECF8E";
 
 /** Morphing glossy blob + two orbiting wireframe rings. Reacts to the cursor. */
 function Scene() {

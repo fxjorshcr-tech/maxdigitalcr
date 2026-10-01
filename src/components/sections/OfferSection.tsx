@@ -56,7 +56,7 @@ export default function OfferSection({ data, ctaLink = "/contacto", lang = "es" 
             <p className="md:flex-1 text-neutral-600 leading-relaxed">{data.fromNote}</p>
             <Link
               href={ctaLink}
-              className="group shrink-0 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all bg-gradient-brand text-neutral-900 hover:shadow-[0_0_40px_rgba(34,211,238,0.35)]"
+              className="group shrink-0 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all bg-gradient-brand text-neutral-900 hover:shadow-[0_0_40px_rgba(198,241,53,0.35)]"
             >
               {data.cta}
               <Icon name="arrowRight" size={16} className="transition-transform group-hover:translate-x-1" />

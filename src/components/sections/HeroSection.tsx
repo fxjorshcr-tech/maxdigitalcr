@@ -64,7 +64,7 @@ export default function HeroSection({
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <Link
               href={ctaLink}
-              className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all bg-brand text-neutral-900 hover:shadow-[0_0_40px_rgba(62,207,142,0.45)] hover:bg-gradient-brand"
+              className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all bg-brand text-neutral-900 hover:shadow-[0_0_40px_rgba(198,241,53,0.45)] hover:bg-gradient-brand"
             >
               {cta}
               <Icon name="arrowRight" size={16} className="transition-transform group-hover:translate-x-1" />

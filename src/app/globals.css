@@ -2,22 +2,28 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0a0a0a;
-  --primary: #0a0a0a;
+  --foreground: #0D1117;
+  --primary: #0D1117;
   --primary-foreground: #ffffff;
   --secondary: #f5f5f5;
-  --secondary-foreground: #0a0a0a;
+  --secondary-foreground: #0D1117;
   --muted: #737373;
   --border: #e5e5e5;
-  --accent: #3ECF8E;
-  /* Paleta oficial: negro + verde + cian. El degradado verde→cian es la firma. */
-  --brand: #3ECF8E;
-  --brand-dark: #2eb67d;
-  --brand-2: #22d3ee;
-  --brand-2-dark: #0891b2;
+  --accent: #C6F135;
+  /* Paleta oficial (logo): negro #0D1117 + lima #C6F135. El verde #3ECF8E queda
+     como secundario para el degradado lima→verde. --brand-dark es la variante
+     para texto sobre fondos claros. */
+  --brand: #C6F135;
+  --brand-dark: #76A700;
+  --brand-2: #3ECF8E;
+  --brand-2-dark: #1E9E66;
 }
 
 @theme inline {
+  /* Neutros oscuros alineados al negro del logo (#0D1117). */
+  --color-neutral-950: #010409;
+  --color-neutral-900: #0D1117;
+  --color-neutral-800: #161B22;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
@@ -60,7 +66,7 @@ html {
 /* Selection color */
 ::selection {
   background: var(--accent);
-  color: #0a0a0a;
+  color: #0D1117;
 }
 
 /* Grid pattern */
@@ -102,10 +108,10 @@ html {
 
 @keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(62, 207, 142, 0.3);
+    box-shadow: 0 0 20px rgba(198, 241, 53, 0.3);
   }
   50% {
-    box-shadow: 0 0 40px rgba(62, 207, 142, 0.5);
+    box-shadow: 0 0 40px rgba(198, 241, 53, 0.5);
   }
 }
 
@@ -271,7 +277,7 @@ a {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.4s ease;
-  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(62, 207, 142, 0.16), rgba(34, 211, 238, 0.08) 30%, transparent 48%);
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(198, 241, 53, 0.16), rgba(62, 207, 142, 0.08) 30%, transparent 48%);
 }
 .spotlight:hover::before { opacity: 1; }
 
@@ -284,7 +290,7 @@ a {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(62, 207, 142, 0.8), rgba(255, 255, 255, 0.06) 45%, rgba(34, 211, 238, 0.7));
+  background: linear-gradient(135deg, rgba(198, 241, 53, 0.8), rgba(255, 255, 255, 0.06) 45%, rgba(62, 207, 142, 0.7));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
@@ -320,7 +326,7 @@ a {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  border: 1px solid #3ECF8E;
+  border: 1px solid var(--brand);
   animation: pulse-ring 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 
@@ -329,7 +335,7 @@ a {
   .marquee-track, .aurora > span, .float-slow, .text-shimmer, .pulse-ring::before { animation: none; }
 }
 
-/* Signature gradient text: green → cyan. Dark variant for light backgrounds. */
+/* Signature gradient text: lime → green. Dark variant for light backgrounds. */
 .text-gradient {
   background: linear-gradient(90deg, var(--brand) 0%, var(--brand-2) 100%);
   -webkit-background-clip: text;
@@ -353,8 +359,8 @@ a {
 
 /* Process timeline nodes light up when the drawn line reaches them */
 .process-node.is-lit {
-  color: #0a0a0a;
+  color: #0D1117;
   background-image: linear-gradient(135deg, var(--brand), var(--brand-2));
   border-color: transparent;
-  box-shadow: 0 0 32px rgba(62, 207, 142, 0.35);
+  box-shadow: 0 0 32px rgba(198, 241, 53, 0.35);
 }

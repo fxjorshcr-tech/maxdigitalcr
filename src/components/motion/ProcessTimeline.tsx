@@ -71,8 +71,8 @@ export default function ProcessTimeline({ steps }: ProcessTimelineProps) {
       <svg className="hidden md:block absolute left-0 right-0 top-7 w-full h-4" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true">
         <defs>
           <linearGradient id="process-grad" x1="0" x2="1">
-            <stop offset="0" stopColor="#3ECF8E" />
-            <stop offset="1" stopColor="#22d3ee" />
+            <stop offset="0" stopColor="#C6F135" />
+            <stop offset="1" stopColor="#3ECF8E" />
           </linearGradient>
         </defs>
         <path d="M125 8 H875" stroke="rgba(255,255,255,0.08)" strokeWidth="2" fill="none" />

@@ -171,7 +171,7 @@ export default function Contact() {
                     disabled={status === "sending" || status === "sent"}
                     className={`w-full py-4 rounded-lg font-medium transition-all flex items-center justify-center gap-2 ${
                       status === "sent"
-                        ? "bg-green-500 text-white"
+                        ? "bg-brand text-neutral-900"
                         : status === "sending"
                         ? "bg-neutral-300 text-neutral-500 cursor-wait"
                         : "bg-brand text-neutral-900 hover:bg-brand-dark"

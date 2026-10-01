@@ -358,7 +358,7 @@ export default function Footer() {
                 disabled={status === "sending" || status === "sent"}
                 className={`w-full py-3 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2 ${
                   status === "sent"
-                    ? "bg-green-500 text-white"
+                    ? "bg-brand text-neutral-900"
                     : status === "sending"
                     ? "bg-neutral-700 text-neutral-400 cursor-wait"
                     : "bg-brand text-neutral-900 hover:bg-brand-dark"
@@ -409,7 +409,7 @@ export default function Footer() {
               className="group relative"
             >
               {/* Glow effect - more subtle */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-brand to-emerald-500 rounded-2xl opacity-0 group-hover:opacity-60 transition-all duration-500" />
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-brand to-brand-2 rounded-2xl opacity-0 group-hover:opacity-60 transition-all duration-500" />
 
               {/* Card */}
               <div className="relative px-8 py-5 bg-neutral-800/80 border border-neutral-700 rounded-xl overflow-hidden group-hover:border-brand/50 transition-all duration-300">
