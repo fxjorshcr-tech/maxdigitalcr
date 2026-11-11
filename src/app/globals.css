@@ -37,8 +37,8 @@
   --color-brand-dark: var(--brand-dark);
   --color-brand-2: var(--brand-2);
   --color-brand-2-dark: var(--brand-2-dark);
-  --font-sans: var(--font-sans-body), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-display: var(--font-display), "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-sans: var(--font-lexend), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-display: var(--font-lexend), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
@@ -46,17 +46,14 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  font-feature-settings: "ss01", "cv11";
 }
 
-/* Titulares en serif editorial. Peso medio: la serif ya aporta presencia. */
+/* Titulares en Lexend: peso semibold y tracking cerrado para compensar su ancho. */
 h1, h2, h3, .font-display {
   font-family: var(--font-display);
   font-weight: 600;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.03em;
 }
-h1 { font-weight: 600; }
-h1 .text-shimmer, h1 .text-gradient, h2 .text-gradient, h2 .text-gradient-dark { font-style: italic; font-weight: 500; }
 
 /* Smooth scrolling */
 html {
