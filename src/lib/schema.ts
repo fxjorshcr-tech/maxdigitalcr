@@ -15,15 +15,19 @@ const WEBSITE_ID = `${SITE.url}/#website`;
  * Add the Google Maps, Bing and Apple Maps profile URLs to `sameAs` once the
  * profiles are live (see docs/presencia-digital.md).
  */
-export function organizationJsonLd() {
-  const services = homeDataES.offer.types.map((t, i) => ({
+export function organizationJsonLd(lang: "es" | "en" = "es") {
+  const es = lang === "es";
+  const home = es ? homeDataES : homeDataEN;
+  const other = es ? homeDataEN : homeDataES;
+  const base = es ? SITE.url : `${SITE.url}/en`;
+  const services = home.offer.types.map((t, i) => ({
     "@type": "Offer",
     name: t.title,
     description: t.desc,
     itemOffered: {
       "@type": "Service",
       name: t.title,
-      alternateName: homeDataEN.offer.types[i]?.title,
+      alternateName: other.offer.types[i]?.title,
       serviceType: "Web design and development",
       description: t.desc,
       provider: { "@id": ORG_ID },
@@ -37,7 +41,7 @@ export function organizationJsonLd() {
           ],
         }
       : {}),
-    url: `${SITE.url}/servicios`,
+    url: `${base}/servicios`,
   }));
 
   return {
@@ -51,9 +55,9 @@ export function organizationJsonLd() {
         url: SITE.url,
         logo: { "@type": "ImageObject", url: LOGO, width: 512, height: 512 },
         image: LOGO,
-        description:
-          "MaxDigitalCR es una agencia de diseño y desarrollo web en La Fortuna de San Carlos, Costa Rica. Crea landing pages, sitios catálogo y tiendas en línea para pequeños y medianos negocios, con asesoría inicial, entrega en días, precio cerrado desde ₡100.000 y configuración de Google Business Profile, Apple Business Connect, Bing Places, Search Console y datos estructurados incluida.",
-        slogan: "Tu negocio, bien puesto en internet.",
+        description: home.facts.summary,
+        slogan: es ? "Páginas web hechas para Google y para las respuestas de la IA." : "Websites built for Google and for AI answers.",
+        foundingLocation: { "@type": "Place", name: "La Fortuna, Alajuela, Costa Rica" },
         telephone: SITE.phoneIntl,
         email: SITE.email,
         address: {
@@ -70,7 +74,7 @@ export function organizationJsonLd() {
           { "@type": "AdministrativeArea", name: "Guanacaste" },
           { "@type": "City", name: "San José" },
         ],
-        priceRange: "desde ₡100.000",
+        priceRange: es ? "desde ₡100.000" : "from $200",
         currenciesAccepted: "CRC, USD",
         paymentAccepted: "SINPE Móvil, transferencia bancaria, PayPal",
         knowsLanguage: ["es", "en"],
@@ -88,20 +92,38 @@ export function organizationJsonLd() {
           url: SITE.whatsapp,
         },
         sameAs: [SITE.social.facebook, SITE.social.instagram, SITE.whatsapp],
-        knowsAbout: [
-          "Diseño web",
-          "Desarrollo web",
-          "Next.js",
-          "React",
-          "SEO local",
-          "Google Business Profile",
-          "Optimización para búsquedas con IA",
-          "E-commerce",
-          "Landing pages",
-        ],
+        knowsAbout: es
+          ? [
+              "Diseño web",
+              "Desarrollo web",
+              "Next.js",
+              "React",
+              "SEO local",
+              "Google Business Profile",
+              "Apple Business Connect",
+              "Bing Places",
+              "Datos estructurados schema.org",
+              "Optimización para búsquedas con IA (GEO)",
+              "E-commerce",
+              "Landing pages",
+            ]
+          : [
+              "Web design",
+              "Web development",
+              "Next.js",
+              "React",
+              "Local SEO",
+              "Google Business Profile",
+              "Apple Business Connect",
+              "Bing Places",
+              "schema.org structured data",
+              "Generative engine optimization (GEO)",
+              "E-commerce",
+              "Landing pages",
+            ],
         hasOfferCatalog: {
           "@type": "OfferCatalog",
-          name: "Servicios de desarrollo web",
+          name: es ? "Servicios de desarrollo web" : "Web development services",
           itemListElement: services,
         },
       },
@@ -110,14 +132,14 @@ export function organizationJsonLd() {
         "@id": WEBSITE_ID,
         url: SITE.url,
         name: SITE.name,
-        description: "Desarrollo web profesional en Costa Rica",
+        description: es ? "Desarrollo web profesional en Costa Rica" : "Professional web development in Costa Rica",
         publisher: { "@id": ORG_ID },
         inLanguage: ["es-CR", "en"],
       },
       {
         "@type": "ItemList",
         "@id": `${SITE.url}/portafolio#lista`,
-        name: "Sitios web desarrollados por MaxDigitalCR",
+        name: es ? "Sitios web desarrollados por MaxDigitalCR" : "Websites built by MaxDigitalCR",
         numberOfItems: portfolioProjects.length,
         itemListElement: portfolioProjects.map((p, i) => ({
           "@type": "ListItem",
@@ -126,7 +148,7 @@ export function organizationJsonLd() {
             "@type": "WebSite",
             name: p.name,
             url: p.url,
-            description: p.summary.es,
+            description: es ? p.summary.es : p.summary.en,
             image: `${SITE.url}${getProjectImage(p.slug)}`,
             creator: { "@id": ORG_ID },
             inLanguage: p.languages,
@@ -137,10 +159,12 @@ export function organizationJsonLd() {
   };
 }
 
-export function faqJsonLd(faq: FAQ[]) {
+export function faqJsonLd(faq: FAQ[], lang: "es" | "en" = "es") {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    inLanguage: lang === "es" ? "es-CR" : "en",
+    publisher: { "@id": ORG_ID },
     mainEntity: faq.map((item) => ({
       "@type": "Question",
       name: item.q,
@@ -159,5 +183,40 @@ export function breadcrumbJsonLd(items: { name: string; url: string }[]) {
       name: item.name,
       item: item.url,
     })),
+  };
+}
+
+/** AboutPage / ContactPage node tied to the organization entity. */
+export function pageJsonLd(type: "AboutPage" | "ContactPage", opts: { name: string; description: string; url: string; lang: "es" | "en" }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": type,
+    name: opts.name,
+    description: opts.description,
+    url: opts.url,
+    inLanguage: opts.lang === "es" ? "es-CR" : "en",
+    isPartOf: { "@id": WEBSITE_ID },
+    about: { "@id": ORG_ID },
+    mainEntity: { "@id": ORG_ID },
+  };
+}
+
+/** BlogPosting with the fields answer engines use to date and attribute an article. */
+export function articleJsonLd(a: { title: string; description: string; image: string; date: string; slug: string }, lang: "es" | "en") {
+  const url = `${SITE.url}${lang === "es" ? "" : "/en"}/blog/${a.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: a.title,
+    description: a.description,
+    image: a.image.startsWith("http") ? a.image : `${SITE.url}${a.image}`,
+    datePublished: a.date,
+    dateModified: a.date,
+    inLanguage: lang === "es" ? "es-CR" : "en",
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    author: { "@id": ORG_ID },
+    publisher: { "@id": ORG_ID },
+    isPartOf: { "@id": WEBSITE_ID },
   };
 }

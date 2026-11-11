@@ -7,7 +7,7 @@ export default function HomeEN() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(homeDataEN.faq)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(homeDataEN.faq, "en")) }}
       />
       <HomePage lang="en" />
     </>

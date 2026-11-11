@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageJsonLd, breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Contact | Website quote within 24 hours",
@@ -15,5 +16,27 @@ export const metadata: Metadata = {
 };
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
-  return children;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            pageJsonLd("ContactPage", {
+              name: String(metadata.title),
+              description: String(metadata.description),
+              url: "https://www.maxdigitalcr.com/en/contacto",
+              lang: "en",
+            }),
+            breadcrumbJsonLd([
+              { name: "Home", url: "https://www.maxdigitalcr.com/en" },
+              { name: "Contact", url: "https://www.maxdigitalcr.com/en/contacto" },
+            ]),
+          ]),
+        }}
+      />
+      {children}
+    </>
+  );
+
 }

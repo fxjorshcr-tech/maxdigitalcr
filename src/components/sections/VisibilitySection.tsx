@@ -1,5 +1,5 @@
 import { Reveal, Spotlight } from "@/components/motion";
-import AiAnswerDemo from "@/components/motion/AiAnswerDemo";
+import SchemaWindow from "./SchemaWindow";
 import { Icon } from "@/components/ui";
 import type { HomeData } from "@/lib/data";
 
@@ -10,40 +10,9 @@ interface VisibilitySectionProps {
 
 /**
  * 3. La nueva forma de aparecer: Google, Apple, Bing y respuestas de IA.
- * Left: a stylized "where you show up" panel. Right: the six items.
+ * Left: the structured data assistants read. Right: the six items.
  */
 export default function VisibilitySection({ data, lang = "es" }: VisibilitySectionProps) {
-  const demo =
-    lang === "es"
-      ? {
-          scenarios: [
-            { query: "mejor hotel boutique en La Fortuna", answer: "Según Google, Apple Maps y Bing, una opción muy bien valorada cerca del volcán es", business: "Tu hotel", meta: "Abierto ahora · 4.9 · La Fortuna" },
-            { query: "tour de cataratas con guía certificado", answer: "Un operador con reseñas recientes y guía naturalista certificado es", business: "Tu tour", meta: "Desde $55 · 5.0 · La Fortuna" },
-            { query: "dónde comer casado en La Fortuna", answer: "Entre los lugares mejor calificados por locales aparece", business: "Tu restaurante", meta: "Abierto hasta las 21:00 · 4.8" },
-          ],
-          sources: [
-            { icon: "mapPin" as const, label: "Google Business" },
-            { icon: "compass" as const, label: "Apple Maps" },
-            { icon: "globe" as const, label: "Bing Places" },
-            { icon: "fileText" as const, label: "tu-sitio.com" },
-          ],
-          sourcesLabel: "Fuentes",
-        }
-      : {
-          scenarios: [
-            { query: "best boutique hotel in La Fortuna", answer: "Based on Google, Apple Maps and Bing, a highly rated option near the volcano is", business: "Your hotel", meta: "Open now · 4.9 · La Fortuna" },
-            { query: "waterfall tour with certified guide", answer: "An operator with recent reviews and a certified naturalist guide is", business: "Your tour", meta: "From $55 · 5.0 · La Fortuna" },
-            { query: "where to eat casado in La Fortuna", answer: "Among the places locals rate highest is", business: "Your restaurant", meta: "Open until 9 pm · 4.8" },
-          ],
-          sources: [
-            { icon: "mapPin" as const, label: "Google Business" },
-            { icon: "compass" as const, label: "Apple Maps" },
-            { icon: "globe" as const, label: "Bing Places" },
-            { icon: "fileText" as const, label: "your-site.com" },
-          ],
-          sourcesLabel: "Sources",
-        };
-
   return (
     <section className="relative py-20 sm:py-28 md:py-36 px-4 sm:px-6 bg-neutral-950 text-white overflow-hidden grain">
       <div className="pointer-events-none absolute -left-40 top-0 w-[700px] h-[500px] rounded-full bg-brand/10 blur-3xl" />
@@ -63,9 +32,9 @@ export default function VisibilitySection({ data, lang = "es" }: VisibilitySecti
         </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Live assistant demo */}
+          {/* What machines read */}
           <Reveal className="lg:col-span-5">
-            <AiAnswerDemo scenarios={demo.scenarios} sources={demo.sources} sourcesLabel={demo.sourcesLabel} />
+            <SchemaWindow lang={lang} />
           </Reveal>
 
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BlogCTA } from "@/components/blog";
 import { getArticleBySlug, getAllSlugs, formatDate, articlesES, blogDataES } from "@/lib/blog-data";
+import { articleJsonLd, breadcrumbJsonLd } from "@/lib/schema";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -89,27 +90,14 @@ export default async function ArticlePage({ params }: PageProps) {
   const parsedContent = parseContent(article.content);
 
   // JSON-LD for article
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: article.title,
-    description: article.description,
-    image: article.image,
-    datePublished: article.date,
-    author: {
-      "@type": "Organization",
-      name: article.author,
-      url: "https://www.maxdigitalcr.com",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "MaxDigitalCR",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.maxdigitalcr.com/brand/logo-maxdigitalcr.png",
-      },
-    },
-  };
+  const jsonLd = [
+    articleJsonLd(article, "es"),
+    breadcrumbJsonLd([
+      { name: "Inicio", url: "https://www.maxdigitalcr.com/" },
+      { name: "Blog", url: "https://www.maxdigitalcr.com/blog" },
+      { name: article.title, url: `https://www.maxdigitalcr.com/blog/${article.slug}` },
+    ]),
+  ];
 
   return (
     <main className="min-h-screen bg-neutral-50">

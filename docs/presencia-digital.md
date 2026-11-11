@@ -92,7 +92,7 @@ Alimenta Apple Maps, Siri y Apple Intelligence. Cada iPhone en Costa Rica consul
 Sin esto no sabés si Google te indexa ni con qué te encuentran.
 
 1. https://search.google.com/search-console → "Agregar propiedad" → tipo **Dominio** (`maxdigitalcr.com`). Verificación por registro TXT en el DNS (Cloudflare, GoDaddy o donde esté el dominio). Cubre www, sin www, http y https.
-2. Como respaldo, agregá también la propiedad **Prefijo de URL** `https://www.maxdigitalcr.com` y verificá con la etiqueta HTML. Copiá el código (`google-site-verification=...`, solo el valor) y en Vercel: Settings → Environment Variables → `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` = ese valor. Redeploy. El sitio ya está preparado para leerlo (`src/app/layout.tsx`).
+2. Como respaldo, agregá también la propiedad **Prefijo de URL** `https://www.maxdigitalcr.com` y verificá con la etiqueta HTML. Copiá el código (`google-site-verification=...`, solo el valor) y en Vercel: Settings → Environment Variables → `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` = ese valor. Redeploy. El sitio ya está preparado para leerlo (`src/app/(es)/layout.tsx` y `src/app/en/layout.tsx`).
 3. Sitemaps → enviar `https://www.maxdigitalcr.com/sitemap.xml`.
 4. Revisar cada semana: **Rendimiento** (consultas que te traen clics) e **Indexación de páginas** (errores).
 5. Usar "Inspección de URL" → "Solicitar indexación" cada vez que publiqués una página o artículo nuevo.
@@ -126,7 +126,7 @@ Sin esto no sabés si Google te indexa ni con qué te encuentran.
 | JSON-LD ItemList del portafolio | Hecho | `src/lib/schema.ts` |
 | Frase de entidad "MaxDigitalCR es una agencia de..." en el primer párrafo de Nosotros | Hecho | `AboutPage.tsx` |
 | Respuestas directas en las 2 primeras frases de cada FAQ | Hecho | `src/lib/data.ts` |
-| `llms.txt` con resumen, servicios, precios y sitios hechos | Hecho | `public/llms.txt` |
+| `llms.txt` y `llms-full.txt` (resumen y contenido completo, generados desde los datos del sitio) | Hecho | `src/lib/llms.ts` |
 | hreflang es/en en sitemap y metadata | Hecho | `sitemap.ts`, `layout.tsx` |
 | FAQ en HTML nativo (`<details>`) sin depender de JavaScript | Hecho | `FAQItem.tsx` |
 

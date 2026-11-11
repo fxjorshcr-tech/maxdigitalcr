@@ -10,6 +10,7 @@ import OfferSection from "./OfferSection";
 import SupportSection from "./SupportSection";
 import AuditSection from "./AuditSection";
 import TalkSection from "./TalkSection";
+import FactsSection from "./FactsSection";
 import { Reveal, Counter, ProcessTimeline } from "@/components/motion";
 import { SectionHeader, FAQItem, Icon } from "@/components/ui";
 import { getHomeData } from "@/lib/data";
@@ -73,7 +74,7 @@ export default function HomePage({ lang }: { lang: "es" | "en" }) {
       <Navbar />
 
       <main className="bg-neutral-950">
-        <HeroSection {...data.hero} ctaLink={t.contact} />
+        <HeroSection {...data.hero} ctaLink={t.contact} lang={lang} />
         <ClientMarquee label={t.marquee} />
 
         {/* 1. Asesoría empresarial */}
@@ -171,6 +172,9 @@ export default function HomePage({ lang }: { lang: "es" | "en" }) {
 
         {/* Free review */}
         <AuditSection data={data.audit} ctaLink={t.contact} />
+
+        {/* Quick facts */}
+        <FactsSection data={data.facts} />
 
         {/* FAQ */}
         <section id="faq" className="py-20 sm:py-28 px-4 sm:px-6 bg-neutral-50">
