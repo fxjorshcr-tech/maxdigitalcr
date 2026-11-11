@@ -1,22 +1,15 @@
 import Script from "next/script";
-import { Source_Serif_4, Instrument_Sans } from "next/font/google";
+import { Lexend } from "next/font/google";
 import "@/app/globals.css";
 import { organizationJsonLd } from "@/lib/schema";
 
 const GA_MEASUREMENT_ID = "G-F86DTXXD46";
 
-// Tipografía: serif editorial para titulares, sans limpia para texto.
-const display = Source_Serif_4({
+// Tipografía: Lexend en todo el sitio (titulares y texto). Es variable, así
+// que un solo archivo cubre todos los pesos.
+const lexend = Lexend({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-display",
-  display: "swap",
-});
-const sans = Instrument_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-sans-body",
+  variable: "--font-lexend",
   display: "swap",
 });
 
@@ -27,7 +20,7 @@ const sans = Instrument_Sans({
  */
 export default function RootDocument({ lang, children }: { lang: "es" | "en"; children: React.ReactNode }) {
   return (
-    <html lang={lang === "es" ? "es-CR" : "en"} className={`${display.variable} ${sans.variable}`}>
+    <html lang={lang === "es" ? "es-CR" : "en"} className={lexend.variable}>
       {/* App Router root layout: a literal <head> is the supported way to add tags here. */}
       {/* eslint-disable-next-line @next/next/no-head-element */}
       <head>

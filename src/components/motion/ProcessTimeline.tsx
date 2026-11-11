@@ -42,8 +42,18 @@ export default function ProcessTimeline({ steps }: ProcessTimelineProps) {
     }
 
     const ctx = gsap.context(() => {
+      // Node i sits at i/(n-1) along the line. Everything fits inside a
+      // timeline of duration 1, so the last node lights before the scroll ends.
+      const ats = nodes.map((_, i) => (i / Math.max(1, nodes.length - 1)) * 0.88);
       const tl = gsap.timeline({
-        scrollTrigger: { trigger: el, start: "top 75%", end: "bottom 60%", scrub: 0.6 },
+        scrollTrigger: { trigger: el, start: "top 75%", end: "bottom 65%", scrub: 0.6 },
+        // Light the nodes from the playhead position on every update. A
+        // callback placed on the timeline can be skipped or read a stale
+        // progress while scrubbing, which left the last steps dark.
+        onUpdate: () => {
+          const time = tl.time();
+          nodes.forEach((n, i) => n.classList.toggle("is-lit", time >= ats[i] - 0.001));
+        },
       });
       if (line) {
         const len = line.getTotalLength();
@@ -55,11 +65,10 @@ export default function ProcessTimeline({ steps }: ProcessTimelineProps) {
         tl.to(vline, { scaleY: 1, ease: "none", duration: 1 }, 0);
       }
       nodes.forEach((n, i) => {
-        const at = (i / Math.max(1, nodes.length - 1)) * 0.95;
-        tl.fromTo(n, { scale: 0.7 }, { scale: 1, duration: 0.08, ease: "back.out(2)" }, at);
-        tl.add(() => n.classList.toggle("is-lit", tl.progress() >= at), at);
-        tl.fromTo(items[i], { y: 24, opacity: 0.3 }, { y: 0, opacity: 1, duration: 0.12, ease: "power2.out" }, at);
+        tl.fromTo(n, { scale: 0.7 }, { scale: 1, duration: 0.08, ease: "back.out(2)" }, ats[i]);
+        tl.fromTo(items[i], { y: 24, opacity: 0.3 }, { y: 0, opacity: 1, duration: 0.12, ease: "power2.out" }, ats[i]);
       });
+      nodes[0]?.classList.add("is-lit");
     }, el);
 
     return () => ctx.revert();
@@ -67,10 +76,11 @@ export default function ProcessTimeline({ steps }: ProcessTimelineProps) {
 
   return (
     <div ref={root} className="relative">
-      {/* Desktop connector */}
+      {/* Desktop connector. The gradient uses userSpaceOnUse: a horizontal path
+          has a zero-height bounding box, where the default units paint nothing. */}
       <svg className="hidden md:block absolute left-0 right-0 top-7 w-full h-4" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true">
         <defs>
-          <linearGradient id="process-grad" x1="0" x2="1">
+          <linearGradient id="process-grad" gradientUnits="userSpaceOnUse" x1="125" y1="8" x2="875" y2="8">
             <stop offset="0" stopColor="#C6F135" />
             <stop offset="1" stopColor="#3ECF8E" />
           </linearGradient>
