@@ -151,6 +151,78 @@ export const portfolioProjects: PortfolioProject[] = [
     languages: ["es", "en", "fr", "de"],
     featured: true,
   },
+  {
+    slug: "skylinecanopytour",
+    name: "Skyline Canopy Tour",
+    url: "https://www.skylinecanopytour.com/",
+    domain: "skylinecanopytour.com",
+    location: "Guanacaste, Costa Rica",
+    industry: { es: "Tours de aventura", en: "Adventure tours" },
+    type: { es: "Sitio con reservas en línea", en: "Site with online booking" },
+    summary: {
+      es: "Parque de aventura a 25 minutos de Tamarindo: canopy familiar, puentes colgantes y tours en ATV y UTV. Cada tour tiene su página, con reserva y pago en línea, blog y ayuda por WhatsApp.",
+      en: "Adventure park 25 minutes from Tamarindo: family zipline, hanging bridges and ATV and UTV tours. Every tour has its own page, with online booking and checkout, a blog and WhatsApp help.",
+    },
+    features: {
+      es: ["Reservas y pago en línea", "Página por tour", "Blog", "Inglés y español"],
+      en: ["Online booking & checkout", "Page per tour", "Blog", "English & Spanish"],
+    },
+    languages: ["en", "es"],
+  },
+  {
+    slug: "goadventurescr",
+    name: "GoAdventuresCR",
+    url: "https://goadventurescr.com/",
+    domain: "goadventurescr.com",
+    location: "Guanacaste, Costa Rica",
+    industry: { es: "Tours y aventura", en: "Tours & adventure" },
+    type: { es: "Sitio catálogo con reservas", en: "Catalog site with bookings" },
+    summary: {
+      es: "Tours de naturaleza, cultura y aventura en Guanacaste. Catálogo con una página por tour, formulario de reserva con datos de recogida y pago en línea con PayPal.",
+      en: "Nature, culture and adventure tours in Guanacaste. Catalog with a page per tour, a booking form with pickup details and online payment through PayPal.",
+    },
+    features: {
+      es: ["Catálogo de tours", "Reserva en línea", "Pago con PayPal", "Sitio en inglés"],
+      en: ["Tour catalog", "Online booking", "PayPal checkout", "English site"],
+    },
+    languages: ["en"],
+  },
+  {
+    slug: "grupooroz",
+    name: "Grupo Oroz",
+    url: "https://www.grupooroz.com/",
+    domain: "grupooroz.com",
+    location: "San José, Costa Rica",
+    industry: { es: "Grupo empresarial", en: "Business group" },
+    type: { es: "Sitio corporativo", en: "Corporate website" },
+    summary: {
+      es: "Grupo que opera y administra parques de aventura en Costa Rica desde 2004. Sitio corporativo que presenta sus parques, agencias, servicios y bienes raíces, con un portal de reservas para agencias y vendedores.",
+      en: "Group that has operated and managed adventure parks in Costa Rica since 2004. Corporate site presenting its parks, agencies, services and real estate, with a booking portal for agencies and vendors.",
+    },
+    features: {
+      es: ["Sitio corporativo", "Parques y empresas del grupo", "Portal para vendedores", "Español e inglés"],
+      en: ["Corporate site", "Parks & group companies", "Vendor portal", "Spanish & English"],
+    },
+    languages: ["es", "en"],
+  },
+  {
+    slug: "tecnoclima",
+    name: "Tecnoclima",
+    url: "https://www.tecnoclimacostarica.com/",
+    domain: "tecnoclimacostarica.com",
+    location: "La Fortuna, San Carlos",
+    industry: { es: "Aire acondicionado", en: "Air conditioning" },
+    type: { es: "Catálogo de productos", en: "Product catalog" },
+    summary: {
+      es: "Repuestos al detalle y servicio técnico de aire acondicionado en la Zona Norte. Catálogo por categoría, solicitud de técnico por WhatsApp y formulario de contacto para hogares y negocios.",
+      en: "Retail spare parts and air-conditioning technical service in Costa Rica's Northern Zone. Catalog by category, technician requests over WhatsApp and a contact form for homes and businesses.",
+    },
+    features: {
+      es: ["Catálogo por categoría", "Solicitud de técnico", "Consultas por WhatsApp", "Formulario de contacto"],
+      en: ["Catalog by category", "Technician requests", "WhatsApp inquiries", "Contact form"],
+    },
+    languages: ["es"],
+  },
 ];
 
 export function getFeaturedProjects(limit = 4): PortfolioProject[] {
