@@ -1,4 +1,5 @@
 import type { IconName } from "@/components/ui/Icon";
+import { portfolioProjects } from "./portfolio";
 
 // Colores del tema
 export const THEME = {
@@ -142,7 +143,7 @@ export const homeDataES: HomeData = {
       "Diseñamos y construimos el sitio de tu negocio en días, con los datos que Google, Siri, ChatGPT y Gemini necesitan para entenderlo y recomendarlo. Precio cerrado desde ₡100.000.",
     cta: "Hablemos",
     ctaSecondary: "Ver sitios que hemos hecho",
-    proof: ["7 sitios en producción", "Entrega en días, no meses", "Desde ₡100.000"],
+    proof: [`${portfolioProjects.length} sitios en producción`, "Entrega en días, no meses", "Desde ₡100.000"],
   },
 
   advisory: {
@@ -395,7 +396,7 @@ export const homeDataEN: HomeData = {
       "We design and build your business site in days, with the data Google, Siri, ChatGPT and Gemini need to understand and recommend it. Fixed price from $200.",
     cta: "Let's talk",
     ctaSecondary: "See sites we have built",
-    proof: ["7 sites in production", "Delivered in days, not months", "From $200"],
+    proof: [`${portfolioProjects.length} sites in production`, "Delivered in days, not months", "From $200"],
   },
 
   advisory: {
