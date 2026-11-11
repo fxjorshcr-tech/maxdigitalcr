@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AboutPage } from "@/components/sections";
+import { pageJsonLd, breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About | Web development agency in La Fortuna, Costa Rica",
@@ -16,5 +17,26 @@ export const metadata: Metadata = {
 };
 
 export default function AboutEN() {
-  return <AboutPage lang="en" />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            pageJsonLd("AboutPage", {
+              name: String(metadata.title),
+              description: String(metadata.description),
+              url: "https://www.maxdigitalcr.com/en/nosotros",
+              lang: "en",
+            }),
+            breadcrumbJsonLd([
+              { name: "Home", url: "https://www.maxdigitalcr.com/en" },
+              { name: "About", url: "https://www.maxdigitalcr.com/en/nosotros" },
+            ]),
+          ]),
+        }}
+      />
+      <AboutPage lang="en" />
+    </>
+  );
 }

@@ -1,11 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import RootDocument from "@/components/RootDocument";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.maxdigitalcr.com"),
   title: {
     default: "MaxDigitalCR | Professional Web Development in Costa Rica",
     template: "%s | MaxDigitalCR"
   },
-  description: "Web development agency in Costa Rica. We create landing pages, digital catalogs, and e-commerce stores with Next.js and React. Delivery in 1-10 days. Affordable prices.",
+  description: "Web design and development agency in La Fortuna, Costa Rica. Websites from $200, delivered in days and built for Google, Apple Maps, Bing and the answers of ChatGPT, Gemini and Perplexity.",
   keywords: [
     "web development Costa Rica",
     "professional web design",
@@ -13,6 +15,8 @@ export const metadata: Metadata = {
     "e-commerce Costa Rica",
     "online store Costa Rica",
     "affordable websites",
+    "AI search optimization",
+    "show up in ChatGPT",
     "Next.js development",
     "React Costa Rica",
     "digital agency Costa Rica",
@@ -33,7 +37,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "MaxDigitalCR | Professional Web Development in Costa Rica",
-    description: "We create landing pages, catalogs, and e-commerce with world-class technology. Delivery in 1-10 days.",
+    description: "Websites for businesses in Costa Rica, built for Google and for AI answers. Delivered in days, fixed price from $200.",
     locale: "en_US",
     alternateLocale: ["es_CR"],
     type: "website",
@@ -51,15 +55,34 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "MaxDigitalCR | Professional Web Development",
-    description: "Web development agency in Costa Rica. Landing pages, e-commerce, and digital catalogs.",
+    description: "Websites for businesses in Costa Rica, built for Google and for AI answers.",
     images: ["/brand/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+      : {}),
+    ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { other: { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION } }
+      : {}),
   },
 };
 
-export default function EnglishLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return children;
+export const viewport: Viewport = {
+  themeColor: "#0D1117",
+};
+
+export default function EnglishLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <RootDocument lang="en">{children}</RootDocument>;
 }

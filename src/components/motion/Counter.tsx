@@ -10,14 +10,18 @@ interface CounterProps {
   className?: string;
 }
 
-/** Counts up from 0 when scrolled into view. */
+/**
+ * Counts up when scrolled into view. The server renders the final value, so
+ * crawlers and AI assistants that do not run JavaScript read "7 sitios", not "0".
+ */
 export default function Counter({ to, suffix = "", prefix = "", duration = 1400, className = "" }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(to);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let raf = 0;
     const io = new IntersectionObserver(
       ([entry]) => {

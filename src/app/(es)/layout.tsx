@@ -1,25 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
-import { Source_Serif_4, Instrument_Sans } from "next/font/google";
-import "./globals.css";
-import { organizationJsonLd } from "@/lib/schema";
-
-const GA_MEASUREMENT_ID = "G-F86DTXXD46";
-
-// Tipografía: serif editorial para titulares, sans limpia para texto.
-const display = Source_Serif_4({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-display",
-  display: "swap",
-});
-const sans = Instrument_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-sans-body",
-  display: "swap",
-});
+import RootDocument from "@/components/RootDocument";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.maxdigitalcr.com"),
@@ -27,7 +7,7 @@ export const metadata: Metadata = {
     default: "MaxDigitalCR | Desarrollo Web Profesional en Costa Rica",
     template: "%s | MaxDigitalCR"
   },
-  description: "Agencia de diseño y desarrollo web en La Fortuna, Costa Rica. Landing pages desde ₡100.000, sitios catálogo y tiendas en línea, entregados en 1 a 10 días hábiles con Google Business y Search Console incluidos.",
+  description: "Agencia de diseño y desarrollo web en La Fortuna, Costa Rica. Páginas web desde ₡100.000, entregadas en días y preparadas para Google, Apple Maps, Bing y las respuestas de ChatGPT, Gemini y Perplexity.",
   keywords: [
     "desarrollo web Costa Rica",
     "diseño web profesional",
@@ -35,6 +15,9 @@ export const metadata: Metadata = {
     "e-commerce Costa Rica",
     "tienda online Costa Rica",
     "páginas web La Fortuna",
+    "optimización para búsquedas con IA",
+    "aparecer en ChatGPT",
+    "SEO para inteligencia artificial",
     "cuánto cuesta una página web en Costa Rica",
     "desarrollo Next.js",
     "React Costa Rica",
@@ -61,7 +44,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "MaxDigitalCR | Desarrollo Web Profesional en Costa Rica",
-    description: "Landing pages, sitios catálogo y tiendas en línea para negocios de Costa Rica. Entrega en 1 a 10 días hábiles, precios desde ₡100.000.",
+    description: "Páginas web para negocios de Costa Rica, hechas para Google y para las respuestas de la IA. Entrega en días, precio cerrado desde ₡100.000.",
     locale: "es_CR",
     alternateLocale: ["en_US"],
     type: "website",
@@ -79,7 +62,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "MaxDigitalCR | Desarrollo Web Profesional",
-    description: "Agencia de desarrollo web en Costa Rica. Landing pages, e-commerce y catálogos digitales.",
+    description: "Páginas web para negocios de Costa Rica, hechas para Google y para las respuestas de la IA.",
     images: ["/brand/og-image.png"],
   },
   robots: {
@@ -109,34 +92,6 @@ export const viewport: Viewport = {
   themeColor: "#0D1117",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="es" className={`${display.variable} ${sans.variable}`}>
-      <head>
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
-          `}
-        </Script>
-      </head>
-      <body className="antialiased font-sans">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
-        />
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <RootDocument lang="es">{children}</RootDocument>;
 }

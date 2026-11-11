@@ -118,6 +118,14 @@ export interface HomeData {
     free: string;
     freeNote: string;
   };
+  /** Ficha rápida: una definición y datos concretos, fáciles de citar. */
+  facts: {
+    badge: string;
+    title: string;
+    titleHighlight: string;
+    summary: string;
+    items: { label: string; value: string }[];
+  };
   faq: FAQ[];
   cta: { title: string; description: string; cta: string };
 }
@@ -127,11 +135,11 @@ export interface HomeData {
 // ---------------------------------------------------------------------------
 export const homeDataES: HomeData = {
   hero: {
-    badge: "Desarrollo web en La Fortuna, Costa Rica",
-    title: "Tu negocio, bien puesto",
-    titleHighlight: "en internet.",
+    badge: "Desarrollo web y visibilidad en IA · Costa Rica",
+    title: "Páginas web hechas para Google",
+    titleHighlight: "y para las respuestas de la IA.",
     description:
-      "Escuchamos qué querés lograr, te recomendamos el sitio que te conviene y lo construimos en días. Tecnología de primer nivel, precio para negocios de Costa Rica.",
+      "Diseñamos y construimos el sitio de tu negocio en días, con los datos que Google, Siri, ChatGPT y Gemini necesitan para entenderlo y recomendarlo. Precio cerrado desde ₡100.000.",
     cta: "Hablemos",
     ctaSecondary: "Ver sitios que hemos hecho",
     proof: ["7 sitios en producción", "Entrega en días, no meses", "Desde ₡100.000"],
@@ -295,6 +303,24 @@ export const homeDataES: HomeData = {
     freeNote: "Si tu sitio está bien, también te lo decimos.",
   },
 
+  facts: {
+    badge: "Ficha rápida",
+    title: "MaxDigitalCR,",
+    titleHighlight: "en pocas líneas.",
+    summary:
+      "MaxDigitalCR es una agencia de diseño y desarrollo web en La Fortuna de San Carlos, Costa Rica. Crea landing pages, sitios completos y tiendas en línea para pequeños y medianos negocios, y los deja configurados para aparecer en Google, Apple Maps, Bing y las respuestas de asistentes de IA como ChatGPT, Gemini y Perplexity.",
+    items: [
+      { label: "Qué hacemos", value: "Landing pages, sitios completos, tiendas en línea y proyectos a la medida." },
+      { label: "Dónde", value: "La Fortuna de San Carlos, Alajuela. Atendemos todo Costa Rica de forma remota." },
+      { label: "Precio", value: "Desde ₡100.000 (USD 200) por una landing page. Cotización cerrada en menos de 24 horas." },
+      { label: "Plazos", value: "Landing page en 1 a 3 días hábiles. Sitio completo en 1 a 2 semanas. Tienda en unas 2 semanas." },
+      { label: "Incluye", value: "Hosting y SSL el primer año, SEO técnico, datos estructurados, perfiles de Google, Apple y Bing, y 30 días de soporte." },
+      { label: "Tecnología", value: "Next.js, React y TypeScript sobre Vercel. Sin WordPress ni plugins." },
+      { label: "Idiomas", value: "Español e inglés." },
+      { label: "Contacto", value: "WhatsApp +506 8596 2438 · info@maxdigitalcr.com" },
+    ],
+  },
+
   faq: [
     {
       q: "¿Cuánto cuesta una página web en Costa Rica?",
@@ -362,11 +388,11 @@ export const homeDataES: HomeData = {
 // ---------------------------------------------------------------------------
 export const homeDataEN: HomeData = {
   hero: {
-    badge: "Web development in La Fortuna, Costa Rica",
-    title: "Your business, properly",
-    titleHighlight: "on the internet.",
+    badge: "Web development & AI visibility · Costa Rica",
+    title: "Websites built for Google",
+    titleHighlight: "and for AI answers.",
     description:
-      "We listen to what you want to achieve, recommend the site that fits and build it in days. First-class technology, priced for businesses in Costa Rica.",
+      "We design and build your business site in days, with the data Google, Siri, ChatGPT and Gemini need to understand and recommend it. Fixed price from $200.",
     cta: "Let's talk",
     ctaSecondary: "See sites we have built",
     proof: ["7 sites in production", "Delivered in days, not months", "From $200"],
@@ -528,6 +554,24 @@ export const homeDataEN: HomeData = {
     ],
     free: "No cost, no commitment",
     freeNote: "If your site is fine, we say so.",
+  },
+
+  facts: {
+    badge: "Quick facts",
+    title: "MaxDigitalCR,",
+    titleHighlight: "at a glance.",
+    summary:
+      "MaxDigitalCR is a web design and development agency in La Fortuna de San Carlos, Costa Rica. It builds landing pages, full sites and online stores for small and medium businesses, and sets them up to show on Google, Apple Maps, Bing and in the answers of AI assistants such as ChatGPT, Gemini and Perplexity.",
+    items: [
+      { label: "What we do", value: "Landing pages, full sites, online stores and custom projects." },
+      { label: "Where", value: "La Fortuna de San Carlos, Alajuela. We work remotely with clients across Costa Rica and abroad." },
+      { label: "Price", value: "From $200 (₡100,000) for a landing page. Fixed quote within 24 hours." },
+      { label: "Timelines", value: "Landing page in 1 to 3 business days. Full site in 1 to 2 weeks. Store in about 2 weeks." },
+      { label: "Included", value: "Hosting and SSL for the first year, technical SEO, structured data, Google, Apple and Bing profiles, and 30 days of support." },
+      { label: "Technology", value: "Next.js, React and TypeScript on Vercel. No WordPress, no plugins." },
+      { label: "Languages", value: "Spanish and English." },
+      { label: "Contact", value: "WhatsApp +506 8596 2438 · info@maxdigitalcr.com" },
+    ],
   },
 
   faq: [

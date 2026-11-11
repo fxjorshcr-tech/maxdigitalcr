@@ -10,3 +10,4 @@ export { default as TalkSection } from "./TalkSection";
 export { default as HomePage } from "./HomePage";
 export { default as ServicesPage } from "./ServicesPage";
 export { default as AboutPage } from "./AboutPage";
+export { default as FactsSection } from "./FactsSection";

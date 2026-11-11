@@ -1,152 +1,167 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Icon, { type IconName } from "@/components/ui/Icon";
-
-interface Scenario {
-  query: string;
-  answer: string;
-  business: string;
-  meta: string;
-}
-
-interface AiAnswerDemoProps {
-  scenarios: Scenario[];
-  sources: { icon: IconName; label: string }[];
-  sourcesLabel: string;
-}
+import Icon from "@/components/ui/Icon";
+import type { AiDemoCopy } from "@/lib/ai-demo";
 
 type Phase = "typing" | "thinking" | "answering" | "done";
 
+function BusinessChip({ name }: { name: string }) {
+  return (
+    <span className="inline-flex items-center gap-1 rounded-md bg-brand/15 border border-brand/40 px-1.5 py-0.5 text-brand font-semibold whitespace-nowrap">
+      {name}
+      <Icon name="externalLink" size={12} />
+    </span>
+  );
+}
+
 /**
- * A live "AI assistant" panel: the query types itself, the assistant thinks,
- * the answer streams in and the business card pops with its sources.
- * Cycles through several scenarios. Static full render before hydration.
+ * An assistant conversation: the question types itself, the assistant thinks,
+ * the answer streams in and cites the business with its sources. Cycles
+ * through several scenarios. The first scenario is fully rendered on the
+ * server, and every scenario is laid out invisibly underneath so the panel
+ * never changes height while the text streams.
  */
-export default function AiAnswerDemo({ scenarios, sources, sourcesLabel }: AiAnswerDemoProps) {
+export default function AiAnswerDemo({ title, scenarios, sources, sourcesLabel }: AiDemoCopy) {
   const [idx, setIdx] = useState(0);
   const [phase, setPhase] = useState<Phase>("done");
   const [typed, setTyped] = useState(scenarios[0].query);
   const [streamed, setStreamed] = useState(scenarios[0].answer);
-  const [reduced, setReduced] = useState(false);
   const timers = useRef<number[]>([]);
 
   const s = scenarios[idx];
 
   useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReduced(mq.matches);
-    if (mq.matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const later = (fn: () => void, ms: number) => {
-      const id = window.setTimeout(fn, ms);
-      timers.current.push(id);
+      timers.current.push(window.setTimeout(fn, ms));
     };
 
     const run = (i: number) => {
       const sc = scenarios[i];
+      setIdx(i);
       setPhase("typing");
       setTyped("");
       setStreamed("");
-      // type the query
-      for (let c = 1; c <= sc.query.length; c++) later(() => setTyped(sc.query.slice(0, c)), 40 * c);
-      const tEnd = 40 * sc.query.length + 350;
+      for (let c = 1; c <= sc.query.length; c++) later(() => setTyped(sc.query.slice(0, c)), 38 * c);
+      const tEnd = 38 * sc.query.length + 350;
       later(() => setPhase("thinking"), tEnd);
-      // stream the answer word by word
       const words = sc.answer.split(" ");
       const aStart = tEnd + 900;
-      words.forEach((_, w) => later(() => setStreamed(words.slice(0, w + 1).join(" ")), aStart + 70 * w));
-      const aEnd = aStart + 70 * words.length;
       later(() => setPhase("answering"), aStart);
+      words.forEach((_, w) => later(() => setStreamed(words.slice(0, w + 1).join(" ")), aStart + 65 * w));
+      const aEnd = aStart + 65 * words.length;
       later(() => setPhase("done"), aEnd + 200);
-      later(() => run((i + 1) % scenarios.length), aEnd + 5200);
-      setIdx(i);
+      later(() => run((i + 1) % scenarios.length), aEnd + 5600);
     };
 
-    later(() => run(0), 1200);
+    later(() => run(1 % scenarios.length), 4200);
     const list = timers.current;
     return () => list.forEach(clearTimeout);
   }, [scenarios]);
 
-  const showCard = phase === "done" || reduced;
-  const showAnswer = phase === "answering" || phase === "done" || reduced;
+  const done = phase === "done";
 
   return (
-    <div className="relative rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur p-5 sm:p-6 gradient-border">
-      {/* Query */}
-      <div className="flex items-center gap-2 rounded-xl bg-neutral-900/80 border border-white/10 px-3 py-2.5 text-sm text-neutral-200">
-        <Icon name="search" size={16} className="shrink-0 text-neutral-500" />
-        <span className="font-mono text-[13px] min-h-[1.25rem]">
-          {reduced ? s.query : typed}
-          {phase === "typing" && <span className="ml-0.5 inline-block w-[2px] h-4 align-middle bg-brand animate-pulse" />}
+    <div className="relative rounded-2xl border border-white/10 bg-neutral-900/80 backdrop-blur-xl shadow-[0_40px_120px_-30px_rgba(0,0,0,0.9)] overflow-hidden">
+      {/* Window bar */}
+      <div className="flex items-center gap-2.5 border-b border-white/10 px-4 py-3">
+        <span className="flex h-6 w-6 items-center justify-center rounded-md bg-gradient-brand text-neutral-900">
+          <Icon name="sparkles" size={13} />
+        </span>
+        <span className="text-[13px] font-medium text-neutral-200">{title}</span>
+        <span className="ml-auto flex gap-1.5" aria-hidden="true">
+          <span className="h-2 w-2 rounded-full bg-white/15" />
+          <span className="h-2 w-2 rounded-full bg-white/15" />
+          <span className="h-2 w-2 rounded-full bg-white/15" />
         </span>
       </div>
 
-      {/* Assistant */}
-      <div className="mt-5 flex items-start gap-3">
-        <div className="shrink-0 w-8 h-8 rounded-lg bg-gradient-brand flex items-center justify-center text-neutral-900">
-          <Icon name="sparkles" size={16} />
+      <div className="p-4 sm:p-5">
+        {/* Question */}
+        <div className="flex justify-end">
+          <div className="grid max-w-[88%] rounded-2xl rounded-br-md bg-white/[0.08] px-4 py-2.5 text-sm text-white">
+            {scenarios.map((sc) => (
+              <span key={sc.query} className="invisible col-start-1 row-start-1" aria-hidden="true">
+                {sc.query}
+              </span>
+            ))}
+            <span className="col-start-1 row-start-1">
+              {typed}
+              {phase === "typing" && <span className="ml-0.5 inline-block h-4 w-[2px] animate-pulse bg-brand align-middle" />}
+            </span>
+          </div>
         </div>
-        <div className="min-h-[3.5rem] flex-1">
-          {phase === "thinking" && !reduced ? (
-            <div className="flex items-center gap-1.5 pt-2" aria-hidden="true">
-              <span className="w-1.5 h-1.5 rounded-full bg-neutral-500 animate-bounce [animation-delay:-0.3s]" />
-              <span className="w-1.5 h-1.5 rounded-full bg-neutral-500 animate-bounce [animation-delay:-0.15s]" />
-              <span className="w-1.5 h-1.5 rounded-full bg-neutral-500 animate-bounce" />
-            </div>
-          ) : (
-            <p className="text-sm text-neutral-300 leading-relaxed">
-              {showAnswer ? (reduced ? s.answer : streamed) : ""}
-              {showCard && (
-                <>
-                  {" "}
-                  <span className="inline-flex items-center gap-1 rounded-md bg-brand/15 border border-brand/40 px-1.5 py-0.5 text-brand font-semibold whitespace-nowrap">
-                    {s.business}
-                    <Icon name="externalLink" size={12} />
-                  </span>
-                  .
-                </>
+
+        {/* Answer */}
+        <div className="mt-4 flex items-start gap-3">
+          <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white/[0.06] border border-white/10 text-brand">
+            <Icon name="sparkles" size={14} />
+          </span>
+          <div className="grid flex-1 text-sm leading-relaxed text-neutral-300">
+            {scenarios.map((sc) => (
+              <p key={sc.query} className="invisible col-start-1 row-start-1" aria-hidden="true">
+                {sc.answer} <BusinessChip name={sc.business} />.
+              </p>
+            ))}
+            <div className="col-start-1 row-start-1">
+              {phase === "thinking" ? (
+                <span className="flex items-center gap-1.5 pt-2" aria-hidden="true">
+                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-neutral-500 [animation-delay:-0.3s]" />
+                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-neutral-500 [animation-delay:-0.15s]" />
+                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-neutral-500" />
+                </span>
+              ) : (
+                <p>
+                  {phase === "typing" ? "" : streamed}
+                  {done && (
+                    <>
+                      {" "}
+                      <BusinessChip name={s.business} />.
+                    </>
+                  )}
+                </p>
               )}
-            </p>
-          )}
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* Business card */}
-      <div
-        className={`mt-4 rounded-xl bg-neutral-900 border border-white/10 p-4 flex items-center gap-3 transition-all duration-500 ${
-          showCard ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-        }`}
-      >
-        <div className="w-10 h-10 rounded-lg bg-brand/15 flex items-center justify-center text-brand">
-          <Icon name="mapPin" size={20} />
+        {/* Cited business */}
+        <div
+          className={`mt-4 flex items-center gap-3 rounded-xl border border-white/10 bg-neutral-950/70 p-3.5 transition-all duration-500 ${
+            done ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+          }`}
+        >
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand/15 text-brand">
+            <Icon name="mapPin" size={20} />
+          </div>
+          <div className="min-w-0">
+            <p className="truncate font-semibold text-white">{s.business}</p>
+            <p className="truncate text-xs text-neutral-400">{s.meta}</p>
+          </div>
+          <div className="ml-auto flex gap-0.5 text-brand">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <Icon key={i} name="star" size={12} className="fill-current" />
+            ))}
+          </div>
         </div>
-        <div className="min-w-0">
-          <p className="font-semibold text-white truncate">{s.business}</p>
-          <p className="text-xs text-neutral-400 truncate">{s.meta}</p>
-        </div>
-        <div className="ml-auto flex gap-0.5 text-brand">
-          {[0, 1, 2, 3, 4].map((i) => (
-            <Icon key={i} name="star" size={12} className="fill-current" />
-          ))}
-        </div>
-      </div>
 
-      {/* Sources */}
-      <div className={`mt-4 transition-opacity duration-700 ${showCard ? "opacity-100" : "opacity-0"}`}>
-        <p className="text-[11px] uppercase tracking-widest text-neutral-500 mb-2">{sourcesLabel}</p>
-        <ul className="flex flex-wrap gap-2">
-          {sources.map((src, i) => (
-            <li
-              key={src.label}
-              className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs text-neutral-300"
-              style={{ transitionDelay: `${i * 120}ms` }}
-            >
-              <Icon name={src.icon} size={12} className="text-brand-2" />
-              {src.label}
-            </li>
-          ))}
-        </ul>
+        {/* Sources */}
+        <div className={`mt-4 transition-opacity duration-700 ${done ? "opacity-100" : "opacity-0"}`}>
+          <p className="mb-2 text-[11px] uppercase tracking-widest text-neutral-500">{sourcesLabel}</p>
+          <ul className="flex flex-wrap gap-2">
+            {sources.map((src) => (
+              <li
+                key={src.label}
+                className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs text-neutral-300"
+              >
+                <Icon name={src.icon} size={12} className="text-brand-2" />
+                {src.label}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ export default function Servicios() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
-            faqJsonLd(homeDataES.faq),
+            faqJsonLd(homeDataES.faq, "es"),
             breadcrumbJsonLd([
               { name: "Inicio", url: "https://www.maxdigitalcr.com/" },
               { name: "Servicios", url: "https://www.maxdigitalcr.com/servicios" },
